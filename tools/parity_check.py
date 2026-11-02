@@ -14,10 +14,12 @@ search paths, addon roots, the fleet of seeded installs) are deliberately not po
 
 Usage::
 
-    python tools/parity_check.py [--json] [target ...]
+    python tools/parity_check.py [--json] [--existing] [target ...]
 
 Targets are ``build``, ``server`` and ``client``; naming none checks all of them. Exit code 0 only
-when every checked target holds exactly the build this worktree would produce.
+when every checked target holds exactly the build this worktree would produce. ``--existing`` drops
+a target whose directory does not exist at all: a copy that was never installed cannot be stale,
+while a directory that exists without this mod, or with a different build, still fails.
 """
 
 from __future__ import annotations
@@ -203,7 +205,8 @@ def inspect(name: str, directory: Path, expected: str, built: Path | None) -> di
 
 def main(argv: list[str]) -> int:
     as_json = "--json" in argv
-    wanted = [arg for arg in argv[1:] if arg != "--json"]
+    existing_only = "--existing" in argv
+    wanted = [arg for arg in argv[1:] if arg not in ("--json", "--existing")]
     targets = TARGETS + prism_targets()
     known = [name for name, _directory in targets]
     groups = {name.split(":")[0] for name in known}
@@ -218,6 +221,8 @@ def main(argv: list[str]) -> int:
     build_jars = ensouled_jars(ROOT / "build" / "libs")
     built_sha = sha256(build_jars[0]) if build_jars else None
     rows = [inspect(name, directory, expected, built_sha) for name, directory in selected]
+    if existing_only:
+        rows = [row for row in rows if row["state"] != "absent"]
     failed = [row for row in rows if row["state"] != "ok"]
 
     if as_json:

@@ -152,6 +152,80 @@ test {
 	useJUnitPlatform()
 }
 
+// One-shot live proof producer. It is not part of build/test: it writes a real wish ticket into the
+// live world so the compile-time proof can re-read the row through the production readers.
+tasks.register('recordLiveWish', JavaExec) {
+	dependsOn testClasses
+	classpath = sourceSets.test.runtimeClasspath
+	mainClass = 'dev.ensouled.work.RecordLiveWish'
+	workingDir = projectDir
+}
+
+// The design lineage says what the civilization is supposed to express, and this task prints the
+// phase ladder beside the source witnesses this worktree actually carries. It is deliberately not a
+// score: a class and a marker are compile-time evidence, not a live bot run, and an Openlock AXIS
+// absence is reported as an external absence rather than converted into a pass. The report is also
+// written to build/reports/gameplay-degrees.txt so a build log can be checked after the fact.
+def openlockRoot = providers.gradleProperty('openlockRoot')
+		.orElse(System.getenv('OPENLOCK_ROOT') ?: 'C:\\Users\\ala\\Documents\\openlock')
+		.get()
+def openlockInstall = providers.gradleProperty('openlockInstall').orNull
+def gameplayDegreesReport = layout.buildDirectory.file('reports/gameplay-degrees.txt')
+
+tasks.register('compileGameplayDegrees', Exec) {
+	group = 'build'
+	description = 'Reports the city-builder gameplay phases and the external Openlock AXIS cell.'
+	def report = gameplayDegreesReport.get().asFile
+	inputs.files(fileTree('docs') { include 'persistent_city_builder_tower_defense_design_analysis*.md' }).optional()
+	inputs.files(fileTree('tools') { include 'gameplay_degrees.py' })
+	inputs.files(fileTree('src/main/java') { include '**/*.java' })
+	outputs.file(report)
+	outputs.upToDateWhen { false }
+	commandLine 'python', 'tools/gameplay_degrees.py',
+			'--root', projectDir.absolutePath,
+			'--openlock', openlockRoot,
+			'--out', report.absolutePath
+	if (openlockInstall) {
+		args '--openlock-install', openlockInstall
+	}
+	doFirst {
+		logger.lifecycle("[build] gameplay degrees and Openlock AXIS (report: ${report})")
+	}
+}
+
+// Compile time is where the ladder is shown: the report runs before javac, and `classes`/`build`
+// inherit the dependency. It does not make an absent design phase fail the build; it names it.
+tasks.named('compileJava') {
+	dependsOn 'compileGameplayDegrees'
+}
+
+// Parity is a build gate, not a report. The task is never up to date, `check` and `build` both
+// depend on it, and an Exec that exits non-zero fails the build: a jar that does not carry this
+// worktree, or a checker that cannot run, is a refusal rather than a warning. `--existing` keeps a
+// fresh checkout honest - a copy that was never installed cannot be stale - while an installed
+// copy that exists and differs still refuses. The store gate runs beside it, so a projection that
+// lags the append logs refuses the build even when the gameplay report is excluded.
+tasks.register('verifyStore', Exec) {
+	group = 'verification'
+	description = 'Refuses when the Mongo projection lags or contradicts the durable stores.'
+	outputs.upToDateWhen { false }
+	commandLine 'python', 'tools/mongo_parity.py'
+}
+
+tasks.register('verifyParity', Exec) {
+	group = 'verification'
+	description = 'Refuses when an installed jar or the store projection does not carry this worktree.'
+	dependsOn 'remapJar', 'verifyStore'
+	outputs.upToDateWhen { false }
+	commandLine 'python', 'tools/parity_check.py', '--json', '--existing', 'build', 'server', 'client'
+	doFirst {
+		logger.lifecycle('[build] parity: build, server and bot copies against this worktree')
+	}
+}
+
+tasks.named('check') { dependsOn 'verifyParity' }
+tasks.named('build') { dependsOn 'verifyParity' }
+
 // scripts/selftest.sh boots the dev server and needs the acceptance harness, which lives in the test
 // source set (src/test/java/dev/ensouled/selftest, declared as a companion mod by
 // src/test/resources/fabric.mod.json). Only that output is added: the harness stays out of the mod jar.

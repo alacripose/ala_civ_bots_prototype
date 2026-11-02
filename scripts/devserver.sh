@@ -85,6 +85,26 @@ if [ -n "$BUILT_JAR" ]; then
 	fi
 fi
 
+# Two refusals before the server takes the port. The installed copies must carry this worktree,
+# and the store must be one a mount can reconcile rather than one holding invented history. A
+# missing checker is itself a refusal: parity that was not run is the failure, not the default.
+if [ ! -f tools/parity_check.py ]; then
+	echo "refusing to launch: tools/parity_check.py is missing, so parity cannot be checked." >&2
+	exit 1
+fi
+if ! python tools/parity_check.py --existing build server client; then
+	echo "refusing to launch: an installed ensouled jar does not carry this worktree." >&2
+	exit 1
+fi
+if [ ! -f tools/mongo_parity.py ]; then
+	echo "refusing to launch: tools/mongo_parity.py is missing, so store drift cannot be checked." >&2
+	exit 1
+fi
+if ! python tools/mongo_parity.py --launch; then
+	echo "refusing to launch: the Mongo projection contradicts the durable stores." >&2
+	exit 1
+fi
+
 echo "== persistent dev server on 25565 (world: run/world, control: 127.0.0.1:25575) =="
 ./gradlew runServer --console=plain >> logs/devserver.log 2>&1 &
 GRADLE_PID=$!
