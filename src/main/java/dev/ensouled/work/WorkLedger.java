@@ -453,10 +453,23 @@ public final class WorkLedger {
 			}
 		}
 		String purpose = "discover:" + skillId;
+		Ticket prior = null;
 		for (Ticket ticket : tickets.values()) {
-			if (ticket.agentId().equals(agentId) && ticket.purpose().equals(purpose)) {
+			if (!ticket.agentId().equals(agentId) || !ticket.purpose().equals(purpose)) {
+				continue;
+			}
+			if (ticket.state() == Ticket.State.HELD) {
+				// A witnessed discovery is the unlock; later practice reinforces it.
 				return;
 			}
+			prior = ticket;
+		}
+		if (prior != null && prior.state() == Ticket.State.REFUSED && !success) {
+			// A refusal is the record of that attempt; another refusal adds nothing.
+			return;
+		}
+		if (prior != null && prior.state() == Ticket.State.OPEN) {
+			return;
 		}
 		String worldId = WorldState.get() == null ? "" : WorldState.get().world().worldId();
 		String witness = success ? "held 1/1 at tick " + tick
@@ -599,7 +612,9 @@ public final class WorkLedger {
 			if (!ticket.agentId().equals(agentId) || !ticket.purpose().startsWith("discover:")) {
 				continue;
 			}
-			out.putIfAbsent(ticket.purpose().substring("discover:".length()), ticket);
+			// The latest attempt is the one that speaks for the ability: a refused first try is
+			// replaced by the successful practice that actually unlocked it.
+			out.put(ticket.purpose().substring("discover:".length()), ticket);
 		}
 		return out;
 	}

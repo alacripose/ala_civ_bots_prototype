@@ -143,6 +143,21 @@ final class WorkLedgerTest {
 		assertTrue(owed.get(0).open(), "a commitment is still owed after the process that made it ends");
 	}
 
+	@Test
+	void aFailedFirstPracticeIsReplacedByTheDiscoveryThatSucceeds(@TempDir Path dir) {
+		WorkLedger work = WorkLedger.at(dir.resolve("work.json"));
+		work.discovered("agent:8", "Ivy", "harvest_tree", 10L, false, "gate:cand:1");
+		assertEquals(Ticket.State.REFUSED,
+				work.discoveriesOf("agent:8").get("harvest_tree").state());
+
+		work.discovered("agent:8", "Ivy", "harvest_tree", 20L, true, "intent:2");
+		Ticket discovered = work.discoveriesOf("agent:8").get("harvest_tree");
+		assertEquals(Ticket.State.HELD, discovered.state(),
+				"the later success is the witnessed unlock, not the refused first try");
+		assertEquals(20L, discovered.closedTick());
+		assertTrue(discovered.witness().contains("held 1/1"), discovered.witness());
+	}
+
 	private static int stage(WorkLedger work, String agentId) {
 		List<Commitment> owed = work.commitmentsOf(agentId);
 		return owed.isEmpty() ? -1 : owed.get(owed.size() - 1).stageReached();
