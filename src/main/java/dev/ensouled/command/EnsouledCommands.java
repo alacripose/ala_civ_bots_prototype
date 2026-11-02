@@ -647,6 +647,15 @@ public final class EnsouledCommands {
 		}
 		AgentMind mind = record.mind();
 		StringBuilder sb = new StringBuilder(mind.describe()).append('\n');
+		// The learned skill view: the verbs the practice log attests, with the counts replayed
+		// from it. A being that has learned nothing prints no row rather than a row of zeroes.
+		if (!mind.ledger().statsBySkill().isEmpty()) {
+			sb.append("  verbs:");
+			mind.ledger().statsBySkill().forEach((verb, stats) -> sb.append(' ').append(verb)
+					.append('(').append(stats.successes()).append('/').append(stats.failures()).append(')'));
+			sb.append('
+');
+		}
 		sb.append("  home=").append(record.home()).append(" gate_budget=").append(record.gate().budgetRemaining()).append('\n');
 		// Why the being is idle: how many candidates its own generator produced on the last idle tick,
 		// what its hands perceive, and whether a reflex owns the body instead.

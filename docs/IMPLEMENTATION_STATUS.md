@@ -5,6 +5,18 @@ Plan: `minecraft_ensouled_system1_cua_architecture_v4.md` (§44/§45), `minecraf
 (explicit project instruction; Addendum B's provisional 1.21.1/NeoForge target is not used).
 This file states what is actually built, what is deliberately absent, and how each claim was checked.
 
+## 2026-11-02 — learned verbs are a replay of the practice log
+
+`MindLedger` now carries one record of practice: `(tick, skill, verb, ok, evidence)` rows. `SkillStats`
+is a cache rebuilt by replaying those rows on load; the save writes `mind.practice` and no longer
+writes `mind.stats`. A save from before the log migrates each counter into labelled `migrated:stats`
+rows on first load, so a resident keeps the verbs it had learned when it relogs. `/ensouled inspect`
+prints the derived view (`verbs: harvest(3/1) ...`).
+
+Checked: `./gradlew --offline --no-daemon build` exits 0, including `PracticeLogTest`. Live server
+`0.1.0+g8d5beb5a…`; the wish "bring me 20 oak logs" opened `ticket:9a8668df…` and streamed it as
+ledger kind `record` at seq 29487 with verb `harvest`, cells 0/20.
+
 ## 2026-11-02 — Node motor body: chat transport and client observation
 
 **Layer correction.** Axis is not part of the Node body and is not proved by its logs. It is the
