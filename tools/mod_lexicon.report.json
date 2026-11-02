@@ -1,0 +1,1014 @@
+{
+  "mods": {
+    "BigGlobe": {
+      "files": {
+        "java": 1166,
+        "lang": 1,
+        "markdown": 42
+      },
+      "tokens": 73148,
+      "top": [
+        "the",
+        "to",
+        "a",
+        "is",
+        "of",
+        "this",
+        "and",
+        "in",
+        "if",
+        "be",
+        "for",
+        "value"
+      ],
+      "words": 4576
+    },
+    "BluePower": {
+      "files": {
+        "java": 400,
+        "lang": 1,
+        "markdown": 2
+      },
+      "tokens": 53103,
+      "top": [
+        "the",
+        "of",
+        "power",
+        "license",
+        "blue",
+        "gnu",
+        "is",
+        "or",
+        "public",
+        "a",
+        "it",
+        "for"
+      ],
+      "words": 2776
+    },
+    "BuildCraft": {
+      "files": {
+        "java": 1931,
+        "lang": 0,
+        "markdown": 6
+      },
+      "tokens": 111924,
+      "top": [
+        "the",
+        "of",
+        "buildcraft",
+        "this",
+        "to",
+        "is",
+        "license",
+        "a",
+        "and",
+        "mozilla",
+        "mpl",
+        "mod"
+      ],
+      "words": 4880
+    },
+    "Calculator": {
+      "files": {
+        "java": 358,
+        "lang": 0,
+        "markdown": 2
+      },
+      "tokens": 9223,
+      "top": [
+        "d",
+        "f",
+        "gl",
+        "new",
+        "itemstack",
+        "double",
+        "if",
+        "import",
+        "x",
+        "y",
+        "z",
+        "this"
+      ],
+      "words": 1102
+    },
+    "ComputerCraft": {
+      "files": {
+        "java": 368,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 79330,
+      "top": [
+        "the",
+        "to",
+        "a",
+        "of",
+        "is",
+        "or",
+        "this",
+        "link",
+        "and",
+        "see",
+        "if",
+        "in"
+      ],
+      "words": 3346
+    },
+    "Create": {
+      "files": {
+        "java": 2017,
+        "lang": 1,
+        "markdown": 7
+      },
+      "tokens": 48931,
+      "top": [
+        "the",
+        "to",
+        "a",
+        "of",
+        "be",
+        "for",
+        "in",
+        "and",
+        "is",
+        "this",
+        "not",
+        "can"
+      ],
+      "words": 5497
+    },
+    "Create-Diesel-Generators": {
+      "files": {
+        "java": 200,
+        "lang": 1,
+        "markdown": 4
+      },
+      "tokens": 2074,
+      "top": [
+        "the",
+        "a",
+        "to",
+        "cement",
+        "concrete",
+        "fluid",
+        "oil",
+        "diesel",
+        "when",
+        "with",
+        "s",
+        "bucket"
+      ],
+      "words": 656
+    },
+    "Create-Ez-Stock-Ticker": {
+      "files": {
+        "java": 9,
+        "lang": 1,
+        "markdown": 3
+      },
+      "tokens": 605,
+      "top": [
+        "the",
+        "stack",
+        "to",
+        "a",
+        "and",
+        "snapping",
+        "or",
+        "shift",
+        "be",
+        "of",
+        "for",
+        "x"
+      ],
+      "words": 257
+    },
+    "Create-Mobile-Packages": {
+      "files": {
+        "java": 112,
+        "lang": 1,
+        "markdown": 4
+      },
+      "tokens": 5624,
+      "top": [
+        "the",
+        "to",
+        "a",
+        "bee",
+        "robo",
+        "port",
+        "network",
+        "is",
+        "if",
+        "create",
+        "in",
+        "player"
+      ],
+      "words": 1094
+    },
+    "Create-Pantographs-and-Wires": {
+      "files": {
+        "java": 276,
+        "lang": 1,
+        "markdown": 1
+      },
+      "tokens": 6419,
+      "top": [
+        "the",
+        "a",
+        "of",
+        "wire",
+        "for",
+        "is",
+        "to",
+        "this",
+        "param",
+        "return",
+        "if",
+        "vertex"
+      ],
+      "words": 1334
+    },
+    "Create-Threaded-Trains": {
+      "files": {
+        "java": 21,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 303,
+      "top": [
+        "the",
+        "a",
+        "this",
+        "mod",
+        "of",
+        "server",
+        "to",
+        "tick",
+        "in",
+        "https",
+        "network",
+        "on"
+      ],
+      "words": 181
+    },
+    "CreateExtraGauges": {
+      "files": {
+        "java": 85,
+        "lang": 1,
+        "markdown": 2
+      },
+      "tokens": 1828,
+      "top": [
+        "the",
+        "to",
+        "gauge",
+        "a",
+        "gauges",
+        "and",
+        "can",
+        "with",
+        "redstone",
+        "will",
+        "is",
+        "when"
+      ],
+      "words": 515
+    },
+    "DenseOres": {
+      "files": {
+        "java": 19,
+        "lang": 1,
+        "markdown": 1
+      },
+      "tokens": 147,
+      "top": [
+        "dense",
+        "ore",
+        "deepslate",
+        "ores",
+        "the",
+        "to",
+        "nether",
+        "gold",
+        "coal",
+        "copper",
+        "diamond",
+        "emerald"
+      ],
+      "words": 69
+    },
+    "DynamicTrees": {
+      "files": {
+        "java": 633,
+        "lang": 1,
+        "markdown": 1
+      },
+      "tokens": 41272,
+      "top": [
+        "the",
+        "to",
+        "link",
+        "a",
+        "of",
+        "param",
+        "for",
+        "if",
+        "is",
+        "this",
+        "code",
+        "return"
+      ],
+      "words": 3445
+    },
+    "DynamicTreesPlus": {
+      "files": {
+        "java": 62,
+        "lang": 1,
+        "markdown": 1
+      },
+      "tokens": 2005,
+      "top": [
+        "the",
+        "for",
+        "a",
+        "of",
+        "this",
+        "is",
+        "block",
+        "branch",
+        "to",
+        "in",
+        "link",
+        "leaves"
+      ],
+      "words": 646
+    },
+    "Ecologics": {
+      "files": {
+        "java": 96,
+        "lang": 1,
+        "markdown": 0
+      },
+      "tokens": 538,
+      "top": [
+        "coconut",
+        "azalea",
+        "walnut",
+        "flowering",
+        "boat",
+        "camel",
+        "fence",
+        "sign",
+        "ice",
+        "spawn",
+        "log",
+        "slab"
+      ],
+      "words": 193
+    },
+    "Equivalent-Exchange-3": {
+      "files": {
+        "java": 164,
+        "lang": 0,
+        "markdown": 3
+      },
+      "tokens": 7547,
+      "top": [
+        "param",
+        "todo",
+        "the",
+        "of",
+        "finish",
+        "javadoc",
+        "potion",
+        "return",
+        "to",
+        "if",
+        "a",
+        "object"
+      ],
+      "words": 1289
+    },
+    "ForestryMC": {
+      "files": {
+        "java": 2031,
+        "lang": 0,
+        "markdown": 5
+      },
+      "tokens": 100896,
+      "top": [
+        "the",
+        "this",
+        "and",
+        "sirsengir",
+        "of",
+        "to",
+        "available",
+        "gnu",
+        "is",
+        "license",
+        "work",
+        "copyright"
+      ],
+      "words": 3936
+    },
+    "GregTech-Modern": {
+      "files": {
+        "java": 1688,
+        "lang": 1,
+        "markdown": 117
+      },
+      "tokens": 186034,
+      "top": [
+        "the",
+        "to",
+        "a",
+        "of",
+        "in",
+        "for",
+        "this",
+        "is",
+        "and",
+        "if",
+        "param",
+        "by"
+      ],
+      "words": 10634
+    },
+    "IC2": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 306,
+      "top": [
+        "the",
+        "ic",
+        "e",
+        "bug",
+        "to",
+        "a",
+        "you",
+        "b",
+        "industrialcraft",
+        "can",
+        "repo",
+        "on"
+      ],
+      "words": 131
+    },
+    "IC2-mirror": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 2,
+      "top": [
+        "industrialcraft",
+        "experimental"
+      ],
+      "words": 2
+    },
+    "IC2Classic": {
+      "files": {
+        "java": 215,
+        "lang": 1,
+        "markdown": 1
+      },
+      "tokens": 7136,
+      "top": [
+        "the",
+        "s",
+        "to",
+        "param",
+        "is",
+        "a",
+        "that",
+        "of",
+        "crop",
+        "return",
+        "if",
+        "be"
+      ],
+      "words": 1291
+    },
+    "Immersive-Weathering": {
+      "files": {
+        "java": 243,
+        "lang": 1,
+        "markdown": 4
+      },
+      "tokens": 4604,
+      "top": [
+        "iron",
+        "the",
+        "to",
+        "if",
+        "blocks",
+        "block",
+        "this",
+        "level",
+        "a",
+        "todo",
+        "it",
+        "brick"
+      ],
+      "words": 1168
+    },
+    "LogisticsPipes": {
+      "files": {
+        "java": 1060,
+        "lang": 0,
+        "markdown": 10
+      },
+      "tokens": 34103,
+      "top": [
+        "the",
+        "to",
+        "of",
+        "in",
+        "this",
+        "is",
+        "a",
+        "and",
+        "or",
+        "logisticspipes",
+        "if",
+        "license"
+      ],
+      "words": 3414
+    },
+    "MineFactoryReloaded": {
+      "files": {
+        "java": 829,
+        "lang": 0,
+        "markdown": 0
+      },
+      "tokens": 32124,
+      "top": [
+        "the",
+        "to",
+        "of",
+        "this",
+        "a",
+        "is",
+        "buildcraft",
+        "be",
+        "if",
+        "in",
+        "param",
+        "return"
+      ],
+      "words": 3475
+    },
+    "ProjectRed": {
+      "files": {
+        "java": 612,
+        "lang": 7,
+        "markdown": 4
+      },
+      "tokens": 25379,
+      "top": [
+        "the",
+        "to",
+        "region",
+        "endregion",
+        "this",
+        "is",
+        "of",
+        "if",
+        "a",
+        "for",
+        "and",
+        "in"
+      ],
+      "words": 3100
+    },
+    "Railcraft": {
+      "files": {
+        "java": 1474,
+        "lang": 0,
+        "markdown": 7
+      },
+      "tokens": 94719,
+      "top": [
+        "info",
+        "the",
+        "railcraft",
+        "covertjaguar",
+        "http",
+        "license",
+        "this",
+        "of",
+        "on",
+        "is",
+        "and",
+        "be"
+      ],
+      "words": 4518
+    },
+    "Repackaged": {
+      "files": {
+        "java": 64,
+        "lang": 1,
+        "markdown": 2
+      },
+      "tokens": 685,
+      "top": [
+        "the",
+        "to",
+        "package",
+        "a",
+        "and",
+        "can",
+        "bottle",
+        "in",
+        "is",
+        "repackaged",
+        "battery",
+        "energy"
+      ],
+      "words": 299
+    },
+    "Rubberworks": {
+      "files": {
+        "java": 46,
+        "lang": 1,
+        "markdown": 0
+      },
+      "tokens": 420,
+      "top": [
+        "the",
+        "to",
+        "fluids",
+        "a",
+        "this",
+        "be",
+        "from",
+        "it",
+        "block",
+        "compressor",
+        "kiln",
+        "new"
+      ],
+      "words": 255
+    },
+    "SeedDelight": {
+      "files": {
+        "java": 6,
+        "lang": 1,
+        "markdown": 0
+      },
+      "tokens": 114,
+      "top": [
+        "rosehip",
+        "seed",
+        "cherry",
+        "acorn",
+        "pie",
+        "sunflower",
+        "jam",
+        "slice",
+        "with",
+        "pinenut",
+        "pine",
+        "kernel"
+      ],
+      "words": 51
+    },
+    "SteamPowered": {
+      "files": {
+        "java": 79,
+        "lang": 1,
+        "markdown": 1
+      },
+      "tokens": 1651,
+      "top": [
+        "the",
+        "steam",
+        "to",
+        "of",
+        "scene",
+        "and",
+        "from",
+        "create",
+        "a",
+        "world",
+        "is",
+        "cast"
+      ],
+      "words": 551
+    },
+    "TerraFirmaCraft": {
+      "files": {
+        "java": 1722,
+        "lang": 3,
+        "markdown": 2
+      },
+      "tokens": 194482,
+      "top": [
+        "the",
+        "eupl",
+        "a",
+        "of",
+        "to",
+        "at",
+        "and",
+        "you",
+        "is",
+        "may",
+        "in",
+        "copy"
+      ],
+      "words": 7988
+    },
+    "Tidal": {
+      "files": {
+        "java": 36,
+        "lang": 1,
+        "markdown": 1
+      },
+      "tokens": 3437,
+      "top": [
+        "the",
+        "to",
+        "a",
+        "for",
+        "is",
+        "of",
+        "water",
+        "this",
+        "chunk",
+        "in",
+        "f",
+        "all"
+      ],
+      "words": 947
+    },
+    "TinkersConstruct": {
+      "files": {
+        "java": 1938,
+        "lang": 1,
+        "markdown": 3
+      },
+      "tokens": 207246,
+      "top": [
+        "the",
+        "to",
+        "a",
+        "for",
+        "param",
+        "if",
+        "of",
+        "tool",
+        "is",
+        "this",
+        "in",
+        "and"
+      ],
+      "words": 7668
+    },
+    "_harvest": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 5
+      },
+      "tokens": 3973,
+      "top": [
+        "nothing",
+        "the",
+        "real",
+        "iron",
+        "json",
+        "copper",
+        "swept",
+        "create",
+        "mb",
+        "a",
+        "rubber",
+        "raw"
+      ],
+      "words": 1466
+    },
+    "_submodules": {
+      "files": {
+        "java": 114,
+        "lang": 0,
+        "markdown": 2
+      },
+      "tokens": 12271,
+      "top": [
+        "the",
+        "this",
+        "is",
+        "to",
+        "for",
+        "covertjaguar",
+        "license",
+        "a",
+        "of",
+        "railcraft",
+        "return",
+        "param"
+      ],
+      "words": 1549
+    },
+    "create-factory-controller": {
+      "files": {
+        "java": 207,
+        "lang": 1,
+        "markdown": 3
+      },
+      "tokens": 37689,
+      "top": [
+        "the",
+        "a",
+        "code",
+        "to",
+        "is",
+        "link",
+        "and",
+        "in",
+        "for",
+        "of",
+        "gauge",
+        "on"
+      ],
+      "words": 3666
+    },
+    "create-metalwork": {
+      "files": {
+        "java": 56,
+        "lang": 1,
+        "markdown": 3
+      },
+      "tokens": 1409,
+      "top": [
+        "molten",
+        "create",
+        "bucket",
+        "crushed",
+        "https",
+        "com",
+        "raw",
+        "mods",
+        "fabric",
+        "minecraft",
+        "www",
+        "curseforge"
+      ],
+      "words": 325
+    },
+    "create-more-vertical-additions": {
+      "files": {
+        "java": 12,
+        "lang": 1,
+        "markdown": 1
+      },
+      "tokens": 204,
+      "top": [
+        "the",
+        "create",
+        "more",
+        "belt",
+        "https",
+        "github",
+        "com",
+        "rekales",
+        "note",
+        "at",
+        "is",
+        "this"
+      ],
+      "words": 130
+    },
+    "create-new-age": {
+      "files": {
+        "java": 179,
+        "lang": 2,
+        "markdown": 3
+      },
+      "tokens": 4164,
+      "top": [
+        "import",
+        "the",
+        "if",
+        "block",
+        "public",
+        "reactor",
+        "return",
+        "to",
+        "level",
+        "net",
+        "a",
+        "heat"
+      ],
+      "words": 862
+    },
+    "createsifter": {
+      "files": {
+        "java": 71,
+        "lang": 1,
+        "markdown": 37
+      },
+      "tokens": 1333,
+      "top": [
+        "mesh",
+        "create",
+        "added",
+        "sifter",
+        "for",
+        "the",
+        "recipe",
+        "sifting",
+        "recipes",
+        "output",
+        "fixed",
+        "brass"
+      ],
+      "words": 476
+    },
+    "ironchest": {
+      "files": {
+        "java": 86,
+        "lang": 1,
+        "markdown": 2
+      },
+      "tokens": 748,
+      "top": [
+        "the",
+        "chest",
+        "to",
+        "iron",
+        "for",
+        "of",
+        "a",
+        "this",
+        "chests",
+        "in",
+        "size",
+        "you"
+      ],
+      "words": 286
+    },
+    "lithostitched": {
+      "files": {
+        "java": 517,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 2983,
+      "top": [
+        "fnlfloat",
+        "the",
+        "to",
+        "for",
+        "of",
+        "a",
+        "summary",
+        "in",
+        "pool",
+        "and",
+        "this",
+        "remarks"
+      ],
+      "words": 748
+    },
+    "refinedstorage2": {
+      "files": {
+        "java": 1402,
+        "lang": 1,
+        "markdown": 17
+      },
+      "tokens": 33602,
+      "top": [
+        "the",
+        "to",
+        "a",
+        "of",
+        "and",
+        "in",
+        "storage",
+        "is",
+        "or",
+        "this",
+        "for",
+        "network"
+      ],
+      "words": 2798
+    }
+  },
+  "root": "F:\\shploingus-mod-sources",
+  "skipped": [
+    "_clone-logs",
+    "optical",
+    "usgs-splib07"
+  ],
+  "total_tokens": 1435735,
+  "total_words": 33091
+}

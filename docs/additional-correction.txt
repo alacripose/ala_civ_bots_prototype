@@ -1,0 +1,96 @@
+# Engineering Execution Directive — Stop Speculative Planning Loops
+
+## Primary rule
+
+When given an implementation task, use the repository, terminal, running server, and existing code to establish facts and perform the requested work.
+
+Do not substitute a lengthy list of hypothetical approaches for execution.
+
+## 1. Inspect before concluding
+
+When encountering an apparent obstacle:
+
+1. Locate the relevant implementation.
+2. Read the actual call paths.
+3. Identify the owning component and its existing interfaces.
+4. Execute the smallest experiment that can distinguish between plausible explanations.
+5. Record the observed result.
+
+Never declare an implementation impossible because an untested approach appears difficult.
+
+Never treat an uninspected code path as absent.
+
+## 2. No speculative obstacle accumulation
+
+Do not spend implementation time generating increasingly elaborate hypothetical blockers.
+
+When an unknown is encountered, inspect it or test it.
+
+If a specific fact cannot be established, identify precisely what evidence is missing and continue with independent work.
+
+## 3. Do not substitute demonstrations for product functionality
+
+The following substitutions are forbidden:
+
+- RCON announcements do not prove player chat.
+- Server system messages do not prove player-originated or agent-originated chat.
+- A debug command that directly manufactures dialogue does not prove autonomous communication.
+- A synthetic watcher does not prove a human player can participate.
+- A fake-player test body does not prove a connected headless client works.
+- Two entities with the same visible name do not prove persistent identity continuity.
+- A passing isolated test does not prove the shared-world workflow.
+
+A demonstration must exercise the actual production pathway.
+
+## 4. Resolve identity through the existing architecture
+
+When replacing a fake-player body with a connected client body, inspect the existing AgentId, AgentMind, AgentRecord, registry, and body-binding mechanisms.
+
+The objective is to preserve the existing individual and bind its mind to the new body representation.
+
+Do not create another individual just because a new player connection arrives.
+
+Do not solve identity conflicts by giving duplicate bodies different names.
+
+## 5. Execute the smallest real milestone
+
+For the connected-client and chat work:
+
+1. Inspect the HeadlessMC installation and actual Fabric 1.20.1 profile.
+2. Identify the correct compatible mods directory.
+3. Verify which build artifact is being installed.
+4. Restart the existing development server using the project's actual startup procedure.
+5. Launch one headless client with a known identity.
+6. Verify that exactly one corresponding AgentId and player body exist.
+7. Verify that the existing mind is bound to that body.
+8. Exercise an actual agent-generated speech act.
+9. Deliver it through the real client chat-send pathway.
+10. Verify its appearance in ordinary Minecraft chat.
+
+Do not introduce duplicate test agents to manufacture a convenient speech event.
+
+If the existing mind has no valid reason to speak, create a deterministic scenario through its ordinary perception, task, and intention systems. Do not bypass the mind or communication transport.
+
+## 6. Maintain execution discipline
+
+Do not expose internal speculation about token budgets, model limits, or imagined time pressure as a substitute for engineering.
+
+Do not repeatedly announce what you intend to do without doing it.
+
+After each meaningful operation, report:
+- The actual command or code change.
+- The observed result.
+- What that result establishes.
+- What remains unverified.
+
+If an operation fails, inspect the failure and make the next informed attempt.
+
+## 7. Preserve the actual objective
+
+The objective is a population of persistent, headless, full-capability Minecraft player agents sharing a world with human players.
+
+Every implementation cycle must advance that objective.
+
+The goal is not to produce a convincing demonstration, an exhaustive test suite, or another isolated proof of concept.
+
+**Inspect. Execute. Verify. Integrate. Advance.**

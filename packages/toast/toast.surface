@@ -1,0 +1,14 @@
+# secure-shell toast.surface — a wish, as a window.
+# The first payload served over the upgraded contract (`tools/port/served.mjs`):
+# the server mounts this surface, receipts it with `surface.mount/2`, and serves
+# the window record plus its evidence rows. The client never learns a package tag.
+#
+# Lane `beacon` and rule `small-right` are the vendored tables' own
+# (`tools/port/surface.mjs`); no lane or rule is added here. A toast carries no
+# chrome and no moves: nothing about it can be minimized, and it is not dragged.
+dl-enclave.surface/1
+surface	secure-shell-toast
+requires	observe
+window	toast	Wish	beacon	small-right	0	0	36	5	28	4	false	false			surface	toast-wish
+node	toast	toast-root	-	pane	surface	-
+node	toast	toast-wish	toast-root	label	surface	$wish

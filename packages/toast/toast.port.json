@@ -1,0 +1,8 @@
+{
+  "format": "secure-shell.port-baseline/1",
+  "surface": "secure-shell-toast",
+  "rows": [
+    { "name": "surface windows", "must": "equal", "value": 1, "of": 1 },
+    { "name": "surface nodes", "must": "equal", "value": 2, "of": 2 }
+  ]
+}

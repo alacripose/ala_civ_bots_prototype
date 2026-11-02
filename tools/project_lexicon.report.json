@@ -1,0 +1,660 @@
+{
+  "documents": {
+    "AGENTS_DO_NOT_IGNORE.txt": [
+      "AGENTS_DO_NOT_IGNORE.txt"
+    ],
+    "AUDIT_AGAINST_SECURE_SHELL.md": [
+      "AUDIT_AGAINST_SECURE_SHELL.md"
+    ],
+    "CONTEXT.md": [
+      "CONTEXT.md"
+    ],
+    "IMPLEMENTATION_STATUS.md": [
+      "IMPLEMENTATION_STATUS.md"
+    ],
+    "LAYER_TABLE.md": [
+      "LAYER_TABLE.md"
+    ],
+    "PHASE0_CONTRACTS.md": [
+      "PHASE0_CONTRACTS.md"
+    ],
+    "README.md": [
+      "README.md"
+    ],
+    "UPSTREAM_ALIGNMENT.md": [
+      "UPSTREAM_ALIGNMENT.md"
+    ],
+    "VERB_CLASSIFIER_V1_IMPLEMENTATION_PLAN.md": [
+      "VERB_CLASSIFIER_V1_IMPLEMENTATION_PLAN.md"
+    ],
+    "WORLD_INTERACTION.md": [
+      "WORLD_INTERACTION.md"
+    ],
+    "additional-correction.txt": [
+      "additional-correction.txt"
+    ],
+    "adr": [
+      "0001-nested-lifetimes-and-idempotent-commands.md"
+    ],
+    "correction.md": [
+      "correction.md"
+    ],
+    "freebuff_persistent_execution_and_continuation_directive.md": [
+      "freebuff_persistent_execution_and_continuation_directive.md"
+    ],
+    "minecraft_agent_chat_and_social_observability_addendum.md": [
+      "minecraft_agent_chat_and_social_observability_addendum.md"
+    ],
+    "minecraft_ensouled_system1_cua_architecture_v3.md": [
+      "minecraft_ensouled_system1_cua_architecture_v3.md"
+    ],
+    "minecraft_ensouled_system1_cua_architecture_v4.md": [
+      "minecraft_ensouled_system1_cua_architecture_v4.md"
+    ],
+    "minecraft_entity_ai_replacement_transition_plan.md": [
+      "minecraft_entity_ai_replacement_transition_plan.md"
+    ],
+    "minecraft_fake_player_first_addendum.md": [
+      "minecraft_fake_player_first_addendum.md"
+    ],
+    "minecraft_headless_full_fidelity_fabric_client_addendum.md": [
+      "minecraft_headless_full_fidelity_fabric_client_addendum.md"
+    ],
+    "minecraft_persistent_interactive_dev_server_test_harness_directive.md": [
+      "minecraft_persistent_interactive_dev_server_test_harness_directive.md"
+    ],
+    "minecraft_player_parity_extensible_needs_and_native_chat_addendum.md": [
+      "minecraft_player_parity_extensible_needs_and_native_chat_addendum.md"
+    ],
+    "minecraft_product_execution_directive_beyond_phase1.md": [
+      "minecraft_product_execution_directive_beyond_phase1.md"
+    ],
+    "minecraft_shared_server_bot_client_population_addendum.md": [
+      "minecraft_shared_server_bot_client_population_addendum.md"
+    ],
+    "persistent_city_builder_tower_defense_design_analysis_v9.md": [
+      "persistent_city_builder_tower_defense_design_analysis_v9.md"
+    ]
+  },
+  "mods": {
+    "AGENTS_DO_NOT_IGNORE.txt": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 2789,
+      "top": [
+        "the",
+        "a",
+        "not",
+        "and",
+        "client",
+        "is",
+        "player",
+        "to",
+        "do",
+        "must",
+        "body",
+        "server"
+      ],
+      "words": 610
+    },
+    "AUDIT_AGAINST_SECURE_SHELL.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 1585,
+      "top": [
+        "the",
+        "a",
+        "is",
+        "and",
+        "md",
+        "no",
+        "client",
+        "toast",
+        "shell",
+        "this",
+        "in",
+        "are"
+      ],
+      "words": 555
+    },
+    "CONTEXT.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 521,
+      "top": [
+        "a",
+        "the",
+        "it",
+        "avoid",
+        "and",
+        "is",
+        "that",
+        "not",
+        "world",
+        "of",
+        "with",
+        "no"
+      ],
+      "words": 271
+    },
+    "IMPLEMENTATION_STATUS.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 6757,
+      "top": [
+        "the",
+        "a",
+        "and",
+        "is",
+        "not",
+        "no",
+        "player",
+        "one",
+        "chat",
+        "client",
+        "phase",
+        "with"
+      ],
+      "words": 1645
+    },
+    "LAYER_TABLE.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 847,
+      "top": [
+        "the",
+        "a",
+        "is",
+        "and",
+        "secure",
+        "shell",
+        "toast",
+        "client",
+        "this",
+        "surface",
+        "not",
+        "window"
+      ],
+      "words": 311
+    },
+    "PHASE0_CONTRACTS.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 954,
+      "top": [
+        "the",
+        "a",
+        "is",
+        "and",
+        "block",
+        "for",
+        "no",
+        "client",
+        "only",
+        "body",
+        "from",
+        "not"
+      ],
+      "words": 468
+    },
+    "README.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 3406,
+      "top": [
+        "the",
+        "a",
+        "and",
+        "is",
+        "not",
+        "phase",
+        "ensouled",
+        "to",
+        "player",
+        "it",
+        "in",
+        "server"
+      ],
+      "words": 1054
+    },
+    "UPSTREAM_ALIGNMENT.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 1384,
+      "top": [
+        "the",
+        "a",
+        "is",
+        "and",
+        "not",
+        "it",
+        "axis",
+        "md",
+        "as",
+        "docs",
+        "decisions",
+        "proof"
+      ],
+      "words": 524
+    },
+    "VERB_CLASSIFIER_V1_IMPLEMENTATION_PLAN.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 2140,
+      "top": [
+        "a",
+        "the",
+        "and",
+        "is",
+        "v",
+        "not",
+        "world",
+        "core",
+        "r",
+        "run",
+        "plan",
+        "no"
+      ],
+      "words": 696
+    },
+    "WORLD_INTERACTION.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 1733,
+      "top": [
+        "the",
+        "and",
+        "a",
+        "is",
+        "chest",
+        "server",
+        "its",
+        "it",
+        "only",
+        "world",
+        "run",
+        "not"
+      ],
+      "words": 674
+    },
+    "additional-correction.txt": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 568,
+      "top": [
+        "the",
+        "a",
+        "not",
+        "do",
+        "and",
+        "an",
+        "existing",
+        "to",
+        "player",
+        "actual",
+        "that",
+        "is"
+      ],
+      "words": 293
+    },
+    "adr": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 249,
+      "top": [
+        "a",
+        "the",
+        "and",
+        "plan",
+        "to",
+        "world",
+        "is",
+        "by",
+        "key",
+        "lifetimes",
+        "commands",
+        "work"
+      ],
+      "words": 141
+    },
+    "correction.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 675,
+      "top": [
+        "the",
+        "test",
+        "agent",
+        "and",
+        "must",
+        "not",
+        "an",
+        "observer",
+        "a",
+        "to",
+        "player",
+        "is"
+      ],
+      "words": 293
+    },
+    "freebuff_persistent_execution_and_continuation_directive.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 1360,
+      "top": [
+        "the",
+        "a",
+        "not",
+        "and",
+        "or",
+        "is",
+        "to",
+        "do",
+        "agent",
+        "that",
+        "it",
+        "execution"
+      ],
+      "words": 546
+    },
+    "minecraft_agent_chat_and_social_observability_addendum.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 3877,
+      "top": [
+        "the",
+        "a",
+        "chat",
+        "and",
+        "not",
+        "agent",
+        "to",
+        "message",
+        "or",
+        "is",
+        "human",
+        "must"
+      ],
+      "words": 955
+    },
+    "minecraft_ensouled_system1_cua_architecture_v3.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 32734,
+      "top": [
+        "the",
+        "a",
+        "and",
+        "or",
+        "not",
+        "is",
+        "it",
+        "player",
+        "to",
+        "agent",
+        "world",
+        "an"
+      ],
+      "words": 4096
+    },
+    "minecraft_ensouled_system1_cua_architecture_v4.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 43795,
+      "top": [
+        "the",
+        "and",
+        "a",
+        "or",
+        "not",
+        "is",
+        "player",
+        "it",
+        "to",
+        "agent",
+        "an",
+        "world"
+      ],
+      "words": 4552
+    },
+    "minecraft_entity_ai_replacement_transition_plan.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 6429,
+      "top": [
+        "and",
+        "the",
+        "a",
+        "entity",
+        "not",
+        "player",
+        "is",
+        "or",
+        "system",
+        "neoforge",
+        "world",
+        "minecraft"
+      ],
+      "words": 1506
+    },
+    "minecraft_fake_player_first_addendum.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 6588,
+      "top": [
+        "and",
+        "a",
+        "the",
+        "player",
+        "fake",
+        "is",
+        "not",
+        "or",
+        "agent",
+        "to",
+        "body",
+        "action"
+      ],
+      "words": 1438
+    },
+    "minecraft_headless_full_fidelity_fabric_client_addendum.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 4681,
+      "top": [
+        "the",
+        "and",
+        "a",
+        "client",
+        "server",
+        "not",
+        "player",
+        "headless",
+        "to",
+        "bot",
+        "fabric",
+        "or"
+      ],
+      "words": 1119
+    },
+    "minecraft_persistent_interactive_dev_server_test_harness_directive.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 2418,
+      "top": [
+        "the",
+        "a",
+        "test",
+        "server",
+        "and",
+        "world",
+        "or",
+        "not",
+        "to",
+        "is",
+        "that",
+        "human"
+      ],
+      "words": 693
+    },
+    "minecraft_player_parity_extensible_needs_and_native_chat_addendum.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 6182,
+      "top": [
+        "the",
+        "and",
+        "a",
+        "player",
+        "not",
+        "or",
+        "must",
+        "is",
+        "to",
+        "state",
+        "client",
+        "chat"
+      ],
+      "words": 1451
+    },
+    "minecraft_product_execution_directive_beyond_phase1.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 3987,
+      "top": [
+        "the",
+        "and",
+        "a",
+        "not",
+        "player",
+        "client",
+        "server",
+        "chat",
+        "to",
+        "bot",
+        "is",
+        "or"
+      ],
+      "words": 1095
+    },
+    "minecraft_shared_server_bot_client_population_addendum.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 6762,
+      "top": [
+        "the",
+        "a",
+        "and",
+        "client",
+        "server",
+        "not",
+        "is",
+        "world",
+        "must",
+        "one",
+        "bot",
+        "or"
+      ],
+      "words": 1247
+    },
+    "persistent_city_builder_tower_defense_design_analysis_v9.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 68580,
+      "top": [
+        "the",
+        "and",
+        "a",
+        "is",
+        "or",
+        "not",
+        "to",
+        "can",
+        "should",
+        "world",
+        "of",
+        "be"
+      ],
+      "words": 6530
+    }
+  },
+  "root": "docs",
+  "skipped": [],
+  "total_tokens": 211001,
+  "total_words": 8909
+}

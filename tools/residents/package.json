@@ -1,0 +1,13 @@
+{
+  "name": "ensouled-resident",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A non-JVM resident: perception, needs, work and speech for a network bot.",
+  "type": "module",
+  "dependencies": {
+    "mineflayer": "^4.20.1",
+    "mineflayer-collectblock": "^1.6.0",
+    "mineflayer-pathfinder": "^2.4.5",
+    "mineflayer-tool": "^1.2.0"
+  }
+}

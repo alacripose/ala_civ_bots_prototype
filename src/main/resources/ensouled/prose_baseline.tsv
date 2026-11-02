@@ -1,0 +1,13 @@
+# Prose-logic baseline, compiled by tools/prose_compile.py — do not hand-edit.
+# source: C:\Users\ala\Documents\agent_god_files\prose_logic
+# claims read: 121501 · corpus digest: 26bdd141152396c5
+# Each row is one verb the corpus uses, with the atom kind and modality the corpus
+# assigns it. This table is the vocabulary sentences here may be composed of.
+ALLOW	Permission	MAY	1154
+DEFINE	Definition	IS	19720
+EXECUTE	Procedure	DO	14
+FORBID	Prohibition	MUST-NOT	382
+RECORD	Fact	HOLDS	66689
+REQUIRE	Obligation	MUST	2377
+UPHOLD	Principle	HOLDS	1187
+WHEN	Condition	IF-THEN	2461

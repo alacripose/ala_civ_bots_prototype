@@ -1,0 +1,10 @@
+{
+  "name": "ensouled-protocol-probe",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Protocol-only client used to prove the ordinary login and chat pipeline. NOT the production embodiment (Addendum G, HCL-01).",
+  "type": "module",
+  "dependencies": {
+    "mineflayer": "^4.20.1"
+  }
+}

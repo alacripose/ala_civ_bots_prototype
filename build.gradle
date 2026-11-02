@@ -1,0 +1,180 @@
+plugins {
+	id 'fabric-loom' version '1.6-SNAPSHOT'
+	id 'maven-publish'
+}
+
+// Every build says which build it is. A version that never changes is how a client jar drifts
+// from the worktree while both claim to be "the mod": the launcher, the log and the jar name all
+// read the commit the bytecode was compiled from.
+def sourceDigest = {
+	def md = java.security.MessageDigest.getInstance('SHA-256')
+	fileTree('src/main').files.sort { it.path }.each { source ->
+		md.update(source.path.getBytes('UTF-8'))
+		md.update(source.bytes)
+	}
+	md.digest().encodeHex().toString().substring(0, 8)
+}
+def gitText = { String args ->
+	try {
+		def out = providers.exec {
+			commandLine(['git'] + (args.split(' ') as List))
+			workingDir = projectDir
+			ignoreExitValue = true
+		}.standardOutput.asText.get()
+		return out.trim()
+	} catch (Exception ignored) {
+		return ''
+	}
+}
+def gitHash = gitText('rev-parse --short=8 HEAD')
+def gitDirty = gitHash && gitText('status --porcelain') ? '-dirty' : ''
+// A version that is the same for every build is how a client jar drifts from the worktree. The
+// content id changes exactly when the sources do; the git id joins it when there is a repository.
+version = gitHash ? "${project.mod_version}+g${gitHash}${gitDirty}.src.${sourceDigest()}"
+		: "${project.mod_version}+src.${sourceDigest()}"
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	// The per-agent stream store. MongoDB is not optional here: the served feed is filtered by the
+	// agent whose stream it is, so one citizen's refusal can never appear in another's toast stack.
+	implementation 'org.mongodb:mongodb-driver-sync:5.2.1'
+	include 'org.mongodb:mongodb-driver-sync:5.2.1'
+	include 'org.mongodb:mongodb-driver-core:5.2.1'
+	include 'org.mongodb:bson:5.2.1'
+
+	testImplementation platform('org.junit:junit-bom:5.10.2')
+	testImplementation 'org.junit.jupiter:junit-jupiter'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// The prose-logic baseline is compiled, never hand-maintained: the corpus under
+// agent_god_files/prose_logic supplies the verbs, atom kinds and modalities that speech here may be
+// composed of. When the corpus is not on this machine the committed baseline is used unchanged, so
+// a build never silently invents a vocabulary.
+//
+// Override the corpus location with -PproseCorpus=<path> or ENSOULED_PROSE_CORPUS.
+def proseCorpus = providers.gradleProperty('proseCorpus')
+		.orElse(System.getenv('ENSOULED_PROSE_CORPUS') ?: 'C:\\Users\\ala\\Documents\\agent_god_files\\prose_logic')
+		.get()
+
+def proseBaseline = file('src/main/resources/ensouled/prose_baseline.tsv')
+
+tasks.register('compileProseBaseline', Exec) {
+	group = 'build'
+	description = 'Compiles the prose-logic corpus into the speech verb baseline.'
+	def corpus = file(proseCorpus)
+	inputs.dir(corpus).optional()
+	outputs.file(proseBaseline)
+	onlyIf { corpus.isDirectory() }
+	commandLine 'python', 'tools/prose_compile.py', '--corpus', corpus.absolutePath,
+			'--out', proseBaseline.absolutePath
+	// A corpus that cannot be compiled leaves the committed baseline in place rather than failing
+	// an unrelated build; the task's own exit codes say why.
+	ignoreExitValue = true
+	doLast {
+		if (executionResult.get().exitValue != 0) {
+			logger.warn('prose_compile did not produce a baseline; using the committed one')
+		}
+	}
+}
+
+// The baseline lives in the resource tree, so every task that reads that tree depends on the
+// compilation that writes it.
+tasks.matching { it.name == 'sourcesJar' || it.name == 'processResources' }.configureEach {
+	dependsOn 'compileProseBaseline'
+}
+
+processResources {
+	inputs.property "version", project.version
+	inputs.file(proseBaseline)
+
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 17
+	it.options.encoding = 'UTF-8'
+}
+
+java {
+	withSourcesJar()
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+}
+
+// The server runs on the JDK named by `server_java_home`, which may be newer than the build's.
+// Bytecode stays at 17 because that is what 1.20.1 and its client mods are built for; only the JVM
+// that loads it moves. Without this, `runServer` inherits the Gradle daemon's JDK.
+def serverJavaHome = providers.gradleProperty('server_java_home').orNull
+tasks.matching { it.name == 'runServer' }.configureEach {
+	// The full mod pack (Create and friends) does not fit in the inherited default heap, and an
+	// OutOfMemoryError during mod remap reads as a loader failure rather than as a JVM limit.
+
+	if (serverJavaHome) {
+		def executable = file("${serverJavaHome}/bin/java.exe")
+		if (executable.exists()) {
+			it.doFirst { logger.lifecycle("[build] runServer on ${executable}") }
+			if (it.hasProperty('executable')) {
+				it.executable = executable
+			}
+		} else {
+			logger.warn("[build] server_java_home set but ${executable} is missing; runServer stays on the build JDK")
+		}
+	}
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.base.archivesName.get()}" }
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
+
+// scripts/selftest.sh boots the dev server and needs the acceptance harness, which lives in the test
+// source set (src/test/java/dev/ensouled/selftest, declared as a companion mod by
+// src/test/resources/fabric.mod.json). Only that output is added: the harness stays out of the mod jar.
+tasks.named('runServer') {
+	dependsOn testClasses
+	classpath += sourceSets.test.output
+	// A dev server for one probe world does not need the default quarter-of-RAM heap, and a bounded
+	// heap keeps it startable on a loaded desktop. The override exists so a suite can still run when
+	// another process has eaten the machine's commit limit; the default is unchanged.
+	// The heap is one decision in one place. The old default of 1G is what made a full mod pack
+	// die in the remapper with OutOfMemoryError, which reads like a loader failure.
+	def serverHeap = System.getenv('ENSOULED_SERVER_XMX')
+			?: (providers.gradleProperty('server_max_heap').orNull ?: '4G')
+	// ZGC: the tick loop is latency-sensitive, and generational ZGC is the default shape on 25, so
+	// pauses do not scale with the heap. This is the forked server JVM only.
+	jvmArgs "-Xmx${serverHeap}", '-Xms1G', '-XX:+UseZGC'
+	// The acceptance harness owns its own socket when the environment asks for it, so a human client
+	// that is connected to the normal dev port cannot join the probe server and change its fixture.
+	def selftestPort = System.getenv('ENSOULED_SELFTEST_PORT')
+	if (selftestPort) {
+		args '--port', selftestPort
+	}
+	// Disposable CI mode stores its world under its own universe directory. The persistent dev
+	// server never passes this, so a probe boot and the developer's run/world cannot touch each
+	// other even when both are up.
+	def selftestUniverse = System.getenv('ENSOULED_SELFTEST_UNIVERSE')
+	if (selftestUniverse) {
+		args '--universe', selftestUniverse
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"schemaVersion": 1,
+	"id": "ensouled_selftest",
+	"version": "1.0.0",
+	"name": "Ensouled acceptance harness (dev only)",
+	"description": "Boots the SELFTEST phases for the dev server. Loaded from the test source set; never shipped.",
+	"license": "All-Rights-Reserved",
+	"environment": "server",
+	"entrypoints": {
+		"server": [
+			"dev.ensouled.selftest.SelfTestEntrypoint"
+		]
+	},
+	"depends": {
+		"ensouled": "*",
+		"fabricloader": ">=0.16.10",
+		"fabric-api": "*"
+	}
+}

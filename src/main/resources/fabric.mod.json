@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "ensouled",
+	"version": "${version}",
+	"name": "Ensouled Civilization",
+	"description": "Persistent, embodied Minecraft inhabitants driven by a non-LLM System-1 controller.",
+	"authors": [
+		"alacripose"
+	],
+	"contact": {},
+	"license": "All-Rights-Reserved",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.ensouled.EnsouledMod"
+		],
+		"server": [
+			"dev.ensouled.EnsouledServer"
+		],
+		"client": [
+			"dev.ensouled.client.EnsouledClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
