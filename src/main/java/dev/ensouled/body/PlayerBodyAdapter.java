@@ -8,7 +8,9 @@ import dev.ensouled.core.WorldView;
 import dev.ensouled.entity.FakePlayerBody;
 import dev.ensouled.interact.InteractionHands;
 import dev.ensouled.interact.PlayerInteractionHands;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 
 /** Wraps the primary fake-player body. */
 public final class PlayerBodyAdapter implements BodyAdapter {
@@ -74,6 +76,24 @@ public final class PlayerBodyAdapter implements BodyAdapter {
 	@Override
 	public WorldView createView() {
 		return new PlayerWorldView(player);
+	}
+
+	/**
+	 * A fake player has no client to send a chat packet from, so its line goes out in the server's
+	 * own chat format. It is still this being's line, and every player reads it as chat.
+	 */
+	@Override
+	public boolean say(String text) {
+		if (!alive() || text == null || text.isBlank()) {
+			return false;
+		}
+		MinecraftServer server = player.getServer();
+		if (server == null) {
+			return false;
+		}
+		server.getPlayerManager().broadcast(
+				Text.translatable("chat.type.text", player.getDisplayName(), Text.literal(text)), false);
+		return true;
 	}
 
 	/** A client-less player is not ticked by vanilla, so its body physics run here. */

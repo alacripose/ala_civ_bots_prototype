@@ -116,7 +116,8 @@ final class SpeechRoutes implements dev.ensouled.core.SocialSeam {
 						record.name(), text);
 				return false;
 			}
-			EnsouledMod.LOG.info("[ensouled] speech -> client {}: {}", record.name(), text);
+			EnsouledMod.LOG.info("[ensouled] speech -> body {} ({}): {}", record.name(),
+					record.body().kind(), text);
 			return true;
 		};
 	}

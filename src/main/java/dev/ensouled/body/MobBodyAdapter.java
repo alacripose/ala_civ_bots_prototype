@@ -4,7 +4,9 @@ import dev.ensouled.core.Motor;
 import dev.ensouled.core.Vec3i;
 import dev.ensouled.core.WorldView;
 import dev.ensouled.entity.AgentBodyEntity;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 
 /** Wraps the custom civilian mob body used before fake players existed. */
 public final class MobBodyAdapter implements BodyAdapter {
@@ -66,5 +68,20 @@ public final class MobBodyAdapter implements BodyAdapter {
 	@Override
 	public WorldView createView() {
 		return new MinecraftWorldView(body);
+	}
+
+	/** A mob has no chat client; its line goes out through the server's ordinary chat format. */
+	@Override
+	public boolean say(String text) {
+		if (!alive() || text == null || text.isBlank() || !(body.getWorld() instanceof ServerWorld world)) {
+			return false;
+		}
+		MinecraftServer server = world.getServer();
+		if (server == null) {
+			return false;
+		}
+		server.getPlayerManager().broadcast(
+				Text.translatable("chat.type.text", body.getDisplayName(), Text.literal(text)), false);
+		return true;
 	}
 }

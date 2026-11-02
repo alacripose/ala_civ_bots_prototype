@@ -32,8 +32,9 @@ public interface BodyAdapter {
 	WorldView createView();
 
 	/**
-	 * Says one line through this body's ordinary player-chat transport. A body with no connected
-	 * client cannot speak and returns false; a server-side system line is not a substitute.
+	 * Says one line through this body's ordinary player-chat transport. A connected client sends its
+	 * own chat packet; an in-process body has no client, so it broadcasts the same chat-formatted
+	 * line to every player. False means the body could not carry speech at all.
 	 */
 	default boolean say(String text) {
 		return false;
