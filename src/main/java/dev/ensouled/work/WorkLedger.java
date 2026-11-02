@@ -443,9 +443,14 @@ public final class WorkLedger {
 	 */
 	public void discovered(String agentId, String agentName, String skillId, long tick,
 			boolean success, String evidence) {
-		if (openCommitment(agentId).isPresent()) {
-			// The wish's ticket already authorises and counts this work.
-			return;
+		java.util.Optional<Commitment> open = openCommitment(agentId);
+		if (open.isPresent()) {
+			Plan plan = planFor(open.get());
+			if (plan != null && skillId.equals(plan.step())) {
+				// The wish's ticket already authorises and counts this exact work; a different
+				// verb practised alongside the wish is still this being's own discovery.
+				return;
+			}
 		}
 		String purpose = "discover:" + skillId;
 		for (Ticket ticket : tickets.values()) {
