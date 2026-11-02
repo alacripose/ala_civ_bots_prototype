@@ -653,8 +653,7 @@ public final class EnsouledCommands {
 			sb.append("  verbs:");
 			mind.ledger().statsBySkill().forEach((verb, stats) -> sb.append(' ').append(verb)
 					.append('(').append(stats.successes()).append('/').append(stats.failures()).append(')'));
-			sb.append('
-');
+			sb.append('\n');
 		}
 		sb.append("  home=").append(record.home()).append(" gate_budget=").append(record.gate().budgetRemaining()).append('\n');
 		// Why the being is idle: how many candidates its own generator produced on the last idle tick,
