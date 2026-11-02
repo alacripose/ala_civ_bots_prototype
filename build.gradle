@@ -73,18 +73,40 @@ def proseCorpus = providers.gradleProperty('proseCorpus')
 def proseBaseline = file('src/main/resources/ensouled/prose_baseline.tsv')
 def proseClaims = file('src/main/resources/ensouled/prose_claims.tsv')
 
+// The ping-wheel document is a language source as well as a set of wishes. It compiles first:
+// its words are merged into the attested lexicon, and its expectations stay non-conclusive.
+def pingWheelLexicon = file('tools/ping_wheel_lexicon.tsv')
+def pingWheelExpectations = file('tools/proofs/ping_wheel/expectations.json')
+tasks.register('compilePingWheelExpectations', Exec) {
+	group = 'build'
+	description = 'Compiles the ping-wheel document into its language and non-conclusive wishes.'
+	inputs.file(file('docs/ping_wheel_messages.md'))
+	inputs.file(file('tools/ping_wheel_ingest.py'))
+	outputs.file(pingWheelLexicon)
+	outputs.file(pingWheelExpectations)
+	outputs.file(file('tools/proofs/ping_wheel/expectations.tsv'))
+	commandLine 'python', 'tools/ping_wheel_ingest.py',
+			'--doc', file('docs/ping_wheel_messages.md').absolutePath,
+			'--out-lexicon', pingWheelLexicon.absolutePath,
+			'--out-json', pingWheelExpectations.absolutePath,
+			'--out-tsv', file('tools/proofs/ping_wheel/expectations.tsv').absolutePath
+}
+
 tasks.register('compileProseBaseline', Exec) {
 	group = 'build'
 	description = 'Compiles the prose-logic corpus into the speech verb baseline.'
 	def corpus = file(proseCorpus)
 	inputs.dir(corpus).optional()
+	dependsOn 'compilePingWheelExpectations'
+	inputs.file(pingWheelLexicon)
 	outputs.file(proseBaseline)
 	outputs.file(proseClaims)
 	onlyIf { corpus.isDirectory() }
 	commandLine 'python', 'tools/prose_compile.py', '--corpus', corpus.absolutePath,
 			'--out', proseBaseline.absolutePath,
 			'--extra', file('tools/mod_lexicon.tsv').absolutePath,
-			'--extra', file('tools/project_lexicon.tsv').absolutePath
+			'--extra', file('tools/project_lexicon.tsv').absolutePath,
+			'--extra', pingWheelLexicon.absolutePath
 	// A corpus that cannot be compiled leaves the committed baseline in place rather than failing
 	// an unrelated build; the task's own exit codes say why.
 	ignoreExitValue = true

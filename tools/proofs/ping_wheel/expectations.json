@@ -1,0 +1,3523 @@
+{
+  "schema": "ensouled.ping-wheel-expectations/1",
+  "source": "docs/ping_wheel_messages.md",
+  "source_sha256": "73321db4283a10955f8acc89bded7e9438091afedfb51d37bc3fa8d3c6cccebe",
+  "compiled_by": "tools/ping_wheel_ingest.py",
+  "provenance": "deadlock-ping-wheel",
+  "basis": "expected",
+  "conclusive": false,
+  "note": "Language is imported and may be spoken or wished for; a wish naming something this world does not implement is still a wish. No row here is evidence of a capability, and a report may not count one as a passed check.",
+  "counts": {
+    "entries": 166,
+    "concepts": 110,
+    "phrases": 166,
+    "triggers": 21,
+    "words": 151,
+    "tokens": 503
+  },
+  "entries": [
+    {
+      "name": "Going In",
+      "concept": "CITADEL_PING_GOING_IN",
+      "intent": "going_in",
+      "phrase": "Going In",
+      "label_token": "#citadel_chatwheel_label_GoingIn",
+      "message_token": "#citadel_chatwheel_label_GoingIn",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_GlobalFriendlyTeam",
+      "lane": "",
+      "option_id": 1,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Help",
+      "concept": "CITADEL_PING_HELP",
+      "intent": "help",
+      "phrase": "Help",
+      "label_token": "#citadel_chatwheel_label_Help",
+      "message_token": "#citadel_chatwheel_message_Help",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 2,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Yes",
+      "concept": "CITADEL_PING_YES",
+      "intent": "yes",
+      "phrase": "Yes",
+      "label_token": "#citadel_chatwheel_label_Yes",
+      "message_token": "#citadel_chatwheel_message_Yes",
+      "triggers": [],
+      "responds_to": [
+        "CITADEL_PING_ATTACK_ENEMY",
+        "CITADEL_PING_GET_BACK",
+        "CITADEL_PING_HELP_WITH_IDOL",
+        "CITADEL_PING_REQUEST_FOLLOW",
+        "CITADEL_PING_RETREAT",
+        "CITADEL_PING_STAY_TOGETHER"
+      ],
+      "recipients": "",
+      "lane": "",
+      "option_id": 3,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Thanks",
+      "concept": "CITADEL_PING_THANK_YOU",
+      "intent": "thank_you",
+      "phrase": "Thanks",
+      "label_token": "#citadel_chatwheel_label_thanks",
+      "message_token": "#citadel_chatwheel_label_thanks",
+      "triggers": [
+        "thank you",
+        "thanks",
+        "thx",
+        "ty"
+      ],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_GlobalFriendlyTeam",
+      "lane": "",
+      "option_id": 4,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Retreat",
+      "concept": "CITADEL_PING_RETREAT",
+      "intent": "retreat",
+      "phrase": "Retreat",
+      "label_token": "#citadel_chatwheel_label_retreat",
+      "message_token": "#citadel_chatwheel_label_retreat",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 5,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Stay Together",
+      "concept": "CITADEL_PING_STAY_TOGETHER",
+      "intent": "stay_together",
+      "phrase": "Stay Together",
+      "label_token": "#citadel_chatwheel_label_StayTogether",
+      "message_token": "#citadel_chatwheel_message_StayTogether",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 6,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Lane",
+      "concept": "CITADEL_PING_DEFEND_LANE",
+      "intent": "defend_lane",
+      "phrase": "Defend Lane",
+      "label_token": "#citadel_chatwheel_label_Defend",
+      "message_token": "#citadel_chatwheel_message_Defend",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 7,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Yellow",
+      "concept": "CITADEL_PING_DEFEND_LANE",
+      "intent": "defend_lane",
+      "phrase": "Defend Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_Defend_Yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 8,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Green",
+      "concept": "CITADEL_PING_DEFEND_LANE",
+      "intent": "defend_lane",
+      "phrase": "Defend Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_Defend_Green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 9,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Blue",
+      "concept": "CITADEL_PING_DEFEND_LANE",
+      "intent": "defend_lane",
+      "phrase": "Defend Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_Defend_Blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 10,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Purple",
+      "concept": "CITADEL_PING_DEFEND_LANE",
+      "intent": "defend_lane",
+      "phrase": "Defend Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_Defend_Purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 11,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Headed To Shop/Base",
+      "concept": "CITADEL_PING_HEADED_TO_BASE",
+      "intent": "headed_to_base",
+      "phrase": "Headed To Shop/Base",
+      "label_token": "#citadel_chatwheel_label_BRB",
+      "message_token": "#citadel_chatwheel_message_BRB",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 12,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "No",
+      "concept": "CITADEL_PING_NO",
+      "intent": "no",
+      "phrase": "No",
+      "label_token": "#citadel_chatwheel_label_No",
+      "message_token": "#citadel_chatwheel_label_No",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 17,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Good Job",
+      "concept": "CITADEL_PING_GOOD_JOB",
+      "intent": "good_job",
+      "phrase": "Good Job",
+      "label_token": "#citadel_chatwheel_label_GoodJob",
+      "message_token": "#citadel_chatwheel_message_GoodJob",
+      "triggers": [
+        "gj",
+        "good job",
+        "nj"
+      ],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_RecipientsAroundPlayer",
+      "lane": "",
+      "option_id": 18,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Good Game (Post Game) - All Chat",
+      "concept": "CITADEL_PING_GOOD_GAME_ALLCHAT",
+      "intent": "good_game_allchat",
+      "phrase": "Good Game (Post Game) - All Chat",
+      "label_token": "#citadel_chatwheel_label_GoodGame",
+      "message_token": "#citadel_chatwheel_message_GoodGame",
+      "triggers": [
+        "gg",
+        "gg wp",
+        "ggwp",
+        "good game"
+      ],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_GlobalAllChat",
+      "lane": "",
+      "option_id": 19,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Well Played (Post Game) - All Chat",
+      "concept": "CITADEL_PING_WELL_PLAYED_ALLCHAT",
+      "intent": "well_played_allchat",
+      "phrase": "Well Played (Post Game) - All Chat",
+      "label_token": "#citadel_chatwheel_label_WellPlayed",
+      "message_token": "#citadel_chatwheel_message_WellPlayed",
+      "triggers": [
+        "well played",
+        "wp"
+      ],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_GlobalAllChat",
+      "lane": "",
+      "option_id": 20,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Thanks (Post Game) - All Chat",
+      "concept": "CITADEL_PING_THANKS_ALLCHAT",
+      "intent": "thanks_allchat",
+      "phrase": "Thanks (Post Game) - All Chat",
+      "label_token": "#citadel_chatwheel_label_thanksGameOver",
+      "message_token": "#citadel_chatwheel_message_thanksGameOver",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_GlobalFriendlyTeam",
+      "lane": "",
+      "option_id": 21,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Good Job (Post Game) - All Chat",
+      "concept": "CITADEL_PING_GOODJOB_ALLCHAT",
+      "intent": "goodjob_allchat",
+      "phrase": "Good Job (Post Game) - All Chat",
+      "label_token": "#citadel_chatwheel_label_GoodJobGameOver",
+      "message_token": "#citadel_chatwheel_message_GoodJobGameOver",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_GlobalAllChat",
+      "lane": "",
+      "option_id": 22,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "On My Way",
+      "concept": "CITADEL_PING_ON_MY_WAY",
+      "intent": "on_my_way",
+      "phrase": "On My Way",
+      "label_token": "#citadel_chatwheel_label_OMW",
+      "message_token": "#citadel_chatwheel_label_OMW",
+      "triggers": [],
+      "responds_to": [
+        "CITADEL_PING_DEFEND_BASE_GUARDIAN",
+        "CITADEL_PING_DEFEND_GUARDIAN",
+        "CITADEL_PING_DEFEND_LANE",
+        "CITADEL_PING_DEFEND_PATRON",
+        "CITADEL_PING_DEFEND_SHRINE",
+        "CITADEL_PING_DEFEND_WALKER",
+        "CITADEL_PING_HEADING_TO_LANE",
+        "CITADEL_PING_IDOL",
+        "CITADEL_PING_LETS_GO_THIS_WAY",
+        "CITADEL_PING_LETS_TAKE_MIDBOSS",
+        "CITADEL_PING_MEET_HERE",
+        "CITADEL_PING_PUSH_BASE_GUARDIAN",
+        "CITADEL_PING_PUSH_GUARDIAN",
+        "CITADEL_PING_PUSH_LANE",
+        "CITADEL_PING_PUSH_PATRON",
+        "CITADEL_PING_PUSH_SHRINE",
+        "CITADEL_PING_PUSH_WALKER"
+      ],
+      "recipients": "",
+      "lane": "",
+      "option_id": 23,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Lane",
+      "concept": "CITADEL_PING_PUSH_LANE",
+      "intent": "push_lane",
+      "phrase": "Push Lane",
+      "label_token": "#citadel_chatwheel_label_Push",
+      "message_token": "#citadel_chatwheel_message_Push",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 24,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Yellow",
+      "concept": "CITADEL_PING_PUSH_LANE",
+      "intent": "push_lane",
+      "phrase": "Push Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_push_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 25,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Green",
+      "concept": "CITADEL_PING_PUSH_LANE",
+      "intent": "push_lane",
+      "phrase": "Push Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_push_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 26,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Blue",
+      "concept": "CITADEL_PING_PUSH_LANE",
+      "intent": "push_lane",
+      "phrase": "Push Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_push_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 27,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Purple",
+      "concept": "CITADEL_PING_PUSH_LANE",
+      "intent": "push_lane",
+      "phrase": "Push Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_push_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 28,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Pinged Enemy Player",
+      "concept": "CITADEL_PING_ENEMY_PLAYER",
+      "intent": "enemy_player",
+      "phrase": "Pinged Enemy Player",
+      "label_token": "#ping_see",
+      "message_token": "#ping_see",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 29,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Pinged Teammate",
+      "concept": "CITADEL_PING_TEAMMATE",
+      "intent": "teammate",
+      "phrase": "Pinged Teammate",
+      "label_token": "#ping_careful",
+      "message_token": "#ping_careful",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_RecipientAndPlayer",
+      "lane": "",
+      "option_id": 30,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Missing",
+      "concept": "CITADEL_PING_MISSING",
+      "intent": "missing",
+      "phrase": "Missing",
+      "label_token": "#citadel_chatwheel_label_missing",
+      "message_token": "#citadel_chatwheel_message_missing_hero",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 31,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Need Heal",
+      "concept": "CITADEL_PING_NEED_HEAL",
+      "intent": "need_heal",
+      "phrase": "Need Heal",
+      "label_token": "#citadel_chatwheel_need_heal",
+      "message_token": "#citadel_chatwheel_heal_please",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_RecipientsAroundPlayer",
+      "lane": "",
+      "option_id": 32,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Can Heal",
+      "concept": "CITADEL_PING_HAVE_HEAL",
+      "intent": "have_heal",
+      "phrase": "Can Heal",
+      "label_token": "#citadel_chatwheel_have_heal",
+      "message_token": "#citadel_chatwheel_can_heal",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_RecipientsAroundPlayer",
+      "lane": "",
+      "option_id": 33,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Need Plan",
+      "concept": "CITADEL_PING_NEED_PLAN",
+      "intent": "need_plan",
+      "phrase": "Need Plan",
+      "label_token": "#citadel_chatwheel_label_need_plan",
+      "message_token": "#citadel_chatwheel_need_plan",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 34,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Heading to Yellow Subnav",
+      "concept": "CITADEL_PING_HEADING_TO_LANE",
+      "intent": "heading_to_lane",
+      "phrase": "Heading to Yellow Subnav",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_HeadedToYellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 38,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Heading to Green Subnav",
+      "concept": "CITADEL_PING_HEADING_TO_LANE",
+      "intent": "heading_to_lane",
+      "phrase": "Heading to Green Subnav",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_HeadedToGreen",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 39,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Headed to Blue Subnav",
+      "concept": "CITADEL_PING_HEADING_TO_LANE",
+      "intent": "heading_to_lane",
+      "phrase": "Headed to Blue Subnav",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_HeadedToBlue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 40,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Headed to Purple Subnav",
+      "concept": "CITADEL_PING_HEADING_TO_LANE",
+      "intent": "heading_to_lane",
+      "phrase": "Headed to Purple Subnav",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_HeadedToPurple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 41,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Headed to Lane",
+      "concept": "CITADEL_PING_HEADING_TO_LANE",
+      "intent": "heading_to_lane",
+      "phrase": "Headed to Lane",
+      "label_token": "#citadel_chatwheel_message_headed_to_lane",
+      "message_token": "#citadel_chatwheel_message_heading_to_lane_generic",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 42,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Help With Idol",
+      "concept": "CITADEL_PING_HELP_WITH_IDOL",
+      "intent": "help_with_idol",
+      "phrase": "Help With Idol",
+      "label_token": "#citadel_chatwheel_help_with_idol_label",
+      "message_token": "#citadel_chatwheel_help_with_idol_message",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 43,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "You're Welcome",
+      "concept": "CITADEL_PING_YOURE_WELCOME",
+      "intent": "youre_welcome",
+      "phrase": "You're Welcome",
+      "label_token": "#citadel_chatwheel_youre_welcome",
+      "message_token": "#citadel_chatwheel_youre_welcome",
+      "triggers": [],
+      "responds_to": [
+        "CITADEL_PING_THANK_YOU"
+      ],
+      "recipients": "k_ECitadelRecipients_RecipientsAroundPlayer",
+      "lane": "",
+      "option_id": 44,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Sorry",
+      "concept": "CITADEL_PING_SORRY",
+      "intent": "sorry",
+      "phrase": "Sorry",
+      "label_token": "#citadel_chatwheel_sorry",
+      "message_token": "#citadel_chatwheel_sorry",
+      "triggers": [
+        "sorry",
+        "sry"
+      ],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 45,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Going to Shop",
+      "concept": "CITADEL_PING_GOING_TO_SHOP",
+      "intent": "going_to_shop",
+      "phrase": "Going to Shop",
+      "label_token": "#citadel_chatwheel_label_going_shop",
+      "message_token": "#citadel_chatwheel_message_going_shop",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 46,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Request Follow",
+      "concept": "CITADEL_PING_REQUEST_FOLLOW",
+      "intent": "request_follow",
+      "phrase": "Request Follow",
+      "label_token": "#citadel_chatwheel_message_Request_Follow",
+      "message_token": "#citadel_chatwheel_message_Request_Follow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 47,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Going to Gank",
+      "concept": "CITADEL_PING_GOING_TO_GANK",
+      "intent": "going_to_gank",
+      "phrase": "Going to Gank",
+      "label_token": "#citadel_chatwheel_message_gank",
+      "message_token": "#citadel_chatwheel_message_gank",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 48,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Rejuv Drop",
+      "concept": "CITADEL_PING_REJUV_DROP",
+      "intent": "rejuv_drop",
+      "phrase": "Rejuv Drop",
+      "label_token": "#citadel_chatwheel_label_Rejuv_Drop",
+      "message_token": "#citadel_chatwheel_message_Rejuv_Drop",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 49,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Need Cover",
+      "concept": "CITADEL_PING_NEED_COVER",
+      "intent": "need_cover",
+      "phrase": "Need Cover",
+      "label_token": "#citadel_chatwheel_label_need_cover",
+      "message_token": "#citadel_chatwheel_message_need_cover",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 50,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Nevermind",
+      "concept": "CITADEL_PING_NEVERMIND",
+      "intent": "nevermind",
+      "phrase": "Nevermind",
+      "label_token": "#citadel_chatwheel_label_nevermind",
+      "message_token": "#citadel_chatwheel_message_nevermind",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 51,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "No Teamfight",
+      "concept": "CITADEL_PING_NO_TEAMFIGHT",
+      "intent": "no_teamfight",
+      "phrase": "No Teamfight",
+      "label_token": "#citadel_chatwheel_label_no_teamfight",
+      "message_token": "#citadel_chatwheel_message_no_teamfight",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 52,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Press The Advantage",
+      "concept": "CITADEL_PING_PRESS_ADVANTAGE",
+      "intent": "press_advantage",
+      "phrase": "Press The Advantage",
+      "label_token": "#citadel_chatwheel_label_press_advantage",
+      "message_token": "#citadel_chatwheel_message_press_advantage",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 53,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Lets Hide Here",
+      "concept": "CITADEL_PING_LETS_HIDE",
+      "intent": "lets_hide",
+      "phrase": "Lets Hide Here",
+      "label_token": "#citadel_chatwheel_label_lets_hide",
+      "message_token": "#citadel_chatwheel_message_lets_hide",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 54,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Its Dangerous",
+      "concept": "CITADEL_PING_DANGER_AREA",
+      "intent": "danger_area",
+      "phrase": "Its Dangerous",
+      "label_token": "#citadel_chatwheel_label_danger_area",
+      "message_token": "#citadel_chatwheel_message_danger_area",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 55,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "I'll Clear Troopers",
+      "concept": "CITADEL_PING_CLEAR_TROOPERS",
+      "intent": "clear_troopers",
+      "phrase": "I'll Clear Troopers",
+      "label_token": "#citadel_chatwheel_label_clear_troopers",
+      "message_token": "#citadel_chatwheel_message_clear_troopers",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 56,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Meet Here",
+      "concept": "CITADEL_PING_MEET_HERE",
+      "intent": "meet_here",
+      "phrase": "Meet Here",
+      "label_token": "#citadel_chatwheel_label_meet_here",
+      "message_token": "#citadel_chatwheel_message_meet_here",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 57,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Flank",
+      "concept": "CITADEL_PING_FLANK",
+      "intent": "flank",
+      "phrase": "Flank",
+      "label_token": "#citadel_chatwheel_label_flank",
+      "message_token": "#citadel_chatwheel_message_flank",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 58,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Pregame Pings",
+      "concept": "CITADEL_PING_PREGAME",
+      "intent": "pregame",
+      "phrase": "Pregame Pings",
+      "label_token": "",
+      "message_token": "",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_GlobalAllChat",
+      "lane": "",
+      "option_id": 59,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Leave Area",
+      "concept": "CITADEL_PING_LEAVE_AREA",
+      "intent": "leave_area",
+      "phrase": "Leave Area",
+      "label_token": "#citadel_chatwheel_label_leaving_area",
+      "message_token": "#citadel_chatwheel_message_leaving_area",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "k_ECitadelRecipients_RecipientsAroundPlayer",
+      "lane": "",
+      "option_id": 60,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Go Farm",
+      "concept": "CITADEL_PING_GOING_TO_FARM",
+      "intent": "going_to_farm",
+      "phrase": "Go Farm",
+      "label_token": "#citadel_chatwheel_label_going_farm",
+      "message_token": "#citadel_chatwheel_message_going_farm",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 61,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Steal Farm",
+      "concept": "CITADEL_PING_STEAL_THEIR_FARM",
+      "intent": "steal_their_farm",
+      "phrase": "Steal Farm",
+      "label_token": "#citadel_chatwheel_label_steal_farm",
+      "message_token": "#citadel_chatwheel_message_steal_farm",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 62,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Go Rat",
+      "concept": "CITADEL_PING_GOING_TO_RAT",
+      "intent": "going_to_rat",
+      "phrase": "Go Rat",
+      "label_token": "#citadel_chatwheel_label_GoingToRat",
+      "message_token": "#citadel_chatwheel_message_GoingToRat",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 63,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Split Push",
+      "concept": "CITADEL_PING_SPLIT_PUSH",
+      "intent": "split_push",
+      "phrase": "Split Push",
+      "label_token": "#citadel_chatwheel_label_split_push",
+      "message_token": "#citadel_chatwheel_message_split_push",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 64,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Im Leaving",
+      "concept": "CITADEL_PING_IM_LEAVING",
+      "intent": "im_leaving",
+      "phrase": "Im Leaving",
+      "label_token": "#citadel_chatwheel_label_im_leaving",
+      "message_token": "#citadel_chatwheel_message_im_leaving",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 65,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Dont Overextend",
+      "concept": "CITADEL_PING_DONT_OVEREXTEND",
+      "intent": "dont_overextend",
+      "phrase": "Dont Overextend",
+      "label_token": "#citadel_chatwheel_label_overextend",
+      "message_token": "#citadel_chatwheel_message_overextend",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 66,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Enemy Is Stealing Farm",
+      "concept": "CITADEL_PING_ENEMY_STEALING_FARM",
+      "intent": "enemy_stealing_farm",
+      "phrase": "Enemy Is Stealing Farm",
+      "label_token": "#citadel_chatwheel_label_enemy_stealing_farm",
+      "message_token": "#citadel_chatwheel_message_enemy_stealing_farm",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 67,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "The Rift is Emerging",
+      "concept": "CITADEL_PING_KOTH_RIFT_EMERGING",
+      "intent": "koth_rift_emerging",
+      "phrase": "The Rift is Emerging",
+      "label_token": "#citadel_chatwheel_label_koth_rift_emerging",
+      "message_token": "#citadel_chatwheel_message_koth_rift_emerging",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 68,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "The Rift is Here",
+      "concept": "CITADEL_PING_KOTH_RIFT_HERE",
+      "intent": "koth_rift_here",
+      "phrase": "The Rift is Here",
+      "label_token": "#citadel_chatwheel_label_koth_rift_here",
+      "message_token": "#citadel_chatwheel_message_koth_rift_here",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 69,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Mid Boss is Here",
+      "concept": "CITADEL_PING_MID_BOSS_HERE",
+      "intent": "mid_boss_here",
+      "phrase": "Mid Boss is Here",
+      "label_token": "#citadel_chatwheel_label_mid_boss_here",
+      "message_token": "#citadel_chatwheel_message_mid_boss_here",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 70,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Let's Take Mid Boss",
+      "concept": "CITADEL_PING_LETS_TAKE_MIDBOSS",
+      "intent": "lets_take_midboss",
+      "phrase": "Let's Take Mid Boss",
+      "label_token": "#citadel_chatwheel_label_lets_take_midboss",
+      "message_token": "#citadel_chatwheel_message_lets_take_midboss",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 71,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Bridge Buff Is Here",
+      "concept": "CITADEL_PING_BRIDGE_BUFF_HERE",
+      "intent": "bridge_buff_here",
+      "phrase": "Bridge Buff Is Here",
+      "label_token": "#citadel_chatwheel_label_bridge_buff_here",
+      "message_token": "#citadel_chatwheel_message_bridge_buff_here",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 72,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Let's Go This Way",
+      "concept": "CITADEL_PING_LETS_GO_THIS_WAY",
+      "intent": "lets_go_this_way",
+      "phrase": "Let's Go This Way",
+      "label_token": "#citadel_chatwheel_label_lets_go_this_way",
+      "message_token": "#citadel_chatwheel_message_lets_go_this_way",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 73,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Guardian",
+      "concept": "CITADEL_PING_PUSH_GUARDIAN",
+      "intent": "push_guardian",
+      "phrase": "Push Guardian",
+      "label_token": "#citadel_chatwheel_label_push_guardian",
+      "message_token": "#citadel_chatwheel_message_push_guardian",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 74,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Guardian Yellow",
+      "concept": "CITADEL_PING_PUSH_GUARDIAN",
+      "intent": "push_guardian",
+      "phrase": "Push Guardian Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_push_guardian_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 75,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Guardian Blue",
+      "concept": "CITADEL_PING_PUSH_GUARDIAN",
+      "intent": "push_guardian",
+      "phrase": "Push Guardian Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_push_guardian_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 76,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Guardian Green",
+      "concept": "CITADEL_PING_PUSH_GUARDIAN",
+      "intent": "push_guardian",
+      "phrase": "Push Guardian Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_push_guardian_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 77,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Guardian Purple",
+      "concept": "CITADEL_PING_PUSH_GUARDIAN",
+      "intent": "push_guardian",
+      "phrase": "Push Guardian Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_push_guardian_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 78,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Guardian",
+      "concept": "CITADEL_PING_DEFEND_GUARDIAN",
+      "intent": "defend_guardian",
+      "phrase": "Defend Guardian",
+      "label_token": "#citadel_chatwheel_label_defend_guardian",
+      "message_token": "#citadel_chatwheel_message_defend_guardian",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 79,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Guardian Yellow",
+      "concept": "CITADEL_PING_DEFEND_GUARDIAN",
+      "intent": "defend_guardian",
+      "phrase": "Defend Guardian Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_defend_guardian_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 80,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Guardian Blue",
+      "concept": "CITADEL_PING_DEFEND_GUARDIAN",
+      "intent": "defend_guardian",
+      "phrase": "Defend Guardian Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_defend_guardian_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 81,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Guardian Green",
+      "concept": "CITADEL_PING_DEFEND_GUARDIAN",
+      "intent": "defend_guardian",
+      "phrase": "Defend Guardian Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_defend_guardian_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 82,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Guardian Purple",
+      "concept": "CITADEL_PING_DEFEND_GUARDIAN",
+      "intent": "defend_guardian",
+      "phrase": "Defend Guardian Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_defend_guardian_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 83,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Walker",
+      "concept": "CITADEL_PING_PUSH_WALKER",
+      "intent": "push_walker",
+      "phrase": "Push Walker",
+      "label_token": "#citadel_chatwheel_label_push_walker",
+      "message_token": "#citadel_chatwheel_message_push_walker",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 84,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Walker Yellow",
+      "concept": "CITADEL_PING_PUSH_WALKER",
+      "intent": "push_walker",
+      "phrase": "Push Walker Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_push_walker_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 85,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Walker Blue",
+      "concept": "CITADEL_PING_PUSH_WALKER",
+      "intent": "push_walker",
+      "phrase": "Push Walker Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_push_walker_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 86,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Walker Green",
+      "concept": "CITADEL_PING_PUSH_WALKER",
+      "intent": "push_walker",
+      "phrase": "Push Walker Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_push_walker_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 87,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Walker Purple",
+      "concept": "CITADEL_PING_PUSH_WALKER",
+      "intent": "push_walker",
+      "phrase": "Push Walker Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_push_walker_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 88,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Walker",
+      "concept": "CITADEL_PING_DEFEND_WALKER",
+      "intent": "defend_walker",
+      "phrase": "Defend Walker",
+      "label_token": "#citadel_chatwheel_label_defend_walker",
+      "message_token": "#citadel_chatwheel_message_defend_walker",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 89,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Walker Yellow",
+      "concept": "CITADEL_PING_DEFEND_WALKER",
+      "intent": "defend_walker",
+      "phrase": "Defend Walker Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_defend_walker_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 90,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Walker Blue",
+      "concept": "CITADEL_PING_DEFEND_WALKER",
+      "intent": "defend_walker",
+      "phrase": "Defend Walker Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_defend_walker_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 91,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Walker Green",
+      "concept": "CITADEL_PING_DEFEND_WALKER",
+      "intent": "defend_walker",
+      "phrase": "Defend Walker Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_defend_walker_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 92,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Walker Purple",
+      "concept": "CITADEL_PING_DEFEND_WALKER",
+      "intent": "defend_walker",
+      "phrase": "Defend Walker Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_defend_walker_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 93,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Base Guardian",
+      "concept": "CITADEL_PING_PUSH_BASE_GUARDIAN",
+      "intent": "push_base_guardian",
+      "phrase": "Push Base Guardian",
+      "label_token": "#citadel_chatwheel_label_push_base_guardian",
+      "message_token": "#citadel_chatwheel_message_push_base_guardian",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 94,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Base Guardian Yellow",
+      "concept": "CITADEL_PING_PUSH_BASE_GUARDIAN",
+      "intent": "push_base_guardian",
+      "phrase": "Push Base Guardian Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_push_base_guardian_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 95,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Base Guardian Blue",
+      "concept": "CITADEL_PING_PUSH_BASE_GUARDIAN",
+      "intent": "push_base_guardian",
+      "phrase": "Push Base Guardian Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_push_base_guardian_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 96,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Base Guardian Green",
+      "concept": "CITADEL_PING_PUSH_BASE_GUARDIAN",
+      "intent": "push_base_guardian",
+      "phrase": "Push Base Guardian Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_push_base_guardian_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 97,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Base Guardian Purple",
+      "concept": "CITADEL_PING_PUSH_BASE_GUARDIAN",
+      "intent": "push_base_guardian",
+      "phrase": "Push Base Guardian Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_push_base_guardian_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 98,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Base Guardian",
+      "concept": "CITADEL_PING_DEFEND_BASE_GUARDIAN",
+      "intent": "defend_base_guardian",
+      "phrase": "Defend Base Guardian",
+      "label_token": "#citadel_chatwheel_label_defend_base_guardian",
+      "message_token": "#citadel_chatwheel_message_defend_base_guardian",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 99,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Base Guardian Yellow",
+      "concept": "CITADEL_PING_DEFEND_BASE_GUARDIAN",
+      "intent": "defend_base_guardian",
+      "phrase": "Defend Base Guardian Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_defend_base_guardian_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 100,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Base Guardian Blue",
+      "concept": "CITADEL_PING_DEFEND_BASE_GUARDIAN",
+      "intent": "defend_base_guardian",
+      "phrase": "Defend Base Guardian Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_defend_base_guardian_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 101,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Base Guardian Green",
+      "concept": "CITADEL_PING_DEFEND_BASE_GUARDIAN",
+      "intent": "defend_base_guardian",
+      "phrase": "Defend Base Guardian Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_defend_base_guardian_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 102,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Base Guardian Purple",
+      "concept": "CITADEL_PING_DEFEND_BASE_GUARDIAN",
+      "intent": "defend_base_guardian",
+      "phrase": "Defend Base Guardian Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_defend_base_guardian_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 103,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Patron",
+      "concept": "CITADEL_PING_PUSH_PATRON",
+      "intent": "push_patron",
+      "phrase": "Push Patron",
+      "label_token": "#citadel_chatwheel_label_push_patron",
+      "message_token": "#citadel_chatwheel_message_push_patron",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 104,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Patron",
+      "concept": "CITADEL_PING_DEFEND_PATRON",
+      "intent": "defend_patron",
+      "phrase": "Defend Patron",
+      "label_token": "#citadel_chatwheel_label_defend_patron",
+      "message_token": "#citadel_chatwheel_message_defend_patron",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 105,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Push Shrine",
+      "concept": "CITADEL_PING_PUSH_SHRINE",
+      "intent": "push_shrine",
+      "phrase": "Push Shrine",
+      "label_token": "#citadel_chatwheel_label_push_shrine",
+      "message_token": "#citadel_chatwheel_message_push_shrine",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 106,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Shrine",
+      "concept": "CITADEL_PING_DEFEND_SHRINE",
+      "intent": "defend_shrine",
+      "phrase": "Defend Shrine",
+      "label_token": "#citadel_chatwheel_label_defend_shrine",
+      "message_token": "#citadel_chatwheel_message_defend_shrine",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 107,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Urn Here",
+      "concept": "CITADEL_PING_IDOL",
+      "intent": "idol",
+      "phrase": "Urn Here",
+      "label_token": "#citadel_chatwheel_idol_here_label",
+      "message_token": "#citadel_chatwheel_idol_here_message",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 108,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Attack Here",
+      "concept": "CITADEL_PING_ATTACK_HERE",
+      "intent": "attack_here",
+      "phrase": "Attack Here",
+      "label_token": "#citadel_chatwheel_label_attack_here",
+      "message_token": "#citadel_chatwheel_message_attack_here",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 109,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Defend Here",
+      "concept": "CITADEL_PING_DEFEND_HERE",
+      "intent": "defend_here",
+      "phrase": "Defend Here",
+      "label_token": "#citadel_chatwheel_label_defend_here",
+      "message_token": "#citadel_chatwheel_message_defend_here",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 110,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Attack Hero",
+      "concept": "CITADEL_PING_ATTACK_ENEMY",
+      "intent": "attack_enemy",
+      "phrase": "Attack Hero",
+      "label_token": "#citadel_chatwheel_label_attack_this_hero",
+      "message_token": "#citadel_chatwheel_message_attack_this_hero",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 111,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Ignore Hero",
+      "concept": "CITADEL_PING_IGNORE_HERO",
+      "intent": "ignore_hero",
+      "phrase": "Ignore Hero",
+      "label_token": "#citadel_chatwheel_label_ignore_hero",
+      "message_token": "#citadel_chatwheel_message_ignore_hero",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 112,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Careful",
+      "concept": "CITADEL_PING_CAREFUL",
+      "intent": "careful",
+      "phrase": "Careful",
+      "label_token": "#citadel_chatwheel_label_Care",
+      "message_token": "#citadel_chatwheel_message_Care",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 113,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Im With You",
+      "concept": "CITADEL_PING_IM_WITH_YOU",
+      "intent": "im_with_you",
+      "phrase": "Im With You",
+      "label_token": "#citadel_chatwheel_label_im_with_you",
+      "message_token": "#citadel_chatwheel_message_im_with_you",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 114,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Are You Ready",
+      "concept": "CITADEL_PING_ARE_YOU_READY",
+      "intent": "are_you_ready",
+      "phrase": "Are You Ready",
+      "label_token": "#citadel_chatwheel_label_are_you_ready",
+      "message_token": "#citadel_chatwheel_message_are_you_ready",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 115,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Ultimate Ready",
+      "concept": "CITADEL_PING_ULTIMATE_READY",
+      "intent": "ultimate_ready",
+      "phrase": "Ultimate Ready",
+      "label_token": "#citadel_chatwheel_label_ultimate_ready",
+      "message_token": "#citadel_chatwheel_message_ultimate_ready",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 116,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Ultimate On Cooldown",
+      "concept": "CITADEL_PING_ULTIMATE_ON_COOLDOWN",
+      "intent": "ultimate_on_cooldown",
+      "phrase": "Ultimate On Cooldown",
+      "label_token": "#citadel_chatwheel_label_ultimate_down",
+      "message_token": "#citadel_chatwheel_message_ultimate_down",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 117,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Heading Here",
+      "concept": "CITADEL_PING_HEADING_HERE",
+      "intent": "heading_here",
+      "phrase": "Heading Here",
+      "label_token": "#citadel_chatwheel_label_heading_here",
+      "message_token": "#citadel_chatwheel_message_heading_here",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 118,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Watch Out",
+      "concept": "CITADEL_PING_WATCH_OUT",
+      "intent": "watch_out",
+      "phrase": "Watch Out",
+      "label_token": "#citadel_chatwheel_label_watch_out",
+      "message_token": "#citadel_chatwheel_message_watch_out",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 119,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Going To Urn",
+      "concept": "CITADEL_PING_GOING_TO_URN",
+      "intent": "going_to_urn",
+      "phrase": "Going To Urn",
+      "label_token": "#citadel_chatwheel_label_going_to_urn",
+      "message_token": "#citadel_chatwheel_message_going_to_urn",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 120,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Going To Base",
+      "concept": "CITADEL_PING_GOING_TO_BASE",
+      "intent": "going_to_base",
+      "phrase": "Going To Base",
+      "label_token": "#citadel_chatwheel_label_going_to_base",
+      "message_token": "#citadel_chatwheel_message_going_to_base",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 121,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Going To Push",
+      "concept": "CITADEL_PING_GOING_TO_PUSH",
+      "intent": "going_to_push",
+      "phrase": "Going To Push",
+      "label_token": "#citadel_chatwheel_label_going_to_push",
+      "message_token": "#citadel_chatwheel_message_going_to_push",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 122,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Going To Defend",
+      "concept": "CITADEL_PING_GOING_TO_DEFEND",
+      "intent": "going_to_defend",
+      "phrase": "Going To Defend",
+      "label_token": "#citadel_chatwheel_label_going_to_defend",
+      "message_token": "#citadel_chatwheel_message_going_to_defend",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 123,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Going To Bridge Buff",
+      "concept": "CITADEL_PING_GOING_TO_BRIDGE_BUFF",
+      "intent": "going_to_bridge_buff",
+      "phrase": "Going To Bridge Buff",
+      "label_token": "#citadel_chatwheel_label_going_to_bridge_buff",
+      "message_token": "#citadel_chatwheel_message_going_to_bridge_buff",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 124,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Help Deliver The Urn",
+      "concept": "CITADEL_PING_URN_HELP",
+      "intent": "urn_help",
+      "phrase": "Help Deliver The Urn",
+      "label_token": "#citadel_chatwheel_label_urn_help",
+      "message_token": "#citadel_chatwheel_message_urn_help",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 125,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Enemy Has The Urn",
+      "concept": "CITADEL_PING_STOP_URN",
+      "intent": "stop_urn",
+      "phrase": "Enemy Has The Urn",
+      "label_token": "#citadel_chatwheel_label_stop_urn",
+      "message_token": "#citadel_chatwheel_message_stop_urn",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 126,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Help Yellow",
+      "concept": "CITADEL_PING_HELP",
+      "intent": "help",
+      "phrase": "Help Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_Help_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 127,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Help Blue",
+      "concept": "CITADEL_PING_HELP",
+      "intent": "help",
+      "phrase": "Help Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_Help_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 128,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Help Green",
+      "concept": "CITADEL_PING_HELP",
+      "intent": "help",
+      "phrase": "Help Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_Help_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 129,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Help Purple",
+      "concept": "CITADEL_PING_HELP",
+      "intent": "help",
+      "phrase": "Help Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_Help_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 130,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "The Rift is Emerging Yellow",
+      "concept": "CITADEL_PING_KOTH_RIFT_EMERGING",
+      "intent": "koth_rift_emerging",
+      "phrase": "The Rift is Emerging Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_koth_rift_emerging_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 131,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "The Rift is Emerging Blue",
+      "concept": "CITADEL_PING_KOTH_RIFT_EMERGING",
+      "intent": "koth_rift_emerging",
+      "phrase": "The Rift is Emerging Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_koth_rift_emerging_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 132,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "The Rift is Emerging Green",
+      "concept": "CITADEL_PING_KOTH_RIFT_EMERGING",
+      "intent": "koth_rift_emerging",
+      "phrase": "The Rift is Emerging Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_koth_rift_emerging_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 133,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "The Rift is Emerging Purple",
+      "concept": "CITADEL_PING_KOTH_RIFT_EMERGING",
+      "intent": "koth_rift_emerging",
+      "phrase": "The Rift is Emerging Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_koth_rift_emerging_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 134,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "The Rift is Here Yellow",
+      "concept": "CITADEL_PING_KOTH_RIFT_HERE",
+      "intent": "koth_rift_here",
+      "phrase": "The Rift is Here Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_koth_rift_here_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 135,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "The Rift is Here Blue",
+      "concept": "CITADEL_PING_KOTH_RIFT_HERE",
+      "intent": "koth_rift_here",
+      "phrase": "The Rift is Here Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_koth_rift_here_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 136,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "The Rift is Here Green",
+      "concept": "CITADEL_PING_KOTH_RIFT_HERE",
+      "intent": "koth_rift_here",
+      "phrase": "The Rift is Here Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_koth_rift_here_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 137,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "The Rift is Here Purple",
+      "concept": "CITADEL_PING_KOTH_RIFT_HERE",
+      "intent": "koth_rift_here",
+      "phrase": "The Rift is Here Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_koth_rift_here_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 138,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Stick With Me",
+      "concept": "CITADEL_PING_STICK_WITH_ME",
+      "intent": "stick_with_me",
+      "phrase": "Stick With Me",
+      "label_token": "#citadel_chatwheel_label_stick_with_me",
+      "message_token": "#citadel_chatwheel_message_stick_with_me",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 139,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Someone Buy This",
+      "concept": "CITADEL_PING_SOMEONE_BUY_THIS",
+      "intent": "someone_buy_this",
+      "phrase": "Someone Buy This",
+      "label_token": "#citadel_chatwheel_label_someone_buy_this",
+      "message_token": "#citadel_chatwheel_message_someone_buy_this",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 140,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Dont Buy This",
+      "concept": "CITADEL_PING_DONT_BUY_THIS",
+      "intent": "dont_buy_this",
+      "phrase": "Dont Buy This",
+      "label_token": "#citadel_chatwheel_label_dont_buy_this",
+      "message_token": "#citadel_chatwheel_message_dont_buy_this",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 141,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Buying This",
+      "concept": "CITADEL_PING_BUYING_THIS",
+      "intent": "buying_this",
+      "phrase": "Buying This",
+      "label_token": "#citadel_chatwheel_label_buying_this",
+      "message_token": "#citadel_chatwheel_message_buying_this",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 142,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Have This Item",
+      "concept": "CITADEL_PING_HAVE_THIS_ITEM",
+      "intent": "have_this_item",
+      "phrase": "Have This Item",
+      "label_token": "#citadel_chatwheel_label_have_this_item",
+      "message_token": "#citadel_chatwheel_message_have_this_item",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 143,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Item Good Pick",
+      "concept": "CITADEL_PING_ITEM_GOOD_PICK",
+      "intent": "item_good_pick",
+      "phrase": "Item Good Pick",
+      "label_token": "#citadel_chatwheel_label_item_good_pick",
+      "message_token": "#citadel_chatwheel_message_item_good_pick",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 144,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Lane Needs Help Yellow",
+      "concept": "CITADEL_PING_LANE_NEEDS_HELP",
+      "intent": "lane_needs_help",
+      "phrase": "Lane Needs Help Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_lane_needs_help_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 145,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Lane Needs Help Green",
+      "concept": "CITADEL_PING_LANE_NEEDS_HELP",
+      "intent": "lane_needs_help",
+      "phrase": "Lane Needs Help Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_lane_needs_help_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 146,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Lane Needs Help Blue",
+      "concept": "CITADEL_PING_LANE_NEEDS_HELP",
+      "intent": "lane_needs_help",
+      "phrase": "Lane Needs Help Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_lane_needs_help_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 147,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Lane Needs Help Purple",
+      "concept": "CITADEL_PING_LANE_NEEDS_HELP",
+      "intent": "lane_needs_help",
+      "phrase": "Lane Needs Help Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_lane_needs_help_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 148,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Lane Needs Help",
+      "concept": "CITADEL_PING_LANE_NEEDS_HELP",
+      "intent": "lane_needs_help",
+      "phrase": "Lane Needs Help",
+      "label_token": "#citadel_chatwheel_message_lane_needs_help",
+      "message_token": "#citadel_chatwheel_message_lane_needs_help",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 149,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Hero Is Dead",
+      "concept": "CITADEL_PING_HERO_IS_DEAD",
+      "intent": "hero_is_dead",
+      "phrase": "Hero Is Dead",
+      "label_token": "#citadel_chatwheel_label_hero_is_dead",
+      "message_token": "#citadel_chatwheel_message_hero_is_dead",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 150,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Shop Closed",
+      "concept": "CITADEL_PING_SHOP_CLOSED",
+      "intent": "shop_closed",
+      "phrase": "Shop Closed",
+      "label_token": "#citadel_chatwheel_label_shop_closed",
+      "message_token": "#citadel_chatwheel_message_shop_closed",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 151,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Visit Shop",
+      "concept": "CITADEL_PING_VISIT_SHOP",
+      "intent": "visit_shop",
+      "phrase": "Visit Shop",
+      "label_token": "#citadel_chatwheel_label_visit_shop",
+      "message_token": "#citadel_chatwheel_message_visit_shop",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 152,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Ignore Shop",
+      "concept": "CITADEL_PING_IGNORE_SHOP",
+      "intent": "ignore_shop",
+      "phrase": "Ignore Shop",
+      "label_token": "#citadel_chatwheel_label_ignore_shop",
+      "message_token": "#citadel_chatwheel_message_ignore_shop",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 153,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "No Problem",
+      "concept": "CITADEL_PING_NO_PROBLEM",
+      "intent": "no_problem",
+      "phrase": "No Problem",
+      "label_token": "#citadel_chatwheel_no_problem",
+      "message_token": "#citadel_chatwheel_no_problem",
+      "triggers": [
+        "no problem",
+        "no worries",
+        "np"
+      ],
+      "responds_to": [
+        "CITADEL_PING_SORRY"
+      ],
+      "recipients": "k_ECitadelRecipients_RecipientsAroundPlayer",
+      "lane": "",
+      "option_id": 154,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Enemy Low Health",
+      "concept": "CITADEL_PING_ENEMY_LOW_HEALTH",
+      "intent": "enemy_low_health",
+      "phrase": "Enemy Low Health",
+      "label_token": "#citadel_chatwheel_label_enemy_low_health",
+      "message_token": "#citadel_chatwheel_message_enemy_low_health",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 155,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Door Here",
+      "concept": "CITADEL_PING_DOOR_HERE",
+      "intent": "door_here",
+      "phrase": "Door Here",
+      "label_token": "#citadel_chatwheel_label_door_here",
+      "message_token": "#citadel_chatwheel_message_door_here",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 156,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Hero Almost Respawned",
+      "concept": "CITADEL_PING_HERO_ALMOST_RESPAWNED",
+      "intent": "hero_almost_respawned",
+      "phrase": "Hero Almost Respawned",
+      "label_token": "#citadel_chatwheel_label_hero_almost_respawned",
+      "message_token": "#citadel_chatwheel_message_hero_almost_respawned",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 157,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Wait",
+      "concept": "CITADEL_PING_WAIT",
+      "intent": "wait",
+      "phrase": "Wait",
+      "label_token": "#citadel_chatwheel_label_HoldUp",
+      "message_token": "#citadel_chatwheel_message_HoldUp",
+      "triggers": [
+        "holup",
+        "stop",
+        "wait"
+      ],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 158,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Going to Corrupted Shop",
+      "concept": "CITADEL_PING_GOING_TO_CORRUPTED_SHOP",
+      "intent": "going_to_corrupted_shop",
+      "phrase": "Going to Corrupted Shop",
+      "label_token": "#citadel_chatwheel_label_going_corrupted_shop",
+      "message_token": "#citadel_chatwheel_message_going_corrupted_shop",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 159,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Visit the Corrupted Shop",
+      "concept": "CITADEL_PING_VISIT_CORRUPTED_SHOP",
+      "intent": "visit_corrupted_shop",
+      "phrase": "Visit the Corrupted Shop",
+      "label_token": "#citadel_chatwheel_label_going_corrupted_shop",
+      "message_token": "#citadel_chatwheel_message_going_corrupted_shop",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 160,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Ignore the Corrupted Shop",
+      "concept": "CITADEL_PING_IGNORE_CORRUPTED_SHOP",
+      "intent": "ignore_corrupted_shop",
+      "phrase": "Ignore the Corrupted Shop",
+      "label_token": "#citadel_chatwheel_label_ignore_corrupted_shop",
+      "message_token": "#citadel_chatwheel_message_ignore_corrupted_shop",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 161,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Guardian Needs Help Yellow",
+      "concept": "CITADEL_PING_GUARDIAN_NEEDS_HELP",
+      "intent": "guardian_needs_help",
+      "phrase": "Guardian Needs Help Yellow",
+      "label_token": "#citadel_chatwheel_label_lane_yellow",
+      "message_token": "#citadel_chatwheel_message_guardian_needs_help_yellow",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Yellow",
+      "option_id": 162,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Guardian Needs Help Green",
+      "concept": "CITADEL_PING_GUARDIAN_NEEDS_HELP",
+      "intent": "guardian_needs_help",
+      "phrase": "Guardian Needs Help Green",
+      "label_token": "#citadel_chatwheel_label_lane_green",
+      "message_token": "#citadel_chatwheel_message_guardian_needs_help_green",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Green",
+      "option_id": 163,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Guardian Needs Help Blue",
+      "concept": "CITADEL_PING_GUARDIAN_NEEDS_HELP",
+      "intent": "guardian_needs_help",
+      "phrase": "Guardian Needs Help Blue",
+      "label_token": "#citadel_chatwheel_label_lane_blue",
+      "message_token": "#citadel_chatwheel_message_guardian_needs_help_blue",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Blue",
+      "option_id": 164,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Guardian Needs Help Purple",
+      "concept": "CITADEL_PING_GUARDIAN_NEEDS_HELP",
+      "intent": "guardian_needs_help",
+      "phrase": "Guardian Needs Help Purple",
+      "label_token": "#citadel_chatwheel_label_lane_purple",
+      "message_token": "#citadel_chatwheel_message_guardian_needs_help_purple",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "Purple",
+      "option_id": 165,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Guardian Needs Help",
+      "concept": "CITADEL_PING_GUARDIAN_NEEDS_HELP",
+      "intent": "guardian_needs_help",
+      "phrase": "Guardian Needs Help",
+      "label_token": "#citadel_chatwheel_message_guardian_needs_help",
+      "message_token": "#citadel_chatwheel_message_guardian_needs_help",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 166,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Sinner's Here",
+      "concept": "CITADEL_PING_SINNERS_HERE",
+      "intent": "sinners_here",
+      "phrase": "Sinner's Here",
+      "label_token": "#citadel_chatwheel_label_sinners_here",
+      "message_token": "#citadel_chatwheel_message_sinners_here",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 167,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Enemy Taking Mid Boss",
+      "concept": "CITADEL_PING_ENEMY_TAKING_MIDBOSS",
+      "intent": "enemy_taking_midboss",
+      "phrase": "Enemy Taking Mid Boss",
+      "label_token": "#citadel_chatwheel_label_enemy_taking_midboss",
+      "message_token": "#citadel_chatwheel_message_enemy_taking_midboss",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 168,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Patron Under Attack",
+      "concept": "CITADEL_PING_PATRON_UNDER_ATTACK",
+      "intent": "patron_under_attack",
+      "phrase": "Patron Under Attack",
+      "label_token": "#citadel_chatwheel_label_patron_under_attack",
+      "message_token": "#citadel_chatwheel_message_patron_under_attack",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 169,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Loose Souls",
+      "concept": "CITADEL_PING_LOOSE_SOULS",
+      "intent": "loose_souls",
+      "phrase": "Loose Souls",
+      "label_token": "#citadel_chatwheel_label_loose_souls",
+      "message_token": "#citadel_chatwheel_message_loose_souls",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 170,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "OK",
+      "concept": "CITADEL_PING_OK",
+      "intent": "ok",
+      "phrase": "OK",
+      "label_token": "#citadel_chatwheel_label_OK",
+      "message_token": "#citadel_chatwheel_message_OK",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 171,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Look Here",
+      "concept": "CITADEL_PING_LOOK_HERE",
+      "intent": "look_here",
+      "phrase": "Look Here",
+      "label_token": "#citadel_chatwheel_label_LookHere",
+      "message_token": "#citadel_chatwheel_message_LookHere",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 172,
+      "basis": "expected",
+      "conclusive": false
+    },
+    {
+      "name": "Someone Was Here",
+      "concept": "CITADEL_PING_SOMEONE_WAS_HERE",
+      "intent": "someone_was_here",
+      "phrase": "Someone Was Here",
+      "label_token": "#citadel_chatwheel_label_someone_was_here",
+      "message_token": "#citadel_chatwheel_message_someone_was_here",
+      "triggers": [],
+      "responds_to": [],
+      "recipients": "",
+      "lane": "",
+      "option_id": 173,
+      "basis": "expected",
+      "conclusive": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "CITADEL_PING_ARE_YOU_READY",
+      "intent": "are_you_ready",
+      "phrases": [
+        "Are You Ready"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_ATTACK_ENEMY",
+      "intent": "attack_enemy",
+      "phrases": [
+        "Attack Hero"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_ATTACK_HERE",
+      "intent": "attack_here",
+      "phrases": [
+        "Attack Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_BRIDGE_BUFF_HERE",
+      "intent": "bridge_buff_here",
+      "phrases": [
+        "Bridge Buff Is Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_BUYING_THIS",
+      "intent": "buying_this",
+      "phrases": [
+        "Buying This"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_CAREFUL",
+      "intent": "careful",
+      "phrases": [
+        "Careful"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_CLEAR_TROOPERS",
+      "intent": "clear_troopers",
+      "phrases": [
+        "I'll Clear Troopers"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DANGER_AREA",
+      "intent": "danger_area",
+      "phrases": [
+        "Its Dangerous"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DEFEND_BASE_GUARDIAN",
+      "intent": "defend_base_guardian",
+      "phrases": [
+        "Defend Base Guardian",
+        "Defend Base Guardian Yellow",
+        "Defend Base Guardian Blue",
+        "Defend Base Guardian Green",
+        "Defend Base Guardian Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DEFEND_GUARDIAN",
+      "intent": "defend_guardian",
+      "phrases": [
+        "Defend Guardian",
+        "Defend Guardian Yellow",
+        "Defend Guardian Blue",
+        "Defend Guardian Green",
+        "Defend Guardian Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DEFEND_HERE",
+      "intent": "defend_here",
+      "phrases": [
+        "Defend Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DEFEND_LANE",
+      "intent": "defend_lane",
+      "phrases": [
+        "Defend Lane",
+        "Defend Yellow",
+        "Defend Green",
+        "Defend Blue",
+        "Defend Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DEFEND_PATRON",
+      "intent": "defend_patron",
+      "phrases": [
+        "Defend Patron"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DEFEND_SHRINE",
+      "intent": "defend_shrine",
+      "phrases": [
+        "Defend Shrine"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DEFEND_WALKER",
+      "intent": "defend_walker",
+      "phrases": [
+        "Defend Walker",
+        "Defend Walker Yellow",
+        "Defend Walker Blue",
+        "Defend Walker Green",
+        "Defend Walker Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DONT_BUY_THIS",
+      "intent": "dont_buy_this",
+      "phrases": [
+        "Dont Buy This"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DONT_OVEREXTEND",
+      "intent": "dont_overextend",
+      "phrases": [
+        "Dont Overextend"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_DOOR_HERE",
+      "intent": "door_here",
+      "phrases": [
+        "Door Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_ENEMY_LOW_HEALTH",
+      "intent": "enemy_low_health",
+      "phrases": [
+        "Enemy Low Health"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_ENEMY_PLAYER",
+      "intent": "enemy_player",
+      "phrases": [
+        "Pinged Enemy Player"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_ENEMY_STEALING_FARM",
+      "intent": "enemy_stealing_farm",
+      "phrases": [
+        "Enemy Is Stealing Farm"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_ENEMY_TAKING_MIDBOSS",
+      "intent": "enemy_taking_midboss",
+      "phrases": [
+        "Enemy Taking Mid Boss"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_FLANK",
+      "intent": "flank",
+      "phrases": [
+        "Flank"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_IN",
+      "intent": "going_in",
+      "phrases": [
+        "Going In"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_TO_BASE",
+      "intent": "going_to_base",
+      "phrases": [
+        "Going To Base"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_TO_BRIDGE_BUFF",
+      "intent": "going_to_bridge_buff",
+      "phrases": [
+        "Going To Bridge Buff"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_TO_CORRUPTED_SHOP",
+      "intent": "going_to_corrupted_shop",
+      "phrases": [
+        "Going to Corrupted Shop"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_TO_DEFEND",
+      "intent": "going_to_defend",
+      "phrases": [
+        "Going To Defend"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_TO_FARM",
+      "intent": "going_to_farm",
+      "phrases": [
+        "Go Farm"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_TO_GANK",
+      "intent": "going_to_gank",
+      "phrases": [
+        "Going to Gank"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_TO_PUSH",
+      "intent": "going_to_push",
+      "phrases": [
+        "Going To Push"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_TO_RAT",
+      "intent": "going_to_rat",
+      "phrases": [
+        "Go Rat"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_TO_SHOP",
+      "intent": "going_to_shop",
+      "phrases": [
+        "Going to Shop"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOING_TO_URN",
+      "intent": "going_to_urn",
+      "phrases": [
+        "Going To Urn"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOODJOB_ALLCHAT",
+      "intent": "goodjob_allchat",
+      "phrases": [
+        "Good Job (Post Game) - All Chat"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOOD_GAME_ALLCHAT",
+      "intent": "good_game_allchat",
+      "phrases": [
+        "Good Game (Post Game) - All Chat"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GOOD_JOB",
+      "intent": "good_job",
+      "phrases": [
+        "Good Job"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_GUARDIAN_NEEDS_HELP",
+      "intent": "guardian_needs_help",
+      "phrases": [
+        "Guardian Needs Help Yellow",
+        "Guardian Needs Help Green",
+        "Guardian Needs Help Blue",
+        "Guardian Needs Help Purple",
+        "Guardian Needs Help"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_HAVE_HEAL",
+      "intent": "have_heal",
+      "phrases": [
+        "Can Heal"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_HAVE_THIS_ITEM",
+      "intent": "have_this_item",
+      "phrases": [
+        "Have This Item"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_HEADED_TO_BASE",
+      "intent": "headed_to_base",
+      "phrases": [
+        "Headed To Shop/Base"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_HEADING_HERE",
+      "intent": "heading_here",
+      "phrases": [
+        "Heading Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_HEADING_TO_LANE",
+      "intent": "heading_to_lane",
+      "phrases": [
+        "Heading to Yellow Subnav",
+        "Heading to Green Subnav",
+        "Headed to Blue Subnav",
+        "Headed to Purple Subnav",
+        "Headed to Lane"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_HELP",
+      "intent": "help",
+      "phrases": [
+        "Help",
+        "Help Yellow",
+        "Help Blue",
+        "Help Green",
+        "Help Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_HELP_WITH_IDOL",
+      "intent": "help_with_idol",
+      "phrases": [
+        "Help With Idol"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_HERO_ALMOST_RESPAWNED",
+      "intent": "hero_almost_respawned",
+      "phrases": [
+        "Hero Almost Respawned"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_HERO_IS_DEAD",
+      "intent": "hero_is_dead",
+      "phrases": [
+        "Hero Is Dead"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_IDOL",
+      "intent": "idol",
+      "phrases": [
+        "Urn Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_IGNORE_CORRUPTED_SHOP",
+      "intent": "ignore_corrupted_shop",
+      "phrases": [
+        "Ignore the Corrupted Shop"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_IGNORE_HERO",
+      "intent": "ignore_hero",
+      "phrases": [
+        "Ignore Hero"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_IGNORE_SHOP",
+      "intent": "ignore_shop",
+      "phrases": [
+        "Ignore Shop"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_IM_LEAVING",
+      "intent": "im_leaving",
+      "phrases": [
+        "Im Leaving"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_IM_WITH_YOU",
+      "intent": "im_with_you",
+      "phrases": [
+        "Im With You"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_ITEM_GOOD_PICK",
+      "intent": "item_good_pick",
+      "phrases": [
+        "Item Good Pick"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_KOTH_RIFT_EMERGING",
+      "intent": "koth_rift_emerging",
+      "phrases": [
+        "The Rift is Emerging",
+        "The Rift is Emerging Yellow",
+        "The Rift is Emerging Blue",
+        "The Rift is Emerging Green",
+        "The Rift is Emerging Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_KOTH_RIFT_HERE",
+      "intent": "koth_rift_here",
+      "phrases": [
+        "The Rift is Here",
+        "The Rift is Here Yellow",
+        "The Rift is Here Blue",
+        "The Rift is Here Green",
+        "The Rift is Here Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_LANE_NEEDS_HELP",
+      "intent": "lane_needs_help",
+      "phrases": [
+        "Lane Needs Help Yellow",
+        "Lane Needs Help Green",
+        "Lane Needs Help Blue",
+        "Lane Needs Help Purple",
+        "Lane Needs Help"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_LEAVE_AREA",
+      "intent": "leave_area",
+      "phrases": [
+        "Leave Area"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_LETS_GO_THIS_WAY",
+      "intent": "lets_go_this_way",
+      "phrases": [
+        "Let's Go This Way"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_LETS_HIDE",
+      "intent": "lets_hide",
+      "phrases": [
+        "Lets Hide Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_LETS_TAKE_MIDBOSS",
+      "intent": "lets_take_midboss",
+      "phrases": [
+        "Let's Take Mid Boss"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_LOOK_HERE",
+      "intent": "look_here",
+      "phrases": [
+        "Look Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_LOOSE_SOULS",
+      "intent": "loose_souls",
+      "phrases": [
+        "Loose Souls"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_MEET_HERE",
+      "intent": "meet_here",
+      "phrases": [
+        "Meet Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_MID_BOSS_HERE",
+      "intent": "mid_boss_here",
+      "phrases": [
+        "Mid Boss is Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_MISSING",
+      "intent": "missing",
+      "phrases": [
+        "Missing"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_NEED_COVER",
+      "intent": "need_cover",
+      "phrases": [
+        "Need Cover"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_NEED_HEAL",
+      "intent": "need_heal",
+      "phrases": [
+        "Need Heal"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_NEED_PLAN",
+      "intent": "need_plan",
+      "phrases": [
+        "Need Plan"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_NEVERMIND",
+      "intent": "nevermind",
+      "phrases": [
+        "Nevermind"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_NO",
+      "intent": "no",
+      "phrases": [
+        "No"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_NO_PROBLEM",
+      "intent": "no_problem",
+      "phrases": [
+        "No Problem"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_NO_TEAMFIGHT",
+      "intent": "no_teamfight",
+      "phrases": [
+        "No Teamfight"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_OK",
+      "intent": "ok",
+      "phrases": [
+        "OK"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_ON_MY_WAY",
+      "intent": "on_my_way",
+      "phrases": [
+        "On My Way"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_PATRON_UNDER_ATTACK",
+      "intent": "patron_under_attack",
+      "phrases": [
+        "Patron Under Attack"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_PREGAME",
+      "intent": "pregame",
+      "phrases": [
+        "Pregame Pings"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_PRESS_ADVANTAGE",
+      "intent": "press_advantage",
+      "phrases": [
+        "Press The Advantage"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_PUSH_BASE_GUARDIAN",
+      "intent": "push_base_guardian",
+      "phrases": [
+        "Push Base Guardian",
+        "Push Base Guardian Yellow",
+        "Push Base Guardian Blue",
+        "Push Base Guardian Green",
+        "Push Base Guardian Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_PUSH_GUARDIAN",
+      "intent": "push_guardian",
+      "phrases": [
+        "Push Guardian",
+        "Push Guardian Yellow",
+        "Push Guardian Blue",
+        "Push Guardian Green",
+        "Push Guardian Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_PUSH_LANE",
+      "intent": "push_lane",
+      "phrases": [
+        "Push Lane",
+        "Push Yellow",
+        "Push Green",
+        "Push Blue",
+        "Push Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_PUSH_PATRON",
+      "intent": "push_patron",
+      "phrases": [
+        "Push Patron"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_PUSH_SHRINE",
+      "intent": "push_shrine",
+      "phrases": [
+        "Push Shrine"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_PUSH_WALKER",
+      "intent": "push_walker",
+      "phrases": [
+        "Push Walker",
+        "Push Walker Yellow",
+        "Push Walker Blue",
+        "Push Walker Green",
+        "Push Walker Purple"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_REJUV_DROP",
+      "intent": "rejuv_drop",
+      "phrases": [
+        "Rejuv Drop"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_REQUEST_FOLLOW",
+      "intent": "request_follow",
+      "phrases": [
+        "Request Follow"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_RETREAT",
+      "intent": "retreat",
+      "phrases": [
+        "Retreat"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_SHOP_CLOSED",
+      "intent": "shop_closed",
+      "phrases": [
+        "Shop Closed"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_SINNERS_HERE",
+      "intent": "sinners_here",
+      "phrases": [
+        "Sinner's Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_SOMEONE_BUY_THIS",
+      "intent": "someone_buy_this",
+      "phrases": [
+        "Someone Buy This"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_SOMEONE_WAS_HERE",
+      "intent": "someone_was_here",
+      "phrases": [
+        "Someone Was Here"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_SORRY",
+      "intent": "sorry",
+      "phrases": [
+        "Sorry"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_SPLIT_PUSH",
+      "intent": "split_push",
+      "phrases": [
+        "Split Push"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_STAY_TOGETHER",
+      "intent": "stay_together",
+      "phrases": [
+        "Stay Together"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_STEAL_THEIR_FARM",
+      "intent": "steal_their_farm",
+      "phrases": [
+        "Steal Farm"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_STICK_WITH_ME",
+      "intent": "stick_with_me",
+      "phrases": [
+        "Stick With Me"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_STOP_URN",
+      "intent": "stop_urn",
+      "phrases": [
+        "Enemy Has The Urn"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_TEAMMATE",
+      "intent": "teammate",
+      "phrases": [
+        "Pinged Teammate"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_THANKS_ALLCHAT",
+      "intent": "thanks_allchat",
+      "phrases": [
+        "Thanks (Post Game) - All Chat"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_THANK_YOU",
+      "intent": "thank_you",
+      "phrases": [
+        "Thanks"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_ULTIMATE_ON_COOLDOWN",
+      "intent": "ultimate_on_cooldown",
+      "phrases": [
+        "Ultimate On Cooldown"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_ULTIMATE_READY",
+      "intent": "ultimate_ready",
+      "phrases": [
+        "Ultimate Ready"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_URN_HELP",
+      "intent": "urn_help",
+      "phrases": [
+        "Help Deliver The Urn"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_VISIT_CORRUPTED_SHOP",
+      "intent": "visit_corrupted_shop",
+      "phrases": [
+        "Visit the Corrupted Shop"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_VISIT_SHOP",
+      "intent": "visit_shop",
+      "phrases": [
+        "Visit Shop"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_WAIT",
+      "intent": "wait",
+      "phrases": [
+        "Wait"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_WATCH_OUT",
+      "intent": "watch_out",
+      "phrases": [
+        "Watch Out"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_WELL_PLAYED_ALLCHAT",
+      "intent": "well_played_allchat",
+      "phrases": [
+        "Well Played (Post Game) - All Chat"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_YES",
+      "intent": "yes",
+      "phrases": [
+        "Yes"
+      ]
+    },
+    {
+      "concept": "CITADEL_PING_YOURE_WELCOME",
+      "intent": "youre_welcome",
+      "phrases": [
+        "You're Welcome"
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "text": "gg",
+      "entries": [
+        "Good Game (Post Game) - All Chat"
+      ]
+    },
+    {
+      "text": "gg wp",
+      "entries": [
+        "Good Game (Post Game) - All Chat"
+      ]
+    },
+    {
+      "text": "ggwp",
+      "entries": [
+        "Good Game (Post Game) - All Chat"
+      ]
+    },
+    {
+      "text": "gj",
+      "entries": [
+        "Good Job"
+      ]
+    },
+    {
+      "text": "good game",
+      "entries": [
+        "Good Game (Post Game) - All Chat"
+      ]
+    },
+    {
+      "text": "good job",
+      "entries": [
+        "Good Job"
+      ]
+    },
+    {
+      "text": "holup",
+      "entries": [
+        "Wait"
+      ]
+    },
+    {
+      "text": "nj",
+      "entries": [
+        "Good Job"
+      ]
+    },
+    {
+      "text": "no problem",
+      "entries": [
+        "No Problem"
+      ]
+    },
+    {
+      "text": "no worries",
+      "entries": [
+        "No Problem"
+      ]
+    },
+    {
+      "text": "np",
+      "entries": [
+        "No Problem"
+      ]
+    },
+    {
+      "text": "sorry",
+      "entries": [
+        "Sorry"
+      ]
+    },
+    {
+      "text": "sry",
+      "entries": [
+        "Sorry"
+      ]
+    },
+    {
+      "text": "stop",
+      "entries": [
+        "Wait"
+      ]
+    },
+    {
+      "text": "thank you",
+      "entries": [
+        "Thanks"
+      ]
+    },
+    {
+      "text": "thanks",
+      "entries": [
+        "Thanks"
+      ]
+    },
+    {
+      "text": "thx",
+      "entries": [
+        "Thanks"
+      ]
+    },
+    {
+      "text": "ty",
+      "entries": [
+        "Thanks"
+      ]
+    },
+    {
+      "text": "wait",
+      "entries": [
+        "Wait"
+      ]
+    },
+    {
+      "text": "well played",
+      "entries": [
+        "Well Played (Post Game) - All Chat"
+      ]
+    },
+    {
+      "text": "wp",
+      "entries": [
+        "Well Played (Post Game) - All Chat"
+      ]
+    }
+  ]
+}
