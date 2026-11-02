@@ -1,0 +1,170 @@
+# Ping-wheel expectations, compiled by tools/ping_wheel_ingest.py - do not hand-edit.
+# basis=expected, conclusive=false: an idea for a wish or a line, never a
+# claim that the world implements it.
+name	concept	intent	phrase	label_token	message_token	triggers	responds_to	recipients	lane	option_id	basis	conclusive
+Going In	CITADEL_PING_GOING_IN	going_in	Going In	#citadel_chatwheel_label_GoingIn	#citadel_chatwheel_label_GoingIn			k_ECitadelRecipients_GlobalFriendlyTeam		1	expected	false
+Help	CITADEL_PING_HELP	help	Help	#citadel_chatwheel_label_Help	#citadel_chatwheel_message_Help					2	expected	false
+Yes	CITADEL_PING_YES	yes	Yes	#citadel_chatwheel_label_Yes	#citadel_chatwheel_message_Yes		CITADEL_PING_ATTACK_ENEMY,CITADEL_PING_GET_BACK,CITADEL_PING_HELP_WITH_IDOL,CITADEL_PING_REQUEST_FOLLOW,CITADEL_PING_RETREAT,CITADEL_PING_STAY_TOGETHER			3	expected	false
+Thanks	CITADEL_PING_THANK_YOU	thank_you	Thanks	#citadel_chatwheel_label_thanks	#citadel_chatwheel_label_thanks	thank you,thanks,thx,ty		k_ECitadelRecipients_GlobalFriendlyTeam		4	expected	false
+Retreat	CITADEL_PING_RETREAT	retreat	Retreat	#citadel_chatwheel_label_retreat	#citadel_chatwheel_label_retreat					5	expected	false
+Stay Together	CITADEL_PING_STAY_TOGETHER	stay_together	Stay Together	#citadel_chatwheel_label_StayTogether	#citadel_chatwheel_message_StayTogether					6	expected	false
+Defend Lane	CITADEL_PING_DEFEND_LANE	defend_lane	Defend Lane	#citadel_chatwheel_label_Defend	#citadel_chatwheel_message_Defend					7	expected	false
+Defend Yellow	CITADEL_PING_DEFEND_LANE	defend_lane	Defend Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_Defend_Yellow				Yellow	8	expected	false
+Defend Green	CITADEL_PING_DEFEND_LANE	defend_lane	Defend Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_Defend_Green				Green	9	expected	false
+Defend Blue	CITADEL_PING_DEFEND_LANE	defend_lane	Defend Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_Defend_Blue				Blue	10	expected	false
+Defend Purple	CITADEL_PING_DEFEND_LANE	defend_lane	Defend Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_Defend_Purple				Purple	11	expected	false
+Headed To Shop/Base	CITADEL_PING_HEADED_TO_BASE	headed_to_base	Headed To Shop/Base	#citadel_chatwheel_label_BRB	#citadel_chatwheel_message_BRB					12	expected	false
+No	CITADEL_PING_NO	no	No	#citadel_chatwheel_label_No	#citadel_chatwheel_label_No					17	expected	false
+Good Job	CITADEL_PING_GOOD_JOB	good_job	Good Job	#citadel_chatwheel_label_GoodJob	#citadel_chatwheel_message_GoodJob	gj,good job,nj		k_ECitadelRecipients_RecipientsAroundPlayer		18	expected	false
+Good Game (Post Game) - All Chat	CITADEL_PING_GOOD_GAME_ALLCHAT	good_game_allchat	Good Game (Post Game) - All Chat	#citadel_chatwheel_label_GoodGame	#citadel_chatwheel_message_GoodGame	gg,gg wp,ggwp,good game		k_ECitadelRecipients_GlobalAllChat		19	expected	false
+Well Played (Post Game) - All Chat	CITADEL_PING_WELL_PLAYED_ALLCHAT	well_played_allchat	Well Played (Post Game) - All Chat	#citadel_chatwheel_label_WellPlayed	#citadel_chatwheel_message_WellPlayed	well played,wp		k_ECitadelRecipients_GlobalAllChat		20	expected	false
+Thanks (Post Game) - All Chat	CITADEL_PING_THANKS_ALLCHAT	thanks_allchat	Thanks (Post Game) - All Chat	#citadel_chatwheel_label_thanksGameOver	#citadel_chatwheel_message_thanksGameOver			k_ECitadelRecipients_GlobalFriendlyTeam		21	expected	false
+Good Job (Post Game) - All Chat	CITADEL_PING_GOODJOB_ALLCHAT	goodjob_allchat	Good Job (Post Game) - All Chat	#citadel_chatwheel_label_GoodJobGameOver	#citadel_chatwheel_message_GoodJobGameOver			k_ECitadelRecipients_GlobalAllChat		22	expected	false
+On My Way	CITADEL_PING_ON_MY_WAY	on_my_way	On My Way	#citadel_chatwheel_label_OMW	#citadel_chatwheel_label_OMW		CITADEL_PING_DEFEND_BASE_GUARDIAN,CITADEL_PING_DEFEND_GUARDIAN,CITADEL_PING_DEFEND_LANE,CITADEL_PING_DEFEND_PATRON,CITADEL_PING_DEFEND_SHRINE,CITADEL_PING_DEFEND_WALKER,CITADEL_PING_HEADING_TO_LANE,CITADEL_PING_IDOL,CITADEL_PING_LETS_GO_THIS_WAY,CITADEL_PING_LETS_TAKE_MIDBOSS,CITADEL_PING_MEET_HERE,CITADEL_PING_PUSH_BASE_GUARDIAN,CITADEL_PING_PUSH_GUARDIAN,CITADEL_PING_PUSH_LANE,CITADEL_PING_PUSH_PATRON,CITADEL_PING_PUSH_SHRINE,CITADEL_PING_PUSH_WALKER			23	expected	false
+Push Lane	CITADEL_PING_PUSH_LANE	push_lane	Push Lane	#citadel_chatwheel_label_Push	#citadel_chatwheel_message_Push					24	expected	false
+Push Yellow	CITADEL_PING_PUSH_LANE	push_lane	Push Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_push_yellow				Yellow	25	expected	false
+Push Green	CITADEL_PING_PUSH_LANE	push_lane	Push Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_push_green				Green	26	expected	false
+Push Blue	CITADEL_PING_PUSH_LANE	push_lane	Push Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_push_blue				Blue	27	expected	false
+Push Purple	CITADEL_PING_PUSH_LANE	push_lane	Push Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_push_purple				Purple	28	expected	false
+Pinged Enemy Player	CITADEL_PING_ENEMY_PLAYER	enemy_player	Pinged Enemy Player	#ping_see	#ping_see					29	expected	false
+Pinged Teammate	CITADEL_PING_TEAMMATE	teammate	Pinged Teammate	#ping_careful	#ping_careful			k_ECitadelRecipients_RecipientAndPlayer		30	expected	false
+Missing	CITADEL_PING_MISSING	missing	Missing	#citadel_chatwheel_label_missing	#citadel_chatwheel_message_missing_hero					31	expected	false
+Need Heal	CITADEL_PING_NEED_HEAL	need_heal	Need Heal	#citadel_chatwheel_need_heal	#citadel_chatwheel_heal_please			k_ECitadelRecipients_RecipientsAroundPlayer		32	expected	false
+Can Heal	CITADEL_PING_HAVE_HEAL	have_heal	Can Heal	#citadel_chatwheel_have_heal	#citadel_chatwheel_can_heal			k_ECitadelRecipients_RecipientsAroundPlayer		33	expected	false
+Need Plan	CITADEL_PING_NEED_PLAN	need_plan	Need Plan	#citadel_chatwheel_label_need_plan	#citadel_chatwheel_need_plan					34	expected	false
+Heading to Yellow Subnav	CITADEL_PING_HEADING_TO_LANE	heading_to_lane	Heading to Yellow Subnav	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_HeadedToYellow				Yellow	38	expected	false
+Heading to Green Subnav	CITADEL_PING_HEADING_TO_LANE	heading_to_lane	Heading to Green Subnav	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_HeadedToGreen				Green	39	expected	false
+Headed to Blue Subnav	CITADEL_PING_HEADING_TO_LANE	heading_to_lane	Headed to Blue Subnav	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_HeadedToBlue				Blue	40	expected	false
+Headed to Purple Subnav	CITADEL_PING_HEADING_TO_LANE	heading_to_lane	Headed to Purple Subnav	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_HeadedToPurple				Purple	41	expected	false
+Headed to Lane	CITADEL_PING_HEADING_TO_LANE	heading_to_lane	Headed to Lane	#citadel_chatwheel_message_headed_to_lane	#citadel_chatwheel_message_heading_to_lane_generic					42	expected	false
+Help With Idol	CITADEL_PING_HELP_WITH_IDOL	help_with_idol	Help With Idol	#citadel_chatwheel_help_with_idol_label	#citadel_chatwheel_help_with_idol_message					43	expected	false
+You're Welcome	CITADEL_PING_YOURE_WELCOME	youre_welcome	You're Welcome	#citadel_chatwheel_youre_welcome	#citadel_chatwheel_youre_welcome		CITADEL_PING_THANK_YOU	k_ECitadelRecipients_RecipientsAroundPlayer		44	expected	false
+Sorry	CITADEL_PING_SORRY	sorry	Sorry	#citadel_chatwheel_sorry	#citadel_chatwheel_sorry	sorry,sry				45	expected	false
+Going to Shop	CITADEL_PING_GOING_TO_SHOP	going_to_shop	Going to Shop	#citadel_chatwheel_label_going_shop	#citadel_chatwheel_message_going_shop					46	expected	false
+Request Follow	CITADEL_PING_REQUEST_FOLLOW	request_follow	Request Follow	#citadel_chatwheel_message_Request_Follow	#citadel_chatwheel_message_Request_Follow					47	expected	false
+Going to Gank	CITADEL_PING_GOING_TO_GANK	going_to_gank	Going to Gank	#citadel_chatwheel_message_gank	#citadel_chatwheel_message_gank					48	expected	false
+Rejuv Drop	CITADEL_PING_REJUV_DROP	rejuv_drop	Rejuv Drop	#citadel_chatwheel_label_Rejuv_Drop	#citadel_chatwheel_message_Rejuv_Drop					49	expected	false
+Need Cover	CITADEL_PING_NEED_COVER	need_cover	Need Cover	#citadel_chatwheel_label_need_cover	#citadel_chatwheel_message_need_cover					50	expected	false
+Nevermind	CITADEL_PING_NEVERMIND	nevermind	Nevermind	#citadel_chatwheel_label_nevermind	#citadel_chatwheel_message_nevermind					51	expected	false
+No Teamfight	CITADEL_PING_NO_TEAMFIGHT	no_teamfight	No Teamfight	#citadel_chatwheel_label_no_teamfight	#citadel_chatwheel_message_no_teamfight					52	expected	false
+Press The Advantage	CITADEL_PING_PRESS_ADVANTAGE	press_advantage	Press The Advantage	#citadel_chatwheel_label_press_advantage	#citadel_chatwheel_message_press_advantage					53	expected	false
+Lets Hide Here	CITADEL_PING_LETS_HIDE	lets_hide	Lets Hide Here	#citadel_chatwheel_label_lets_hide	#citadel_chatwheel_message_lets_hide					54	expected	false
+Its Dangerous	CITADEL_PING_DANGER_AREA	danger_area	Its Dangerous	#citadel_chatwheel_label_danger_area	#citadel_chatwheel_message_danger_area					55	expected	false
+I'll Clear Troopers	CITADEL_PING_CLEAR_TROOPERS	clear_troopers	I'll Clear Troopers	#citadel_chatwheel_label_clear_troopers	#citadel_chatwheel_message_clear_troopers					56	expected	false
+Meet Here	CITADEL_PING_MEET_HERE	meet_here	Meet Here	#citadel_chatwheel_label_meet_here	#citadel_chatwheel_message_meet_here					57	expected	false
+Flank	CITADEL_PING_FLANK	flank	Flank	#citadel_chatwheel_label_flank	#citadel_chatwheel_message_flank					58	expected	false
+Pregame Pings	CITADEL_PING_PREGAME	pregame	Pregame Pings					k_ECitadelRecipients_GlobalAllChat		59	expected	false
+Leave Area	CITADEL_PING_LEAVE_AREA	leave_area	Leave Area	#citadel_chatwheel_label_leaving_area	#citadel_chatwheel_message_leaving_area			k_ECitadelRecipients_RecipientsAroundPlayer		60	expected	false
+Go Farm	CITADEL_PING_GOING_TO_FARM	going_to_farm	Go Farm	#citadel_chatwheel_label_going_farm	#citadel_chatwheel_message_going_farm					61	expected	false
+Steal Farm	CITADEL_PING_STEAL_THEIR_FARM	steal_their_farm	Steal Farm	#citadel_chatwheel_label_steal_farm	#citadel_chatwheel_message_steal_farm					62	expected	false
+Go Rat	CITADEL_PING_GOING_TO_RAT	going_to_rat	Go Rat	#citadel_chatwheel_label_GoingToRat	#citadel_chatwheel_message_GoingToRat					63	expected	false
+Split Push	CITADEL_PING_SPLIT_PUSH	split_push	Split Push	#citadel_chatwheel_label_split_push	#citadel_chatwheel_message_split_push					64	expected	false
+Im Leaving	CITADEL_PING_IM_LEAVING	im_leaving	Im Leaving	#citadel_chatwheel_label_im_leaving	#citadel_chatwheel_message_im_leaving					65	expected	false
+Dont Overextend	CITADEL_PING_DONT_OVEREXTEND	dont_overextend	Dont Overextend	#citadel_chatwheel_label_overextend	#citadel_chatwheel_message_overextend					66	expected	false
+Enemy Is Stealing Farm	CITADEL_PING_ENEMY_STEALING_FARM	enemy_stealing_farm	Enemy Is Stealing Farm	#citadel_chatwheel_label_enemy_stealing_farm	#citadel_chatwheel_message_enemy_stealing_farm					67	expected	false
+The Rift is Emerging	CITADEL_PING_KOTH_RIFT_EMERGING	koth_rift_emerging	The Rift is Emerging	#citadel_chatwheel_label_koth_rift_emerging	#citadel_chatwheel_message_koth_rift_emerging					68	expected	false
+The Rift is Here	CITADEL_PING_KOTH_RIFT_HERE	koth_rift_here	The Rift is Here	#citadel_chatwheel_label_koth_rift_here	#citadel_chatwheel_message_koth_rift_here					69	expected	false
+Mid Boss is Here	CITADEL_PING_MID_BOSS_HERE	mid_boss_here	Mid Boss is Here	#citadel_chatwheel_label_mid_boss_here	#citadel_chatwheel_message_mid_boss_here					70	expected	false
+Let's Take Mid Boss	CITADEL_PING_LETS_TAKE_MIDBOSS	lets_take_midboss	Let's Take Mid Boss	#citadel_chatwheel_label_lets_take_midboss	#citadel_chatwheel_message_lets_take_midboss					71	expected	false
+Bridge Buff Is Here	CITADEL_PING_BRIDGE_BUFF_HERE	bridge_buff_here	Bridge Buff Is Here	#citadel_chatwheel_label_bridge_buff_here	#citadel_chatwheel_message_bridge_buff_here					72	expected	false
+Let's Go This Way	CITADEL_PING_LETS_GO_THIS_WAY	lets_go_this_way	Let's Go This Way	#citadel_chatwheel_label_lets_go_this_way	#citadel_chatwheel_message_lets_go_this_way					73	expected	false
+Push Guardian	CITADEL_PING_PUSH_GUARDIAN	push_guardian	Push Guardian	#citadel_chatwheel_label_push_guardian	#citadel_chatwheel_message_push_guardian					74	expected	false
+Push Guardian Yellow	CITADEL_PING_PUSH_GUARDIAN	push_guardian	Push Guardian Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_push_guardian_yellow				Yellow	75	expected	false
+Push Guardian Blue	CITADEL_PING_PUSH_GUARDIAN	push_guardian	Push Guardian Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_push_guardian_blue				Blue	76	expected	false
+Push Guardian Green	CITADEL_PING_PUSH_GUARDIAN	push_guardian	Push Guardian Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_push_guardian_green				Green	77	expected	false
+Push Guardian Purple	CITADEL_PING_PUSH_GUARDIAN	push_guardian	Push Guardian Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_push_guardian_purple				Purple	78	expected	false
+Defend Guardian	CITADEL_PING_DEFEND_GUARDIAN	defend_guardian	Defend Guardian	#citadel_chatwheel_label_defend_guardian	#citadel_chatwheel_message_defend_guardian					79	expected	false
+Defend Guardian Yellow	CITADEL_PING_DEFEND_GUARDIAN	defend_guardian	Defend Guardian Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_defend_guardian_yellow				Yellow	80	expected	false
+Defend Guardian Blue	CITADEL_PING_DEFEND_GUARDIAN	defend_guardian	Defend Guardian Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_defend_guardian_blue				Blue	81	expected	false
+Defend Guardian Green	CITADEL_PING_DEFEND_GUARDIAN	defend_guardian	Defend Guardian Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_defend_guardian_green				Green	82	expected	false
+Defend Guardian Purple	CITADEL_PING_DEFEND_GUARDIAN	defend_guardian	Defend Guardian Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_defend_guardian_purple				Purple	83	expected	false
+Push Walker	CITADEL_PING_PUSH_WALKER	push_walker	Push Walker	#citadel_chatwheel_label_push_walker	#citadel_chatwheel_message_push_walker					84	expected	false
+Push Walker Yellow	CITADEL_PING_PUSH_WALKER	push_walker	Push Walker Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_push_walker_yellow				Yellow	85	expected	false
+Push Walker Blue	CITADEL_PING_PUSH_WALKER	push_walker	Push Walker Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_push_walker_blue				Blue	86	expected	false
+Push Walker Green	CITADEL_PING_PUSH_WALKER	push_walker	Push Walker Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_push_walker_green				Green	87	expected	false
+Push Walker Purple	CITADEL_PING_PUSH_WALKER	push_walker	Push Walker Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_push_walker_purple				Purple	88	expected	false
+Defend Walker	CITADEL_PING_DEFEND_WALKER	defend_walker	Defend Walker	#citadel_chatwheel_label_defend_walker	#citadel_chatwheel_message_defend_walker					89	expected	false
+Defend Walker Yellow	CITADEL_PING_DEFEND_WALKER	defend_walker	Defend Walker Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_defend_walker_yellow				Yellow	90	expected	false
+Defend Walker Blue	CITADEL_PING_DEFEND_WALKER	defend_walker	Defend Walker Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_defend_walker_blue				Blue	91	expected	false
+Defend Walker Green	CITADEL_PING_DEFEND_WALKER	defend_walker	Defend Walker Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_defend_walker_green				Green	92	expected	false
+Defend Walker Purple	CITADEL_PING_DEFEND_WALKER	defend_walker	Defend Walker Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_defend_walker_purple				Purple	93	expected	false
+Push Base Guardian	CITADEL_PING_PUSH_BASE_GUARDIAN	push_base_guardian	Push Base Guardian	#citadel_chatwheel_label_push_base_guardian	#citadel_chatwheel_message_push_base_guardian					94	expected	false
+Push Base Guardian Yellow	CITADEL_PING_PUSH_BASE_GUARDIAN	push_base_guardian	Push Base Guardian Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_push_base_guardian_yellow				Yellow	95	expected	false
+Push Base Guardian Blue	CITADEL_PING_PUSH_BASE_GUARDIAN	push_base_guardian	Push Base Guardian Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_push_base_guardian_blue				Blue	96	expected	false
+Push Base Guardian Green	CITADEL_PING_PUSH_BASE_GUARDIAN	push_base_guardian	Push Base Guardian Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_push_base_guardian_green				Green	97	expected	false
+Push Base Guardian Purple	CITADEL_PING_PUSH_BASE_GUARDIAN	push_base_guardian	Push Base Guardian Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_push_base_guardian_purple				Purple	98	expected	false
+Defend Base Guardian	CITADEL_PING_DEFEND_BASE_GUARDIAN	defend_base_guardian	Defend Base Guardian	#citadel_chatwheel_label_defend_base_guardian	#citadel_chatwheel_message_defend_base_guardian					99	expected	false
+Defend Base Guardian Yellow	CITADEL_PING_DEFEND_BASE_GUARDIAN	defend_base_guardian	Defend Base Guardian Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_defend_base_guardian_yellow				Yellow	100	expected	false
+Defend Base Guardian Blue	CITADEL_PING_DEFEND_BASE_GUARDIAN	defend_base_guardian	Defend Base Guardian Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_defend_base_guardian_blue				Blue	101	expected	false
+Defend Base Guardian Green	CITADEL_PING_DEFEND_BASE_GUARDIAN	defend_base_guardian	Defend Base Guardian Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_defend_base_guardian_green				Green	102	expected	false
+Defend Base Guardian Purple	CITADEL_PING_DEFEND_BASE_GUARDIAN	defend_base_guardian	Defend Base Guardian Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_defend_base_guardian_purple				Purple	103	expected	false
+Push Patron	CITADEL_PING_PUSH_PATRON	push_patron	Push Patron	#citadel_chatwheel_label_push_patron	#citadel_chatwheel_message_push_patron					104	expected	false
+Defend Patron	CITADEL_PING_DEFEND_PATRON	defend_patron	Defend Patron	#citadel_chatwheel_label_defend_patron	#citadel_chatwheel_message_defend_patron					105	expected	false
+Push Shrine	CITADEL_PING_PUSH_SHRINE	push_shrine	Push Shrine	#citadel_chatwheel_label_push_shrine	#citadel_chatwheel_message_push_shrine					106	expected	false
+Defend Shrine	CITADEL_PING_DEFEND_SHRINE	defend_shrine	Defend Shrine	#citadel_chatwheel_label_defend_shrine	#citadel_chatwheel_message_defend_shrine					107	expected	false
+Urn Here	CITADEL_PING_IDOL	idol	Urn Here	#citadel_chatwheel_idol_here_label	#citadel_chatwheel_idol_here_message					108	expected	false
+Attack Here	CITADEL_PING_ATTACK_HERE	attack_here	Attack Here	#citadel_chatwheel_label_attack_here	#citadel_chatwheel_message_attack_here					109	expected	false
+Defend Here	CITADEL_PING_DEFEND_HERE	defend_here	Defend Here	#citadel_chatwheel_label_defend_here	#citadel_chatwheel_message_defend_here					110	expected	false
+Attack Hero	CITADEL_PING_ATTACK_ENEMY	attack_enemy	Attack Hero	#citadel_chatwheel_label_attack_this_hero	#citadel_chatwheel_message_attack_this_hero					111	expected	false
+Ignore Hero	CITADEL_PING_IGNORE_HERO	ignore_hero	Ignore Hero	#citadel_chatwheel_label_ignore_hero	#citadel_chatwheel_message_ignore_hero					112	expected	false
+Careful	CITADEL_PING_CAREFUL	careful	Careful	#citadel_chatwheel_label_Care	#citadel_chatwheel_message_Care					113	expected	false
+Im With You	CITADEL_PING_IM_WITH_YOU	im_with_you	Im With You	#citadel_chatwheel_label_im_with_you	#citadel_chatwheel_message_im_with_you					114	expected	false
+Are You Ready	CITADEL_PING_ARE_YOU_READY	are_you_ready	Are You Ready	#citadel_chatwheel_label_are_you_ready	#citadel_chatwheel_message_are_you_ready					115	expected	false
+Ultimate Ready	CITADEL_PING_ULTIMATE_READY	ultimate_ready	Ultimate Ready	#citadel_chatwheel_label_ultimate_ready	#citadel_chatwheel_message_ultimate_ready					116	expected	false
+Ultimate On Cooldown	CITADEL_PING_ULTIMATE_ON_COOLDOWN	ultimate_on_cooldown	Ultimate On Cooldown	#citadel_chatwheel_label_ultimate_down	#citadel_chatwheel_message_ultimate_down					117	expected	false
+Heading Here	CITADEL_PING_HEADING_HERE	heading_here	Heading Here	#citadel_chatwheel_label_heading_here	#citadel_chatwheel_message_heading_here					118	expected	false
+Watch Out	CITADEL_PING_WATCH_OUT	watch_out	Watch Out	#citadel_chatwheel_label_watch_out	#citadel_chatwheel_message_watch_out					119	expected	false
+Going To Urn	CITADEL_PING_GOING_TO_URN	going_to_urn	Going To Urn	#citadel_chatwheel_label_going_to_urn	#citadel_chatwheel_message_going_to_urn					120	expected	false
+Going To Base	CITADEL_PING_GOING_TO_BASE	going_to_base	Going To Base	#citadel_chatwheel_label_going_to_base	#citadel_chatwheel_message_going_to_base					121	expected	false
+Going To Push	CITADEL_PING_GOING_TO_PUSH	going_to_push	Going To Push	#citadel_chatwheel_label_going_to_push	#citadel_chatwheel_message_going_to_push					122	expected	false
+Going To Defend	CITADEL_PING_GOING_TO_DEFEND	going_to_defend	Going To Defend	#citadel_chatwheel_label_going_to_defend	#citadel_chatwheel_message_going_to_defend					123	expected	false
+Going To Bridge Buff	CITADEL_PING_GOING_TO_BRIDGE_BUFF	going_to_bridge_buff	Going To Bridge Buff	#citadel_chatwheel_label_going_to_bridge_buff	#citadel_chatwheel_message_going_to_bridge_buff					124	expected	false
+Help Deliver The Urn	CITADEL_PING_URN_HELP	urn_help	Help Deliver The Urn	#citadel_chatwheel_label_urn_help	#citadel_chatwheel_message_urn_help					125	expected	false
+Enemy Has The Urn	CITADEL_PING_STOP_URN	stop_urn	Enemy Has The Urn	#citadel_chatwheel_label_stop_urn	#citadel_chatwheel_message_stop_urn					126	expected	false
+Help Yellow	CITADEL_PING_HELP	help	Help Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_Help_yellow				Yellow	127	expected	false
+Help Blue	CITADEL_PING_HELP	help	Help Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_Help_blue				Blue	128	expected	false
+Help Green	CITADEL_PING_HELP	help	Help Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_Help_green				Green	129	expected	false
+Help Purple	CITADEL_PING_HELP	help	Help Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_Help_purple				Purple	130	expected	false
+The Rift is Emerging Yellow	CITADEL_PING_KOTH_RIFT_EMERGING	koth_rift_emerging	The Rift is Emerging Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_koth_rift_emerging_yellow				Yellow	131	expected	false
+The Rift is Emerging Blue	CITADEL_PING_KOTH_RIFT_EMERGING	koth_rift_emerging	The Rift is Emerging Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_koth_rift_emerging_blue				Blue	132	expected	false
+The Rift is Emerging Green	CITADEL_PING_KOTH_RIFT_EMERGING	koth_rift_emerging	The Rift is Emerging Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_koth_rift_emerging_green				Green	133	expected	false
+The Rift is Emerging Purple	CITADEL_PING_KOTH_RIFT_EMERGING	koth_rift_emerging	The Rift is Emerging Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_koth_rift_emerging_purple				Purple	134	expected	false
+The Rift is Here Yellow	CITADEL_PING_KOTH_RIFT_HERE	koth_rift_here	The Rift is Here Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_koth_rift_here_yellow				Yellow	135	expected	false
+The Rift is Here Blue	CITADEL_PING_KOTH_RIFT_HERE	koth_rift_here	The Rift is Here Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_koth_rift_here_blue				Blue	136	expected	false
+The Rift is Here Green	CITADEL_PING_KOTH_RIFT_HERE	koth_rift_here	The Rift is Here Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_koth_rift_here_green				Green	137	expected	false
+The Rift is Here Purple	CITADEL_PING_KOTH_RIFT_HERE	koth_rift_here	The Rift is Here Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_koth_rift_here_purple				Purple	138	expected	false
+Stick With Me	CITADEL_PING_STICK_WITH_ME	stick_with_me	Stick With Me	#citadel_chatwheel_label_stick_with_me	#citadel_chatwheel_message_stick_with_me					139	expected	false
+Someone Buy This	CITADEL_PING_SOMEONE_BUY_THIS	someone_buy_this	Someone Buy This	#citadel_chatwheel_label_someone_buy_this	#citadel_chatwheel_message_someone_buy_this					140	expected	false
+Dont Buy This	CITADEL_PING_DONT_BUY_THIS	dont_buy_this	Dont Buy This	#citadel_chatwheel_label_dont_buy_this	#citadel_chatwheel_message_dont_buy_this					141	expected	false
+Buying This	CITADEL_PING_BUYING_THIS	buying_this	Buying This	#citadel_chatwheel_label_buying_this	#citadel_chatwheel_message_buying_this					142	expected	false
+Have This Item	CITADEL_PING_HAVE_THIS_ITEM	have_this_item	Have This Item	#citadel_chatwheel_label_have_this_item	#citadel_chatwheel_message_have_this_item					143	expected	false
+Item Good Pick	CITADEL_PING_ITEM_GOOD_PICK	item_good_pick	Item Good Pick	#citadel_chatwheel_label_item_good_pick	#citadel_chatwheel_message_item_good_pick					144	expected	false
+Lane Needs Help Yellow	CITADEL_PING_LANE_NEEDS_HELP	lane_needs_help	Lane Needs Help Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_lane_needs_help_yellow				Yellow	145	expected	false
+Lane Needs Help Green	CITADEL_PING_LANE_NEEDS_HELP	lane_needs_help	Lane Needs Help Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_lane_needs_help_green				Green	146	expected	false
+Lane Needs Help Blue	CITADEL_PING_LANE_NEEDS_HELP	lane_needs_help	Lane Needs Help Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_lane_needs_help_blue				Blue	147	expected	false
+Lane Needs Help Purple	CITADEL_PING_LANE_NEEDS_HELP	lane_needs_help	Lane Needs Help Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_lane_needs_help_purple				Purple	148	expected	false
+Lane Needs Help	CITADEL_PING_LANE_NEEDS_HELP	lane_needs_help	Lane Needs Help	#citadel_chatwheel_message_lane_needs_help	#citadel_chatwheel_message_lane_needs_help					149	expected	false
+Hero Is Dead	CITADEL_PING_HERO_IS_DEAD	hero_is_dead	Hero Is Dead	#citadel_chatwheel_label_hero_is_dead	#citadel_chatwheel_message_hero_is_dead					150	expected	false
+Shop Closed	CITADEL_PING_SHOP_CLOSED	shop_closed	Shop Closed	#citadel_chatwheel_label_shop_closed	#citadel_chatwheel_message_shop_closed					151	expected	false
+Visit Shop	CITADEL_PING_VISIT_SHOP	visit_shop	Visit Shop	#citadel_chatwheel_label_visit_shop	#citadel_chatwheel_message_visit_shop					152	expected	false
+Ignore Shop	CITADEL_PING_IGNORE_SHOP	ignore_shop	Ignore Shop	#citadel_chatwheel_label_ignore_shop	#citadel_chatwheel_message_ignore_shop					153	expected	false
+No Problem	CITADEL_PING_NO_PROBLEM	no_problem	No Problem	#citadel_chatwheel_no_problem	#citadel_chatwheel_no_problem	no problem,no worries,np	CITADEL_PING_SORRY	k_ECitadelRecipients_RecipientsAroundPlayer		154	expected	false
+Enemy Low Health	CITADEL_PING_ENEMY_LOW_HEALTH	enemy_low_health	Enemy Low Health	#citadel_chatwheel_label_enemy_low_health	#citadel_chatwheel_message_enemy_low_health					155	expected	false
+Door Here	CITADEL_PING_DOOR_HERE	door_here	Door Here	#citadel_chatwheel_label_door_here	#citadel_chatwheel_message_door_here					156	expected	false
+Hero Almost Respawned	CITADEL_PING_HERO_ALMOST_RESPAWNED	hero_almost_respawned	Hero Almost Respawned	#citadel_chatwheel_label_hero_almost_respawned	#citadel_chatwheel_message_hero_almost_respawned					157	expected	false
+Wait	CITADEL_PING_WAIT	wait	Wait	#citadel_chatwheel_label_HoldUp	#citadel_chatwheel_message_HoldUp	holup,stop,wait				158	expected	false
+Going to Corrupted Shop	CITADEL_PING_GOING_TO_CORRUPTED_SHOP	going_to_corrupted_shop	Going to Corrupted Shop	#citadel_chatwheel_label_going_corrupted_shop	#citadel_chatwheel_message_going_corrupted_shop					159	expected	false
+Visit the Corrupted Shop	CITADEL_PING_VISIT_CORRUPTED_SHOP	visit_corrupted_shop	Visit the Corrupted Shop	#citadel_chatwheel_label_going_corrupted_shop	#citadel_chatwheel_message_going_corrupted_shop					160	expected	false
+Ignore the Corrupted Shop	CITADEL_PING_IGNORE_CORRUPTED_SHOP	ignore_corrupted_shop	Ignore the Corrupted Shop	#citadel_chatwheel_label_ignore_corrupted_shop	#citadel_chatwheel_message_ignore_corrupted_shop					161	expected	false
+Guardian Needs Help Yellow	CITADEL_PING_GUARDIAN_NEEDS_HELP	guardian_needs_help	Guardian Needs Help Yellow	#citadel_chatwheel_label_lane_yellow	#citadel_chatwheel_message_guardian_needs_help_yellow				Yellow	162	expected	false
+Guardian Needs Help Green	CITADEL_PING_GUARDIAN_NEEDS_HELP	guardian_needs_help	Guardian Needs Help Green	#citadel_chatwheel_label_lane_green	#citadel_chatwheel_message_guardian_needs_help_green				Green	163	expected	false
+Guardian Needs Help Blue	CITADEL_PING_GUARDIAN_NEEDS_HELP	guardian_needs_help	Guardian Needs Help Blue	#citadel_chatwheel_label_lane_blue	#citadel_chatwheel_message_guardian_needs_help_blue				Blue	164	expected	false
+Guardian Needs Help Purple	CITADEL_PING_GUARDIAN_NEEDS_HELP	guardian_needs_help	Guardian Needs Help Purple	#citadel_chatwheel_label_lane_purple	#citadel_chatwheel_message_guardian_needs_help_purple				Purple	165	expected	false
+Guardian Needs Help	CITADEL_PING_GUARDIAN_NEEDS_HELP	guardian_needs_help	Guardian Needs Help	#citadel_chatwheel_message_guardian_needs_help	#citadel_chatwheel_message_guardian_needs_help					166	expected	false
+Sinner's Here	CITADEL_PING_SINNERS_HERE	sinners_here	Sinner's Here	#citadel_chatwheel_label_sinners_here	#citadel_chatwheel_message_sinners_here					167	expected	false
+Enemy Taking Mid Boss	CITADEL_PING_ENEMY_TAKING_MIDBOSS	enemy_taking_midboss	Enemy Taking Mid Boss	#citadel_chatwheel_label_enemy_taking_midboss	#citadel_chatwheel_message_enemy_taking_midboss					168	expected	false
+Patron Under Attack	CITADEL_PING_PATRON_UNDER_ATTACK	patron_under_attack	Patron Under Attack	#citadel_chatwheel_label_patron_under_attack	#citadel_chatwheel_message_patron_under_attack					169	expected	false
+Loose Souls	CITADEL_PING_LOOSE_SOULS	loose_souls	Loose Souls	#citadel_chatwheel_label_loose_souls	#citadel_chatwheel_message_loose_souls					170	expected	false
+OK	CITADEL_PING_OK	ok	OK	#citadel_chatwheel_label_OK	#citadel_chatwheel_message_OK					171	expected	false
+Look Here	CITADEL_PING_LOOK_HERE	look_here	Look Here	#citadel_chatwheel_label_LookHere	#citadel_chatwheel_message_LookHere					172	expected	false
+Someone Was Here	CITADEL_PING_SOMEONE_WAS_HERE	someone_was_here	Someone Was Here	#citadel_chatwheel_label_someone_was_here	#citadel_chatwheel_message_someone_was_here					173	expected	false

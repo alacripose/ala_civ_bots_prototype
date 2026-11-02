@@ -2,6 +2,7 @@
 # source: C:\Users\ala\Documents\agent_god_files\prose_logic
 # merged source: C:\Users\ala\Documents\ala_civ_bots_prototype\tools\mod_lexicon.tsv
 # merged source: C:\Users\ala\Documents\ala_civ_bots_prototype\tools\project_lexicon.tsv
+# merged source: C:\Users\ala\Documents\ala_civ_bots_prototype\tools\ping_wheel_lexicon.tsv
 # Every word the corpus quotes attest, with how often it says it. Speech here may
 # only use these words; the world supplies its own names and the being its numbers.
 a	50979
@@ -1612,7 +1613,7 @@ advanceweathercycle	1
 advancing	10
 advancment	2
 advancments	1
-advantage	43
+advantage	44
 advantaged	1
 advantageous	2
 advantages	3
@@ -2666,7 +2667,7 @@ alku	76
 alkweiay	1
 alkwieaw	1
 alky	2
-all	16267
+all	16271
 allaah	1
 allah	19
 allayed	1
@@ -2776,7 +2777,7 @@ almodad	2
 almon	5
 almond	2
 almonds	8
-almost	56
+almost	57
 alms	17
 almsdeeds	1
 almsqu	1
@@ -4407,8 +4408,8 @@ ardwige	1
 ardwis	105
 ardwsw	1
 ardwsy	2
-are	19327
-area	296
+are	19328
+area	297
 areacontext	2
 areafactory	2
 areaofeffectiterator	1
@@ -5317,7 +5318,7 @@ attachto	5
 attachtoneighbors	1
 attachtrait	6
 attachtraits	1
-attack	335
+attack	338
 attackdamage	8
 attackdown	3
 attacked	46
@@ -7986,7 +7987,7 @@ basat	50
 basay	35
 basayraa	14
 basayro	3
-base	989
+base	1001
 base's	1
 baseamount	2
 baseaspect	2
@@ -11388,7 +11389,7 @@ blssed	1
 blu	25
 bluaw	2
 blubber	5
-blue	1552
+blue	1566
 blueberry	12
 bluebonnets	2
 blued	1
@@ -12010,7 +12011,7 @@ boscath	1
 bosheth	14
 bosom	45
 bosor	1
-boss	39
+boss	42
 bosses	8
 boston	1
 bot	327
@@ -12376,7 +12377,7 @@ bridechamber	3
 bridegroom	27
 brides	91
 bridesmaids	1
-bridge	115
+bridge	117
 bridged	1
 bridges	16
 bridging	7
@@ -12834,7 +12835,7 @@ buf	47
 bufbuj	1
 bufei	1
 bufeiaw	1
-buff	11
+buff	13
 buffalo	4
 buffalo's	1
 buffed	1
@@ -13403,11 +13404,11 @@ buuz	2
 buxmg	1
 buxmgm	3
 buxmgmu	1
-buy	76
+buy	78
 buyer	8
 buyest	2
 buyeth	4
-buying	1
+buying	2
 buys	4
 buz	3
 buzi	1
@@ -14385,7 +14386,7 @@ camphire	4
 camphor	6
 campion	2
 camps	11
-can	9361
+can	9362
 can't	271
 cana	4
 canaan	94
@@ -14654,7 +14655,7 @@ careah	1
 cared	8
 career	10
 carefree	47
-careful	38
+careful	39
 carefully	30
 carefulness	4
 careless	9
@@ -15705,7 +15706,7 @@ chastised	7
 chastisement	6
 chastiseth	1
 chastity	11
-chat	515
+chat	519
 chataaraa	1
 chatay	1
 chatee	3
@@ -17035,7 +17036,7 @@ cleansing	125
 cleansings	4
 cleantag	1
 cleanup	70
-clear	498
+clear	499
 clearable	10
 clearance	1
 clearblockrenderpass	1
@@ -17224,7 +17225,7 @@ clooo	2
 clooollc	2
 close	299
 closeall	1
-closed	110
+closed	111
 closeinventory	1
 closely	21
 closeness	6
@@ -18878,7 +18879,7 @@ coolable	1
 coolant	25
 coolants	1
 coolanttank	1
-cooldown	71
+cooldown	72
 cooldowns	11
 cooled	82
 coolengine	1
@@ -19044,7 +19045,7 @@ corrodes	1
 corrosion	3
 corrsponding	1
 corrupt	105
-corrupted	37
+corrupted	40
 corrupters	2
 corrupteth	1
 corruptible	7
@@ -19176,7 +19177,7 @@ covenant	299
 covenantbreakers	1
 covenanted	4
 covenants	3
-cover	388
+cover	389
 cover's	2
 coverage	65
 coverbehavior	2
@@ -20820,7 +20821,7 @@ dandled	1
 dandlee	1
 dang	1
 danger	33
-dangerous	38
+dangerous	39
 dangerously	1
 dangers	4
 dangling	3
@@ -21306,7 +21307,7 @@ deactivate	36
 deactivated	1
 deactivates	5
 deactivating	1
-dead	655
+dead	656
 dead's	1
 deadcontroller	1
 deadened	1
@@ -21677,7 +21678,7 @@ defects	7
 defence	56
 defenced	11
 defences	3
-defend	46
+defend	70
 defended	7
 defender	5
 defenders	4
@@ -21840,7 +21841,7 @@ delims	2
 delirious	1
 delisted	1
 delite	40
-deliver	348
+deliver	349
 deliverable	11
 deliverables	4
 deliverance	25
@@ -23974,7 +23975,7 @@ donkey	23
 donkey's	1
 donkeys	10
 dono	5
-dont	23
+dont	25
 dont's	1
 doo	30
 doob	12
@@ -24021,7 +24022,7 @@ doonaa	3
 doondar	1
 doonee	3
 doongar	6
-door	784
+door	785
 dooraa	3
 dooraaree	2
 doorantar	2
@@ -24462,7 +24463,7 @@ drone	24
 drones	10
 droop	3
 droopy	1
-drop	449
+drop	450
 dropadi	4
 dropadi's	1
 dropatee's	1
@@ -26320,6 +26321,7 @@ emergencies	1
 emergency	29
 emergent	25
 emerges	10
+emerging	5
 emerods	8
 emf	1
 emi	49
@@ -26620,7 +26622,7 @@ endvertex	12
 endwidth	1
 enegery	1
 enemies	417
-enemy	251
+enemy	256
 enemy's	2
 enemydefeated	2
 enemyenteredtowerrange	1
@@ -28366,7 +28368,7 @@ farhaa	1
 farhay	2
 farhee	1
 fari	1
-farm	109
+farm	112
 farm's	4
 farmable	3
 farmablebasicgrowthcraft	1
@@ -29252,6 +29254,7 @@ flamingoes	2
 flammability	4
 flammable	23
 flammagenitus	2
+flank	1
 flanks	6
 flap	1
 flapping	3
@@ -29680,7 +29683,7 @@ foliay	4
 folih	5
 folk	5
 folks	2
-follow	286
+follow	287
 followed	169
 followedst	1
 follower	3
@@ -31075,7 +31078,7 @@ gambler's	2
 gamblers	1
 gambles	1
 gambling	2
-game	738
+game	744
 game's	38
 gameboard	1
 gamedeveloper	3
@@ -31150,6 +31153,7 @@ gani	6
 ganika	4
 ganikaa	9
 ganin	1
+gank	1
 gankaa	1
 gannaa	1
 gannay	2
@@ -33050,7 +33054,7 @@ gfwei	1
 gfwvy	1
 gfx	1
 gfy	1
-gg	31
+gg	33
 ggg	5
 ggin	8
 ggn	30
@@ -33059,6 +33063,7 @@ ggnw	2
 ggri	1
 ggriaw	2
 ggw	4
+ggwp	1
 ggx	1
 ggy	4
 gh	7
@@ -33483,7 +33488,7 @@ givqw	1
 gix	4
 gixaw	4
 gizonite	1
-gj	17
+gj	18
 gjdr	1
 gji	1
 gjiemdr	1
@@ -33745,7 +33750,7 @@ gnyriaw	1
 gnyro	1
 gnyrw	4
 gnyry	29
-go	2657
+go	2660
 goa	1
 goad	1
 goads	2
@@ -33845,7 +33850,7 @@ goil	15
 goilaw	1
 goin	4
 goindwal	1
-going	460
+going	469
 goings	86
 goipaw	3
 goir	6
@@ -33908,7 +33913,7 @@ gonfkri	1
 gong	4
 gonna	4
 goo	2
-good	1793
+good	1799
 goodbye	2
 goodee	1
 goodlier	1
@@ -34223,7 +34228,7 @@ greeds	1
 greedy	57
 greek	12
 greeks	14
-green	391
+green	405
 greend	1
 greenery	11
 greenf	1
@@ -34582,7 +34587,7 @@ guaranteeing	1
 guarantees	13
 guard	81
 guarded	7
-guardian	6
+guardian	31
 guardians	3
 guarding	1
 guardprobeworld	1
@@ -36064,7 +36069,7 @@ harvesttoolprovider	1
 harvesttreeroutine	1
 harvesttype	6
 harvie	1
-has	6407
+has	6408
 hasactiverecipe	1
 hasaddeditem	1
 hasadiah	1
@@ -36302,7 +36307,7 @@ havaa	3
 havaal	6
 havaalaa	1
 havaalai	1
-have	11424
+have	11425
 haven	7
 haven't	27
 havens	1
@@ -36394,11 +36399,11 @@ head	969
 headaches	1
 headbands	1
 headcrumbs	1
-headed	23
+headed	27
 headentity	1
 header	46
 headers	14
-heading	5
+heading	8
 headings	2
 headless	201
 headlesshq	4
@@ -36417,7 +36422,7 @@ headsets	1
 headspan	1
 headstone	1
 heady	1
-heal	60
+heal	62
 healamount	3
 healed	87
 healer	2
@@ -36426,7 +36431,7 @@ healeth	4
 healing	60
 healings	1
 heals	20
-health	203
+health	204
 healthy	18
 heap	59
 heaped	3
@@ -36607,7 +36612,7 @@ helmets	14
 helmholtz	1
 helmsman	1
 helon	5
-help	469
+help	486
 helped	31
 helper	373
 helpers	182
@@ -36666,7 +36671,7 @@ herdman	1
 herdmen	8
 herds	36
 herdsman	4
-here	1257
+here	1274
 here's	7
 hereafter	242
 hereby	159
@@ -36690,7 +36695,7 @@ hermits	17
 hermogenes	1
 hermon	15
 hermonites	1
-hero	30
+hero	34
 herod	44
 herodians	3
 herodias	6
@@ -36779,7 +36784,7 @@ hiddekel	2
 hidden	257
 hiddeningredient	1
 hiddeningredientitem	2
-hide	215
+hide	216
 hided	1
 hidefacadesinrecipeviewer	1
 hidefilledcellsinrecipeviewer	1
@@ -37226,6 +37231,7 @@ hologram	1
 holon	5
 holpen	6
 holten	1
+holup	1
 holy	1804
 holyday	2
 hom	24
@@ -38098,7 +38104,7 @@ hyxwqi	1
 hz	6
 i	28168
 i'd	5
-i'll	15
+i'll	16
 i'm	39
 i've	16
 ia	1
@@ -39444,7 +39450,7 @@ idnw	2
 idny	1
 ido	1
 idof	1
-idol	28
+idol	29
 idolater	2
 idolaters	5
 idolatries	1
@@ -39953,7 +39959,7 @@ ignorable	2
 ignorance	128
 ignorant	187
 ignorantly	4
-ignore	208
+ignore	211
 ignorecase	1
 ignorecontainedaspects	1
 ignorecraftingtools	1
@@ -40633,7 +40639,7 @@ iluatask	6
 ilv	436
 ilvwiv	1
 ilvy	8
-im	15
+im	17
 imachine	1
 imachineblock	1
 imachineblockentity	5
@@ -41136,7 +41142,7 @@ imutablealloytank	1
 imutabletinkerstationcontainer	3
 imutation	3
 imutationbuilder	3
-in	42303
+in	42304
 ina	3
 inaa	46
 inability	3
@@ -43467,7 +43473,7 @@ irsy	1
 iru	1
 irvikenu	1
 irw	1
-is	52343
+is	52357
 isaa	5
 isaac	138
 isacceptablesoilforrootsystem	1
@@ -44220,7 +44226,7 @@ itching	2
 ite	1
 ited	1
 itee	4
-item	4259
+item	4261
 item's	33
 itemability	2
 itemabovecontrollerrender	11
@@ -44556,7 +44562,7 @@ itriggerexternal	2
 itriggerinternal	3
 itriggerinternalsided	1
 itriggerprovider	9
-its	2936
+its	2937
 itself	475
 itsfelix	2
 ittah	1
@@ -46638,7 +46644,7 @@ joanna	3
 joash	51
 joatham	2
 joawieaw	1
-job	197
+job	200
 jobab	9
 joban	78
 jobanvant	2
@@ -52493,7 +52499,7 @@ landslide	12
 landsliderecipe	1
 landslides	5
 landweight	4
-lane	50
+lane	58
 lanes	16
 lang	114
 lang's	5
@@ -52945,7 +52951,7 @@ leather	64
 leathern	1
 leatherworker	1
 leatherworking	1
-leave	404
+leave	405
 leaveblock	1
 leaved	2
 leaveground	1
@@ -52965,7 +52971,7 @@ leavesstatewithhydro	1
 leavestype	1
 leaveth	7
 leavevinedecorator	1
-leaving	86
+leaving	87
 lebana	1
 lebanah	1
 lebanon	72
@@ -53146,11 +53152,11 @@ lesson	29
 lessons	22
 lest	244
 let	2226
-let's	54
+let's	56
 lethal	2
 lethargic	1
 lethech	1
-lets	106
+lets	107
 letter	61
 letters	73
 letterstack	1
@@ -54297,7 +54303,7 @@ loohai	1
 loojh	2
 loojhai	12
 loojheh	5
-look	772
+look	773
 lookai	1
 lookat	4
 lookatpos	1
@@ -54339,7 +54345,7 @@ looplength	1
 loopports	2
 loops	64
 looptick	1
-loose	107
+loose	108
 loosed	35
 loosely	8
 loosen	1
@@ -54473,7 +54479,7 @@ lovingkindnesses	4
 lovingly	354
 lovqy	1
 lovy	16
-low	572
+low	573
 lowdraglib	1
 lowdragmc	1
 lowed	1
@@ -56761,7 +56767,7 @@ mdusudnu	7
 mdvi	1
 mdwxu	1
 mdy	38
-me	7826
+me	7827
 mead	1
 meadow	17
 meadows	16
@@ -56880,7 +56886,7 @@ meeraa	10
 meeraan	1
 meerann	1
 meeray	1
-meet	967
+meet	968
 meetaa	41
 meetah	1
 meetday	1
@@ -57402,7 +57408,7 @@ microverse	7
 microwave	6
 microwaves	1
 micu	5
-mid	122
+mid	125
 midair	1
 midal	1
 midas	4
@@ -57913,7 +57919,7 @@ missabib	2
 missed	16
 misselection	1
 misses	8
-missing	337
+missing	338
 missingdropafterminingfailstheinventorypostcondition	1
 missingfluidexception	3
 missingitemexception	1
@@ -60255,7 +60261,7 @@ mxiey	3
 mxkvw	1
 mxu	1
 mxw	3
-my	13692
+my	13693
 myaddon	1
 myau	1
 myblocks	2
@@ -61131,7 +61137,7 @@ neechah	2
 neechahu	2
 neechay	3
 neechee	1
-need	1633
+need	1636
 needdescriptor	1
 needed	487
 neededperlevel	6
@@ -61152,7 +61158,7 @@ needmodel	1
 needn't	6
 needobservation	3
 needprovider	1
-needs	696
+needs	706
 needsadding	6
 needscharging	1
 needsfuel	3
@@ -61388,6 +61394,7 @@ neutronium	7
 neutrons	8
 nevada	1
 never	1364
+nevermind	1
 nevertheless	106
 new	4152
 newaccessibility	4
@@ -62160,7 +62167,7 @@ nivw	1
 nixie	35
 nixies	3
 nixietubeblock	1
-nj	3
+nj	4
 njaa	1
 njaam	2
 njaanaho	2
@@ -62257,7 +62264,7 @@ nnon	1
 nnpjcoc	1
 nnw	2
 nnyaa	1
-no	8190
+no	8195
 noaa	20
 noadiah	2
 noah	54
@@ -62513,6 +62520,7 @@ now	2558
 nowadays	1
 nowhere	17
 nozzle	2
+np	1
 npai	1
 npart	1
 npc	7
@@ -63337,7 +63345,7 @@ ojaarh	1
 ojaarhay	1
 ojaarhee	2
 ojal	63
-ok	24
+ok	25
 okay	31
 okdoc	4
 okkkkkkkkkkkxxddooooodxxkooooo	2
@@ -63437,7 +63445,7 @@ omnipotent	3
 omniscience	9
 omniscient	12
 omri	18
-on	14156
+on	14158
 onaa	46
 onaahaa	1
 onactivatorrailpass	1
@@ -64214,7 +64222,7 @@ our	2292
 ours	25
 ourself	13
 ourselves	111
-out	4696
+out	4697
 outa	4
 outage	1
 outages	1
@@ -64348,6 +64356,7 @@ overes	1
 overestimated	1
 overestimates	1
 overestimation	2
+overextend	1
 overfill	1
 overfilling	3
 overflow	74
@@ -66171,7 +66180,7 @@ patrimony	1
 patrobas	1
 patrol	5
 patrols	2
-patron	8
+patron	11
 patronless	2
 patrons	1
 patted	1
@@ -67171,7 +67180,7 @@ pichho	4
 pichhvaarlaa	1
 pichwri	1
 picim	1
-pick	147
+pick	148
 pickable	7
 pickables	1
 pickadze	3
@@ -67369,7 +67378,9 @@ piness	1
 pineth	1
 ping	4
 pingala	5
+pinged	2
 pingpong	2
+pings	1
 pingul	5
 pingulaa	7
 pinguree	1
@@ -67773,7 +67784,7 @@ plaintext	1
 plaister	7
 plaistered	2
 plaiting	1
-plan	151
+plan	152
 plan's	4
 planar	8
 plancraftinggrid	1
@@ -67881,9 +67892,9 @@ playas	2
 playat	2
 playaudio	1
 playblockbreak	1
-played	42
+played	44
 playedst	2
-player	4415
+player	4416
 player's	167
 playerabilitiess	1
 playerbodyadapter	4
@@ -68603,7 +68614,7 @@ possiblevalues	1
 possiblevehicle	1
 possibly	99
 posstack	4
-post	225
+post	229
 postage	4
 postal	3
 postbox	24
@@ -69059,6 +69070,7 @@ prefixes	27
 prefixexp	2
 prefixing	2
 prefixname	1
+pregame	1
 pregen	2
 pregenerate	1
 pregenerates	1
@@ -69134,7 +69146,7 @@ president	3
 presidents	5
 presize	1
 presorted	1
-press	116
+press	117
 pressed	126
 pressedkeys	1
 presser	1
@@ -69559,7 +69571,7 @@ probe's	1
 probes	7
 probided	1
 probing	1
-problem	148
+problem	150
 problematic	12
 problems	72
 probmap	1
@@ -70730,7 +70742,7 @@ purnmw	1
 purno	3
 purnu	21
 puro	4
-purple	178
+purple	192
 purpose	610
 purposed	19
 purposefully	4
@@ -70786,7 +70798,7 @@ pury	574
 puryn	1
 puryv	1
 pus	1
-push	126
+push	150
 pushable	1
 pushattrib	1
 pushed	37
@@ -73085,7 +73097,7 @@ rasterizer	1
 rasterizes	1
 rasterizing	1
 rasunathay	1
-rat	50
+rat	51
 rat's	1
 rata	2
 rataa	63
@@ -73353,7 +73365,7 @@ readutf	4
 readuuid	1
 readvarint	1
 readwritelock	1
-ready	190
+ready	192
 reagent	2
 reagents	3
 reaia	1
@@ -74330,6 +74342,7 @@ rejoices	8
 rejoicest	1
 rejoiceth	19
 rejoicing	42
+rejuv	1
 rejuvenate	4
 rejuvenated	52
 rejuvenates	5
@@ -74926,7 +74939,7 @@ reputations	9
 reputed	2
 req	1
 reqire	1
-request	538
+request	539
 request's	3
 requestblock	5
 requestcodec	2
@@ -75146,7 +75159,7 @@ resourcessupplier	2
 resourcetexture	6
 resourcetype	1
 respawn	43
-respawned	1
+respawned	2
 respawning	2
 respawns	3
 respec	1
@@ -75299,7 +75312,7 @@ retracted	1
 retracting	1
 retraction	5
 retracts	2
-retreat	8
+retreat	9
 retreating	3
 retreats	1
 retreived	1
@@ -75649,7 +75662,7 @@ ridweily	1
 ridy	1
 rie	3
 rifled	1
-rift	7
+rift	17
 rifting	1
 rig	22
 rigamarole	1
@@ -80655,7 +80668,7 @@ shooters	4
 shooteth	4
 shooting	14
 shoots	13
-shop	28
+shop	36
 shop's	1
 shophach	4
 shophan	1
@@ -80795,7 +80808,7 @@ shriek	2
 shriekers	1
 shrieks	5
 shrill	1
-shrine	36
+shrine	38
 shrines	134
 shrink	49
 shrinkage	1
@@ -81412,6 +81425,7 @@ sinks	28
 sinnaa	1
 sinned	121
 sinner	111
+sinner's	1
 sinners	187
 sinnest	1
 sinneth	23
@@ -83015,7 +83029,7 @@ somebody	6
 someday	4
 somehow	25
 somemethod	1
-someone	214
+someone	216
 someone's	7
 someprop	1
 something	372
@@ -83186,7 +83200,7 @@ sorroweth	1
 sorrowful	20
 sorrowing	2
 sorrows	89
-sorry	21
+sorry	23
 sort	200
 sorta	1
 sortby	1
@@ -83221,7 +83235,7 @@ soul's	2
 soulbound	6
 soullavaloggable	1
 soullavalogging	1
-souls	168
+souls	169
 soulsand	4
 soulspeed	4
 soulspeedmodule	1
@@ -83609,7 +83623,7 @@ spline	2
 splines	1
 splinter	2
 splish	5
-split	172
+split	173
 spliterator	1
 spliterators	1
 splitlocation	3
@@ -84036,7 +84050,7 @@ srxwieaw	6
 srxwiee	1
 srxwige	1
 srxy	2
-sry	18
+sry	19
 sryau	1
 sryivaw	2
 sryivhu	1
@@ -84391,7 +84405,7 @@ statutemaker	1
 statutes	133
 stave	1
 staves	49
-stay	143
+stay	144
 stayed	37
 stayeth	2
 staying	8
@@ -84409,9 +84423,9 @@ steadily	9
 steads	1
 steady	116
 steak	1
-steal	49
+steal	50
 stealeth	6
-stealing	14
+stealing	15
 steals	9
 stealth	17
 steam	427
@@ -84494,7 +84508,7 @@ stiaih	2
 stiain	1
 stiay	1
 stibnite	2
-stick	163
+stick	164
 sticker	2
 stickers	2
 sticketh	1
@@ -84602,7 +84616,7 @@ stoop	4
 stooped	7
 stoopeth	1
 stooping	2
-stop	291
+stop	292
 stopanimation	1
 stopattackingiftargetinvalid	1
 stopaudio	1
@@ -85091,6 +85105,7 @@ submodule	7
 submodules	9
 submq	1
 subnautica	23
+subnav	4
 subnet	13
 subnets	4
 subnetwork	3
@@ -87284,7 +87299,7 @@ takaa	3
 takai	1
 takay	2
 takbeer	1
-take	1690
+take	1691
 takeaway	1
 takeaways	2
 takee	8
@@ -87301,7 +87316,7 @@ takevariant	1
 takh	2
 takhat	55
 taki	2
-taking	190
+taking	191
 takrhay	1
 takrhee	2
 taksaal	2
@@ -87835,8 +87850,8 @@ teachings	654
 teahniques	1
 teak	1
 team	1661
-teamfight	1
-teammate	1
+teamfight	2
+teammate	2
 teammoeg	1
 teammoegmc	1
 teamreborn	1
@@ -88435,14 +88450,14 @@ thandhaa	11
 thanee	4
 thangan	1
 thanhu	1
-thank	45
+thank	46
 thankaa	1
 thanked	5
 thankful	4
 thankfully	2
 thankfulness	1
 thanking	1
-thanks	104
+thanks	107
 thanksgiving	32
 thanksgivings	2
 thankworthy	1
@@ -88491,7 +88506,7 @@ thayhhu	1
 thayhu	7
 thaykai	1
 thayvaa	1
-the	243152
+the	243167
 theater	1
 theaters	1
 theatre	2
@@ -88669,7 +88684,7 @@ thirteenth	17
 thirtieth	9
 thirty	216
 thirtyfold	2
-this	27542
+this	27547
 this'll	1
 thistle	9
 thistledown	1
@@ -88862,6 +88877,7 @@ thus	904
 thusly	1
 thwack	1
 thwarted	2
+thx	1
 thy	4761
 thyatira	4
 thybring	1
@@ -89370,7 +89386,7 @@ tnt	22
 tntblock	1
 tnts	1
 tnumber	27
-to	58528
+to	58542
 toa	1
 toabsolutepath	1
 toadd	7
@@ -89420,7 +89436,7 @@ tofloat	3
 tofu	2
 tog	1
 togarmah	4
-together	843
+together	844
 toggle	114
 toggle's	2
 toggleable	2
@@ -90327,7 +90343,7 @@ tron	2
 trona	1
 troop	17
 trooper	4
-troopers	7
+troopers	8
 troops	11
 trop	1
 tropheusj	2
@@ -90802,7 +90818,7 @@ txr	2
 txs	2
 txt	2010
 txy	2
-ty	37
+ty	38
 tya	2
 tychicus	7
 tycoon	15
@@ -91188,7 +91204,7 @@ ultee	20
 ultharhay	1
 ulthay	1
 ulti	2
-ultimate	91
+ultimate	93
 ultimately	27
 ultimet	1
 ulto	3
@@ -91383,7 +91399,7 @@ undeclared	2
 undefiled	8
 undefined	13
 undelivered	1
-under	5324
+under	5325
 undercounts	2
 undercut	2
 undercuts	1
@@ -92230,7 +92246,7 @@ urkat	1
 url	45
 urls	4
 urm	1
-urn	3
+urn	7
 uro	3
 uroo	2
 urrhee	1
@@ -93892,7 +93908,7 @@ vision	603
 visions	27
 visir	2
 visiraw	7
-visit	134
+visit	136
 visitation	16
 visitations	1
 visited	65
@@ -94666,7 +94682,7 @@ wailings	1
 wails	8
 waist	3
 waists	2
-wait	244
+wait	246
 waited	43
 waiteth	13
 waiting	82
@@ -94692,7 +94708,7 @@ walkable	3
 walked	154
 walkedblocks	1
 walkedst	1
-walker	19
+walker	29
 walker's	1
 walkers	2
 walkest	7
@@ -94788,7 +94804,7 @@ wars	20
 wart	25
 wartelogged	1
 warum	4
-was	7552
+was	7553
 wasd	2
 wash	202
 washburn	3
@@ -94818,7 +94834,7 @@ wastesselating	12
 wasteth	4
 wasting	40
 wastouchingwater	1
-watch	168
+watch	169
 watched	22
 watchedblock	3
 watchedentity	3
@@ -94901,7 +94917,7 @@ waxen	12
 waxes	1
 waxeth	2
 waxing	3
-way	1772
+way	1774
 wayback	1
 wayfaring	6
 wayfinding	1
@@ -95030,7 +95046,7 @@ weird	49
 weirder	1
 weirdly	5
 weirdness	6
-welcome	26
+welcome	27
 welcomed	3
 welcomes	2
 weld	17
@@ -95038,7 +95054,7 @@ welded	6
 welding	28
 welds	1
 welfare	13
-well	882
+well	884
 wellbeloved	6
 welled	35
 wellfavoured	1
@@ -95420,7 +95436,7 @@ witch	8
 witchcraft	4
 witchcrafts	4
 witcher	1
-with	24127
+with	24130
 withal	36
 withanimation	1
 withaoetarget	1
@@ -95714,7 +95730,7 @@ wormwood	9
 worn	49
 woroking	1
 worried	6
-worries	18
+worries	19
 worry	37
 worrying	6
 worse	47
@@ -95750,7 +95766,7 @@ wounds	22
 wove	1
 woven	38
 wow	5
-wp	2
+wp	4
 wpdy	1
 wpqu	1
 wpsin	1
@@ -96171,10 +96187,10 @@ yell	2
 yelled	5
 yelleth	1
 yellorium	1
-yellow	182
+yellow	196
 yelow	1
 yelps	14
-yes	50
+yes	51
 yesterday	26
 yesternight	4
 yet	1160
@@ -96214,10 +96230,10 @@ yokes	4
 yonder	7
 yor	1
 york	8
-you	17061
+you	17064
 you'd	15
 you'll	23
-you're	81
+you're	82
 you've	17
 young	383
 younger	39
