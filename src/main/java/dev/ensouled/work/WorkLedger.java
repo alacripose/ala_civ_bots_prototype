@@ -436,6 +436,37 @@ public final class WorkLedger {
 		}
 	}
 
+	/**
+	 * The first time this being practises a verb outside any wish, that verb gets its own one-cell
+	 * ticket. Discovery is read from work the being actually did, not from a list: a verb with no
+	 * practice has no standing ticket, and a verb already discovered is not re-opened on every step.
+	 */
+	public void discovered(String agentId, String agentName, String skillId, long tick,
+			boolean success, String evidence) {
+		if (openCommitment(agentId).isPresent()) {
+			// The wish's ticket already authorises and counts this work.
+			return;
+		}
+		String purpose = "discover:" + skillId;
+		for (Ticket ticket : tickets.values()) {
+			if (ticket.agentId().equals(agentId) && ticket.purpose().equals(purpose)) {
+				return;
+			}
+		}
+		String worldId = WorldState.get() == null ? "" : WorldState.get().world().worldId();
+		String witness = success ? "held 1/1 at tick " + tick
+				: "refused 0/1: " + (evidence == null ? "" : evidence);
+		Ticket ticket = Ticket.opened("ticket:" + UUID.randomUUID(), "", worldId, agentId,
+				agentName, purpose, dev.ensouled.core.VerbLibrary.corpus().spokenVerb(skillId),
+				dev.ensouled.core.VerbLibrary.corpus().basis(skillId), 1, tick, tick + WINDOW_TICKS)
+				.withCell(evidence)
+				.closed(success ? Ticket.State.HELD : Ticket.State.REFUSED, tick,
+						success ? "first practice" : "practice refused", witness);
+		tickets.put(ticket.ticketId(), ticket);
+		publish(ticket);
+		save();
+	}
+
 	private void placed(String agentId, long tick, Vec3i at, String blockId) {
 		Optional<Commitment> open = openCommitment(agentId);
 		if (open.isEmpty()) {

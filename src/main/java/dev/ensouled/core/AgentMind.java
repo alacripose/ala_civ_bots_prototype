@@ -707,6 +707,11 @@ public final class AgentMind implements SkillContext.Listener {
 
 		lastActionSucceeded = true;
 		ledger.practiced(intention.skillId(), tick, true, "intent:" + intention.id());
+		dev.ensouled.work.WorkLedger work = dev.ensouled.work.WorkLedger.get();
+		if (work != null) {
+			work.discovered(identity.agentId(), identity.displayName(), intention.skillId(), tick,
+					true, "intent:" + intention.id());
+		}
 		ledger.note(tick, identity.agentId(), intention.id(), EvidenceKind.LEARN, hash,
 				"reinforced", intention.skillId() + " successes="
 						+ ledger.stats(intention.skillId()).successes() + " failures="
@@ -739,6 +744,11 @@ public final class AgentMind implements SkillContext.Listener {
 				"ev:" + ledger.evidence().sequence());
 		lastActionFailed = true;
 		ledger.practiced(intention.skillId(), tick, false, "intent:" + intention.id());
+		dev.ensouled.work.WorkLedger work = dev.ensouled.work.WorkLedger.get();
+		if (work != null) {
+			work.discovered(identity.agentId(), identity.displayName(), intention.skillId(), tick,
+					false, "intent:" + intention.id());
+		}
 		ledger.note(tick, identity.agentId(), intention.id(), EvidenceKind.LEARN, hash,
 				"failure_recorded", intention.skillId() + " code=" + code);
 

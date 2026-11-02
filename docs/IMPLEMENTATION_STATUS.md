@@ -15,7 +15,9 @@ prints the derived view (`verbs: harvest(3/1) ...`).
 
 Checked: `./gradlew --offline --no-daemon build` exits 0, including `PracticeLogTest`. Live server
 `0.1.0+g8d5beb5a…`; the wish "bring me 20 oak logs" opened `ticket:9a8668df…` and streamed it as
-ledger kind `record` at seq 29487 with verb `harvest`, cells 0/20.
+ledger kind `record` at seq 29487 with verb `harvest`, cells 0/20. A verb the being practises outside a wish now opens its own one-cell discovery ticket
+(`purpose=discover:<skill>`), so the world's own affordances produce verb tickets and not
+only human wishes.
 
 ## 2026-11-02 — Node motor body: chat transport and client observation
 
