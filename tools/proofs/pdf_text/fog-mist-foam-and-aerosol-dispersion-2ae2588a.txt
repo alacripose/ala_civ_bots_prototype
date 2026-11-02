@@ -1,0 +1,672 @@
+FOG, MIST, FOAM
+AND AEROSOL DISPERSION
+
+How water moves between surfaces, air, and visible suspended droplets
+
+Example: warm moist air crosses a colder lake or coastal current
+
+Surface cooling lowers saturation vapor pressure; air reaches saturation and droplets grow on aerosol particles.
+
+warm, moist air advects
+
+                         fog layer  Water vapor can also be added
+                                    when cold air passes over warmer water.
+
+                                    cold water
+
+A physical guide to near-surface clouds and water-atmosphere exchange
+
+This guide connects the thermodynamics of fog to the fluid mechanics of spray and foam. It explains why fog forms, why it
+can cling to the ground or water, how wind and mixing disperse it, and how breaking waves can turn liquid water into airborne
+aerosol particles. Emphasis is placed on mechanism rather than visual label alone.
+
+  Core distinction: fog is a suspension of tiny liquid droplets (or, in ice fog, ice particles) in air. Foam is a collection of gas
+  bubbles enclosed by liquid films. Spray is liquid droplets launched into air. These can interact, but they are not the same physical
+  state.
+
+Includes ground fog, lake and sea fog, steam fog, cold-water advection fog, sea foam and bubble-burst aerosols, waterfalls and surf mist, visibility
+physics, dissipation, field diagnosis, a compact modeling framework, and research links.
+
+Scientific reference guide | Standard-font edition | Research links are clickable
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+1. The system at a glance
+
+Visible fog and mist are outcomes of two related but different pathways: phase change (water vapor condenses into droplets)
+and mechanical atomization (liquid water is broken into airborne droplets). A third pathway, bubble bursting, couples foam
+to aerosol generation. All three are shaped by humidity, temperature, turbulence, and droplet-size distributions. [1-5]
+
+Topic                       What it answers
+Water vapor to fog          When does invisible vapor become visible liquid?
+Ground and valley fog       Why does fog pool in low places and hug the surface?
+Water-body interactions     Why does a lake or ocean make fog in one situation and steam fog in another?
+Foam and spray              How do waves and bubbles eject liquid droplets into the atmosphere?
+Dispersion and dissipation  What removes fog: warming, mixing, wind, deposition, or evaporation?
+Quantitative model          Which variables matter for a physically informed simulation?
+References                  Agency explainers and peer-reviewed papers with direct links.
+
+1.1 Terminology that prevents category errors
+
+Term                        Physical meaning
+
+Water vapor                 Individual water molecules in the gas phase; invisible by itself at ordinary atmospheric concentrations.
+
+Aerosol                     Solid or liquid particles suspended in a gas. It is a broad category, not a synonym for smoke.
+
+Fog                         Near-surface cloud droplets or ice particles that reduce horizontal visibility to less than about 1 km under the common
+
+                            meteorological convention. [1,2]
+
+Mist                        A less visibility-reducing suspension of droplets; exact operational thresholds vary among services and contexts.
+
+Spray                       Liquid droplets mechanically produced by waves, splashing, jets, waterfalls, fountains, or other breakup of liquid.
+
+Foam                        Gas bubbles dispersed through a liquid. Surface-active compounds can stabilize the thin liquid films between bubbles.
+
+Haze                        Visibility reduction dominated by dry or weakly hydrated aerosol particles, often with pollution, dust, smoke, or salt.
+
+Cloud                       Suspended droplets and/or ice crystals aloft; fog is often described as a cloud with its base at the surface.
+
+Important: you cannot infer the formation mechanism from a pale, white appearance alone. A white plume over water may be
+condensed fog droplets, mechanically generated spray, or both. A “steam fog” plume is usually condensed water droplets, not
+hot gaseous steam.
+
+                                                                                                                                                     2
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+2. How invisible vapor becomes visible fog
+
+Air contains water vapor mixed with nitrogen, oxygen, and other gases. The vapor pressure at saturation rises strongly with
+temperature: warm air can coexist with more vapor before condensation begins than cold air can. Fog develops when
+near-surface air becomes saturated and droplets can form and grow on suitable aerosol particles. Cooling is common, but
+adding vapor can also bring air to saturation. [1,2,6]
+
+2.1 Relative humidity and dew point
+
+Relative humidity (RH) is the ratio of actual vapor pressure to saturation vapor pressure at the current temperature. Dew point
+is the temperature to which the air must cool, at roughly constant pressure and vapor content, to reach saturation. As air
+temperature approaches dew point, the saturation deficit shrinks. At saturation, condensation is favored if droplets can
+nucleate or existing droplets can grow.
+
+  Field reading: if air temperature is only 0-2 C above dew point, fog may be close, but it is not guaranteed. Wind, vertical mixing,
+  aerosols, surface temperature, and whether the air is actually cooling or moistening determine the outcome.
+
+2.2 Why aerosols matter
+
+Water often condenses on pre-existing particles rather than appearing spontaneously in perfectly clean air. Hygroscopic
+particles such as sea salt can take up water as humidity rises. Once activated, a cloud or fog droplet grows by vapor diffusion
+and latent-heat exchange. The number and chemistry of available nuclei influence droplet number, average size, optical
+extinction, and the speed at which water is redistributed among droplets. [4,7,8]
+
+2.3 Condensation versus atomization
+
+Pathway               How droplets are made                                             Typical clue
+
+Condensation          Water vapor transfers to liquid on aerosol nuclei as air reaches  Cloud/fog boundary follows air temperature,
+                      saturation.                                                       dew point, and mixing.
+
+Atomization           Liquid is stretched, splashed, or torn into droplets by turbulence, jets, Droplets can be present even when RH is below
+
+                      impact, or wave breaking.                                         100%; then they may evaporate.
+
+Bubble-burst aerosol  A bubble rises through water and ruptures; film fragments and a   Strongly associated with whitecaps, surf, and
+                      recoiling cavity/jet eject droplets.                              aerated water; chemistry reflects the source
+                                                                                        water.
+
+The two pathways can follow one another: spray droplets can partially evaporate, leaving salt or organic residues; those
+residual particles can later take up water and act as cloud-condensation nuclei. Conversely, fog droplets evaporate during
+drying and leave any nonvolatile material behind as aerosol. [4,7,8]
+
+                                                                                                                                       3
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+3. Ground fog, radiation fog, and valley fog
+
+ Ground fog is a practical description for fog concentrated in a shallow layer close to the surface. It is often associated with
+ nocturnal radiative cooling, but the label does not uniquely identify one process. Radiation fog develops when the ground
+ loses longwave energy, cools the adjacent air, and brings it to saturation. It is favored by moist near-surface air, clear or
+ mostly clear skies, light winds, and sufficient time for cooling. [2,3]
+
+      Cold, sheltered basin
+      Clear sky + light wind -> ground loses heat -> shallow saturated layer
+
+                             near-surface fog
+
+                                                                                    Cold air drains downslope and collects in low terrain
+  Figure 1. In a sheltered basin, cooled dense air can drain downslope and collect in low terrain. If the near-ground layer reaches saturation, fog
+
+                                                   can form as a shallow pool and deepen upward as cooling continues.
+
+ 3.1 A typical overnight sequence
+
+ • Evening: the surface begins losing stored heat. Moist soil, wetlands, irrigation, lakes, and vegetation can keep the
+ near-surface layer humid.
+ • Late night: the surface and adjacent air cool. If temperature reaches dew point, droplets form around nuclei. A light breeze
+ may help mix moisture into a shallow layer; stronger wind can mix in warmer or drier air and prevent a dense layer.
+ • Predawn: continued cooling can increase liquid water content and deepen fog. In valleys, cold-air drainage may reinforce
+ pooling; a temperature inversion can cap vertical mixing.
+ • After sunrise: surface heating raises air temperature and saturation vapor pressure. Droplets evaporate if the air becomes
+ subsaturated, though thick fog can persist where sunlight is weak or moisture supply remains strong.
+
+ 3.2 Why fog likes low places
+
+ Cold air is denser than warmer air at similar pressure and tends to flow downslope under gravity. Valleys can therefore
+ accumulate a humid, cool layer while ridges remain clear. Topography also reduces ventilation and can shelter the surface
+ from stronger winds. Yet not every valley fog is purely radiative: moisture advection, evaporation, precipitation, and slope
+ lifting may contribute. [2,3]
+
+ 3.3 Dew, frost, fog, and wet vegetation are different
+
+ Dew is liquid water deposited directly onto a surface when that surface cools below the local dew point. Frost forms as ice
+ deposition or freezing under appropriate conditions. Fog consists of airborne droplets or ice particles. A foggy landscape can
+ collect additional liquid by interception on leaves, needles, fences, and buildings, but that surface water is not itself airborne
+ fog.
+
+   Ground-fog diagnostic: inspect vertical depth, wind, cloud cover, surface wetness, valley position, and the
+   temperature-dew-point spread. A thin fog layer that leaves treetops clear suggests a shallow near-surface process; fog attached
+   to a slope may instead indicate upslope flow or advection.
+
+                                                                                                                                                                                                            4
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+4. Fog in relation to lakes, rivers, and oceans
+
+A water body is not simply a source of “more humidity.” Its surface temperature relative to the air, the stability of the lowest
+atmosphere, wind direction, and air-water exchange jointly determine whether fog forms. Lake and sea fog can arise when
+the water cools the air above it; steam fog can arise when warmer water adds vapor to colder air. [2,5,6]
+
+    Example: warm moist air crosses a colder lake or coastal current
+
+    Surface cooling lowers saturation vapor pressure; air reaches saturation and droplets grow on aerosol particles.
+
+         warm, moist air advects
+
+                                                                                   fog layer  Water vapor can also be added
+                                                                                              when cold air passes over warmer water.
+
+                                                                                              cold water
+
+Figure 2. Two competing water-body effects: cold water cools advected air toward saturation; relatively warm water can supply vapor to colder
+                                                            air, producing an evaporation or “steam fog” plume.
+
+Process                      Required contrast                                     Typical setting / appearance
+
+Advection fog over cold      Warm, moist air flows over colder water and           Cold coastal currents, springtime lakes, air moving over cold
+water                        cools to saturation.                                  upwelled ocean water; broad low cloud-like bank.
+
+Steam / evaporation fog      Cold air passes over water warmer than the air;       Autumn lakes, rivers, reservoirs, or open water during a cold-air
+                             evaporation moistens the lowest air until it          outbreak; wisps often stream downwind. Despite the name, the
+                             saturates.                                            visible plume is mostly droplets, not vapor.
+
+Radiation fog over water Surface and adjacent air cool enough overnight            Calm lakes, bays, sheltered harbors, and wetland pools; often
+                                    to reach saturation; wind is generally light.  shallow and patchy.
+
+Lake / sea fog moving        Fog formed over water is transported inland by        Coastal roads, estuaries, harbors, shorelines; can persist while cold
+ashore                       low-level wind.                                       water maintains the layer.
+
+Precipitation / frontal fog  Rain evaporates into cooler air, raising vapor        Near fronts, persistent rain, and shallow cool air; fog can develop
+                             content toward saturation; cooling may also           even without clear nighttime skies.
+                             contribute.
+                                                                                   Hills around lakes, coastal ranges, and mountain slopes; often
+Upslope fog                  Moist stable air rises along terrain and cools as     merges with low stratus.
+                             pressure decreases.
+
+4.1 The key temperature difference
+
+For advection fog, compare the air dew point with the surface temperature of the water. If moist air is advected over water
+cooler than its dew point, the air can be cooled to saturation. For steam fog, compare the water temperature with the air
+temperature: evaporation from warmer water adds vapor to a cold layer, which can rapidly reach saturation. This is not a strict
+binary in nature; fog layers can evolve through simultaneous cooling, evaporation, turbulent mixing, and advection.
+
+4.2 Why big lakes behave differently from small ponds
+
+Large lakes and oceans have substantial heat capacity, so their temperatures change more slowly than land surface
+temperatures. This seasonal lag creates strong air-water contrasts during transitions: cold water can undercut warm moist air
+in spring, while water that retains summer heat can send vapor into cold autumn air. Small, shallow ponds respond more
+quickly to weather and can cool or warm faster. Local wind, fetch, shoreline geometry, and cold-air drainage determine how
+far a fog bank extends.
+
+                                                                                                                                               5
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+ 4.3 Bodies of water do not always make fog
+
+ If the air is too dry, there is insufficient vapor for saturation. Strong mixing can dilute a near-surface moist layer. If water and
+ air temperatures are similar, neither cooling nor evaporative moistening may be strong enough. A visible spray plume may still
+ form from breaking waves or splash, but that is mechanical droplet production rather than a condensation fog.
+
+5. Foam, whitecaps, bubble bursting, and sea spray
+
+ Foam is a gas-in-liquid structure: many bubbles are separated by thin liquid films. Surfactants, including natural organic
+ material from plankton and decaying biomass, can lower surface tension and slow drainage or rupture of these films. Foam is
+ often transient; its lifetime depends on bubble-size distribution, film thickness, liquid viscosity, surfactant chemistry, and the
+ rate at which waves create and destroy bubbles. [8-10]
+
+      Wave breaking entrains air; bubbles rise and burst at the surface
+      Foam is gas bubbles in liquid. Bubble bursting can eject tiny liquid droplets into the air.
+
+                                                                                         airborne droplets / spray aerosol
+                                                                                                Small droplets may evaporate, leaving salt
+                                                                                                and organic residue; some larger droplets fall back.
+
+                                                                                                                                       foam remains on water
+
+    Figure 3. Breaking waves entrain air. Bubbles rise, expand or shrink, and burst at the surface. The rupture can launch airborne droplets that
+                                            become sea-spray aerosol; much of the foam remains in the liquid phase. [8-10]
+
+ 5.1 What happens when a bubble bursts?
+
+ • Bubble formation: breaking waves, waterfalls, turbulence, or splashing drive air into water. Dissolved gases and
+ surfactants influence bubble behavior.
+ • Bubble rise: buoyancy carries bubbles toward the surface; small bubbles can be transported or trapped by turbulent water.
+ • Film-cap rupture: the thin bubble cap breaks into fragments, producing film drops. The exact number and size vary
+ strongly with bubble size and surface chemistry.
+ • Cavity collapse and jetting: after the cap breaks, the cavity recoils and can eject a jet that pinches into additional drops.
+ • Atmospheric fate: larger drops may fall back quickly; smaller droplets can be transported by turbulence, evaporate, or
+ retain water and grow if ambient humidity is high.
+
+ 5.2 Why sea foam can be white or brown
+
+ A dense foam patch scatters visible light repeatedly at many gas-liquid interfaces, producing a pale or white appearance even
+ though a thin film of water is transparent. Brown or tan sea foam may contain concentrated dissolved or suspended organic
+ material, algal products, or sediment. Color alone does not establish toxicity or biological origin. The foam patch is a
+ liquid-surface feature; the droplets it emits are a distinct airborne population. [9,10]
+
+ 5.3 Spray versus humid air
+
+ Windy surf can look like fog even when the air is not saturated. Mechanical spray consists of droplets launched from waves
+ and carried downwind. These droplets exchange heat and water with the air; if they evaporate, they can leave salt and
+ organic residues. At high humidity they may persist longer. Spray can therefore coexist with true fog, and a coastal scene can
+ contain a near-water spray layer beneath advection fog aloft. [7-10]
+
+ Modeling caution: do not generate sea fog solely from wind speed. Wind and wave state create spray and bubbles; fog requires a
+ thermodynamic path to saturation. They should be separate but coupled processes.
+
+                                                                                                                                                                                                            6
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+6. Other aerosolized water features
+
+Source                         Main production route                               How it differs from fog
+
+Waterfall / rapids             Impact, turbulent breakup, and air entrainment eject Often localized spray plume; droplets can evaporate downwind.
+
+                               droplets.                                           Cooling and saturation may create secondary fog nearby.
+
+Breaking surf / whitecaps      Bubble bursting plus direct wave fragmentation and  Broad droplet spectrum; large drops return quickly while fine
+                               spume from wind stress.                             droplets travel farther.
+
+Fountains / jets / irrigation  A pressurized stream or nozzle breaks into          Mechanically produced; can occur in dry air and then
+                               droplets; wind transports them.                     evaporate.
+
+Rain splash                    Impact forms crowns, ligaments, and secondary       A local aerosol source during precipitation; evaporation can
+                               droplets.                                           modify the size and lifetime.
+
+Wet soil / wetlands            Water vapor flux plus surface cooling can raise     May support condensation fog but does not automatically
+                               humidity; vegetation intercepts droplets.           create airborne droplets.
+
+Industrial or urban water      Cooling towers, humidifiers, wash systems, and      Droplet size, dissolved chemistry, and biological content
+spray                          other sources eject droplets or vapor.              depend on source and controls.
+
+Geysers / hot springs          Hot water jets and bubbles can create spray;        A visible plume can mix mechanical droplets with condensed
+                               cooling causes condensation under some              droplets; distinguish liquid spray from vapor.
+                               conditions.
+
+6.1 Evaporation does not always mean instant disappearance
+
+Droplet lifetime depends on initial diameter, air temperature, relative humidity, ventilation, and dissolved material. Small
+pure-water droplets can shrink rapidly in subsaturated air. Salt or organic residue may remain after most water evaporates. At
+higher humidity, droplets may settle into an equilibrium haze-like state or take up water. A visible plume may therefore change
+from liquid droplets to nearly invisible residual particles without physically travelling far. [7-9]
+
+6.2 Aerosol source chemistry
+
+Source water matters. Sea spray carries sea salt and a variable organic fraction; freshwater spray has much less sea salt but
+can carry dissolved minerals, organic matter, microbes, and suspended solids. Rain splash can mobilize material from a
+surface. Once airborne, particles can take up gases, undergo aqueous chemistry while wet, or deposit onto land and water.
+Treating all droplets as optically and chemically identical misses this source dependence. [7,8]
+
+                                                                                                                                                  7
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+7. Fog dispersion and dissipation
+
+Fog is maintained by a balance of cooling or moisture supply, condensation, turbulent transport, radiation, and droplet loss.
+Dissipation usually does not mean the droplets “fall out” like rain. More often, the air becomes subsaturated and droplets
+evaporate, or mixing replaces a foggy parcel with warmer or drier air. [3,5,6]
+
+Mechanism                 What it does                                             When it tends to matter
+Solar heating / sensible
+heat                      Warms the surface and lower air; saturation vapor        Morning radiation fog over land, sunlit shallow fog
+Entrainment of dry air    pressure rises and droplets evaporate.                   layers.
+Advection
+Mechanical mixing         Turbulence mixes unsaturated air into fog, evaporating   At fog top, edges, or where shear increases.
+                          droplets and reducing liquid water.
+Changing surface fluxes
+Droplet deposition        Wind transports fog into a new environment that may be   Sea fog moving inland; a valley fog bank crossing
+Coalescence / drizzle     warmer, drier, or differently ventilated.                terrain.
+Freezing / ice processes
+                          Wind or convective turbulence deepens and dilutes the    Transitions from calm dawn to breezy daytime
+                          layer; outcome depends on moisture and temperature of    conditions.
+                          mixed air.
+
+                          Cooling or vapor supply weakens; the fog can no longer   After winds change or a water-air temperature contrast
+                          maintain saturation.                                     diminishes.
+
+                          Droplets impact foliage, structures, or terrain and remove Vegetation-rich slopes, cloud forests, and persistent fog
+
+                          liquid from the air.                                     zones.
+
+                          Droplets collide and combine; if large enough, they may  Deep, liquid-rich fog and low stratus; can thin fog while
+                          fall as drizzle.                                         wetting surfaces.
+
+                          Supercooled droplets freeze on contact or ice particles  Freezing fog or ice fog; hazards and optics differ from
+                          form in very cold air.                                   liquid fog.
+
+7.1 Why wind can either clear or thicken fog
+
+Wind is not a universal fog-removal switch. Stronger wind can mix a saturated surface layer with warm/dry air and dissipate it.
+But it can also advect warm moist air over cold water, replenish moisture, or transport an existing fog bank. Gentle turbulence
+may help mix moisture from a wet surface through a shallow layer; stronger turbulence may erode it. The air mass and
+surface boundary conditions matter as much as wind speed.
+
+7.2 Fog is a moving field, not a solid object
+
+Fog edges are zones where droplet number and liquid water content change. In one location, droplets may evaporate while
+new droplets form a short distance away. Visual movement can reflect air transport, changing illumination, or changing droplet
+size rather than a coherent body of water moving intact. For simulation, represent fog as a concentration field transported by
+wind and turbulence, with local source/sink terms for condensation, evaporation, and deposition.
+
+  Practical chain: air transport + surface heat and moisture fluxes -> local temperature and vapor -> droplet activation/growth ->
+  liquid water content and droplet sizes -> light extinction/visibility -> evaporation, deposition, or precipitation.
+
+                                                                                                                                        8
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+8. Droplet size, optics, and visibility
+
+Fog is visible because droplets scatter light. Their size and concentration determine how strongly a beam is redirected and
+how quickly contrast is lost with distance. A fog bank made of many tiny droplets can have high optical extinction even when
+the total liquid mass is modest. Conversely, a spray cloud containing fewer but much larger drops may look different, fall out
+faster, and produce different near-field scattering. [4,7,8]
+
+8.1 Visibility and extinction
+
+In a uniform, approximately homogeneous fog, a useful meteorological approximation is the Koschmieder relation:
+
+Visual range: V ~= 3.912 / beta
+V is the visibility distance in meters for a 2% contrast threshold, and beta is the atmospheric extinction coefficient in inverse
+meters. This approximation is useful for intuition and rendering, but real scenes require care with illumination, background
+contrast, nonuniform density, and multiple scattering.
+
+As droplet number or effective size changes, extinction changes. At visible wavelengths, fog droplets are commonly in a size
+regime where Mie scattering is important; they are not simply tiny Rayleigh scatterers. For physically consistent models, use a
+size distribution (number concentration by diameter), not only one average radius, when fine accuracy is needed.
+
+8.2 A qualitative droplet-size map
+
+Population                    Typical behavior                                     Visual / transport consequence
+
+Very small aerosol particles  Often invisible individually; can be hygroscopic     Scatter weakly per particle but can be numerous; can
+                              nuclei.                                              grow at high RH.
+
+Fog and cloud droplets        Micron-scale liquid drops, with broad distributions  Strong visible scattering collectively; remain suspended
+                              that depend on formation history and dynamics.       when air motion is present.
+
+Fine spray droplets           Produced by fragmentation or bubble bursting; some   Can be carried downwind and can evaporate to residue.
+                              overlap fog sizes.
+
+Large spray drops             Produced by strong wave splash, jets, or impact.     Higher inertia and settling speed; more likely to fall or
+                                                                                   strike nearby surfaces.
+
+The boundaries between these categories overlap. Particle origin is not always recoverable from size alone: the same
+diameter could be a condensed fog droplet or a mechanically generated spray drop. Composition, location, humidity history,
+and dynamics can help distinguish them.
+
+8.3 White fog, gray fog, and glowing halos
+
+Dense fog often appears gray or white because scattered light arrives from many directions and contrast collapses. Fog
+illuminated from behind can glow; side lighting can reveal streaks and local density gradients. Fine droplets can create halos
+or coronas around lights under appropriate distributions, while water droplets on nearby lenses or surfaces produce different
+optical artifacts. Rendering should separate volume scattering from surface droplets and from lens effects.
+
+                                                                                                                                              9
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+9. Fog water, deposition, and environmental effects
+
+ Fog is a multiphase chemical environment rather than pure distilled water suspended in air. Droplets can scavenge soluble
+ gases and particles, host aqueous reactions, and deposit material on vegetation, buildings, and soil. When the fog
+ evaporates, some nonvolatile components remain as aerosol. The chemistry depends on air pollution, marine salts, organic
+ matter, and local biological emissions. [4,7]
+
+ 9.1 Fog deposition and cloud forests
+
+ In persistent fog regions, leaves, needles, and branches intercept droplets. The resulting fog drip can add water to
+ ecosystems, particularly where rainfall is limited or seasonal. Deposition depends on droplet size, wind, vegetation
+ roughness, canopy structure, and whether droplets evaporate after collision. Fog frequency alone does not quantify water
+ input; liquid water content, wind, exposure, and collection efficiency also matter.
+
+ 9.2 Coastal atmosphere and marine aerosol
+
+ Sea spray transports sodium chloride and a variable amount of organic and biological material into the marine boundary layer.
+ As droplets evaporate, they may leave particles that influence aerosol optical properties and later cloud condensation. Some
+ spray is transported far from the sea; larger droplets tend to remain nearer the surface. Bubble bursting and wave breaking
+ couple ocean chemistry, heat and gas exchange, cloud microphysics, and coastal air quality. [8-10]
+
+ 9.3 Freezing fog and ice fog
+
+ Freezing fog is supercooled liquid fog that freezes onto exposed surfaces. Ice fog consists of suspended ice particles and
+ occurs in very cold conditions, especially in polar or interior winter environments. Their formation depends on temperatures,
+ nuclei, vapor conditions, and local sources such as combustion or open water. Do not treat every subzero fog as an
+ ice-crystal field: supercooled liquid droplets can persist below 0 C. [1,2]
+
+   Environmental distinction: fog can be a source of water and dissolved substances through deposition, but it can also transport
+   pollutants and salts. Its net ecological effect depends on chemistry, frequency, liquid water content, and the receiving surface.
+
+                                                                                                                                                                                                          10
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+10. A compact physically informed model
+
+A useful model need not resolve every microscopic droplet. It should, however, preserve the separation between
+thermodynamic fog and mechanical spray, and it should evolve moisture, temperature, transport, and visible extinction
+consistently. The following structure is a hierarchy from a minimum viable simulation to a higher-fidelity model.
+
+Layer                   State variables / processes                              Minimum useful behavior
+Atmosphere
+Surface boundary        Air temperature T, vapor mixing ratio qv or relative     Advect fields; compute saturation vapor pressure and
+Condensation fog        humidity, pressure, wind, turbulent mixing.              saturation deficit.
+Spray / bubble aerosol
+Foam surface state      Surface temperature, water temperature, moisture flux,   Cool or moisten near-surface air; vary lake/sea and land
+Radiative optics        roughness, terrain exposure.                             independently.
+Sinks / phase change
+                        Droplet number N, liquid water content LWC, effective    When saturation is reached, activate nuclei and transfer
+                        radius or size bins.                                     vapor to liquid; evaporate when subsaturated.
+
+                        Source flux from waves, waterfalls, jets, bubbles;       Spawn droplets from mechanical breakup independent of
+                        drop-size distribution and source chemistry.             saturation; transport, evaporate, deposit.
+
+                        Bubble coverage, characteristic bubble size,             Keep foam on the liquid surface; generate aerosol only
+                        drainage/rupture rate, surface-active material proxy.    through an explicit burst/spray mechanism.
+
+                        Extinction, scattering albedo, phase function, spectral  Compute view-dependent contrast loss and light beams from
+                        dependence.                                              droplet/aerosol fields.
+
+                        Evaporation, deposition to land/water/vegetation,        Conserve water approximately between vapor, droplets,
+                        freezing, drizzle/coalescence.                           surface storage, and precipitation.
+
+10.1 Simplified saturation logic
+
+• Compute saturation vapor pressure from temperature and compare it with the actual vapor pressure.
+• If RH exceeds 100% in a numerical step, relax supersaturation by condensing vapor into droplets rather than allowing
+uncontrolled excess moisture. In a simple model, use a timescale; in a microphysical model, use droplet growth and aerosol
+activation.
+• If RH falls below 100%, evaporate liquid droplets subject to the available liquid water and a size-dependent evaporation
+rate.
+• Advect fog-water and spray-droplet fields with wind and mix them with a turbulence term. Add source terms for water-body
+fog, waves, falls, jets, and spray impacts.
+• Convert the evolving droplet distribution to optical extinction. Do not map visibility directly from RH alone; high RH can occur
+without visible fog if liquid droplets are absent.
+
+10.2 A conceptual fog-water budget
+
+  Change in airborne liquid water = condensation growth + injected spray - evaporation - deposition - precipitation loss + net
+  transport.
+
+  Change in vapor = surface evaporation and vapor advection - condensation - mixing losses or gains.
+
+  The same water can move between vapor, suspended droplets, surface water, and aerosol residue. Tracking only a “fog density”
+  slider skips the mechanism that should create and remove it.
+
+                                                                                                                       11
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+10.3 Fidelity tiers               What it resolves                                          Best suited for
+
+ Tier                             Fog density and height, wind drift, fade with warming.    A stylized scene with physically sensible controls.
+ Tier 1: artistically controlled
+ Tier 2: thermodynamic            Temperature, humidity, dew point, surface water           Ground fog, lake fog, low cloud bases, morning
+                                  temperature, advection and mixing.                        dissipation.
+ Tier 3: microphysical
+                                  Aerosol activation, droplet size distribution, LWC,       Research-grade appearance and size-dependent
+ Tier 4: coupled fluid/source     collision/coalescence, detailed extinction.               optics.
+ model
+                                  Wave breaking, bubbles, foam lifetime, spray production,  Surf, waterfalls, rivers, fountains, and sea-spray
+                                  aerosol evaporation and deposition.                       interaction.
+
+11. Field scenarios: infer the mechanism
+
+Observation                           Likely mechanisms                                     Useful checks
+                                      Steam/evaporation fog, possibly mixed with water
+A white plume streams downwind        spray if wind is rough.                               Water warmer than air? Very cold surface layer?
+from a lake on a cold morning.        Advection / sea fog.                                  Does plume follow wind and thin as it mixes?
+
+A broad fog bank drifts inland from   Radiation and valley fog, cold-air drainage.          Moist air crossing colder water; low stratus-like top;
+a cold coast.                                                                               wind carries it ashore.
+                                      Mechanical spray from droplet breakup; local
+A thin fog layer sits in a valley at  cooling/condensation may add fog.                     Clear night, light wind, wet ground, inversion,
+dawn while ridges are clear.          Gas bubbles stabilized by dissolved/suspended         dew-point spread.
+                                      organic matter or other surface-active material.
+The air above a waterfall looks       Spray droplets evaporating in unsaturated air, with   Visible close to impact, droplets wet nearby
+smoky, even in dry weather.           residual aerosol possible.                            surfaces, plume decays downwind.
+                                      Precipitation-induced fog: evaporation moistens
+Brown foam accumulates at a           cooler low-level air.                                 Foam is on the liquid surface; color alone cannot
+shoreline after strong surf.          Mechanical spray, dust, smoke, or another aerosol     identify chemistry or hazard.
+                                      is more plausible than condensation fog.
+Sea spray looks like fog above                                                              Humidity and temperature; droplet size; salt residue;
+whitecaps but vanishes quickly.                                                             wave and wind conditions.
+
+Fog forms during steady rain below                                                          Ongoing rain, shallow cool air, high RH; not
+a warm front.                                                                               dependent on nighttime radiative cooling.
+
+A visible plume appears but                                                                 Check source, droplet deposition, particle
+humidity is well below saturation.                                                          composition, and vapor conditions.
+
+11.1 Quick diagnostic order
+
+• First, locate the source: surface cooling, warm water, rain, waves, a waterfall, or a jet?
+
+• Second, classify the pathway: condensation, mechanical breakup, bubble bursting, or a mixture?
+
+• Third, inspect the air-water contrast: air temperature, water temperature, dew point, RH, wind, and stability.
+
+• Fourth, infer transport and lifetime: droplet size, turbulent mixing, downwind dilution, evaporation, surface collection, and
+precipitation.
+
+• Finally, infer the optics: droplet number and size, humidity, lighting, background contrast, and any non-water aerosol
+residue.
+
+The visual category is the last step, not the first. Starting from mechanism is more reliable than choosing “fog” because the
+plume happens to look white.
+
+                                                                                            12
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+12. Scientific references and deeper reading
+
+ The links below combine operational meteorology guidance with peer-reviewed reviews and papers. Agency pages are useful
+ for definitions and field diagnosis; research articles are better for microphysical detail, aerosols, bubble bursting, chemistry,
+ and unresolved mechanisms. Links are clickable in the PDF.
+
+ [1] NOAA National Weather Service. “Fog” - Weather Forecasting Glossary.
+ https://forecast.weather.gov/glossary.php?word=FOG
+ Operational definitions and descriptions of radiation, sea, steam, and other fog types.
+ [2] NOAA JetStream. “Weather Glossary: F”.
+ https://www.noaa.gov/jetstream/appendix/weather-glossary-f
+ Plain-language fog and mist definitions, including the visibility distinction.
+ [3] National Weather Service. “Radiation Fog” and “Advection Fog”.
+ https://www.weather.gov/safety/fog-radiation
+ Formation environments, overnight cooling, surface interactions, and air moving over colder ground or water.
+ https://www.weather.gov/safety/fog-advection
+ [4] Khoury, D.; Millet, M.; Jabali, Y.; Delhomme, O. (2023). “Fog Water: A General Review of Its Physical and Chemical Aspects.”
+ Environments 10(12), 224.
+ https://doi.org/10.3390/environments10120224
+ Broad review of fog formation, droplet activation, water chemistry, aerosol interactions, and fog-water collection.
+ [5] Korasin, D. et al. (2014). “Marine fog: A review.” Atmospheric Research 143, 142-175.
+ https://doi.org/10.1016/j.atmosres.2013.12.012
+ Review of marine fog formation, maintenance, dissipation, air-sea turbulence, advection, and observation.
+ [6] National Weather Service. “Fog Over Water”.
+ https://www.weather.gov/safety/fog-water
+ Practical explanation of sea and lake fog, including warm moist air over colder water.
+ [7] NOAA National Weather Service Louisville. “How Fog Forms”.
+ https://www.weather.gov/lmk/fog_tutorial
+ Accessible overview of radiation, valley, advection, and related fog processes.
+ [8] Deike, L. (2022). “Mass Transfer at the Ocean-Atmosphere Interface: The Role of Wave Breaking, Droplets, and Bubbles.” Annual
+ Review of Fluid Mechanics 54, 191-224.
+ https://doi.org/10.1146/annurev-fluid-030121-014132
+ Wave-breaking mechanics, air entrainment, bubbles, droplet production, and sea-spray exchange.
+ [9] Veron, F. (2015). “Ocean Spray.” Annual Review of Fluid Mechanics 47, 507-538.
+ https://doi.org/10.1146/annurev-fluid-010814-014651
+ How ocean spray is produced, transported, evaporated, and coupled to atmospheric aerosols and heat exchange.
+ [10] Quinn, P. K. et al. (2015). “Chemistry and Related Properties of Freshly Emitted Sea Spray Aerosol.” Chemical Reviews 115(10),
+ 4383-4399.
+ https://doi.org/10.1021/cr500713g
+ Sea-spray aerosol composition, salts, organics, and implications for atmospheric chemistry.
+
+                                                                                                                                                                                                          13
+FOG, MIST, FOAM & AEROSOL DISPERSION
+
+13. Additional references and key takeaways
+
+ [11] Villermaux, E. et al. (2022). “Bubbles spray aerosols: Certitudes and mysteries.” PNAS Nexus 1(5), pgac261.
+ https://doi.org/10.1093/pnasnexus/pgac261
+ Open-access perspective on bubble bursting, film drops, jet drops, and the role of fluid mechanics and chemistry.
+ [12] Callaghan, A. H.; Deane, G. B.; Stokes, M. D. (2017). “On the imprint of surfactant-driven stabilization of laboratory breaking wave
+ foam with comparison to oceanic whitecaps.” Journal of Geophysical Research: Oceans.
+ https://doi.org/10.1002/2017JC012809
+ Foam stability, surfactants, and comparisons between laboratory foam and ocean whitecaps.
+ [13] Quinn, P. K. et al. (2015). “Chemistry and Related Properties of Freshly Emitted Sea Spray Aerosol.” Chemical Reviews.
+ https://pubs.acs.org/doi/10.1021/cr500713g
+ Publisher page for a widely cited sea-spray review.
+ [14] National Weather Service Houston/Galveston. “Fog Definitions”.
+ https://www.weather.gov/source/zhu/ZHU_Training_Page/fog_stuff/fog_definitions/Fog_definitions.html
+ Operational categories such as radiation, precipitation, advection, steam, upslope, freezing, and ice fog.
+ [15] NOAA National Weather Service. “Types of Weather Phenomena”.
+ https://www.noaa.gov/jetstream/synoptic/types-of-weather-phenomena
+ Definitions of obscurations including fog, mist, and smoke.
+ [16] Villermaux, E. and related bubble-bursting literature referenced by PNAS Nexus 2022.
+ https://pmc.ncbi.nlm.nih.gov/articles/PMC9809165/
+ Open text version of the bubble-spray review, useful for detailed mechanism and aerosol size discussions.
+
+ Key takeaways
+
+ • Fog is an airborne droplet field created by saturation and condensation; spray is mechanically broken liquid; foam is gas
+ bubbles contained by liquid films.
+ • Ground fog is commonly connected to radiative cooling and terrain pooling, but the label describes where it sits rather than
+ proving its cause.
+ • Cold water can cool moist air into advection fog. Warm water can moisten cold air into steam or evaporation fog. Both can
+ occur near the same shoreline under changing conditions.
+ • Breaking waves and bubbles make sea-spray aerosols; foam does not simply turn into a fog bank, though bubble bursting
+ ejects droplets that may later evaporate or participate in aerosol and cloud processes.
+ • Fog disperses through evaporation, mixing, advection, changing surface fluxes, deposition, and sometimes drizzle or
+ freezing. Wind can clear, create, or transport fog depending on the air mass and source boundary.
+ • For physical simulation, track temperature, vapor, aerosol nuclei, droplet water, droplet size, sources, transport, and optics
+ separately enough that each process has a plausible cause.
+
+   Scope note: This is an educational synthesis, not a substitute for aviation, marine, or road-visibility forecasts. Actual
+   atmospheric fog and sea-spray production depend on multiscale turbulence and droplet microphysics; several bubble-bursting
+   and aerosol-production details remain active research topics.
+
+                                                                                                                                                                                                          14
+

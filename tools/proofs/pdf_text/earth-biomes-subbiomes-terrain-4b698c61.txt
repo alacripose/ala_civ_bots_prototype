@@ -1,0 +1,474 @@
+     EARTH BIOMES, SUB-BIOMES, AND
+                        TERRAIN
+
+How climate sets the broad envelope, while landform, water, soil, and geology carve that envelope into
+                                                          real landscapes
+
+ CORE IDEA
+
+ A biome is not simply a place at a particular latitude. At broad scales, temperature and water availability strongly constrain
+ vegetation. Terrain then redistributes heat, precipitation, runoff, snow, soil depth, and exposure over much smaller
+ distances. The result is a nested landscape: broad biome -> regional ecoregion -> local habitat or sub-biome-like patch.
+
+Latitude / oceans                                            Atmosphere                    Terrain
+     energy input                                        temperature + rainfall  uplift + shade + drainage
+
+   Soil / rock                                                Vegetation            Biome / sub-biome
+water + nutrients                                        structure + feedbacks   recurring ecological pattern
+
+Figure 1. A practical way to think about biome formation: global climate creates the outer envelope, but terrain and the soil-water system repeatedly
+reshape conditions at finer scales. These feedbacks make neighboring landscapes ecologically different even under the same regional climate.
+
+One important terminology note
+
+"Biome" is a broad ecological category, usually defined by characteristic vegetation structure and climate. "Sub-biome" is
+useful descriptive language but is not a single globally standardized scientific rank. For regional work, terms such as
+ecoregion, ecological region, formation, vegetation type, and habitat are often more precise. The hierarchy used in this
+guide is therefore conceptual rather than a claim that every classification system uses the same ranks.
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                                                1
+1. THE FIRST FILTER: ENERGY AND WATER
+
+Terrestrial biomes emerge from recurring combinations of heat, water availability, seasonality, and disturbance. Two simple
+climate variables explain a surprising amount of the broad pattern: temperature and precipitation. But precipitation alone is
+not the same thing as usable water. Wind, evaporation, snow storage, soil depth, drainage, and the length of the growing
+season determine how much water plants can actually access.
+
+A useful mental model is an atmospheric "budget":
+
+Input               What it does
+
+Solar energy        Sets potential heating and growing-season energy; varies with latitude, season, cloudiness, and slope aspect.
+
+Rain / snow         Adds water. Snow can also store water and delay its delivery into the soil until melt.
+
+Evaporation +       Removes water from soil and vegetation; demand rises with energy, wind, and dryness.
+transpiration
+
+Runoff + drainage   Moves water away from a location, often making ridges and steep slopes much drier than nearby hollows.
+
+Storage             Soil, wetlands, lakes, groundwater, snowpack, and organic layers can buffer dry periods.
+
+This is why two places with the same annual rainfall can support very different vegetation. If one receives rain in a cool
+season while the other receives it during a hot, high-evaporation season, their effective water balance can be radically
+different. Climate classifications such as Köppen-Geiger formalize broad climatic regimes, while vegetation-based biome
+maps add ecological structure. High-resolution climate maps show that sharp elevation gradients can produce rapid
+transitions over short distances.
+
+Source: Beck, Zimmermann, McVicar et al. (2018), Scientific Data, global 1-km Köppen-Geiger climate maps. https://doi.org/10.1038/sdata.2018.214
+
+The Whittaker-style intuition
+
+Imagine a graph with mean annual temperature on one axis and annual precipitation on the other. Forests occupy wetter
+combinations, grasslands tend to appear where water is more limiting or seasonality favors grasses, and deserts occur
+where atmospheric demand greatly exceeds water supply. Cold conditions create another filter: even with water present, low
+temperature can limit growth and change which plants can persist. This is a climate envelope, not a rigid boundary.
+
+                                                         Latitude / climate belt tendency (stylized)
+
+Polar desert / ice
+
+Tropical forest
+
+Polar desert / ice
+
+                    Real biome boundaries follow climate, circulation, ocean influence, terrain, and history - not latitude alone.
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                                           2
+2. MAJOR TERRESTRIAL BIOMES - AND THEIR COMMON
+SUBTYPES
+
+The following is a practical synthesis rather than a single universal classification. Real maps divide the Earth into many more
+ecoregions, and the names of intermediate categories vary. The key is the physical logic behind each group.
+
+Broad biome            Typical environmental envelope Common subtypes / expressions                       Terrain effects
+Tropical moist forest
+                       Warm year-round, high rainfall, long  Lowland rainforest; montane cloud forest;    Mountains create cloud belts; floodplains
+Tropical dry forest /  growing season.                       peat swamp forest.                           and slopes separate wetland and upland
+savanna                                                                                                   forests.
+Desert / xeric
+shrubland              Warm; strong wet-dry seasonality or   Seasonal dry forest; wooded savanna;         Fire, drainage, shallow soil, and slope
+Mediterranean          water limitation.                     grass-dominated savanna; thorn scrub.        moisture change tree cover dramatically.
+woodland / shrubland
+                       Low effective precipitation; high     Hot desert; cold desert; semi-desert         Alluvial fans, playas, dunes, rocky slopes,
+Temperate forest                                                                                          and wadis create strong habitat mosaics.
+                       evaporative demand in many regions. shrubland; salt desert.
+Temperate grassland /
+shrubland              Mild/wet season + dry summer;         Chaparral; maquis; matorral; fynbos-like     Aspect, slope, bedrock, and fire history
+Boreal forest / taiga  recurring fire common.                shrub systems.                               can separate woodland from shrubland
+                                                                                                          and grassland.
+Tundra
+                       Moderate temperatures; precipitation  Deciduous broadleaf; mixed forest;           Rain shadows, valley cold-air pooling,
+                       often sufficient for trees.           temperate rainforest; dry woodland.          aspect, and soil depth alter forest
+                                                                                                          structure.
+
+                       Seasonal climate; water or            Prairie; steppe; pampas; montane             Plains promote broad grasslands; slopes
+                       disturbance can limit trees.          grassland; shrub-steppe.                     and shallow soils favor shorter vegetation.
+
+                       Long cold winters; short growing      Closed conifer forest; open taiga; peatland  Lowlands can be waterlogged; uplands
+                       season.                               complexes; subarctic woodland.               drain faster; permafrost may reorganize
+                                                                                                          drainage.
+
+                       Very short growing season; cold       Arctic tundra; alpine tundra; polar desert;  Elevation, wind exposure, snow cover,
+                       soils; low stature vegetation.        wet sedge tundra.                            and permafrost determine which
+                                                                                                          microhabitats persist.
+
+WWF-style global ecoregion maps further subdivide terrestrial environments into many ecological regions, including flooded grasslands and savannas,
+montane grasslands and shrublands, mangroves, and numerous forest and desert categories. The exact hierarchy differs among systems, so map
+legends should always be read with their stated definitions.
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                                                3
+3. TERRAIN IS A CLIMATE MODIFIER
+
+Terrain does not replace regional climate; it redistributes it. A mountain ridge, canyon, plateau, dune field, river terrace, or
+shaded slope can create local energy and water conditions that differ strongly from the surrounding landscape. The most
+important terrain variables are elevation, slope, aspect, relief, and position relative to wind and water flow.
+
+     Mountain terrain converts one regional climate into many local microclimates.
+
+                                                                         alpine / subalpine
+
+                                                         montane forest
+
+                                                                                                  dry woodland / shrub / grassland
+
+Windward: uplift -> cooling -> clouds/precipitation -> wetter soils                               Leeward: sinking air -> warming/drying -> rain shadow
+
+Figure 2. A simplified mountain transect. Rising air cools as it expands, encouraging cloud formation and precipitation on the windward side. Descending air
+on the leeward side is warmer and drier, creating a rain shadow. Elevation also lowers average temperature and changes snow duration, growing season,
+and vegetation height.
+
+Elevation: the vertical biome ladder
+
+A mountain can compress climate zones that occur thousands of kilometers apart on a horizontal transect into a few
+kilometers vertically. As elevation increases, air pressure decreases and the mean environmental temperature generally
+falls. But the ecological transition is not controlled by temperature alone: wind exposure, snow redistribution, cloudiness, soil
+development, growing-season length, and geology also change. Above a treeline, the system often shifts from forest to
+shrub/grass/herb communities and eventually to sparse alpine or nival habitats.
+
+Aspect: the same elevation can behave like two different climates
+
+Slope orientation changes incoming solar radiation and therefore surface heating and drying. The sign and magnitude of this
+effect depend on latitude and season. In the Northern Hemisphere, for example, south-facing slopes often receive more
+direct annual solar input than north-facing slopes, but local cloud, vegetation, slope angle, and atmospheric conditions
+matter. Aspect can therefore shift snowmelt timing and soil moisture enough to alter community composition within a single
+elevation band.
+
+Evidence: global mountain studies show biodiversity patterns associated with temperature, rainfall, relief, erosion, and soil
+heterogeneity, demonstrating that terrain and geological history interact with climate rather than acting as isolated controls.
+
+Reference: Antonelli et al. (2018), Nature Geoscience. https://doi.org/10.1038/s41561-018-0236-z
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                                                       4
+4. WATER MOVES DOWNHILL - AND BIOMES FOLLOW THE
+WATER
+
+Once water reaches the ground, terrain becomes a hydrologic sorting machine. A steep convex slope may shed rainfall
+quickly. A hollow may collect runoff and sediment. A floodplain may be inundated repeatedly. A terrace may sit above the
+active flood zone and drain more freely. These small changes can determine whether the same regional climate produces
+forest, woodland, wet meadow, marsh, shrubland, or grassland.
+
+     Terrain redistributes water: ridge, slope, hollow, terrace, and floodplain can host different plant communities.
+
+                                                         wet valley / floodplain
+
+Upper slopes: faster drainage, thinner soils             Valleys: water + sediment accumulation  Aspect: changes solar exposure and drying
+
+Figure 3. Cross-sectional terrain model. Runoff and subsurface flow concentrate in depressions and valley bottoms. That water movement changes soil
+saturation, nutrient transport, and disturbance frequency, producing a fine-scale mosaic of vegetation.
+
+Floodplains are especially important because the terrain-hydrology relationship is time-dependent. A floodplain can shift
+among wet and dry states, and its vegetation is shaped by flood depth, duration, frequency, sediment deposition, channel
+migration, and groundwater connection. Vegetation in turn modifies roughness, sediment retention, and flow, so terrain and
+vegetation can become a feedback system rather than a one-way control.
+
+Reference: Noe (2013), "Interactions among hydrogeomorphology, vegetation, and nutrient biogeochemistry in floodplain ecosystems." DOI:
+https://doi.org/10.1016/B978-0-12-374739-6.00338-9
+
+Drainage can create "hidden sub-biomes"
+
+Within a grassland or forest biome, a local depression with persistent saturated soil can support wetland species that would
+not survive on an adjacent ridge. Conversely, rocky ridges with thin soil can support drought-adapted shrubs in the middle of
+a humid forest region. These are not necessarily separate global biomes; they are local ecological expressions generated by
+terrain and water availability.
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                                              5
+5. GEOLOGY AND SOIL: THE TERRAIN UNDER THE TERRAIN
+
+Topography determines where material accumulates or is removed, while geology determines what that material is made of.
+Weathering turns rock into soil; slope processes move soil downhill; water sorts particles; organic matter accumulates;
+plants alter the soil they occupy. The resulting soil controls root access to water and nutrients and can therefore reinforce or
+oppose the vegetation pattern expected from climate alone.
+
+A useful state-factor model
+
+Factor                Landscape consequence                                       Possible vegetation response
+
+Parent material       Controls mineral supply, texture, base status, and          Species adapted to different pH, nutrient, or texture conditions.
+                      weathering pathways.
+
+Slope / relief        Changes erosion, soil depth, runoff, and stability.         Deep-soil woodland in stable hollows; short vegetation on
+                                                                                  exposed shallow soils.
+
+Soil texture          Changes infiltration and water storage.                     Sandy sites may drain rapidly; clay-rich sites may hold water
+                                                                                  but drain slowly.
+
+Organic layer         Buffers temperature and moisture, stores carbon and         Can support mosses, shrubs, conifers, or wetland plants under
+                      nutrients.                                                  cold/wet conditions.
+
+Permafrost / hardpan  Creates shallow barriers to drainage and root penetration.  Can promote surface wetness despite low precipitation;
+                                                                                  supports specialized tundra or shrub communities.
+
+A global soil analysis found that climate, parent material, vegetation, and topography together explain much more variation
+in ecosystem properties than soil age alone. Another global soil-climate-biome analysis found strong relationships between
+soil properties, temperature, precipitation, and biome, reinforcing the idea that soil is part of the climate-biome-terrain
+coupling rather than a passive layer beneath plants.
+
+References: Delvaux et al. (2010), Nature Communications / global cross-biome soil chronosequences; Shen et al. (2019), Biogeosciences, global
+soil-climate-biome diagram.
+
+Links: https://doi.org/10.1038/s41467-020-18451-3 | https://doi.org/10.5194/bg-16-2857-2019
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                                              6
+6. TERRAIN EXPRESSION OF BIOMES
+
+Tropical forest
+
+Lowland basins and wet slopes can support tall, layered forests. On steep tropical mountains, elevation, cloud immersion,
+and thin/young soils can produce montane forests and cloud forests. Valley bottoms may contain swamp or floodplain
+forests, while exposed ridges can be shorter and more wind-stressed.
+
+Savanna and tropical dry systems
+
+Small changes in water table, soil depth, fire frequency, and drainage can change tree cover. Deep, well-drained soils may
+carry taller woody vegetation where rainfall permits, while shallow rocky soils or frequently burned areas can remain
+grass-dominated.
+
+Temperate forest
+
+Mountain windward slopes can be wetter than nearby lowlands. Valley floors may be frost-prone because cold dense air
+pools at night, altering species composition. Limestone, sandstone, volcanic ash, and glacial deposits can each create
+different soil conditions within the same climatic forest zone.
+
+Grassland and shrub-steppe
+
+Broad flat terrain favors widespread grasses where water limitation or fire prevents closed forest. Hills and mountains create
+a patchwork of shallow soils, snow traps, riparian strips, and sheltered pockets that can support shrubs or trees inside an
+otherwise grass-dominated regional biome.
+
+Desert
+
+Deserts are highly structured by landform. Fans, playas, dunes, rocky pavements, canyon floors, and ephemeral stream
+channels differ in water storage and disturbance. A single desert can therefore contain many sharply contrasting
+"micro-biomes" separated by only a few kilometers.
+
+Boreal and tundra
+
+Flat, cold lowlands can be surprisingly wet because evaporation is low and drainage is impeded by permafrost or shallow
+frozen layers. Raised ground, ridges, wind-exposed slopes, and south-facing aspects can be drier and warmer, creating a
+mosaic from wet sedge to shrub tundra to open woodland.
+
+ IMPORTANT
+
+ A biome label is a regional summary. Terrain is one reason the same broad biome can contain forests, wetlands,
+ shrublands, grasslands, bare rock, and many transitional communities side by side.
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                         7
+7. MOUNTAINS: COMPRESSED BIOMES + HIGH TOPOGRAPHIC
+DIVERSITY
+
+Mountains are unusually useful for understanding the biome-terrain relationship because elevation changes temperature
+quickly while relief simultaneously changes rainfall, exposure, snow distribution, and erosion. A single mountain slope can
+cross several vegetation belts in a relatively short horizontal distance.
+
+Zone                Typical physical conditions                                    Common ecological expression
+Foothill / montane  Warmer, deeper soils, more developed drainage networks.
+lowland                                                                            Forest, woodland, or montane grassland depending on
+Montane             Cooler, often wetter; slopes can be steep and erosion strong.  regional climate.
+Subalpine           Shorter growing season, high snow influence, strong winds.
+Alpine              Above treeline; cold, windy, short growing season.             Montane forest, conifer forest, cloud forest, or shrubland.
+
+Nival / permanent   Extremely short or absent growing season; exposed ground       Open conifer woodland, tall shrub, meadow.
+snow-ice            sparse.
+                                                                                   Alpine meadow, fellfield, dwarf shrub, cushion plant
+                                                                                   communities.
+
+                                                                                   Bare rock, snow, ice, sparse pioneer
+                                                                                   organisms.
+
+Importantly, there is no universal elevation at which a particular biome "starts." Treeline and other ecological boundaries
+depend on latitude, maritime influence, moisture, wind, disturbance, and species history. Mountain research also shows that
+geology can matter directly by controlling relief and soil heterogeneity.
+
+Reference: Körner et al. (2011), "A definition of mountains and their bioclimatic belts for global comparisons of biodiversity data."
+https://doi.org/10.1007/s00035-011-0094-4
+
+Reference: Ott et al. (2020), "How Lithology Impacts Global Topography, Vegetation, and Animal Biodiversity." https://doi.org/10.1029/2020GL088649
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                                             8
+8. COASTS, WETLANDS, AND OTHER WATER-CONTROLLED
+SUB-BIOMES
+
+Some of the strongest ecological boundaries are not caused by broad climate at all. They are caused by persistent water
+geometry: coastlines, river corridors, deltas, lakes, springs, and wetlands. Here the terrain is inseparable from hydrology.
+
+Landform         Hydrologic condition                                             Ecological result
+                                                                                  Riparian woodland, wet meadow, floodplain forest, swamp, or
+Floodplain       Periodic inundation, sediment deposition, groundwater            marsh.
+                 connection.                                                      Marsh, mangrove, mudflat, tidal forest, brackish habitats.
+
+Delta / estuary  Freshwater + tides + salinity gradients + sediment               Sphagnum-rich bog, fen, wet shrubland, stunted woodland.
+                 accumulation.
+                                                                                  Halophytic shrubland, salt marsh, salt pan, sparse vegetation.
+Peatland / bog   Persistently waterlogged soil, slow decomposition, low           Dune grassland, beach shrubland, coastal heath, pioneer
+                 oxygen.                                                          vegetation.
+
+Salt flat / saline depression Evaporation concentrates salts; episodic flooding.
+
+Coastal dune     Wind-driven sand movement; drainage often rapid.
+
+In a floodplain, the relevant terrain is not just "flat land." What matters is elevation relative to the river, connection to the
+channel, frequency and depth of flooding, and how sediment is deposited. Hydrologic connectivity creates gradients from
+frequently flooded bars to rarely flooded terraces, each with different soils and plant communities.
+
+For a broad global framing, WWF terrestrial ecoregions explicitly separate flooded grasslands and savannas, mangroves, freshwater systems, and
+montane ecosystems from other major terrestrial classes. WWF Terrestrial Ecoregions of the World.
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                                           9
+9. BIOMES ARE NOT JUST PRODUCTS OF TERRAIN - THEY
+ALSO CHANGE TERRAIN
+
+Once vegetation becomes established, it starts modifying the physical environment. Roots stabilize soil. Canopy changes
+wind and rainfall interception. Litter alters infiltration and evaporation. Beavers, grasses, mangroves, and riparian forests can
+reshape channels and sediment patterns. Fire changes vegetation structure and erosion. The result is a set of feedback
+loops.
+
+Vegetation process           Physical change                                          Potential ecological feedback
+Root growth                  Improves soil aggregation and stabilizes slopes.         More soil retention -> more moisture/nutrients -> continued
+                                                                                      plant growth.
+Canopy interception          Changes rainfall reaching soil and surface evaporation.
+                                                                                      Understory becomes a different microclimate than exposed
+Organic matter accumulation  Raises water-holding capacity and changes                ground.
+                             decomposition.
+                                                                                      Longer moisture persistence can support denser vegetation.
+Fire                         Removes biomass, exposes soil, changes runoff and
+                                                                                      Repeated fire can maintain grassland/savanna where forest
+                             nutrient pulses.                                         could otherwise expand.
+
+River vegetation             Changes roughness, sediment trapping, bank strength,     New landforms create new habitat for plants and animals.
+                             and channel form.
+
+River corridors are a particularly clear example of two-way coupling. Reviews of fluvial biogeomorphology show that
+vegetation responds to channel form and flow while also changing sediment transport, bank stability, and the development
+of vegetated landforms. The ecosystem therefore becomes a moving physical system, not a static patch of plants placed on
+top of terrain.
+
+Reference: Corenblit et al. (2007), "Reciprocal interactions and adjustments between fluvial landforms and vegetation dynamics in river corridors."
+https://doi.org/10.1016/j.earscirev.2007.05.004
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                                              10
+10. A REAL-WORLD METHOD: PREDICT THE LOCAL BIOME
+FROM TERRAIN
+
+For worldbuilding, simulation, environmental modeling, or simply interpreting a landscape, you can estimate the likely
+vegetation pattern by moving through the following sequence.
+
+1. Establish the regional climate
+
+Estimate latitude, seasonal temperature, annual precipitation, precipitation seasonality, prevailing winds, and distance from
+ocean.
+
+2. Locate the terrain
+
+Measure elevation, slope, aspect, relief, and position relative to mountain barriers or major water bodies.
+
+3. Predict local moisture
+
+Ask where precipitation is concentrated, where runoff collects, how quickly water drains, and whether snow or groundwater
+stores it.
+
+4. Infer the soil environment
+
+Use parent rock, sediment type, erosion/deposition, organic matter, texture, depth, pH, and water table as filters.
+
+5. Add disturbance
+
+Fire, grazing, floods, landslides, storms, avalanches, drought, and human land use can maintain an alternative vegetation
+state.
+
+6. Select the vegetation structure
+
+Forest, woodland, shrubland, grassland, wetland, desert scrub, alpine vegetation, or sparse/bare ground.
+
+7. Name the regional unit
+
+Only after understanding the physical setting should you assign a biome/ecoregion/subtype label. The label is the summary,
+not the mechanism.
+
+ EXAMPLE
+
+ Suppose two valleys sit at similar latitude and elevation. Valley A is on the windward side of a mountain, has deep volcanic
+ soil, frequent cloud, and a perennial stream. Valley B lies in the rain shadow, has shallow rocky soil, and an intermittent
+ stream. Even without changing latitude, A could support dense forest while B supports open woodland, shrubland, or
+ grassland. Terrain changed the local water and soil regime enough to move the sites into different ecological expressions
+ of the same regional climate.
+
+Earth biomes, sub-biomes, and terrain - reference guide  11
+11. DEEPER REFERENCE - PAPERS, MAPS, AND
+FRAMEWORKS
+
+Beck, H. E., Zimmermann, N. E., McVicar, T. R., Vergopolan, N., Berg, A., & Wood, E. F. (2018). Present and future Koeppen-Geiger climate
+   classification maps at 1-km resolution. Scientific Data 5, 180214.
+   https://doi.org/10.1038/sdata.2018.214
+
+Antonelli, A. et al. (2018). Geological and climatic influences on mountain biodiversity. Nature Geoscience.
+   https://doi.org/10.1038/s41561-018-0236-z
+
+Korner, C. et al. (2011). A definition of mountains and their bioclimatic belts for global comparisons of biodiversity data. Alpine Botany.
+   https://doi.org/10.1007/s00035-011-0094-4
+
+Ott, R. F. et al. (2020). How Lithology Impacts Global Topography, Vegetation, and Animal Biodiversity: A Global-Scale Analysis of Mountainous
+   Regions. Geophysical Research Letters 47.
+   https://doi.org/10.1029/2020GL088649
+
+Delvaux, M. et al. (2020). The influence of soil age on ecosystem structure and function across biomes. Nature Communications.
+   https://doi.org/10.1038/s41467-020-18451-3
+
+Shen, H. et al. (2019). Global soil-climate-biome diagram: linking surface soil properties to climate and biota. Biogeosciences 16, 2857-2873.
+   https://doi.org/10.5194/bg-16-2857-2019
+
+Thompson, R. S. et al. (2005). Topographic, bioclimatic, and vegetation characteristics of three ecoregion classification systems in North America.
+   Environmental Management.
+   https://doi.org/10.1007/s00267-003-7200-3
+
+Noe, G. B. (2013). Interactions among hydrogeomorphology, vegetation, and nutrient biogeochemistry in floodplain ecosystems.
+   https://doi.org/10.1016/B978-0-12-374739-6.00338-9
+
+Corenblit, D. et al. (2007). Reciprocal interactions and adjustments between fluvial landforms and vegetation dynamics in river corridors.
+   Earth-Science Reviews 84, 56-86.
+   https://doi.org/10.1016/j.earscirev.2007.05.004
+
+Durán, J. & Delgado-Baquerizo, M. (2020). Vegetation structure determines the spatial variability of soil biodiversity across biomes. Scientific
+   Reports 10, 21500.
+   https://doi.org/10.1038/s41598-020-78483-z
+
+USGS. Bailey Ecoregions of North America - Atlas of Relations Between Climatic Parameters and Distributions of Important Trees and Shrubs.
+   https://pubs.usgs.gov/pp/p1650-e/graphical_bailey.html
+
+World Wildlife Fund. Terrestrial Ecoregions of the World - global ecoregion framework and map resources.
+   https://www.worldwildlife.org/publications/terrestrial-ecoregions-of-the-world
+
+Recent note
+
+Topography remains an active research topic because its ecological effect is scale-dependent. A 2025 global alpine-zone study, for example, found that
+vegetation changes covary with elevation and slope aspect, reinforcing that even within one biome class, terrain can modify long-term vegetation
+response. https://doi.org/10.1016/j.jag.2025.104727
+
+ TAKEAWAY
+
+ A useful causal picture is: climate sets the envelope -> terrain redistributes energy and water -> geology/soil
+ controls storage and access -> disturbance selects which vegetation persists -> vegetation feeds back on soil
+ and landform -> the resulting recurring pattern is what we call a biome or sub-biome.
+
+Earth biomes, sub-biomes, and terrain - reference guide                                                                                                 12
+

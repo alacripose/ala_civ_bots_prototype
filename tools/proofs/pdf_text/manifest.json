@@ -1,0 +1,140 @@
+{
+  "schema": "ensouled.pdf-text/1",
+  "root": "C:\\Users\\ala\\Documents\\shploingus-clean",
+  "out": "tools\\proofs\\pdf_text",
+  "documents": {
+    "aerosol-optics-sky-lwc-twilight-grok-460edf10.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\Aerosol_Optics_Sky_LWC_Twilight_grok.pdf"
+      ],
+      "sha256": "460edf10866504c73fe4ca4dafd9cc0d60808eef7b543d2183a9751fab874d81",
+      "bytes": 22148,
+      "pages": null,
+      "text_chars": 19585
+    },
+    "atmospheric-optical-coupling-chatgpt-3fd1a476.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\Atmospheric_Optical_Coupling_chatgpt.pdf"
+      ],
+      "sha256": "3fd1a476f1ac842863db070befa5246c60efbf442b6b8593be3182ca8fc7326b",
+      "bytes": 566608,
+      "pages": null,
+      "text_chars": 43934
+    },
+    "cloud-types-fronts-and-altitudes-guide-d684bd9d.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\cloud_types_fronts_and_altitudes_guide.pdf"
+      ],
+      "sha256": "d684bd9d14ef5bedd03906d597efe635e90908f3103a841ec3a6e287e451feb8",
+      "bytes": 56768,
+      "pages": null,
+      "text_chars": 45869
+    },
+    "clouds-and-atmospheric-formation-7a47b6db.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\clouds_and_atmospheric_formation.pdf"
+      ],
+      "sha256": "7a47b6db4a8139d4d24dad78d5127b7b836e421897571ab258c60865b59fea45",
+      "bytes": 36185,
+      "pages": null,
+      "text_chars": 26094
+    },
+    "colorado-atmospheric-effects-scientific-report-3fe90c65.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\colorado_atmospheric_effects_scientific_report.pdf"
+      ],
+      "sha256": "3fe90c65b0d76f7079e6971ce8b9672ae6ebc7956b2f7141c3e382090f2d7eea",
+      "bytes": 739832,
+      "pages": null,
+      "text_chars": 20892
+    },
+    "commerce-city-fog-scientific-brief-oct-26-2026-18ac9f7d.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\commerce_city_fog_scientific_brief_oct_26_2026.pdf"
+      ],
+      "sha256": "18ac9f7d9a5488d83af305d1d0f003325ed9f166b813a9ac65945392328cb048",
+      "bytes": 41304,
+      "pages": null,
+      "text_chars": 14125
+    },
+    "earth-biomes-subbiomes-continentalness-mountains-014bd73e.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\earth_biomes_subbiomes_continentalness_mountains.pdf"
+      ],
+      "sha256": "014bd73e45187e1679a4ccc467fbfd50d1a2ba43a3bc98cda3bc6bd9e1770474",
+      "bytes": 113330,
+      "pages": null,
+      "text_chars": 90584
+    },
+    "earth-biomes-subbiomes-terrain-4b698c61.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\earth_biomes_subbiomes_terrain.pdf"
+      ],
+      "sha256": "4b698c61ebe217ee8d1e8943f125ba158868d0b38193e2f31b40f2227307162d",
+      "bytes": 65056,
+      "pages": null,
+      "text_chars": 31341
+    },
+    "earth-upper-atmosphere-to-space-cf29ea15.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\earth_upper_atmosphere_to_space.pdf"
+      ],
+      "sha256": "cf29ea15b33673dca395cbaf72f04e095e6e7da565a5fef179e752d7c6834d19",
+      "bytes": 77936,
+      "pages": null,
+      "text_chars": 46698
+    },
+    "fluidics-pressure-and-water-ingress-758903b7.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\fluidics_pressure_and_water_ingress.pdf"
+      ],
+      "sha256": "758903b7630a52f845a5c9a403804ac984107f45aebadf4c4909e2e4e7ddf971",
+      "bytes": 61470,
+      "pages": null,
+      "text_chars": 27142
+    },
+    "fog-mist-foam-and-aerosol-dispersion-2ae2588a.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\fog_mist_foam_and_aerosol_dispersion.pdf"
+      ],
+      "sha256": "2ae2588abced6707f77e9ef7c234db9f583c6899c32f6585e9c0e5b0f5b1f38e",
+      "bytes": 56179,
+      "pages": null,
+      "text_chars": 47062
+    },
+    "laine2010tr1-paper-b71711e6.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\laine2010tr1_paper.pdf"
+      ],
+      "sha256": "b71711e68bc99c06ba66bb87cbd70bcfa03ab704b48f05bd45862011c287f233",
+      "bytes": 23471002,
+      "pages": null,
+      "text_chars": 190382
+    },
+    "openpbr-energy-conservation-28d33322.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\OpenPBR_Energy_Conservation.pdf"
+      ],
+      "sha256": "28d3332243a388b31aa63b2c7dac61c468a19f70d5e4e07a9dc9ae22ed13bb62",
+      "bytes": 477572,
+      "pages": null,
+      "text_chars": 56580
+    },
+    "phase-change-ice-and-light-spectrum-5086ec7d.txt": {
+      "sources": [
+        "C:\\Users\\ala\\Documents\\shploingus-clean\\docs\\phase_change_ice_and_light_spectrum.pdf"
+      ],
+      "sha256": "5086ec7d5429cd7e60cb0a76e6fc7fcd974f365b9c487a4ef6b883e569094c5f",
+      "bytes": 349458,
+      "pages": null,
+      "text_chars": 19531
+    }
+  },
+  "failures": [],
+  "counts": {
+    "pdfs": 14,
+    "converted": 14,
+    "failed": 0,
+    "text_chars": 679819
+  }
+}

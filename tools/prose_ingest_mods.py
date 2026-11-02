@@ -11,7 +11,7 @@ a being speak.
 What is read, and what is not:
 
   * `**/lang/en_us.json` — the string *values* only. Keys are identifiers and are excluded.
-  * comments in `.java` — `//`, `/* ... */` and `/** ... */` bodies. Code is never read, so
+  * comments in `.java` and `.rs` — `//`, `/* ... */` and `/** ... */` bodies. Code is never read, so
     identifiers, string literals and class names cannot leak into the vocabulary.
   * `**/*.md` and `**/*.txt` — prose from READMEs, changelogs, design docs and directives.
 
@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import fnmatch
 import json
 import pathlib
 import re
@@ -43,6 +44,8 @@ import sys
 # The same word shape the corpus compiler attests, so merged counts mean the same thing.
 WORD = re.compile(r"[a-z]+(?:'[a-z]+)?")
 JAVA_SKIP = ("src/test", "src/testFixtures")
+# History, build output and tool caches are not the project's own prose.
+SKIP_PARTS = {".git", "target", "node_modules", ".freebuff", ".scratch", ".cargo"}
 LANG_SKIP = ("lang/en_us.json",)
 # Prose suffixes. `.txt` is here because the project's corrective directives arrive as text.
 PROSE_SUFFIXES = (".md", ".txt")
@@ -113,7 +116,8 @@ def java_comments(path: pathlib.Path) -> str:
     return "\n".join(kept)
 
 
-def read_unit(source: pathlib.Path) -> tuple[collections.Counter, dict, list[str]]:
+def read_unit(source: pathlib.Path, excludes: tuple[str, ...] = ()
+              ) -> tuple[collections.Counter, dict, list[str]]:
     """The prose of one source: a directory tree, or a single file read as itself."""
     words: collections.Counter[str] = collections.Counter()
     files = {"lang": 0, "java": 0, "markdown": 0}
@@ -123,12 +127,19 @@ def read_unit(source: pathlib.Path) -> tuple[collections.Counter, dict, list[str
         posix = path.as_posix()
         if any(skip in posix for skip in JAVA_SKIP):
             continue
+        relative = path.name if source.is_file() else path.relative_to(source).as_posix()
+        if any(part.casefold() in SKIP_PARTS for part in pathlib.PurePosixPath(relative).parts):
+            continue
+        if any(fnmatch.fnmatch(relative, pattern) or fnmatch.fnmatch(path.name, pattern)
+               for pattern in excludes):
+            continue
         suffix = path.suffix.lower()
         if suffix == ".json" and any(posix.endswith(skip) for skip in LANG_SKIP):
             files["lang"] += 1
             for value in lang_values(path):
                 words.update(WORD.findall(value.lower()))
-        elif suffix == ".java":
+        elif suffix in (".java", ".rs"):
+            # Rust and Java share the comment syntax this reader extracts; code is never read.
             files["java"] += 1
             words.update(WORD.findall(java_comments(path).lower()))
         elif suffix in PROSE_SUFFIXES:
@@ -139,47 +150,63 @@ def read_unit(source: pathlib.Path) -> tuple[collections.Counter, dict, list[str
     return words, files, documents
 
 
-def ingest(root: pathlib.Path, extra_files: list[pathlib.Path]) -> tuple[collections.Counter, dict]:
-    sources: list[pathlib.Path] = [p for p in sorted(root.iterdir())
-                                   if p.is_dir() or p.suffix.lower() in PROSE_SUFFIXES]
-    sources.extend(extra_files)
+def ingest(roots: list[pathlib.Path], extra_files: list[pathlib.Path],
+           excludes: tuple[str, ...] = ()) -> tuple[collections.Counter, dict]:
+    """Every root's prose, merged. A second root is a second corpus (a PDF staging dir, say)."""
     words: collections.Counter[str] = collections.Counter()
-    report = {"root": str(root), "mods": {}, "skipped": [], "documents": {}}
-    for source in sources:
-        mod_words, files, documents = read_unit(source)
-        if not mod_words:
-            report["skipped"].append(source.name)
-            continue
-        words.update(mod_words)
-        report["mods"][source.name] = {
-            "files": files,
-            "words": len(mod_words),
-            "tokens": sum(mod_words.values()),
-            "top": [word for word, _ in mod_words.most_common(12)],
-        }
-        # Every prose file the source contributed, so coverage is checkable per document rather
-        # than inferred from a word count that could have come from anywhere.
-        report["documents"][source.name] = documents
+    report = {"roots": [str(root) for root in roots], "mods": {}, "skipped": [],
+              "documents": {}}
+    if len(roots) == 1:
+        report["root"] = str(roots[0])
+    for index, root in enumerate(roots):
+        sources: list[pathlib.Path] = [p for p in sorted(root.iterdir())
+                                       if (p.is_dir() or p.suffix.lower() in PROSE_SUFFIXES)
+                                       and p.name.casefold() not in SKIP_PARTS
+                                       and not p.name.startswith(".")]
+        if index == 0:
+            sources.extend(extra_files)
+        for source in sources:
+            mod_words, files, documents = read_unit(source, excludes)
+            # A multi-root report names which corpus a source came from; a single root keeps the
+            # source name it always had, so the project report stays comparable.
+            label = source.name if len(roots) == 1 else f"{root.name}/{source.name}"
+            if not mod_words:
+                report["skipped"].append(label)
+                continue
+            words.update(mod_words)
+            report["mods"][label] = {
+                "files": files,
+                "words": len(mod_words),
+                "tokens": sum(mod_words.values()),
+                "top": [word for word, _ in mod_words.most_common(12)],
+            }
+            # Every prose file the source contributed, so coverage is checkable per document
+            # rather than inferred from a word count that could have come from anywhere.
+            report["documents"][label] = documents
     return words, report
 
 
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--root", type=pathlib.Path, required=True)
+    parser.add_argument("--root", type=pathlib.Path, action="append", required=True,
+                        help="a source tree; repeat to merge several corpora")
+    parser.add_argument("--exclude", action="append", default=[],
+                        help="file name or glob to skip (a data dump with its own reader)")
     parser.add_argument("--file", type=pathlib.Path, action="append", default=[],
                         help="a prose file outside the root, e.g. a design document")
     parser.add_argument("--out", type=pathlib.Path, required=True)
     parser.add_argument("--report", type=pathlib.Path, default=None)
     args = parser.parse_args(argv)
 
-    if not args.root.is_dir():
-        print(f"prose_ingest_mods: no such source root {args.root}", file=sys.stderr)
-        return 1
+    for root in args.root:
+        if not root.is_dir():
+            print(f"prose_ingest_mods: no such source root {root}", file=sys.stderr)
+            return 1
     for extra in args.file:
         if not extra.is_file():
             print(f"prose_ingest_mods: no such file {extra}", file=sys.stderr)
             return 1
-    words, report = ingest(args.root, args.file)
+    words, report = ingest(args.root, args.file, tuple(args.exclude))
     if not words:
         print(f"prose_ingest_mods: no prose found under {args.root}", file=sys.stderr)
         return 1
@@ -187,7 +214,8 @@ def main(argv: list[str]) -> int:
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with args.out.open("w", encoding="utf-8", newline="\n") as handle:
         handle.write("# Mod-source words, compiled by tools/prose_ingest_mods.py — do not hand-edit.\n")
-        handle.write(f"# source: {args.root}\n")
+        for root in args.root:
+            handle.write(f"# source: {root}\n")
         for extra in args.file:
             handle.write(f"# source file: {extra}\n")
         handle.write("# Read from lang values, Java comments and markdown prose; never from code.\n")

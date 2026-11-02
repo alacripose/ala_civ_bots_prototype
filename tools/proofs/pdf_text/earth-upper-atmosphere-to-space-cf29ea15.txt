@@ -1,0 +1,733 @@
+EARTH'S UPPER ATMOSPHERE
+AND THE TRANSITION TO SPACE
+
+A physics-first field guide to the stratosphere, mesosphere, thermosphere, ionosphere,
+exosphere, and the environment beyond the conventional edge of space.
+
+  Exosphere      What changes with height?
+                 Rare ballistic atoms; gradual escape to space
+~500-10,000 km*
+
+Thermosphere     Absorbs solar EUV/X-rays; aurora, ionization
+
+   ~85-500+ km
+
+Mesosphere       Coldest layer; meteors ablate
+
+   ~50-85 km
+
+Stratosphere     Ozone absorbs UV; temperature rises upward
+                 Weather, clouds, most water vapor
+   ~12-50 km     *Bands are schematic, not altitude-proportional; the edge fades gradually.
+
+Troposphere
+
+    0-8/18 km
+
+Core idea: the atmosphere does not end at a hard ceiling. Air gets thinner, collisions become less frequent, the dominant
+physical description changes, and some particles eventually escape Earth. The familiar layer names describe different
+patterns within one continuous system.
+
+Designed for atmospheric visualization, simulation, and deeper scientific reading. Altitude ranges are approximate and vary with conditions. Clickable
+source links are collected at the end.
+1. How to think about the atmosphere
+
+Atmospheric layers are not stacked shells with sealed borders. They are regions defined by different properties: how
+temperature changes with altitude, whether gases remain mixed, how much ionization exists, and whether ordinary fluid
+mechanics remains a good approximation. Several classifications overlap rather than align perfectly. [1][2][3]
+
+Three maps should be kept separate
+
+Map                   What it classifies                                 Main use
+
+Thermal layers        Troposphere, stratosphere, mesosphere,             Explains temperature structure and broad atmospheric behavior.
+                      thermosphere, exosphere
+                                                                         Explains when turbulence keeps gases mixed and when molecular
+Composition / mixing  Homosphere, turbopause/homopause,                  diffusion separates species by mass.
+                      heterosphere
+                                                                         Explains ionization, radio propagation, currents, and coupling to
+Electrical state      Ionosphere and its D, E, F regions;                space weather.
+                      plasmasphere beyond
+                                                                         Determines whether fluid equations, kinetic models, or a coupling
+Collision regime      Continuum flow, transitional flow, free-molecular  of both is appropriate.
+                      flow
+
+Modeling warning: a single altitude-only label is not enough to determine pressure, temperature, density, composition,
+ionization, or drag. Latitude, local solar time, season, geomagnetic activity, and recent solar input matter especially above
+the mesosphere.
+
+A useful causal chain
+
+Solar radiation and charged particles deposit energy -> chemistry and ionization change -> temperature and pressure
+gradients drive winds and waves -> density and composition change with altitude -> the collision environment transitions
+toward rarefied gas -> a tiny fraction of particles can escape. The lower atmosphere drives waves upward, while the upper
+atmosphere can affect satellites, radio links, and near-Earth space.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                                2
+2. Altitude map: the major regions
+
+The values below are reference ranges, not universal boundaries. The tropopause and stratopause move; the mesopause
+altitude varies; the thermosphere expands and contracts with solar activity; and the exosphere is defined by collision physics
+rather than a visible surface. [1][4]
+
+Region                       Approximate altitude             Temperature trend / key process
+
+Troposphere                  Surface to about 8 km at high    Usually cools upward; weather, clouds, most water vapor and aerosols.
+                             latitudes; up to 16-18 km in
+                             tropics; global mean ~12 km
+
+Stratosphere                 Roughly 12-50 km                 Warms upward through much of the layer because ozone absorbs ultraviolet
+                                                              radiation.
+
+Mesosphere                   Roughly 50-85 km                 Cools upward; the mesopause is often around -90 C or colder in some conditions;
+                                                              meteor ablation and noctilucent clouds.
+
+Thermosphere                 About 85-500/700 km, with        Kinetic temperature rises strongly as sparse gas absorbs EUV/X-rays and particle
+                             substantial variability          energy; auroral energy deposition and satellite drag.
+
+Exosphere                    Begins roughly 500-1,000 km and  Collisions become rare; light atoms, especially hydrogen, populate extended
+                             thins outward over thousands of  distributions; gradual transition to space.
+                             km
+
+Ionosphere (overlapping      Commonly ~60 km to several       Charged particles coexist with neutrals; D/E/F regions control radio-wave absorption
+region)                      hundred km or more               and propagation.
+
+Karman line convention       100 km by FAI convention; other  A convention for aerospace, not a physical surface or end of gravity/air.
+                             operational definitions use ~80
+                             km or different thresholds
+
+               120
+                        Schematic temperature structure (not to scale above 100 km)
+                                                                                                            Thermosphere
+
+               100
+
+Altitude (km)  80
+
+                               Mesosphere
+               60
+
+               40 Stratosphere
+
+               20            Troposphere                                                                                  300 C            600 C
+                                          0 C                 Actual profiles vary with latitude, season, local time, and solar/geomagnetic activity.
+                0
+                     -100 C
+
+Temperature profile is schematic. Thermospheric temperatures can reach many hundreds to over 1,000 K, and sometimes higher under strong solar
+forcing, but temperature is not the same thing as heat content or the ability to warm a person or object. [1][5][6]
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                                           3
+3. Pressure, density, and why the upper atmosphere
+expands
+
+Gravity continuously pulls atmospheric mass downward. In approximate hydrostatic balance, the pressure change with
+height supports the weight of the air above. The ideal-gas law links pressure, temperature, and number density, but
+temperature alone does not determine density: pressure and molecular composition matter too.
+
+Two compact equations
+
+                                            Hydrostatic balance: dp/dz = -rho g
+
+                                      Ideal gas: p = n k T (or p = rho R_specific T)
+
+In a simple isothermal atmosphere with fixed composition, density falls approximately exponentially with altitude. The scale
+height H = kT/(m g) describes the vertical distance over which density falls by a factor of e. As the upper atmosphere warms,
+its scale height increases, causing the same high-altitude density surfaces to expand upward. A real atmosphere is not
+isothermal and changes composition, so a multi-species numerical model is needed for precision.
+
+                Relative number density (log scale)
+
+                                                              Rare collisions
+
+                                              Thin upper air
+
+Dense lower air
+
+Altitude increases
+
+                                              Concept only: real density profiles change with composition, temperature, and solar forcing.
+
+Why is the atmosphere still present at hundreds of kilometers?
+
+There is no lid holding the air down. Instead, gravity and particle thermal motion establish a distribution whose density
+becomes extraordinarily small upward. At low altitude, collisions are frequent and gas behaves as a continuum. Higher up,
+the mean free path grows until particles may travel long distances between collisions. Eventually many particles follow nearly
+ballistic trajectories, and the idea of a sharply defined air surface stops being useful.
+
+   Important distinction: the thermosphere may have a very high kinetic temperature because individual particles move
+   quickly, while its density is so low that it contains very little thermal energy per unit volume. A thermometer, a spacecraft
+   surface, and a human body do not exchange heat with such a gas the way they do with dense hot air at sea level.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                                4
+4. Stratosphere: ozone, stable layering, and wave
+gateway
+
+The stratosphere begins above the tropopause and extends to the stratopause near 50 km. Unlike the troposphere, where
+the surface is the dominant heat source and temperature commonly decreases upward, ozone in the stratosphere absorbs
+ultraviolet radiation and warms the surrounding gas. That produces a temperature inversion over much of the layer and
+makes vertical mixing more inhibited than in a strongly convective troposphere. [1][10]
+
+Ozone is not a solid shell
+
+Ozone is a trace gas distributed through the stratosphere, with its greatest concentration typically in the lower-to-middle
+stratosphere (roughly 15-35 km, varying by location and season). Oxygen molecules are split by high-energy UV, and
+oxygen atoms react with O2 to form ozone. Ozone also absorbs UV and can be photochemically destroyed. This balance
+helps filter biologically damaging UV while setting the stratosphere's thermal structure.
+
+Why the stratosphere matters to the upper atmosphere
+
+The stratosphere transmits waves generated by mountains, convection, and weather systems. Waves that propagate
+upward can grow in amplitude as air density falls, then deposit momentum when they break or dissipate. This helps drive the
+circulation of the middle atmosphere and affects temperatures and winds above. The stratosphere and mesosphere are
+therefore not isolated from weather below; they are connected through wave propagation, chemistry, and circulation. [12]
+
+Useful variables for a model
+
+• Ozone number density and UV absorption profile
+• Temperature and stability (often expressed through the buoyancy frequency)
+• Mean zonal wind and vertical wind shear
+• Vertical wave momentum flux and wave breaking
+• Seasonal and latitude-dependent circulation
+
+   Do not represent the ozone layer as a hard altitude band that completely blocks all UV. Absorption depends on
+   wavelength, optical path, solar angle, ozone amount, and other absorbers. The ozone distribution is smooth and variable.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                 5
+5. Mesosphere: cold, meteors, and rare high clouds
+
+The mesosphere occupies roughly 50-85 km. In the standard temperature profile, temperature decreases upward through
+the layer and reaches a minimum near the mesopause. This is commonly the coldest region of the atmosphere, with values
+near or below -85 to -90 C in many descriptions, but the exact profile varies with season, latitude, waves, and dynamics.
+[1][8][9]
+
+Meteors and metal chemistry
+
+Small meteoroids encounter enough gas in the mesosphere and adjoining altitude range to ablate, heat, and fragment. Their
+material supplies meteoric metals and tiny smoke particles. After vapor condenses or reacts, nanometer-scale particles can
+influence heterogeneous chemistry and can provide nuclei for ice crystals. Not every meteor burns up at one exact height;
+entry velocity, composition, angle, size, and atmospheric density shift the ablation profile.
+
+Noctilucent / polar mesospheric clouds
+
+At around 80-85 km, extremely cold summer-polar conditions can permit tiny ice particles to form despite the very low
+water-vapor abundance. The clouds are visible from the ground after local sunset or before sunrise because the high cloud
+remains sunlit against a dark lower sky. They are not ordinary weather clouds: their particles, environment, and formation
+altitudes are very different. Meteoric smoke may play a role in nucleation. [8][9][11]
+
+Dynamics: waves become more influential aloft
+
+Gravity waves, tides, and planetary waves influence temperature, winds, and composition. Since density declines rapidly, a
+wave with a given energy flux can have a much larger velocity perturbation aloft than near its source. Waves can deposit
+momentum and heat when they become unstable or encounter a critical level. This coupling is one reason simple local
+temperature rules are insufficient for predicting the mesosphere.
+
+   Simulation note: noctilucent clouds need a specialized ice microphysics model at about 80 km, not a normal tropospheric
+   cloud recipe simply moved upward. Water availability, very low temperature, meteoric nuclei, particle growth, and solar
+   illumination all matter.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                6
+6. Thermosphere: high kinetic temperature, low density
+
+Above the mesopause, the temperature trend reverses and thermospheric kinetic temperature rises with altitude.
+Extreme-ultraviolet and X-ray solar photons are absorbed by oxygen and nitrogen species, causing excitation, dissociation,
+and ionization. Energetic particles from the magnetosphere can also deposit energy, especially in auroral zones. The
+thermosphere expands when heated and contracts when energy input declines. [1][5][6]
+
+Heating is not the same as ordinary hot air
+
+Temperature measures the average kinetic energy per particle. At high altitude, the number of particles per cubic meter is
+tiny. Consequently, heat transfer from gas to an object is weak compared with dense air, even when the kinetic temperature
+is high. Spacecraft thermal balance depends strongly on solar radiation, Earth infrared radiation, albedo, internal heat
+generation, surface optical properties, and the sparse gas environment.
+
+Major thermospheric energy pathways
+
+Input / pathway                 Physical effect                                     Modeling implication
+
+Solar EUV and X-rays            Heat, dissociation, and ion production at           Use wavelength-dependent absorption / parameterized solar
+                                altitude-dependent absorption depths                forcing, not a constant heater.
+
+Auroral particle precipitation  Excites and ionizes upper-atmospheric species;      Varies with latitude, magnetic activity, and time.
+                                locally heats gas
+                                                                                    Couples thermospheric neutral winds to ionospheric
+Joule heating                   Electric currents and ion-neutral friction convert  electrodynamics.
+                                energy into heat
+                                                                                    Cooling changes with composition, density, and
+Infrared cooling                CO2, NO, and other species radiate energy to space  temperature.
+                                at relevant bands
+                                                                                    High-altitude temperature is a global dynamical result, not
+Conduction / circulation        Redistributes heat vertically and horizontally      only local sunlight.
+
+Why satellite drag changes
+
+Low-Earth-orbit spacecraft move through residual gas. Drag depends on local mass density, relative speed, ballistic
+coefficient, and spacecraft attitude. Solar and geomagnetic disturbances can heat and expand the thermosphere, increasing
+density at a given orbital altitude and raising drag. Density also varies with local time, latitude, season, and atmospheric
+waves. Even small fractional density errors can accumulate into meaningful orbit-prediction errors. [5][6][7]
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                                     7
+7. The ionosphere: atmosphere as a weak plasma
+
+The ionosphere is not a separate temperature layer. It is the portion of the atmosphere in which enough atoms and
+molecules are ionized that free electrons and ions affect radio propagation and electrodynamics. It spans overlapping parts
+of the mesosphere, thermosphere, and topside atmosphere; its upper extent changes with definitions and conditions. Solar
+EUV and X-rays dominate regular photoionization, while energetic particles and cosmic rays contribute in particular regions.
+[2][3]
+
+               The ionosphere overlaps altitude-defined layers
+
+800                                D region (~60-90 km)
+                                   Daytime absorption of HF radio; often weakens greatly
+600                                at night.
+
+Altitude (km)400F region / topside E region (~90-150 km)
+                                   Ion production and collisions; sporadic-E sheets can
+200                                occur.
+
+100            E region            F region (~150 km and above)
+                                   Higher electron density supports long-distance HF
+               D region            skywave propagation; splits/recombines with
+                                   conditions.
+
+                                   Important
+                                   These are functional ionospheric regions, not separate
+                                   neutral-atmosphere layers. Their heights vary.
+
+0
+
+D, E, and F regions
+
+D region (~60-90 km): relatively weak ionization but strong collisional effects; often important for daytime absorption of
+high-frequency radio waves. It weakens greatly at night as the ionization source disappears and recombination dominates.
+
+E region (~90-150 km): a region of regular daytime ionization and variable thin structures such as sporadic-E layers.
+Collisions remain frequent enough to make ion-neutral interactions important.
+
+F region (~150 km and upward): often contains the peak electron density important for long-distance HF skywave
+communication. Depending on conditions, it separates into F1 and F2 structures by day and recombines or changes at night.
+
+Not a literal mirror
+
+Radio refraction arises because the refractive index depends on electron density and signal frequency, as well as
+magnetic-field and collision effects. Under suitable conditions, HF waves bend enough to return toward Earth. Other
+frequencies, signal paths, and ionospheric conditions behave differently. GPS signals generally pass through the ionosphere
+and acquire delays, rather than simply bouncing off it. Space weather can produce scintillation, outages, positioning errors,
+or unexpected long-range propagation.
+
+   Use an ionosphere model when a simulation needs radio behavior, plasma density, or auroral electrodynamics. A
+   neutral-air temperature profile alone does not specify electron density, ion composition, collision frequency, or
+   magnetic-field coupling.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                  8
+8. Exosphere: where collisions stop controlling every
+step
+
+The exosphere is the outermost conventional atmospheric region. It does not have a crisp upper boundary. Near its lower
+part, particles can still collide, but with increasing altitude the mean free path can become comparable to or greater than the
+scale of the problem. The exobase is the approximate transition where a particle's mean free path becomes comparable to a
+characteristic vertical scale height. Above it, a kinetic description becomes increasingly useful. [4][13]
+
+Composition separates with height
+
+In the lower atmosphere, turbulent mixing keeps the major gases well mixed. Higher up, molecular diffusion competes
+successfully with mixing. Lighter constituents become relatively more abundant with height: atomic oxygen is important
+through much of the thermosphere; hydrogen and helium become especially relevant in the exosphere. The exact
+composition varies with altitude, solar conditions, geophysical conditions, and the species being tracked.
+
+The geocorona
+
+Hydrogen atoms populate a very extended cloud around Earth. Solar Lyman-alpha photons scatter from these atoms,
+producing a faint ultraviolet glow called the geocorona. The hydrogen population is linked to the upper-atmospheric
+processing of water and other hydrogen-bearing species. Some atoms are gravitationally bound on long trajectories; some
+escape. The geocorona can extend far beyond the altitude where a common diagram stops drawing the atmosphere. [13]
+
+Escape mechanisms in plain language
+
+Mechanism               What happens                                                        Key caveat
+
+Jeans escape            The high-speed tail of a particle velocity distribution includes    Depends on species mass, exobase temperature,
+                        particles that exceed escape speed near the exobase.                gravity, and distribution assumptions.
+
+Photochemical escape    A chemical reaction or photochemical process creates a particle     Must track the relevant chemistry and energy
+                        with enough energy to escape.                                       partition.
+
+Ion outflow / pickup    Charged particles are accelerated or transported by electric and    Requires plasma and magnetic-field physics.
+                        magnetic fields, sometimes escaping along open field lines or into
+                        the solar-wind environment.
+
+Sputtering / energetic  Energetic particles transfer momentum and eject atmospheric         Efficiency depends on particle populations and
+impacts                 particles.                                                          upper-atmospheric conditions.
+
+For modern Earth, loss is a slow species-specific process, not the atmosphere boiling off into space. Escape matters over
+geological time and varies enormously among planets and evolutionary conditions. [14]
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                                9
+9. Where does the atmosphere end?
+
+No physical surface divides atmosphere from space. There are several useful thresholds because different scientific and
+operational problems need different definitions.
+
+Threshold               Meaning                                                     Useful for
+100 km Karman line                                                                  Aerospace records and public communication.
+~80 km threshold        Common FAI convention for the boundary of space.            Operational categories; not the same definition as
+Turbopause / homopause                                                              FAI.
+                        Used by some US organizations for particular astronautics   Composition models.
+Exobase                 purposes.
+Orbital drag threshold                                                              Transition from continuum / collisional to kinetic
+Geocoronal extent       Approximate height above which molecular diffusion          descriptions.
+                        increasingly separates constituents instead of turbulent    Orbit prediction and mission design.
+                        mixing keeping them uniform.
+                                                                                    UV observations and escape physics.
+                        Region where mean free path becomes comparable to a
+                        characteristic scale height.
+
+                        No single height: drag depends on vehicle, speed, density,
+                        solar conditions, and required accuracy.
+
+                        A diffuse hydrogen distribution reaches far from Earth.
+
+Why the Karman line is not a wall
+
+At 100 km, gravity is still nearly as strong as at the surface and air is still present. A vehicle must maintain orbital velocity to
+remain in a stable orbit; crossing a line does not turn aerodynamic forces instantly off. Conversely, spacecraft can orbit well
+below or above 100 km under suitable conditions, though low orbits experience drag and decay. The boundary is convenient,
+but it is not a boundary between gravity and no gravity, nor between air and no air. [4]
+
+A physical transition has several overlapping markers
+
+As altitude rises, neutral density drops, mean free path grows, gas composition becomes species-dependent, ionization
+becomes increasingly important in some regions, and individual trajectories become more important than bulk fluid motion.
+These changes occur across wide ranges. In a physically realistic model, choose the transition criterion that matches the
+process being simulated rather than using one arbitrary cutoff for everything.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                            10
+10. Equations and model choices for simulation
+
+The following are useful scaffolding equations. They are not a complete upper-atmosphere model; their assumptions should
+remain explicit.
+
+1) Hydrostatic approximation
+
+                                                   dp/dz = -rho g
+
+Good as a background approximation when vertical accelerations are small compared with gravity and pressure-gradient
+support. It does not resolve waves, rapid outflows, or kinetic exospheric trajectories by itself.
+
+2) Ideal gas relation
+
+                                                   p = n k T
+
+Here p is pressure, n is number density, k is Boltzmann constant, and T is kinetic temperature. If composition varies, mean
+molecular mass changes; do not assume a single fixed gas constant all the way from the surface to the exosphere.
+
+3) Scale height
+
+                                                   H = k T / (m g)
+
+For one species in an isothermal hydrostatic atmosphere, H estimates the vertical distance over which its density falls by e.
+Warmer gases and lighter particles have larger scale heights. In real Earth conditions, g also decreases slightly with altitude
+and T changes with z.
+
+4) Mean free path and the Knudsen number
+
+                                    lambda is the mean free path; Kn = lambda / L
+
+L is the characteristic length scale for the modeled phenomenon. When Kn is much smaller than one, continuum fluid
+equations are usually appropriate; when it approaches or exceeds one, rarefaction corrections or kinetic methods become
+necessary. There is no universal fixed altitude for a chosen Kn because L, density, temperature, and gas composition all
+matter.
+
+5) A practical modeling ladder
+
+Goal                      Reasonable model family                                  Missing if used alone
+
+Layered educational       Empirical mean temperature and density curves by         Local weather, composition dynamics, solar-cycle
+visualization             altitude                                                 response.
+
+Neutral winds / waves to  Compressible dynamics with radiative/chemical terms and  Detailed ionization and collisionless particle trajectories.
+~100 km                   wave forcing
+
+Thermosphere density and  Empirical upper-atmosphere models or coupled             Fine composition and space-weather events if
+drag                      thermosphere general circulation model                   drivers/data are inadequate.
+
+Radio propagation         Electron density profile plus refractive / collisional model A neutral-atmosphere model is not sufficient.
+
+Exosphere / escape        Species-resolved kinetic distribution and relevant       Continuum fluid laws fail as the sole description.
+                          chemistry/plasma forcing
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                                     11
+11. How the layers communicate with each other
+
+The upper atmosphere is a coupled system. An input in one altitude band can change conditions far away because energy,
+momentum, chemistry, and charged particles are transported vertically and horizontally.
+
+Upward coupling from weather
+
+Convection and flow over mountains generate gravity waves; weather systems generate planetary-scale wave patterns; daily
+solar heating drives atmospheric tides. These motions can propagate upward, change amplitude, break, and deposit
+momentum and heat. The effects can include mesospheric temperature changes, shifting wind jets, and changes in
+thermospheric density.
+
+Downward / cross-system coupling
+
+Sudden stratospheric warmings and planetary waves affect the circulation that connects to the mesosphere. Solar and
+geomagnetic energy deposited in the thermosphere-ionosphere alters winds, composition, electron density, and satellite
+drag. Electric fields and currents couple the ionosphere to the magnetosphere. Neutral wind and ion motion are linked by
+collisions, although collision frequency declines with altitude.
+
+A useful causal diagram
+
+Driver                First-order response                                   Possible downstream signature
+
+Solar EUV changes     Ionization and heating change in upper atmosphere      Electron density, thermospheric expansion, orbit drag
+                                                                             change.
+Geomagnetic storm     Energetic particles and electric fields inject energy
+                                                                             Auroras, Joule heating, composition changes, satellite
+Tropospheric convection / terrain Gravity waves launch upward                drag disturbances.
+
+Seasonal circulation  Winds redistribute minor species and waves filter      Middle-atmosphere wind and temperature perturbations.
+                      differently
+                                                                             Changes in mesopause temperatures and polar
+Composition changes   Radiative cooling/heating and chemistry change         mesospheric clouds.
+
+                                                                             Feedbacks in thermospheric temperature and density.
+
+Avoid one-way thinking
+
+The layers are convenient for teaching, but computational domains often couple several at once. For a credible model,
+specify boundary conditions for radiation, waves, composition, and electrodynamics rather than imposing independent
+profiles that cannot exchange energy or momentum.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                         12
+12. How scientists measure it
+
+Method                        Best at measuring                                          Limitation / interpretation
+Radiosondes and balloons
+Lidar and radar               Troposphere and lower stratosphere temperature,            Most balloons stop far below the mesosphere; they do
+                              pressure, humidity, winds                                  not sample the thermosphere.
+Sounding rockets
+Satellites / accelerometers   Winds, temperature proxies, aerosols, meteors,             Each system samples particular species, geometry,
+GNSS radio occultation / TEC  mesospheric structures, ionospheric echoes depending       and altitude range.
+Airglow and auroral imaging   on instrument
+UV remote sensing
+                              In-situ particles, density, composition, electric fields,  Brief snapshots; coverage is sparse in space and time.
+                              and short-lived upper-atmospheric processes
+
+                              Thermospheric density inferred from drag; composition      Retrievals depend on instrument calibration, orbit, and
+                              or temperature from dedicated sensors                      physical models.
+
+                              Integrated refractivity or total electron content;         Integrated measurements may need inversion/model
+                              ionosphere affects radio paths                             assumptions to recover vertical structure.
+
+                              Emissions from excited atoms and molecules;                Brightness is not a direct single-variable thermometer;
+                              precipitation and dynamics                                 chemistry and line-of-sight matter.
+
+                              Ozone, geocorona, upper-atmospheric composition and        Requires spectroscopy, radiative transfer, and careful
+                              emission profiles                                          calibration.
+
+Measured quantities are not interchangeable
+
+Temperature, number density, mass density, electron density, composition, optical emission, and drag are different
+observables. A model may infer one from another only with assumptions about instrument response and the governing
+physics. For example, an aurora image reports emitted light integrated through a column; it does not independently provide
+the full 3D temperature, density, and particle precipitation field.
+
+Reference data and model families
+
+For real research, use mission datasets and documented empirical models appropriate to the requested altitude and date,
+and preserve solar/geomagnetic drivers such as F10.7 solar radio flux and geomagnetic indices when supplied by the
+dataset or model. Never present a climatological profile as a live forecast of the current upper atmosphere.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                                      13
+13. Phenomena by altitude and cause
+
+Phenomenon                Approximate altitude / region      Mechanism
+Ozone UV shielding
+Noctilucent clouds        Stratosphere, strongest ozone      Ozone absorbs UV and converts radiant energy into chemical/thermal
+Meteor trails / ablation  abundance usually ~15-35 km        processes.
+Aurora
+                          ~80-85 km, especially summer       Tiny ice crystals form in exceptionally cold, low-pressure air around suitable
+HF skywave propagation    high latitudes                     nuclei.
+Satellite drag
+                          Often roughly 70-110 km,           Incoming dust/rock transfers kinetic energy and ablates; metals and smoke
+Geocorona                 event-dependent                    enter upper-atmosphere chemistry.
+Atmospheric escape
+                          Often visible around ~80-500 km    Energetic charged particles excite atoms/molecules; emitted colors depend on
+                          or more depending on emission      species, altitude, and energy.
+                          and event
+                                                             Electron density bends radio paths; lower-region collisions can absorb signal
+                          Ionospheric D/E/F structures       energy.
+                          across ~60-500+ km
+                                                             Momentum exchange with residual gas slowly changes orbit.
+                          Low Earth orbit; strength follows
+                          local neutral density and orbital  Solar UV scattering by hydrogen reveals a diffuse halo; the distribution
+                          speed                              merges gradually with space.
+
+                          Extended hydrogen cloud far        High-energy neutral particles, photochemical products, or ions escape under
+                          beyond the dense atmosphere        species-specific conditions.
+
+                          Most effectively described near
+                          the exobase and for energetic /
+                          charged particles
+
+A shared but incomplete explanation
+
+Many of these features involve solar energy, but their mechanisms differ. Auroras are emission from excited atmospheric
+species, not ordinary combustion. Meteors are heated and ablated by energy exchange with gas, not simply because space
+is hot. Thermospheric temperature is kinetic temperature, not a measure of how dense the air feels. Noctilucent clouds are
+ice particles in a very unusual cold, thin environment, not the same cloud process as a cumulus cloud near the surface.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                                 14
+14. Reading an upper-atmosphere profile without
+fooling yourself
+
+Suppose a simulation asks for temperature, density, and composition at 150 km. A common failure is to take a single
+textbook layer diagram and assign one constant value across the thermosphere. That loses several important controls.
+
+A better sequence
+
+1. Fix the context: latitude, longitude, date, local solar time, season, solar input, and geomagnetic state.
+2. Choose variables explicitly: neutral temperature, neutral mass density, species densities, electron density, wind, and
+uncertainty.
+3. Select a documented empirical or physics-based model suitable to the target altitude range.
+4. Preserve boundary and forcing data: solar EUV proxies, geomagnetic indices, lower-atmospheric waves, and chemical
+composition as applicable.
+5. Interpolate carefully. Avoid sharp discontinuities at layer boundaries when the underlying physical field is continuous.
+6. Validate against measurements or a trusted reference profile; check magnitude, units, coordinate conventions, and time
+stamps.
+7. For altitudes near the exobase, determine whether a continuum approximation is valid for the scale and process being
+modeled.
+
+Sanity checks          Question to ask
+                       Are altitude, temperature, pressure, and density units consistent? Is temperature kelvin or Celsius?
+ Check                 Are named boundaries being treated as approximate ranges rather than physical walls?
+  Units                Does the model assume average conditions, solar minimum, solar maximum, or an observed storm?
+  Layer limits         Is mean molecular mass allowed to change with altitude? Are species mixing ratios applicable in this regime?
+  Solar forcing        Is temperature kinetic temperature, and does the model separately represent radiation heat loads?
+  Composition          Does the model need fluid flow, plasma dynamics, or collisionless particle trajectories?
+  Temperature meaning  Can each data profile be traced to its source, epoch, coordinate system, and known limitations?
+  Space transition
+  Evidence
+
+Practical principle: choose model complexity from the mechanism being simulated. A sky gradient may need only an
+atmospheric optical model; satellite drag needs thermospheric mass density; radio transmission needs electron density
+and propagation physics; atmospheric escape needs kinetic and/or plasma processes.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                         15
+15. Short glossary
+
+Term                       Meaning
+Ablation
+Airglow                    Loss of material from an incoming particle as it heats, melts, vaporizes, or chemically reacts during atmospheric
+Exobase                    entry.
+Exosphere
+Geocorona                  Emission of light from atmospheric atoms/molecules excited by sunlight, chemistry, or particle energy.
+Homosphere / heterosphere
+Ionosphere                 Approximate level where the mean free path becomes comparable to a characteristic atmospheric scale height;
+Joule heating              above it, collisions become too infrequent for ordinary local-fluid assumptions.
+Kinetic temperature
+Scale height               Outermost conventional layer where particle trajectories and rare collisions become central to the physical
+Thermospheric expansion    description.
+Turbopause / homopause
+Knudsen number             Extended cloud of hydrogen around Earth that scatters solar ultraviolet light.
+
+                           Lower region with relatively well-mixed major gases versus higher region where molecular diffusion causes
+                           stronger species separation.
+
+                           Region with enough free electrons and ions to influence radio signals and electrodynamics; overlaps
+                           neutral-atmosphere layers.
+
+                           Conversion of electrical energy into thermal energy through currents and ion-neutral friction.
+
+                           Measure of the statistical translational kinetic energy of particles; does not by itself indicate heat content or
+                           heat-transfer rate.
+
+                           Characteristic vertical distance for exponential decline in a simple atmosphere; depends on temperature, gravity,
+                           and particle mass.
+
+                           Increase in scale height and density at a fixed high altitude when energy input warms the upper atmosphere.
+
+                           Approximate transition above which molecular diffusion becomes more important than turbulent mixing for
+                           atmospheric composition.
+
+                           Ratio of mean free path to a characteristic length scale; helps determine whether a continuum-fluid
+                           approximation applies.
+
+A note on altitude ranges
+
+All altitude ranges in this document are rounded educational references. A named boundary may be defined by a
+temperature minimum, composition transition, ionization profile, or convention. Those are different criteria, so their values do
+not line up precisely and can move with conditions.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                                  16
+16. Sources and further reading
+
+These links support the basic layer ranges, ionosphere behavior, upper-atmosphere dynamics, satellite drag, mesospheric
+clouds, geocorona, and atmospheric escape. Agency pages are useful for orientation; review papers provide more technical
+entry points. All links are clickable in the PDF.
+
+[1] NASA Science Editorial Team. “Earth’s Atmosphere: A Multi-layered Cake” (2019). Layer definitions and broad vertical structure.
+https://science.nasa.gov/earth/earth-atmosphere/earths-atmosphere-a-multi-layered-cake/
+
+[2] NOAA Space Weather Prediction Center. “Ionosphere.” Solar EUV/X-ray ionization, variability, radio impacts, and space-weather effects.
+https://www.spaceweather.gov/phenomena/ionosphere
+
+[3] NOAA National Centers for Environmental Information. “Definition of the Ionospheric Regions (Structures).” D, E, F, and topside regions.
+https://www.ngdc.noaa.gov/stp/IONO/ionostru.html
+
+[4] NASA Science. “The Atmosphere: Earth’s Security Blanket.” Atmospheric scale and the fact that the atmosphere-space boundary is
+conventional.
+https://science.nasa.gov/earth/earth-atmosphere/the-atmosphere-earths-security-blanket/
+
+[5] Qian, L. & Solomon, S. C. (2012). “Thermospheric Density: An Overview of Temporal and Spatial Variations.” Space Science Reviews, 168,
+147-173. DOI: 10.1007/s11214-011-9810-z.
+https://doi.org/10.1007/s11214-011-9810-z
+
+[6] Emmert, J. T. (2015). “Thermospheric mass density: A review.” Advances in Space Research, 56(5), 773-824. DOI: 10.1016/j.asr.2015.05.038.
+https://doi.org/10.1016/j.asr.2015.05.038
+
+[7] Bruinsma, S. et al. (2023). “Thermosphere and satellite drag.” Advances in Space Research. DOI: 10.1016/j.asr.2023.05.011.
+https://doi.org/10.1016/j.asr.2023.05.011
+
+[8] Megner, L. et al. (2008). “Global and temporal distribution of meteoric smoke: A two-dimensional simulation study.” Journal of Geophysical
+Research: Atmospheres. DOI: 10.1029/2007JD009054.
+https://doi.org/10.1029/2007JD009054
+
+[9] “Noctilucent clouds” (1993). Review, Journal of Atmospheric and Terrestrial Physics. DOI: 10.1016/0021-9169(93)90118-I.
+https://doi.org/10.1016/0021-9169(93)90118-I
+
+[10] NASA. “Twenty Questions and Answers About the Ozone Layer.” Explanation of ozone absorption and UV protection (PDF).
+https://science.nasa.gov/wp-content/uploads/2024/09/final-20qs-2022-full-document-26april2023-digital-version.pdf
+
+[11] Antonsen, T. & Havnes, O. (2015). “On the detection of mesospheric meteoric smoke particles embedded in noctilucent cloud particles with
+rocket-borne dust probes.” Review of Scientific Instruments. DOI: 10.1063/1.4914394.
+https://doi.org/10.1063/1.4914394
+
+[12] Fritts, D. C. (2003). “Gravity wave dynamics and effects in the middle atmosphere.” Encyclopedia of Atmospheric Sciences (chapter overview
+page).
+https://www.sciencedirect.com/topics/earth-and-planetary-sciences/middle-atmosphere
+
+[13] NASA Science. “Carruthers Geocorona Observatory.” Hydrogen geocorona and scattering of sunlight.
+https://science.nasa.gov/mission/carruthers-geocorona-observatory/
+
+[14] Gronoff, G. et al. (2020). “Atmospheric Escape Processes and Planetary Atmospheric Evolution.” Journal of Geophysical Research: Space
+Physics. DOI: 10.1029/2019JA027639.
+https://doi.org/10.1029/2019JA027639
+
+[15] NASA Scientific Visualization Studio (2025). “Carruthers Atmospheric Layers Animation.” Modern visual overview of the five main layers.
+https://svs.gsfc.nasa.gov/20405/
+
+[16] Brain, D. A. et al. (2016). “Atmospheric escape from unmagnetized bodies.” Journal of Geophysical Research: Planets. DOI:
+10.1002/2016JE005162. Comparative escape mechanisms across planetary bodies.
+https://doi.org/10.1002/2016JE005162
+
+Scope and uncertainty
+
+This is a synthesis for learning and preliminary modeling, not a substitute for a mission-specific atmosphere product or
+operational space-weather forecast. Upper-atmosphere values vary substantially with location, local time, season, solar
+activity, geomagnetic forcing, and chosen scientific definition. Where a single typical number is shown, it is illustrative rather
+than universal.
+
+EARTH'S UPPER ATMOSPHERE | SCIENCE REFERENCE                                                                                        17
+
