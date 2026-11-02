@@ -12,8 +12,9 @@ import dev.ensouled.core.SkillRoutine;
  * one: a body with nothing more urgent to do selects a bounded rest inside its own position,
  * records that it chose rest, and then competes for its next intention like any other action.
  *
- * <p>A hungry being does not rest: settling the need comes first, so the precondition refuses the
- * rest rather than letting it mask an unmet need.
+ * <p>A hungry being with food eats first; a hungry being with nothing to eat may still rest, or an
+ * exhausted body would walk until it dies. Rest is never the default: the candidate only exists
+ * when the body's own fatigue asks for it.
  */
 public final class RestRoutine implements SkillRoutine {
 	/**
@@ -31,7 +32,11 @@ public final class RestRoutine implements SkillRoutine {
 
 	@Override
 	public List<String> unmetPreconditions(SkillContext ctx) {
-		return ctx.view().needs().hungry() ? List.of("needs_settled") : List.of();
+		// Rest is a survival decision, not a reward for having no needs. A hungry body that holds
+		// food still eats first, because eating outranks resting in the candidate utility; a hungry
+		// body with nothing to eat must be allowed to conserve what it has. Refusing rest on hunger
+		// made an exhausted, starving body wander until it died (rest 4/268 on the live mob).
+		return List.of();
 	}
 
 	@Override
