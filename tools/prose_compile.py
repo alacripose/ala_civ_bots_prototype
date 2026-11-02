@@ -123,6 +123,10 @@ def compile_baseline(corpus: pathlib.Path):
     # from the corpus rather than declared in the parser.
     by_verb: dict[str, collections.Counter] = collections.defaultdict(collections.Counter)
     quotes: list[list[str]] = []
+    # Every claim the corpus states, in its own words. This is the speech material the mod
+    # ingests: a being speaks corpus claims, not sentences assembled from a speech-act menu.
+    claim_rows: list[tuple[str, str, str]] = []
+    seen: set[tuple[str, str]] = set()
     claims = 0
     digest = hashlib.sha256()
     for claim in read_claims(corpus):
@@ -140,8 +144,16 @@ def compile_baseline(corpus: pathlib.Path):
         if match:
             pairs[(match.group(1), str(claim.get("kind")), str(claim.get("modality")))] += 1
             by_verb[match.group(1)].update(words)
+            # A spoken line needs words: a rule whose quote is a bare number is a parsed artefact,
+            # not something a being can say. Length is bounded so one claim is one utterance.
+            quote = " ".join(str(claim.get("evidence_quote") or "").split())
+            if quote and 3 <= len(words) <= 60:
+                key = (match.group(1), quote.lower())
+                if key not in seen:
+                    seen.add(key)
+                    claim_rows.append((match.group(1), rule.split(":", 1)[0].strip(), quote))
     rows = [(verb, kind, modality, count) for (verb, kind, modality), count in sorted(pairs.items())]
-    return rows, claims, digest.hexdigest()[:16], lexicon, by_verb, quotes
+    return rows, claims, digest.hexdigest()[:16], lexicon, by_verb, quotes, claim_rows
 
 
 def compile_cues(by_verb: dict[str, collections.Counter], cues_per_verb: int = 14) -> list[tuple[str, str, float]]:
@@ -194,7 +206,7 @@ def main(argv: list[str]) -> int:
     if not args.corpus.exists():
         print(f"prose_compile: corpus not found at {args.corpus}", file=sys.stderr)
         return 1
-    rows, claims, digest, lexicon, by_verb, quotes = compile_baseline(args.corpus)
+    rows, claims, digest, lexicon, by_verb, quotes, claim_rows = compile_baseline(args.corpus)
     if not rows:
         print(f"prose_compile: no rule-shaped claims in {args.corpus}", file=sys.stderr)
         return 1
@@ -239,6 +251,18 @@ def main(argv: list[str]) -> int:
         for verb, kind, modality, count in rows:
             handle.write(f"{verb}\t{kind}\t{modality}\t{count}\n")
     print(f"prose_compile: {len(rows)} verb(s) from {claims} claim(s) -> {args.out}")
+
+    # The ingested claim corpus: the being's speech material. Each row is one claim the corpus
+    # states, with its own verb and its own quoted words, so speech is selected from claims rather
+    # than composed from a hand-written set of speech acts.
+    claims_out = args.out.parent / "prose_claims.tsv"
+    with claims_out.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write("# Ingested prose claims, compiled by tools/prose_compile.py — do not hand-edit.\n")
+        handle.write(f"# source: {args.corpus}\n")
+        handle.write("# verb<TAB>ref<TAB>quote — what the corpus states, in its own words.\n")
+        for verb, ref, quote in claim_rows:
+            handle.write(f"{verb}\t{ref}\t{quote}\n")
+    print(f"prose_compile: {len(claim_rows)} spoken claim(s) ingested -> {claims_out}")
 
     # The dynamic verb library: the action verbs this corpus uses, read from its own sentences.
     # A being names what it is doing with a word from here, so no capability carries a hand-written

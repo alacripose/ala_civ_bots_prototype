@@ -71,6 +71,7 @@ def proseCorpus = providers.gradleProperty('proseCorpus')
 		.get()
 
 def proseBaseline = file('src/main/resources/ensouled/prose_baseline.tsv')
+def proseClaims = file('src/main/resources/ensouled/prose_claims.tsv')
 
 tasks.register('compileProseBaseline', Exec) {
 	group = 'build'
@@ -78,9 +79,12 @@ tasks.register('compileProseBaseline', Exec) {
 	def corpus = file(proseCorpus)
 	inputs.dir(corpus).optional()
 	outputs.file(proseBaseline)
+	outputs.file(proseClaims)
 	onlyIf { corpus.isDirectory() }
 	commandLine 'python', 'tools/prose_compile.py', '--corpus', corpus.absolutePath,
-			'--out', proseBaseline.absolutePath
+			'--out', proseBaseline.absolutePath,
+			'--extra', file('tools/mod_lexicon.tsv').absolutePath,
+			'--extra', file('tools/project_lexicon.tsv').absolutePath
 	// A corpus that cannot be compiled leaves the committed baseline in place rather than failing
 	// an unrelated build; the task's own exit codes say why.
 	ignoreExitValue = true

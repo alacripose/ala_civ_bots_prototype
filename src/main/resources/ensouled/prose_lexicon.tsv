@@ -1,7 +1,7 @@
 # Prose-logic lexicon, compiled by tools/prose_compile.py — do not hand-edit.
 # source: C:\Users\ala\Documents\agent_god_files\prose_logic
-# merged source: tools\mod_lexicon.tsv
-# merged source: tools\project_lexicon.tsv
+# merged source: C:\Users\ala\Documents\ala_civ_bots_prototype\tools\mod_lexicon.tsv
+# merged source: C:\Users\ala\Documents\ala_civ_bots_prototype\tools\project_lexicon.tsv
 # Every word the corpus quotes attest, with how often it says it. Speech here may
 # only use these words; the world supplies its own names and the being its numbers.
 a	50979
