@@ -589,6 +589,21 @@ public final class WorkLedger {
 		}
 	}
 
+	/**
+	 * The discovery tickets this being opened, keyed by the skill that first practised the verb.
+	 * A reader: it is the evidence side of the skill lineage and changes nothing.
+	 */
+	public Map<String, Ticket> discoveriesOf(String agentId) {
+		Map<String, Ticket> out = new LinkedHashMap<>();
+		for (Ticket ticket : tickets.values()) {
+			if (!ticket.agentId().equals(agentId) || !ticket.purpose().startsWith("discover:")) {
+				continue;
+			}
+			out.putIfAbsent(ticket.purpose().substring("discover:".length()), ticket);
+		}
+		return out;
+	}
+
 	/** Everything this being has owed, closed ones included. A reader; it changes nothing. */
 	public List<Commitment> commitmentsOf(String agentId) {
 		List<Commitment> out = new ArrayList<>();

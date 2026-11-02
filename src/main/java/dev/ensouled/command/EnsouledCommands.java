@@ -16,6 +16,7 @@ import dev.ensouled.domain.Command;
 import dev.ensouled.domain.WorldState;
 import dev.ensouled.core.EvidenceRecord;
 import dev.ensouled.core.Peers;
+import dev.ensouled.core.SkillLineage;
 import dev.ensouled.core.Vec3i;
 import dev.ensouled.core.Wishes;
 import dev.ensouled.harness.HarnessControl;
@@ -654,6 +655,24 @@ public final class EnsouledCommands {
 			mind.ledger().statsBySkill().forEach((verb, stats) -> sb.append(' ').append(verb)
 					.append('(').append(stats.successes()).append('/').append(stats.failures()).append(')'));
 			sb.append('\n');
+		}
+		// The lineage of those verbs: the first practice that unlocked each one, the discovery
+		// ticket that witnessed it, and the sessions the practice log has carried it through.
+		AgentContinuity facts = AgentManager.get().continuityOf(record.agentId());
+		var discoveries = new java.util.LinkedHashMap<String, SkillLineage.Discovery>();
+		var work = dev.ensouled.work.WorkLedger.get();
+		if (work != null) {
+			work.discoveriesOf(record.agentId()).forEach((skill, ticket) -> discoveries.put(skill,
+					new SkillLineage.Discovery(ticket.ticketId(), ticket.state().name(),
+							ticket.witness())));
+		}
+		SkillLineage lineage = SkillLineage.of(mind.ledger().practice(), discoveries,
+				facts == null ? 0 : facts.boots());
+		if (!lineage.isEmpty()) {
+			sb.append("  lineage: sessions=").append(lineage.sessions()).append('\n');
+			for (String line : lineage.lines()) {
+				sb.append("    ").append(line).append('\n');
+			}
 		}
 		sb.append("  home=").append(record.home()).append(" gate_budget=").append(record.gate().budgetRemaining()).append('\n');
 		// Why the being is idle: how many candidates its own generator produced on the last idle tick,

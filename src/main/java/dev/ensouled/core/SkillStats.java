@@ -28,6 +28,11 @@ public final class SkillStats {
 
 	/** Habit strength in thousandths, derived only from observed results. */
 	public int habitStrength() {
+		return habitStrength(successes, failures);
+	}
+
+	/** The same rule for a view, such as lineage, that has counts but no mutable cache. */
+	public static int habitStrength(int successes, int failures) {
 		int total = successes + failures;
 		if (total == 0) {
 			return 0;
