@@ -1,6 +1,7 @@
 package dev.ensouled.work;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.nio.file.Path;
@@ -11,6 +12,7 @@ import java.util.Optional;
 import dev.ensouled.core.EntityStimulus;
 import dev.ensouled.core.InventorySlot;
 import dev.ensouled.core.NeedsState;
+import dev.ensouled.core.VerbFrame;
 import dev.ensouled.core.Vec3i;
 import dev.ensouled.core.VisibleBlock;
 import dev.ensouled.core.WorldView;
@@ -39,6 +41,42 @@ final class WorkLedgerTest {
 		assertEquals(Optional.of(Deliverable.Kind.LOGS), Deliverable.named("bring me some wood"));
 		assertTrue(Deliverable.parse("bring me 3 moonrocks").isEmpty());
 		assertEquals(Optional.empty(), Deliverable.named("bring me 3 moonrocks"));
+	}
+
+	@Test
+	void aWishForSomethingTheWorldCannotSupplyIsHeldAsAnAspiration(@TempDir Path dir) {
+		WorkLedger work = WorkLedger.at(dir.resolve("work.json"));
+		// The parser can read this wish, but no learned or visible target supplies moonrock. The
+		// frame is supplied directly because a unit test has no live WorldState to record one.
+		VerbFrame frame = new VerbFrame("frame:aspiration", 900L, "wish", "Nia", "bring",
+				VerbFrame.State.NAMED, "moonrock", 3, "", "", "", List.of(),
+				"bring me 3 moonrocks", 0, 18);
+		WorkLedger.Answer answer = work.offer("agent:9", "Nia", "wish:9", "bring me 3 moonrocks",
+				900L, new Stub(900L), frame);
+		assertEquals("wish-aspiration", answer.code(), answer.why());
+		assertFalse(answer.opened(), "an aspiration is not a commitment");
+		assertTrue(work.commitmentsOf("agent:9").isEmpty(),
+				"a wish with no target must not open work nobody can do");
+	}
+
+	@Test
+	void aDecisionSpendsTheWishCellAndIsNotRebilledAsDiscovery(@TempDir Path dir) {
+		WorkLedger work = WorkLedger.at(dir.resolve("work.json"));
+		Stub view = new Stub(700L);
+		work.offer("agent:9", "Nia", "wish:9", "bring me 4 oak logs", 700L, view);
+
+		Ticket before = work.activeTicket("agent:9").orElseThrow();
+		assertEquals(0, before.usedCells());
+		assertEquals(0, work.cell("agent:9", "intent:7", "harvest_tree", 710L));
+		Ticket spent = work.activeTicket("agent:9").orElseThrow();
+		assertEquals(1, spent.usedCells());
+		assertEquals(List.of("intent:7"), spent.evidence());
+
+		view.slots.add(new InventorySlot(0, "minecraft:oak_log", 4));
+		work.observe("agent:9", "Nia", view, 720L);
+		work.discovered("agent:9", "Nia", "harvest_tree", 730L, true, "intent:7");
+		assertTrue(work.discoveriesOf("agent:9").isEmpty(),
+				"the decision is already on the wish ticket, not a fresh discovery");
 	}
 
 	@Test

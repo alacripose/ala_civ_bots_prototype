@@ -1,0 +1,618 @@
+                                             CLOUDS OF THE ATMOSPHERE
+
+                                        A field guide to cloud types, altitude, warm fronts, cold fronts, and the structures between
+
+                                        16
+
+Approximate altitude (km above ground)  14
+
+                                        12
+
+                                        10
+
+                                        8
+
+                                        6   Ci  Cs  Cc
+
+                                        4
+
+                                        2               Ac  As
+
+                                                                Ns                                                                                                      Cu  Cb
+
+                                        0                           Sc  St
+
+                                            Typical simplified envelopes, not hard boundaries. Cloud bases and tops shift with latitude, season, weather, and terrain.
+
+What this guide does: catalogues the ten internationally recognized cloud genera, their common species and notable visual
+features; explains approximate cloud-base and cloud-top heights; and connects cloud structure to frontal weather systems. It is
+designed to be useful for observing the real sky, not only memorizing names.
+
+  One important rule: a cloud name describes what is observed. It does not, by itself, prove which weather system produced it.
+  Height, shape, precipitation, motion, wind, pressure trend, and the wider synoptic pattern should be read together.
+
+Reference basis: World Meteorological Organization (WMO) International Cloud Atlas; NOAA/National Weather Service educational material; Met Office
+cloud guides; and peer-reviewed research on frontal cloud and precipitation organization.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                                                                                                                            Page 1
+1. How cloud height is described
+
+A cloud has a base (its lowest visible level) and a top (its highest visible level). Cloud classification by level usually refers mainly to
+where the cloud occurs or where its base lies, not to a hard ceiling. A shallow cloud can be low; a deep convective cloud can cross
+low, middle, and high levels.
+
+The WMO gives broad, region-dependent levels. For a temperate-region rule of thumb, high clouds often occur around 5-13 km,
+middle clouds around 2-7 km, and low clouds from the surface to roughly 2 km. These ranges overlap intentionally. In the tropics,
+high cloud tops can reach much higher; in polar regions, high-cloud levels are generally lower. The tropopause height changes with
+latitude, season, and weather.
+
+Level /          Approximate range in            Common genera                       Interpretation
+description      mid-latitudes
+High                                             Cirrus, Cirrostratus, Cirrocumulus  Mostly ice crystals; often thin, fibrous, veil-like, or tiny ripples
+                 Base often above about 5 km
+Middle           (16,500 ft); commonly 6-13 km   Altocumulus, Altostratus;           Water droplets, ice, or a mix depending on temperature and
+                                                 Nimbostratus often spans levels     depth
+Low              Often 2-7 km (6,500-23,000 ft)  Stratus, Stratocumulus, Cumulus     Liquid droplets are common; can obscure terrain or form fog
+                                                 bases, Cumulonimbus bases
+Deep / vertical  Surface to about 2 km (0-6,500  Cumulus congestus,                  Strong vertical motion; can cross multiple altitude bands
+                 ft)                             Cumulonimbus
+
+                 Base may be low; top may
+                 reach 8-16 km or the
+                 tropopause
+
+Use feet and kilometres as estimates, not rigid definitions. Pilot reports, ceilometers, radiosondes, lidar, and satellite retrievals
+can give more precise heights. The same named cloud may sit at different altitudes in different climates.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                                 Page 2
+2. The naming system: genera, species, varieties, features
+
+The international system uses ten main genera. A genus is the broad category: for example, Cirrus or Cumulonimbus. More
+detailed labels describe shape, arrangement, transparency, or attached features. They are not all separate genera, and not every
+combination is allowed.
+
+Name layer             What it tells you                                          Examples
+Genus                  Main cloud family                                          Cirrus (Ci), Altocumulus (Ac), Cumulonimbus (Cb)
+Species                Shape or internal structure                                Cirrus uncinus; Cumulus congestus; Cumulonimbus capillatus
+Variety                Transparency, layering, or pattern across the sky          undulatus (wave pattern), radiatus (bands), opacus (opaque)
+Supplementary feature  A recognizable structure attached to or merged with a      incus (anvil), mamma (pouches), asperitas (rough waves), virga (fall
+                       cloud                                                      streaks that evaporate)
+Accessory cloud        A smaller associated cloud nearby or attached              pileus (cap), velum (veil), pannus (ragged low cloud), flumen (beaver
+                                                                                  tail)
+Special /              A cloud linked to a specific local source or modification  contrail cloud (homogenitus), wildfire-generated cloud (flammagenitus)
+human-influenced
+forms
+
+Useful word roots: cirro- / cirrus = high, wispy; alto- = middle-level in cloud names; strato- = layered; cumulo- = heaped or puffy;
+nimbo- / -nimbus = precipitation-bearing. The prefix alto- can be misleading if read as ordinary English: it generally signals a middle
+cloud, not the highest cloud.
+
+Cloud names may be combined in a formal observation, such as Cumulonimbus capillatus incus: a cumulonimbus of the
+fibrous-topped species, bearing an anvil feature. The formal system has many more combinations than the ten basic genera.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                              Page 3
+3. High clouds: Cirrus, Cirrostratus, Cirrocumulus
+
+High clouds are commonly composed mainly of ice crystals because temperatures are very cold. They may look bright white in
+daylight and can appear yellow, orange, or red near sunrise and sunset. They are often distant from the surface weather that
+eventually reaches an observer.
+
+CIRRUS (Ci) - fibres, wisps, hooks
+
+Typical height: base often around 6-13 km (20,000-43,000 ft), depending on region and tropopause. Appearance: detached
+streaks, filaments, feathers, curved hooks, dense fibrous patches. Physics: ice crystals grow by deposition from water vapour and
+are shaped by winds and crystal habit. Weather clues: cirrus may be benign, may trail convection, or may thicken ahead of an
+approaching frontal system; one isolated patch does not guarantee rain.
+
+Common species: fibratus (fine threads, mostly straight or gently curved); uncinus (hooks or comma-like heads, often with a
+trailing brush); spissatus (dense, thick patches); castellanus (turreted tops indicating vertical structure); floccus (small tufts with
+ragged bases). Look for changes in coverage and direction over time.
+
+CIRROSTRATUS (Cs) - high veil
+
+Typical height: about 6-12 km (20,000-40,000 ft). Appearance: transparent, milky veil over part or most of the sky. The Sun or
+Moon often remains visible. Ice crystals can refract light to produce halos, arcs, or bright spots. Weather clues: a spreading veil
+that thickens and lowers can be a classic early sign of large-scale ascent ahead of a warm front or mid-latitude cyclone.
+
+Common species: fibratus, a fibrous veil with threads; nebulosus, a more uniform, nebulous sheet. Cirrostratus can be so thin that
+a halo is more obvious than the cloud itself.
+
+CIRROCUMULUS (Cc) - very small ripples or grains
+
+Typical height: about 6-12 km (20,000-40,000 ft). Appearance: tiny white cloudlets, grains, or ripples, usually with little or no
+shading. It can form a “mackerel sky” texture. Common species: stratiformis (widespread sheet with elements), lenticularis
+(lens-shaped), castellanus (small turrets), floccus (tufted elements). Weather clues: indicates structure or waves aloft, but is not a
+stand-alone forecast of rain.
+
+  High-cloud observation tip: note whether the cover is increasing, whether cloud elements are spreading into a veil, the direction
+  of upper-level motion, and whether a halo forms. A trend over several hours is more informative than a single cloud photograph.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference  Page 4
+4. Middle clouds: Altocumulus, Altostratus, Nimbostratus
+
+ALTOCUMULUS (Ac) - rolls, patches, or rounded elements
+
+Typical layer: roughly 2-7 km (6,500-23,000 ft), with substantial variation. Appearance: rounded patches or rolls, often larger and
+more shaded than cirrocumulus. Elements may be arranged in sheets or parallel bands. Composition: liquid droplets, ice crystals,
+or both, depending on temperature and vertical depth.
+
+Common species: stratiformis (cloudlets in a sheet); lenticularis (smooth lenses near mountain waves); castellanus (turrets rising
+from a common base, evidence of elevated instability); floccus (tufted elements with ragged bases); volutus (roll-shaped cloud).
+Notable features: virga may trail downward; cavum can appear as a circular or linear hole in a thin supercooled layer; asperitas
+creates an undulating, rough underside; mamma forms pouch-like structures.
+
+Weather clues: altocumulus castellanus in the morning can signal instability aloft and a possible risk of later showers or
+thunderstorms if moisture and lift are sufficient. Lenticular altocumulus points to wave motion, not automatically to approaching
+precipitation.
+
+ALTOSTRATUS (As) - broad grey-blue sheet
+
+Typical layer: about 2-7 km (6,500-23,000 ft); can extend higher. Appearance: widespread, grey or blue-grey layer; the Sun may
+look like a dim disk through thinner areas. Usually lacks the sharp halo of cirrostratus. Weather clues: thickening altostratus can
+mark deeper large-scale ascent and the transition toward nimbostratus, especially ahead of a warm front. Precipitation may be light,
+intermittent, or still evaporating before it reaches the ground.
+
+NIMBOSTRATUS (Ns) - thick precipitation layer
+
+Typical base: often low to middle, roughly 0.5-3 km, but variable. Vertical span: commonly several kilometres, extending through
+the middle layer and sometimes into low and high levels. Appearance: extensive, dark grey, fairly featureless cloud deck; Sun is
+generally hidden. Weather: sustained rain or snow over a broad area is common. Nimbostratus is often associated with warm fronts
+and occlusions, but also appears in other broad ascent regimes.
+
+Important distinction: Nimbostratus tends to produce widespread, relatively continuous precipitation. Cumulonimbus produces
+convective showers or storms with stronger local variability, and may bring lightning, hail, or damaging wind.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference  Page 5
+5. Low clouds: Stratus and Stratocumulus
+
+STRATUS (St) - low, flat, grey layer
+
+Typical base: at the surface to about 1 km (0-3,300 ft); may sit higher in dry or elevated settings. Appearance: a smooth, uniform
+sheet, sometimes like lifted fog. It may give drizzle or fine snow, but often produces no measurable precipitation. Formation:
+cooling of a moist layer, gentle lifting, advection over a colder surface, or fog lifting from the ground. The cloud base may be difficult
+to distinguish from terrain in hills or mountains.
+
+Common species: nebulosus (uniform fog-like layer); fractus (ragged shreds, often under precipitation clouds and sometimes
+called scud in informal weather discussion). Stratus near the ground can reduce visibility substantially.
+
+STRATOCUMULUS (Sc) - low rolls and cloud cells
+
+Typical base: surface to about 2 km (0-6,500 ft). Appearance: low lumpy masses with broad elements, often in rows or sheets;
+dark gaps or shading distinguish it from the more delicate high cloudlets. Formation: commonly the top of a moist boundary layer
+cooled beneath an inversion; it may develop from a broken-up stratus deck, shallow convection, or air flowing over terrain.
+
+Species: stratiformis (sheet); lenticularis (lens-shaped); castellanus (turrets); floccus (tufts); volutus (roll). Varieties/patterns:
+undulatus (waves), radiatus (bands that appear to converge or diverge in perspective), perlucidus (gaps between elements),
+opacus (opaque sheet). Asperitas and fluctus may add distinctive underside or wave structures.
+
+What low clouds tell you: a persistent low deck often signals moisture trapped under a stable layer. A clearing trend after a front
+may begin with broken stratocumulus, while renewed moist advection can rebuild the deck. Surface wind, temperature, dew point,
+and visibility are especially useful because low clouds are close to the boundary layer.
+
+  Fog: meteorologically, fog is a cloud at or very near the ground. Common forms include radiation fog (surface cooling on clear calm
+  nights), advection fog (moist air moving over a colder surface), upslope fog (air cooled as it rises), and evaporation or steam fog
+  (water vapour added to cold air). Fog type describes the formation process, not a new cloud genus.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference  Page 6
+6. Vertically developed clouds: Cumulus and
+Cumulonimbus
+
+CUMULUS (Cu) - detached heaps with a relatively flat base
+
+Typical base: often 0.5-2.5 km, depending on moisture and surface heating. Appearance: cauliflower-like towers, bright sunlit
+tops, and a flatter base near the level where rising air first reaches saturation. Mechanism: buoyant thermals rise from heated
+surfaces or are lifted by terrain or convergence. If the air is stable or dry above, growth may stop.
+
+Species and practical meaning: fractus - ragged, changing fragments, often in turbulent or precipitating environments; humilis -
+small fair-weather puffs with limited vertical depth; mediocris - moderate vertical growth; congestus - tall cauliflower towers with
+vigorous updrafts and potential for showers. Cumulus congestus can grow into cumulonimbus if the updraft and moisture sustain
+deeper development.
+
+CUMULONIMBUS (Cb) - thunderstorm cloud
+
+Typical base: often around 0.5-2 km, but lower or higher bases occur. Top: may reach 8-16 km and often spreads near the
+tropopause; strong storms can briefly overshoot it. The vertical extent is more important than a single “cloud height.”
+
+Appearance and physics: deep convective tower with strong updrafts and downdrafts. Liquid droplets form in lower warm regions;
+supercooled water, ice crystals, graupel, and hail may coexist in colder regions. The glaciated upper cloud can spread into an anvil
+(incus) in strong upper-level flow. Precipitation loading and evaporation can help generate downdrafts and gust fronts.
+
+Species: calvus - upper part mostly swollen and relatively smooth as glaciation begins; capillatus - fibrous or striated upper parts,
+often including an anvil. Common features: incus (anvil), mamma (pouches), arcus (shelf-like or roll-like leading cloud), murus
+(wall cloud), cauda (tail cloud), tuba (funnel-shaped feature), virga (precipitation that evaporates or sublimates before ground),
+praecipitatio (precipitation reaching the ground). Accessory clouds can include pileus (smooth cap), velum (veil), pannus (ragged
+shreds), and flumen (inflow band sometimes called a beaver tail in storm spotting).
+
+  Safety note: an approaching cumulonimbus can produce lightning, hail, severe gusts, flash flooding, and tornadoes in some
+  storms. Do not use cloud appearance alone to judge safe distance; thunder means lightning is close enough to be dangerous.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference  Page 7
+7. A broader cloud atlas: species, varieties, and special
+forms
+
+The table below lists the major species commonly taught from the WMO system. Some are subtle in the field and several only occur
+with particular genera. The WMO atlas is the controlling reference for exact formal combinations.
+
+Genus          Species (common formal set)                                        How to recognize it
+Cirrus         fibratus; uncinus; spissatus; castellanus; floccus                 Threads, hooks, dense fibrous patches, turrets, or tufted ends
+Cirrostratus   fibratus; nebulosus                                                Fibrous or uniform transparent ice-crystal veil
+Cirrocumulus   stratiformis; lenticularis; castellanus; floccus                   Fine sheets of tiny grains, lenses, turrets, or tufts
+Altocumulus    stratiformis; lenticularis; castellanus; floccus; volutus          Patches or rolls, wave lenses, turrets, tufts, or rolls
+Altostratus    No species routinely assigned; varieties include translucidus and  Sun weakly visible through thinner sheet, or obscured by opaque layer
+               opacus
+Nimbostratus   No species routinely assigned in the WMO genus table               Deep, widespread precipitating layer
+Stratocumulus  stratiformis; lenticularis; castellanus; floccus; volutus          Low lumps, cells, waves, lenses, tufts, or rolls
+Stratus        nebulosus; fractus                                                 Uniform low layer or ragged shreds
+Cumulus        fractus; humilis; mediocris; congestus                             Ragged fragments through progressively taller towers
+Cumulonimbus   calvus; capillatus                                                 Smooth swollen top transitioning to fibrous/glaciated upper cloud
+
+Varieties and patterns: intortus (interwoven cirrus threads); vertebratus (fishbone-like structure); undulatus (wave-like bands);
+radiatus (parallel bands with perspective convergence); lacunosus (net-like gaps or holes); duplicatus (two or more layers);
+translucidus (sun or moon can be seen through thinner portions); perlucidus (clear gaps between cloud elements); opacus (opaque
+enough to hide the sun or moon). These are descriptors, not free-form modifiers: a variety is only used where the formal
+classification allows it.
+
+Useful supplementary features: asperitas - chaotic wave-like underside; cavum - hole in a thin cloud layer, often tied to phase
+change in supercooled droplets; fluctus - short-lived breaking-wave forms from wind shear; mamma - hanging pouch-like structures;
+virga - precipitation streaks that evaporate or sublimate; praecipitatio - precipitation reaching the surface; arcus - low arc or shelf/roll
+form; incus - anvil; murus - wall cloud; cauda - tail feature; tuba - funnel-like feature.
+
+Accessory clouds: pileus is a smooth cap over a rising tower; velum is a veil intersecting a convective cloud; pannus consists of
+ragged shreds often under a precipitating deck; flumen is an inflow band linked to some supercells. These may coexist with a parent
+cloud and are not separate genera.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                                                                                                     Page 8
+8. Special clouds and clouds with non-weather origins
+
+Name / type                   Typical appearance                                            Origin or process
+Contrail cloud (homogenitus)
+Homomutatus                   Narrow streaks behind aircraft; can widen into ice-cloud      Aircraft exhaust adds water and particles; persistence depends strongly on
+Flammagenitus                 sheets                                                        upper-level humidity and temperature
+Cataractagenitus
+Silvagenitus                  An initially narrow contrail evolves into a wider,            Wind shear spreads ice crystals and the cloud field changes form
+Lenticular clouds             natural-looking cirrus-like veil
+Roll cloud / volutus
+Hole-punch / cavum            Cloud plume over intense fire or wildfire                     Fire-driven buoyancy and moisture; large pyroconvective events can reach
+Mammatus                                                                                    great heights
+Kelvin-Helmholtz / fluctus
+Asperitas                     Local cloud or fog near a major waterfall                     Waterfall spray and local cooling/moistening
+
+                              Localized cloud in very moist air above forest canopy         Evapotranspiration contributes moisture, with local lifting and cooling
+
+                              Smooth lens or stacked saucer shapes, often over mountains Standing mountain waves; cloud forms in ascent and evaporates in descent
+                                                                                                                   while air flows through
+
+                              Long horizontal tube that appears to roll                     Often tied to outflow boundaries or particular wave/boundary-layer structures;
+                                                                                            mechanism depends on setting
+
+                              Circular or linear hole in a thin supercooled cloud with ice  Ice formation triggers glaciation and precipitation that removes droplets in the
+                              streaks nearby                                                hole
+
+                              Rounded pouches hanging from a cloud base, often an anvil     Cloud-scale mixing, evaporation, and hydrometeor processes; not by itself
+                                                                                            proof of a tornado
+
+                              Breaking wave crests resembling ocean waves                   Strong vertical wind shear at a stable interface between layers
+
+                              Chaotic, wave-textured underside                              Gravity-wave and turbulent cloud-layer structure; visual pattern alone is not a
+                                                                                            severe-weather warning
+
+The WMO system uses terms ending in -genitus for a locally generated cloud and -mutatus for a cloud form that has changed
+through a particular process. These categories do not replace the ordinary genus; they add information about origin or
+transformation. Human-created clouds can still participate in ordinary atmospheric physics, including ice growth, radiation, and
+spreading by wind.
+
+Not every dramatic cloud has a single distinctive weather meaning. A visual feature can reveal local airflow or microphysics but
+often cannot identify the full storm environment without radar, satellite, surface observations, and vertical profiles.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                                                                                                                 Page 9
+9. Warm fronts: broad ascent and layered cloud shields
+
+A warm front advances when a warmer air mass replaces colder air at the surface. Because cold air is denser, the advancing warm
+air usually cannot simply bulldoze underneath it; instead it glides up and over the shallow cold air along a gently sloping frontal
+surface. The ascent can extend hundreds of kilometres ahead of the surface front.
+
+WARM AIR RISING GRADUALLY
+
+                                                                                   As  Ci / Cs
+                                                      Ns + precipitation                  COLD AIR AT SURFACE
+
+          Schematic only - actual frontal slopes and cloud bands vary.
+
+Why the cloud layers form: as moist air ascends, pressure falls and the air expands. Expansion cools it; once it reaches
+saturation, droplets and/or ice crystals form. Because uplift is broad and comparatively gradual, cloud tends to occupy a large shield
+and may appear as successive layers at different heights.
+
+A textbook approach sequence (not a promise):
+
+      1. Cirrus         2. Cirrostratus                3. Altostratus                    4. Nimbostratus         5. Low cloud
+
+High ice wisps appear  A veil spreads; halo           Sky turns grey; Sun              Deep layer; widespread  Stratus or fragments
+        far ahead            may form                       looks dim                         rain or snow           may follow
+
+Precipitation geography: the broad area of ascent and precipitation is commonly ahead of the surface warm front, on its cold side,
+though exact placement depends on the cyclone, front slope, dry slots, and temperature profile. Precipitation can begin aloft and
+evaporate in a dry lower layer, producing virga or a sub-cloud layer that gradually moistens.
+
+What changes at passage: temperatures and dew points often rise, winds shift, and the air mass becomes warmer or more humid.
+Cloud cover may break in the warm sector, but stratus, stratocumulus, fog, or continued rain can persist if moisture and stability
+remain.
+
+  Warm-front pattern to remember: high cloud often arrives first; the deck thickens and lowers; steady precipitation becomes more
+  likely as the cloud deepens. This sequence is a useful pattern, not a fixed timetable. Some warm fronts have little cloud or
+  precipitation if the air is dry, ascent is weak, or the vertical structure differs.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                                                                                 Page 10
+10. Cold fronts: sharper lifting and convective clouds
+
+A cold front is the leading boundary of colder air displacing warmer air. The dense cold air tends to wedge underneath the warm air.
+The resulting lift is often more abrupt than along a warm front, especially when the front is strong and the warm sector is moist and
+unstable.
+
+COLD AIR WEDGES UNDER WARM MOIST AIR
+
+                                                                      Cumulonimbus / tower
+                                                                                  Anvil may spread downwind
+
+                               COLD AIR                                                            WARM AIR
+
+          Schematic only - cold fronts can also be shallow, diffuse, or mostly layered.
+
+Common cloud development: cumulus may deepen into congestus and cumulonimbus along or just ahead of the front. Where
+instability is limited, the cloud band can be shallow or mostly stratiform. A cold front does not automatically mean thunderstorms;
+moisture, instability, lift, and wind shear determine what develops.
+
+A common cold-front passage pattern:
+
+           1. Ahead                               2. Front                   3. Passage                                4. Behind
+
+Warm, moist air; Cu or Ac may            Towering Cu / Cb or a rain   Showers, gusts, wind shift,            Cooler air; broken Cu/Sc, then
+                 grow                         band if lift is strong        temperature drop                          possible clearing
+
+Cloud and precipitation details: fast-moving cold fronts can produce a relatively narrow line of showers or storms. Slow fronts,
+weak instability, or strong layered ascent may produce broad cloud cover and stratiform rain. A squall line can form ahead of or
+along a front, but not every line of storms is a surface cold front. Outflow boundaries from storms can themselves lift warm air and
+initiate new clouds.
+
+Post-frontal clouds: cold air moving over a relatively warm surface can create shallow convection, cloud streets, cumulus, or
+stratocumulus. If the air mass is dry or subsidence is strong, the sky may clear rapidly. Over water, cold-air outbreaks can organize
+striking bands of clouds and snow showers.
+
+  Cold-front pattern to remember: look for a boundary, a change in wind and temperature, and a narrow or broken band of stronger
+  cloud growth near the leading edge. The most intense cloud is not necessarily exactly on the surface front; upper-level forcing,
+  terrain, and storm outflow can shift it.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                                                                                         Page 11
+11. Fronts compared: stationary, occluded, and mixed
+cases
+
+Front / boundary            Lift and cloud pattern                                            Typical precipitation / caveats
+Warm front
+                            Warm air glides over cooler surface air along a gentle slope;     Can produce long-duration steady rain/snow ahead of the surface front; classic
+Cold front                  often broad, layered cloud shield                                 Ci -> Cs -> As -> Ns sequence is common but not universal
+
+Stationary front            Colder air wedges beneath warmer air; steeper lift can deepen     Often showers or thunderstorms in a relatively narrow band, but may be dry,
+                            clouds rapidly                                                    shallow, or stratiform
+Occluded front
+                            Boundary moves little; persistent convergence and lift may        Cloud and rain can linger over one region for many hours or days; local waves
+Dryline (not a temperature  repeatedly form clouds                                            can intensify rain
+front)
+Outflow boundary            Cold front catches a warm front, lifting much of the warm sector  Cloud and precipitation can wrap around the low; character depends on which
+                            off the ground                                                    air mass is colder at the surface
+
+                            Boundary between moist and dry air, often in the Great Plains;    Can trigger severe storms when instability, cap erosion, and upper-level forcing
+                            convergence can lift moist air                                    align; cloud may be limited on the dry side
+
+                            Cool downdraft air spreads outward from a storm                   Can create a new line of cumulus or storms when it meets warm moist air
+
+Occlusion: in a mature mid-latitude cyclone, the faster-moving cold front may catch up with the warm front. The warm air is lifted
+above the surface, and the surface pattern becomes an occluded front. The cloud field is often extensive and layered, but
+embedded convection is possible.
+
+Stationary fronts: repeated lift over a nearly fixed boundary can maintain cloudiness or precipitation. If waves develop along the
+boundary, one section may intensify even while another weakens. A stationary front is a motion description, not a cloud type.
+
+Frontal cloud systems in research: real cyclones contain multiple scales of cloud organization: broad frontal shields, narrow
+rainbands, embedded convective cells, and post-frontal bands. The exact arrangement varies with vertical wind shear, stability,
+moisture, topography, and the cyclone stage.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                                          Page 12
+12. Why the same front can produce different cloud heights
+
+Cloud height is the result of thermodynamics and dynamics, not a fixed altitude assigned to a weather front. Several variables can
+radically change the observed cloud deck.
+
+Control                   Effect on cloud height or shape                                                       Practical sign
+Moisture profile
+                          A saturated layer starting low makes low cloud; a moist layer aloft can form          Compare dew point with temperature at the surface and, if
+Stability / inversion     Altocumulus or Altostratus without a low deck                                         available, a sounding
+
+Lifting strength          An inversion caps vertical growth and favours stratus or stratocumulus; instability   Flat tops suggest a cap; growing towers suggest stronger
+                          allows cumulus to deepen                                                              buoyancy
+Temperature and freezing
+level                     Gentle, widespread ascent favours layered clouds; concentrated strong ascent can      Broad solid deck versus localized cauliflower growth
+Wind shear                build towers
+                                                                                                                High cloud can be ice-dominated; thunderstorms contain
+Terrain                   Cloud phase changes from mostly liquid to mixed phase and ice as temperature          supercooled water and ice aloft
+                          drops; the level varies with air mass
+Latitude and tropopause                                                                                         Anvil displaced downwind; repeating wave-like cloud
+                          Tilts towers, spreads anvils, shapes bands, and can create waves at layer             features
+                          boundaries
+                                                                                                                Cloud hugging a ridge or standing in a smooth lens
+                          Air forced up windward slopes may cool and saturate; lee waves form lenticular        downwind
+                          clouds
+                                                                                                                Tropical anvils can be higher than comparable mid-latitude
+                          The upper limit of the troposphere is higher in the tropics and lower near the poles  anvils
+
+Time of day / surface heating Heating creates thermals and can deepen cumulus; nighttime cooling can create     Clouds build afternoon, or low cloud/fog forms overnight
+                                         stratus or fog
+
+Cloud base is closely related to the lifting condensation level (LCL) for a rising near-surface parcel: a rough estimate can be
+obtained from temperature-dew-point spread, but an observed base also depends on mixing, entrainment, and local structure. A
+deep cumulonimbus may have a low base and a very high top; reporting it as simply “a 10 km cloud” hides this vertical range.
+
+Cloud top is often tied to a stable layer: a capping inversion can flatten cumulus; a tropopause can stop or spread thunderstorm
+outflow into an anvil; strong updrafts can penetrate briefly into the lower stratosphere. These are common patterns, not hard
+geometric boundaries.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                                                            Page 13
+13. How clouds produce rain, snow, virga, and ice
+
+Clouds are not simply water vapour made visible. Visible cloud is made of liquid droplets, ice crystals, or both. Water vapour is
+invisible. A cloud forms when air reaches saturation and water condenses or deposits onto microscopic particles; later growth
+processes determine whether precipitation reaches the ground.
+
+Warm-cloud growth: in clouds above freezing, droplets collide and coalesce. Turbulence and the size distribution of droplets
+influence how quickly some grow into drizzle or rain drops. Larger drops fall relative to smaller ones and can collect them.
+
+Mixed-phase and cold-cloud growth: below 0 C, liquid droplets can remain supercooled. In many clouds, ice crystals grow at the
+expense of supercooled droplets because saturation vapour pressure over ice is lower than over liquid water. Ice crystals may
+aggregate, and riming can accrete supercooled droplets to form graupel or contribute to hail in strong updrafts.
+
+Virga: precipitation falls out of a cloud but evaporates or sublimates before reaching the surface. A dry sub-cloud layer can
+therefore show visible streaks under Altocumulus, Cumulus, or other clouds without rain measured on the ground. As precipitation
+moistens the lower air, the streaks may eventually reach the surface.
+
+Snow versus rain at the surface: the cloud can contain ice even when precipitation arrives as rain, if falling ice melts through a
+warm layer. Conversely, snow can reach the ground when the vertical temperature profile stays cold enough. Freezing rain and
+sleet depend on the depth and temperature of warm/cold layers aloft and near the surface - cloud type alone is insufficient to
+diagnose them.
+
+Frontal precipitation: warm fronts often have large regions of layered cloud and broad ascent, making sustained precipitation
+likely. Cold fronts can contain convective rainbands where ascent is concentrated. Both may have embedded cells and both can
+produce rain or snow, depending on the atmospheric column.
+
+  Three observations to separate cloud from precipitation: (1) cloud form and vertical extent, (2) whether streaks reach the
+  ground, and (3) the temperature profile between cloud and surface. A dark base alone does not identify precipitation type or
+  intensity.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference  Page 14
+14. Field method: identify what you see and infer cautiously
+
+Use the following order when looking at the sky. It is deliberately practical: first record visible evidence, then infer a process, then
+check whether nearby observations support that inference.
+
+Step         Question                                                      Useful evidence
+1. Level
+             Where is the base? Is the cloud shallow or vertically deep? Terrain reference, aircraft reports, ceilometer, nearby cloud layers; remember perspective can
+2. Shape                                                                                       mislead
+
+3. Motion    Fibrous, veil, rounded elements, flat deck, tower, anvil,     Assign a likely genus before trying a species or feature
+             wave, or ragged fragments?
+4. Water
+             Is the cloud approaching, spreading, lowering, or growing? Track the same feature for 10-30 minutes; note motion at more than one level
+5.           Is upper cloud moving differently from low cloud?
+Environment
+6. Trend     Are droplets only visible as cloud, are there virga streaks,  Look for fall streaks, surface wetting, rain/snow observations, radar
+             or is precipitation reaching the surface?
+
+             Is a front, trough, mountain wave, sea breeze, or             Surface pressure, temperature, dew point, wind shift, radar and satellite
+             thunderstorm outflow nearby?
+
+             Is the deck thinning, thickening, lowering, or becoming       Repeated observations matter more than a single snapshot
+             more cellular?
+
+Fast recognition cues
+
+- High wisps spreading into a veil with a halo: possible cirrus-to-cirrostratus progression; a frontal shield may be approaching.
+
+- A grey sheet that gradually hides the Sun and deepens into steady precipitation: Altostratus progressing toward Nimbostratus is
+one possible pattern.
+
+- Growing towers with sharp cauliflower edges: strong vertical development; if they glaciate and spread an anvil, Cumulonimbus is
+likely.
+
+- Smooth lens clouds near mountains: likely standing-wave clouds; they can indicate strong winds aloft, but the cloud may remain
+stationary relative to terrain.
+
+- Low, widespread grey cloud with poor visibility: Stratus or fog; check surface temperature, dew point, wind, and terrain.
+
+- A ragged low cloud under a storm base: could be pannus or scud; it should not automatically be interpreted as a funnel or tornado.
+
+Do not overclaim: clouds can suggest processes, but a cloud photograph rarely proves a front location, storm severity, exact
+altitude, or precipitation type. Use a current surface map, radar, satellite loop, and sounding when those distinctions matter.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                                                                                                  Page 15
+15. Scientific and technical references
+
+The World Meteorological Organization atlas is the definitive source for formal cloud names, species, varieties, supplementary
+features, and accessory clouds. NOAA and Met Office educational pages are useful for interpreting frontal structure and typical
+heights. The research papers below provide deeper treatment of cyclone cloud structure and precipitation.
+
+Classification and altitude
+
+1. World Meteorological Organization (WMO), International Cloud Atlas - official cloud definitions, genera, species, varieties, supplementary features,
+    accessory clouds, and classification summary. https://cloudatlas.wmo.int/en/home.html
+
+2. WMO, Definitions of clouds - ten recognized genera and genus definitions. https://cloudatlas.wmo.int/en/definitions-of-clouds.html
+
+3. WMO, Approximate levels and heights - regional ranges for high, middle, and low cloud groups. https://cloudatlas.wmo.int/en/clouds-definitions.html
+
+4. WMO, Supplementary features and accessory clouds - formal definitions for incus, mamma, virga, asperitas, cavum, fluctus, arcus, murus, cauda, tuba,
+    pileus, velum, pannus, and flumen. Official WMO page
+
+5. Met Office, High clouds - cirrus, cirrostratus, cirrocumulus, typical height and morphology. Met Office high clouds
+
+6. Met Office, Mid-level clouds - altocumulus, altostratus, nimbostratus. Met Office mid-level clouds
+
+7. Met Office, Low-level clouds - stratus, stratocumulus, cumulus and cumulonimbus. Met Office low-level clouds
+
+8. NOAA, How to read surface weather maps: fronts - practical characteristics of warm and cold fronts and their passage. NOAA JetStream: weather maps
+
+9. NOAA, Air masses - frontal slopes and why warm fronts commonly support broad layered clouds while cold fronts can produce sharper lifting. NOAA
+    JetStream: air masses
+
+Peer-reviewed research
+
+10. Hobbs, P. V. (1978). “Organization and structure of clouds and precipitation on the mesoscale and microscale in cyclonic storms.” Reviews of
+    Geophysics, 16(4), 741-755. DOI: 10.1029/RG016i004p00741. A classic review of frontal, warm-sector, cold-frontal, and post-frontal precipitation
+    bands.
+
+11. Browning, K. A. (1990). “Organization of clouds and precipitation in extratropical cyclones.” In Extratropical Cyclones: The Erik Palmén Memorial
+    Volume, pp. 129-153. DOI: 10.1007/978-1-944970-33-8_8. A key synthesis of cloud and precipitation organization in mid-latitude cyclones.
+
+12. Catto, J. L., Jakob, C., Berry, G., and Nicholls, N. (2012). “Relating global precipitation to atmospheric fronts.” Geophysical Research Letters, 39,
+    L10805. DOI: 10.1029/2012GL051736. Open-access research connecting precipitation patterns to warm, cold, and quasi-stationary fronts.
+
+13. Houze, R. A. Jr. (2014). Cloud Dynamics, 2nd ed. Academic Press. A major textbook on cloud-scale dynamics, cloud formation, and precipitation
+    processes. Publisher page.
+
+14. Markowski, P. and Richardson, Y. (2010). Mesoscale Meteorology in Midlatitudes. Wiley-Blackwell. Background on fronts, cyclones, instability, and
+    mesoscale convective organization. DOI / publisher record.
+
+Use links as starting points. Some references are open access; others may require library access. Scientific papers describe
+distributions and mechanisms, while the official WMO atlas controls formal cloud terminology.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference  Page 16
+16. Compact glossary and final reference card
+
+Term                Meaning
+Advection           Horizontal transport of a property such as heat or moisture by wind
+Anvil (incus)       Flattened, spreading upper part of a strong cumulonimbus, often near a stable tropopause
+Cloud base / top    Lowest / highest visible boundary of a cloud
+Condensation level  Altitude where a rising air parcel first becomes saturated under the parcel's thermodynamic path
+Convection          Vertical overturning driven by buoyancy and/or destabilizing processes
+Frontal slope       The three-dimensional inclined zone separating air masses; usually gentler for warm fronts than cold fronts
+Inversion           A layer where temperature increases with height; often suppresses vertical mixing
+Mixed-phase cloud   Cloud containing both supercooled liquid droplets and ice crystals
+Nimbostratus        Deep widespread precipitating cloud, typically layered rather than strongly cellular
+Tropopause          Boundary region between the troposphere and stratosphere; often limits or redirects cloud-top growth
+Virga               Precipitation falling from cloud but evaporating or sublimating before it reaches the surface
+
+One-minute summary
+
+High clouds (Ci, Cs, Cc) are usually ice-rich and often reveal upper-level moisture, waves, or the leading edge of a broad cloud
+shield. Middle clouds (Ac, As, Ns) expose the structure of moist layers and broad ascent; nimbostratus commonly supports
+prolonged rain or snow. Low clouds (St, Sc) are often shaped by boundary-layer moisture and inversions. Cumulus and
+cumulonimbus grow vertically when lift, moisture, and instability permit.
+
+Warm fronts often feature a broad, gently ascending cloud shield and a possible progression from cirrus through cirrostratus and
+altostratus to nimbostratus. Cold fronts often lift air more abruptly, allowing cumulus towers and cumulonimbus where moisture and
+instability are available. Real cloud systems are messier: fronts can be dry, weak, stationary, occluded, or mixed with waves and
+convection.
+
+  Best field habit: identify the genus, estimate the cloud base and top separately, record how the cloud is changing, then relate it to
+  wind, temperature, dew point, pressure trend, terrain, and current radar/satellite data. Always distinguish what you can see from
+  what you infer.
+
+CLOUD TYPES, FRONTS, AND ALTITUDES | Field reference                                                                             Page 17
+

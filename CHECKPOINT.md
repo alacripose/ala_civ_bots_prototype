@@ -1,5 +1,29 @@
 # Execution checkpoint — the model is enforced: lifetimes, Command envelope, live frames (2026-11-01 02:35)
 
+
+## 2026-11-02 — shploingus corpus and project docs ingested; a wish without a target is an aspiration
+
+**Language.** `tools/pdf_extract.py` converted all 14 PDFs under `shploingus-clean/docs` (679,819
+characters) before ingestion. `tools/prose_ingest_mods.py` now reads Rust `//` and `/* */` comments,
+skips `.git`, `target`, `node_modules` and tool caches, and accepts repeated `--root` plus
+`--exclude`. The corpus compiled to `tools/shploingus_lexicon.tsv` (20,762 words from 29 sources,
+including the `crates` and `clean-room` Rust trees); this project's `docs/` compiled to
+`tools/project_lexicon.tsv` (9,066 words from 30 sources, with `ping_wheel_messages.md` left to its
+own extractor). The baseline merge reports 103,546 attested words.
+
+**Aspiration.** A parsed wish whose noun has no learned or visible target no longer returns
+`wish-unknown-target`. `WorkLedger.offer` returns `wish-aspiration` without opening a commitment or
+spending a ticket; `WishDesk` records the wish as an `EpisodeKind.DREAM` episode and tells the asker
+it has the wish in mind but no way to bring the thing yet.
+`WorkLedgerTest.aWishForSomethingTheWorldCannotSupplyIsHeldAsAnAspiration` passes.
+
+**Build and runtime.** Jar `ensouled-0.1.0+g68ae76eb-dirty.src.a1c9b82e.jar` contains the merged
+lexicon (`aerosol`, `rejuv`, `flank`); `python tools/parity_check.py --existing build server client`
+reports every target carries this worktree; the server on 25565 restarted with build
+`...a1c9b82e` and reached `Done (4.361s)`. The pre-existing `compileGameplayDegrees` refusal remains:
+`ticket:5ea346d8-4bae-4c3b-8fec-97f3795252e6 has 10 spent decisions but 0 decision packages`; the
+server was started with `-x compileGameplayDegrees` rather than treating that refusal as fixed.
+
 ## 2026-11-02 — Node body: native chat restored, per-body client evidence
 
 **Layer correction (2026-11-02).** Axis is not a Node-side decision layer. It is the server-side

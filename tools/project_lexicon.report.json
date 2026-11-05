@@ -1,16 +1,19 @@
 {
   "documents": {
-    "AGENTS_DO_NOT_IGNORE.txt": [
-      "AGENTS_DO_NOT_IGNORE.txt"
-    ],
     "AUDIT_AGAINST_SECURE_SHELL.md": [
       "AUDIT_AGAINST_SECURE_SHELL.md"
     ],
-    "CONTEXT.md": [
-      "CONTEXT.md"
+    "GAIA.md": [
+      "GAIA.md"
+    ],
+    "GAMEPLAY_DEGREES.md": [
+      "GAMEPLAY_DEGREES.md"
     ],
     "IMPLEMENTATION_STATUS.md": [
       "IMPLEMENTATION_STATUS.md"
+    ],
+    "LANGUAGE_AUDIT.md": [
+      "LANGUAGE_AUDIT.md"
     ],
     "LAYER_TABLE.md": [
       "LAYER_TABLE.md"
@@ -18,11 +21,11 @@
     "PHASE0_CONTRACTS.md": [
       "PHASE0_CONTRACTS.md"
     ],
-    "README.md": [
-      "README.md"
-    ],
     "UPSTREAM_ALIGNMENT.md": [
       "UPSTREAM_ALIGNMENT.md"
+    ],
+    "V9_FINDINGS.md": [
+      "V9_FINDINGS.md"
     ],
     "VERB_CLASSIFIER_V1_IMPLEMENTATION_PLAN.md": [
       "VERB_CLASSIFIER_V1_IMPLEMENTATION_PLAN.md"
@@ -72,34 +75,23 @@
     "minecraft_shared_server_bot_client_population_addendum.md": [
       "minecraft_shared_server_bot_client_population_addendum.md"
     ],
+    "persistent_city_builder_tower_defense_design_analysis.md": [
+      "persistent_city_builder_tower_defense_design_analysis.md"
+    ],
+    "persistent_city_builder_tower_defense_design_analysis_v2.md": [
+      "persistent_city_builder_tower_defense_design_analysis_v2.md"
+    ],
+    "persistent_city_builder_tower_defense_design_analysis_v4.md": [
+      "persistent_city_builder_tower_defense_design_analysis_v4.md"
+    ],
+    "persistent_city_builder_tower_defense_design_analysis_v5.md": [
+      "persistent_city_builder_tower_defense_design_analysis_v5.md"
+    ],
     "persistent_city_builder_tower_defense_design_analysis_v9.md": [
       "persistent_city_builder_tower_defense_design_analysis_v9.md"
     ]
   },
   "mods": {
-    "AGENTS_DO_NOT_IGNORE.txt": {
-      "files": {
-        "java": 0,
-        "lang": 0,
-        "markdown": 1
-      },
-      "tokens": 2789,
-      "top": [
-        "the",
-        "a",
-        "not",
-        "and",
-        "client",
-        "is",
-        "player",
-        "to",
-        "do",
-        "must",
-        "body",
-        "server"
-      ],
-      "words": 610
-    },
     "AUDIT_AGAINST_SECURE_SHELL.md": {
       "files": {
         "java": 0,
@@ -123,28 +115,51 @@
       ],
       "words": 555
     },
-    "CONTEXT.md": {
+    "GAIA.md": {
       "files": {
         "java": 0,
         "lang": 0,
         "markdown": 1
       },
-      "tokens": 521,
+      "tokens": 1661,
       "top": [
-        "a",
         "the",
-        "it",
-        "avoid",
-        "and",
+        "a",
         "is",
-        "that",
+        "and",
+        "it",
+        "gaia",
         "not",
-        "world",
-        "of",
-        "with",
-        "no"
+        "declared",
+        "per",
+        "to",
+        "its",
+        "so"
       ],
-      "words": 271
+      "words": 635
+    },
+    "GAMEPLAY_DEGREES.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 1492,
+      "top": [
+        "the",
+        "and",
+        "a",
+        "is",
+        "not",
+        "client",
+        "harvest",
+        "wander",
+        "phase",
+        "wish",
+        "v",
+        "are"
+      ],
+      "words": 520
     },
     "IMPLEMENTATION_STATUS.md": {
       "files": {
@@ -152,22 +167,45 @@
         "lang": 0,
         "markdown": 1
       },
-      "tokens": 6757,
+      "tokens": 8644,
       "top": [
         "the",
-        "a",
         "and",
+        "a",
         "is",
         "not",
         "no",
-        "player",
-        "one",
-        "chat",
         "client",
-        "phase",
-        "with"
+        "player",
+        "chat",
+        "one",
+        "with",
+        "it"
       ],
-      "words": 1645
+      "words": 1880
+    },
+    "LANGUAGE_AUDIT.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 1196,
+      "top": [
+        "the",
+        "a",
+        "is",
+        "and",
+        "corpus",
+        "of",
+        "it",
+        "as",
+        "not",
+        "to",
+        "what",
+        "that"
+      ],
+      "words": 416
     },
     "LAYER_TABLE.md": {
       "files": {
@@ -215,29 +253,6 @@
       ],
       "words": 468
     },
-    "README.md": {
-      "files": {
-        "java": 0,
-        "lang": 0,
-        "markdown": 1
-      },
-      "tokens": 3406,
-      "top": [
-        "the",
-        "a",
-        "and",
-        "is",
-        "not",
-        "phase",
-        "ensouled",
-        "to",
-        "player",
-        "it",
-        "in",
-        "server"
-      ],
-      "words": 1054
-    },
     "UPSTREAM_ALIGNMENT.md": {
       "files": {
         "java": 0,
@@ -261,28 +276,51 @@
       ],
       "words": 524
     },
+    "V9_FINDINGS.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 2108,
+      "top": [
+        "a",
+        "the",
+        "and",
+        "is",
+        "not",
+        "v",
+        "in",
+        "package",
+        "are",
+        "or",
+        "state",
+        "what"
+      ],
+      "words": 882
+    },
     "VERB_CLASSIFIER_V1_IMPLEMENTATION_PLAN.md": {
       "files": {
         "java": 0,
         "lang": 0,
         "markdown": 1
       },
-      "tokens": 2140,
+      "tokens": 3929,
       "top": [
-        "a",
         "the",
+        "a",
         "and",
         "is",
-        "v",
+        "run",
+        "it",
         "not",
         "world",
-        "core",
-        "r",
-        "run",
-        "plan",
+        "one",
+        "in",
+        "v",
         "no"
       ],
-      "words": 696
+      "words": 1025
     },
     "WORLD_INTERACTION.md": {
       "files": {
@@ -629,6 +667,98 @@
       ],
       "words": 1247
     },
+    "persistent_city_builder_tower_defense_design_analysis.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 8379,
+      "top": [
+        "and",
+        "a",
+        "the",
+        "or",
+        "can",
+        "should",
+        "of",
+        "map",
+        "tower",
+        "player",
+        "is",
+        "be"
+      ],
+      "words": 2113
+    },
+    "persistent_city_builder_tower_defense_design_analysis_v2.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 14855,
+      "top": [
+        "and",
+        "a",
+        "the",
+        "or",
+        "can",
+        "should",
+        "is",
+        "to",
+        "be",
+        "not",
+        "of",
+        "world"
+      ],
+      "words": 3002
+    },
+    "persistent_city_builder_tower_defense_design_analysis_v4.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 32386,
+      "top": [
+        "and",
+        "the",
+        "a",
+        "or",
+        "is",
+        "not",
+        "https",
+        "can",
+        "com",
+        "to",
+        "world",
+        "should"
+      ],
+      "words": 4380
+    },
+    "persistent_city_builder_tower_defense_design_analysis_v5.md": {
+      "files": {
+        "java": 0,
+        "lang": 0,
+        "markdown": 1
+      },
+      "tokens": 33389,
+      "top": [
+        "the",
+        "and",
+        "a",
+        "or",
+        "is",
+        "not",
+        "https",
+        "can",
+        "to",
+        "com",
+        "world",
+        "should"
+      ],
+      "words": 4464
+    },
     "persistent_city_builder_tower_defense_design_analysis_v9.md": {
       "files": {
         "java": 0,
@@ -653,8 +783,13 @@
       "words": 6530
     }
   },
-  "root": "docs",
-  "skipped": [],
-  "total_tokens": 211001,
-  "total_words": 8909
+  "root": "C:\\Users\\ala\\Documents\\ala_civ_bots_prototype\\docs",
+  "roots": [
+    "C:\\Users\\ala\\Documents\\ala_civ_bots_prototype\\docs"
+  ],
+  "skipped": [
+    "ping_wheel_messages.md"
+  ],
+  "total_tokens": 303427,
+  "total_words": 9066
 }

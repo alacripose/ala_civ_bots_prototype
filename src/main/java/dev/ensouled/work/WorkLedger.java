@@ -122,19 +122,76 @@ public final class WorkLedger {
 	 */
 	public Answer offer(String agentId, String agentName, String wishId, String text, long tick,
 			WorldView view) {
-		Optional<Deliverable> parsed = Deliverable.parse(text);
-		if (parsed.isEmpty()) {
-			record(agentName, agentId, null, "work-unclear", Map.of("wish", wishId, "said", text));
-			// The named half, if one was named: the being asks about what is missing rather than
-			// about the whole sentence.
-			String words = Deliverable.named(text).map(kind -> kind.noun(true)).orElse("");
-			return new Answer("wish-unclear", "the words did not name both a thing and a number", 0,
-					words);
-		}
-		Deliverable deliverable = parsed.get();
+		return offer(agentId, agentName, wishId, text, tick, view,
+				dev.ensouled.core.FrameLedger.wishFrame(wishId));
+	}
+
+	/**
+	 * The same reading with the frame already in hand. A test supplies the frame so it can exercise
+	 * what a wish becomes without a live world; a caller never does.
+	 */
+	Answer offer(String agentId, String agentName, String wishId, String text, long tick,
+			WorldView view, dev.ensouled.core.VerbFrame frame) {
 		// A build wish is not answered "already held": the stock it names is what must be put
 		// into the world, so holding it is the precondition, not the completion.
 		boolean building = Deliverable.builds(text);
+		Deliverable deliverable;
+		if (frame != null) {
+			// The wish is read from the frame the corpus parser produced, not from a noun table.
+			// The count is the frame's count; a location is not a quantity (the parser refuses
+			// coordinate runs), so a wish that only names a place asks how many instead.
+			if (frame.objectKind().isBlank()) {
+				record(agentName, agentId, null, "work-unclear",
+						Map.of("wish", wishId, "said", text, "frame", frame.frameId()));
+				return new Answer("wish-unclear", "the frame named no thing", 0, "");
+			}
+			if (frame.objectCount() == null) {
+				// A number is missing, not a thing. The being asks for the missing half, so a
+				// clear "5 dirt" never gets the question meant for "dirt".
+				String code = frame.verb().isBlank() ? "wish-unclear" : "wish-no-count";
+				record(agentName, agentId, null, "work-unclear",
+						Map.of("wish", wishId, "said", text, "frame", frame.frameId()));
+				return new Answer(code, "the frame named no number", 0, frame.objectKind());
+			}
+			String noun = frame.objectKind().strip();
+			dev.ensouled.core.TrainingLedger.LearnedTarget target =
+					dev.ensouled.core.TrainingLedger.targetFor(noun);
+			if (target == null && view != null) {
+				// No client has taught this noun yet. The visible world supplies a hypothesis to
+				// test; success is what promotes it into the learned target map.
+				target = dev.ensouled.core.TrainingLedger.hypothesis(noun, view.visibleBlocks(16));
+			}
+			if (target == null) {
+				// The corpus can name a thing this world has no learned or visible supply for. That is
+				// not a refusal: the wish is held as an aspiration, so the dreaming loop can take it on
+				// when a target is learned. It opens no commitment and spends no ticket.
+				record(agentName, agentId, null, "work-aspiration",
+						Map.of("wish", wishId, "said", text, "noun", noun, "state", "aspiration"));
+				return new Answer("wish-aspiration",
+						"no learned or visible target for " + noun + "; held as an aspiration", 0, noun);
+			}
+			String skill = building ? Phase1GatePolicy.SKILL_PLACE : target.skillId();
+			if (skill == null || skill.isBlank()) {
+				skill = building ? Phase1GatePolicy.SKILL_PLACE : Phase1GatePolicy.SKILL_GATHER;
+			}
+			deliverable = Deliverable.learned(noun, frame.objectCount(), target.blockId(),
+					target.itemId(), skill).withBuild(building);
+			record(agentName, agentId, null, "work-target", Map.of("wish", wishId,
+					"noun", noun, "block", target.blockId(), "item", target.itemId(),
+					"basis", target.basis()));
+		} else {
+			// Compatibility for a direct caller or a persisted old wish with no frame: the old
+			// declared table remains readable, but no live client wish takes this path.
+			Optional<Deliverable> parsed = Deliverable.parse(text);
+			if (parsed.isEmpty()) {
+				record(agentName, agentId, null, "work-unclear",
+						Map.of("wish", wishId, "said", text));
+				String words = Deliverable.named(text).map(kind -> kind.noun(true)).orElse("");
+				return new Answer(words.isBlank() ? "wish-unclear" : "wish-no-count",
+						"the words did not name both a thing and a number", 0, words);
+			}
+			deliverable = parsed.get();
+		}
 		if (!building && deliverable.met(view)) {
 			record(agentName, agentId, null, "work-already-held",
 					Map.of("wish", wishId, "held", Integer.toString(deliverable.held(view)),
@@ -163,7 +220,10 @@ public final class WorkLedger {
 				agentName, deliverable, "wish:" + wishId, tick, tick + WINDOW_TICKS, runId,
 				Commitment.State.OPEN, 0L, "", Run.Stage.CONSIDERED.ordinal());
 		commitments.put(commitment.commitmentId(), commitment);
-		String step = building ? Phase1GatePolicy.SKILL_PLACE : STEP_HARVEST;
+		String step = deliverable.skillId();
+		if (step == null || step.isBlank()) {
+			step = building ? Phase1GatePolicy.SKILL_PLACE : STEP_HARVEST;
+		}
 		Plan plan = new Plan("plan:" + UUID.randomUUID(), commitment.commitmentId(),
 				List.of(step), 0, tick, 0L, "");
 		plans.put(plan.planId(), plan);
@@ -171,10 +231,12 @@ public final class WorkLedger {
 				commitment.commitmentId(), tick, commitment.dueTick(), deliverable.condition(),
 				ObjectiveWindow.State.OPEN, 0L);
 		windows.put(window.windowId(), window);
+		// The wish uses the same training ledger as a decision package: a verb a client has actually
+		// exercised wins; the compiled corpus remains the fallback when no client has taught it.
 		Ticket ticket = Ticket.opened("ticket:" + UUID.randomUUID(), commitment.commitmentId(),
 				worldId, agentId, agentName, "wish:" + wishId,
-				dev.ensouled.core.VerbLibrary.corpus().spokenVerb(step),
-				dev.ensouled.core.VerbLibrary.corpus().basis(step), deliverable.count(),
+				dev.ensouled.core.TrainingLedger.spokenVerb(step),
+				dev.ensouled.core.TrainingLedger.basis(step), deliverable.count(),
 				tick, commitment.dueTick());
 		tickets.put(ticket.ticketId(), ticket);
 		record(agentName, agentId, commitment, "work-opened",
@@ -254,8 +316,7 @@ public final class WorkLedger {
 		String condition = "";
 		if (next == Run.Stage.SURVEY && sighted) {
 			target = Run.Stage.SURVEY;
-			condition = commitment.deliverable().kind().name().toLowerCase(java.util.Locale.ROOT)
-					+ " in sight";
+			condition = commitment.deliverable().words() + " in sight";
 		} else if (next == Run.Stage.CLAIM && held >= 1) {
 			target = Run.Stage.CLAIM;
 			condition = "held " + held + "/" + commitment.deliverable().count();
@@ -285,14 +346,18 @@ public final class WorkLedger {
 		boolean sighted = seesAny(view, commitment.deliverable());
 		long since = lastSighted.getOrDefault(commitment.commitmentId(),
 				plan.replacedTick() > 0 ? plan.replacedTick() : plan.createdTick());
+		String gatherStep = commitment.deliverable().skillId();
+		if (gatherStep == null || gatherStep.isBlank()) {
+			gatherStep = STEP_HARVEST;
+		}
 		if (sighted && STEP_WANDER.equals(plan.step())) {
-			plans.put(plan.planId(), plan.replacedBy(List.of(STEP_HARVEST), tick,
+			plans.put(plan.planId(), plan.replacedBy(List.of(gatherStep), tick,
 					"the thing owed is in sight again"));
 			record(agentName, commitment.agentId(), commitment, "plan-replaced",
-					Map.of("step", STEP_HARVEST, "why", "in sight again"));
+					Map.of("step", gatherStep, "why", "in sight again"));
 			return true;
 		}
-		if (!sighted && STEP_HARVEST.equals(plan.step()) && tick - since >= STEP_PATIENCE_TICKS) {
+		if (!sighted && gatherStep.equals(plan.step()) && tick - since >= STEP_PATIENCE_TICKS) {
 			plans.put(plan.planId(), plan.replacedBy(List.of(STEP_WANDER), tick,
 					"nothing of that kind in sight for " + STEP_PATIENCE_TICKS + " ticks"));
 			record(agentName, commitment.agentId(), commitment, "plan-replaced",
@@ -356,7 +421,7 @@ public final class WorkLedger {
 
 	private static boolean seesAny(WorldView view, Deliverable deliverable) {
 		for (VisibleBlock block : view.visibleBlocks(DevView.RADIUS)) {
-			if (deliverable.kind().matches(block.blockId()) && block.lineOfSight()) {
+			if (deliverable.blockMatches(block.blockId()) && block.lineOfSight()) {
 				return true;
 			}
 		}
@@ -372,6 +437,79 @@ public final class WorkLedger {
 	public Optional<Commitment> openCommitment(String agentId) {
 		List<Commitment> open = openFor(agentId);
 		return open.isEmpty() ? Optional.empty() : Optional.of(open.get(open.size() - 1));
+	}
+
+	/** Visible blocks that match the open ticket's learned block target. */
+	public List<VisibleBlock> openTargets(String agentId, WorldView view) {
+		if (view == null) {
+			return List.of();
+		}
+		Optional<Commitment> open = openCommitment(agentId);
+		if (open.isEmpty()) {
+			return List.of();
+		}
+		Deliverable deliverable = open.get().deliverable();
+		if (!Phase1GatePolicy.SKILL_GATHER.equals(deliverable.skillId())
+				|| deliverable.blockId().isBlank()) {
+			return List.of();
+		}
+		List<VisibleBlock> out = new ArrayList<>();
+		for (VisibleBlock block : view.visibleBlocks(16)) {
+			if (block.lineOfSight() && deliverable.blockMatches(block.blockId()) && out.size() < 8) {
+				out.add(block);
+			}
+		}
+		return out;
+	}
+
+	/**
+	 * Promote or reject a noun hypothesis from what a client's own gather actually did. The target
+	 * ledger keeps the row; this method only reports the evidence and fills a missing item id on the
+	 * open commitment so its own inventory check can see the drop.
+	 */
+	public void recordTarget(String agentId, String agentName, String skillId,
+			Map<String, String> facts, long tick, boolean accepted) {
+		if (!Phase1GatePolicy.SKILL_GATHER.equals(skillId)
+				&& !Phase1GatePolicy.SKILL_HARVEST.equals(skillId)) {
+			return;
+		}
+		Optional<Commitment> open = openCommitment(agentId);
+		if (open.isEmpty() || facts == null) {
+			return;
+		}
+		Deliverable deliverable = open.get().deliverable();
+		String block = facts.getOrDefault("block_id", "");
+		if (block.isBlank()) {
+			block = facts.getOrDefault("observed_block", "");
+		}
+		String item = facts.getOrDefault("item", "");
+		if (item.isBlank()) {
+			item = block;
+		}
+		if (block.isBlank()) {
+			return;
+		}
+		dev.ensouled.core.TrainingLedger.learnTarget(agentName, deliverable.words(), block, item,
+				skillId, accepted, tick);
+		if (accepted) {
+			commitments.put(open.get().commitmentId(),
+					open.get().withDeliverable(deliverable.withTargets(block, item, skillId)));
+			// The same gather that taught the noun also taught the skill's verb. If the open
+			// ticket was opened before that evidence existed, update its vocabulary now; its
+			// spent cell and evidence stay exactly as they were.
+			Ticket ticket = ticketFor(open.get().commitmentId());
+			if (ticket != null && !ticket.evidence().isEmpty()) {
+				Ticket learned = ticket.withVocabulary(
+						dev.ensouled.core.TrainingLedger.spokenVerb(skillId),
+						dev.ensouled.core.TrainingLedger.basis(skillId));
+				tickets.put(learned.ticketId(), learned);
+				publish(learned);
+			}
+			record(agentName, agentId, open.get(), "target-learned",
+					Map.of("noun", deliverable.words(), "block", block, "item", item,
+							"skill", skillId));
+			save();
+		}
 	}
 
 	/** The ticket this being is working under, if one is open. A reader: it changes nothing. */
@@ -413,6 +551,20 @@ public final class WorkLedger {
 			publish(ticket);
 			return -1;
 		}
+		// A ticket authorises the verb it was opened with. A replanned method step (say `wander`
+		// after `harvest_tree` lost sight of a tree) is not that verb, so it must not be charged to
+		// the ticket: otherwise the ticket's own evidence names a different action than its verb.
+		String authorised = dev.ensouled.core.TrainingLedger.spokenVerb(skillId);
+		if (!ticket.verb().equals(authorised)) {
+			record(commitment.get().name(), agentId, commitment.get(), "ticket-cell-refused",
+					Map.of("ticket", ticket.ticketId(),
+							"cells", ticket.usedCells() + "/" + ticket.declaredCells(),
+							"why", "decision verb " + authorised + " is not the ticket's " + ticket.verb()));
+			StreamNotices.refuse(commitment.get().name(), ticket.ticketId(), "ticket-cell-verb",
+					"this decision is " + authorised + ", the ticket authorises " + ticket.verb());
+			publish(ticket);
+			return -1;
+		}
 		Ticket next = ticket.withCell(decisionId);
 		tickets.put(next.ticketId(), next);
 		record(commitment.get().name(), agentId, commitment.get(), "ticket-cell",
@@ -443,6 +595,16 @@ public final class WorkLedger {
 	 */
 	public void discovered(String agentId, String agentName, String skillId, long tick,
 			boolean success, String evidence) {
+		// A decision already spent on a wish ticket is not a second discovery. This is the
+		// identity check: the cell's evidence is the decision id, so the same id cannot be
+		// billed again as a one-cell practice ticket.
+		if (evidence != null && !evidence.isBlank()) {
+			for (Ticket ticket : tickets.values()) {
+				if (ticket.agentId().equals(agentId) && ticket.evidence().contains(evidence)) {
+					return;
+				}
+			}
+		}
 		java.util.Optional<Commitment> open = openCommitment(agentId);
 		if (open.isPresent()) {
 			Plan plan = planFor(open.get());
@@ -475,8 +637,8 @@ public final class WorkLedger {
 		String witness = success ? "held 1/1 at tick " + tick
 				: "refused 0/1: " + (evidence == null ? "" : evidence);
 		Ticket ticket = Ticket.opened("ticket:" + UUID.randomUUID(), "", worldId, agentId,
-				agentName, purpose, dev.ensouled.core.VerbLibrary.corpus().spokenVerb(skillId),
-				dev.ensouled.core.VerbLibrary.corpus().basis(skillId), 1, tick, tick + WINDOW_TICKS)
+				agentName, purpose, dev.ensouled.core.TrainingLedger.spokenVerb(skillId),
+				dev.ensouled.core.TrainingLedger.basis(skillId), 1, tick, tick + WINDOW_TICKS)
 				.withCell(evidence)
 				.closed(success ? Ticket.State.HELD : Ticket.State.REFUSED, tick,
 						success ? "first practice" : "practice refused", witness);
@@ -539,9 +701,9 @@ public final class WorkLedger {
 		if (plan == null || !Phase1GatePolicy.SKILL_PLACE.equals(plan.step())) {
 			return Optional.empty();
 		}
-		Deliverable.Kind kind = open.get().deliverable().kind();
+		Deliverable deliverable = open.get().deliverable();
 		for (dev.ensouled.core.InventorySlot slot : view.inventory()) {
-			if (slot.count() > 0 && kind.matches(slot.itemId())) {
+			if (slot.count() > 0 && deliverable.matches(slot.itemId())) {
 				return Optional.of(slot.itemId());
 			}
 		}
@@ -737,6 +899,11 @@ public final class WorkLedger {
 				row.addProperty("name", commitment.name());
 				row.addProperty("kind", commitment.deliverable().kind().name());
 				row.addProperty("count", commitment.deliverable().count());
+				row.addProperty("noun", commitment.deliverable().words());
+				row.addProperty("block_id", commitment.deliverable().blockId());
+				row.addProperty("item_id", commitment.deliverable().itemId());
+				row.addProperty("skill", commitment.deliverable().skillId());
+				row.addProperty("build", commitment.deliverable().build());
 				row.addProperty("source", commitment.source());
 				row.addProperty("opened_tick", commitment.openedTick());
 				row.addProperty("due_tick", commitment.dueTick());
@@ -785,6 +952,7 @@ public final class WorkLedger {
 				row.addProperty("agent_id", ticket.agentId());
 				row.addProperty("presenter", ticket.presenter());
 				row.addProperty("purpose", ticket.purpose());
+				row.addProperty("wish", ticket.wishId());
 				row.addProperty("verb", ticket.verb());
 				row.addProperty("verb_basis", ticket.verbBasis());
 				row.addProperty("declared_cells", ticket.declaredCells());
@@ -829,6 +997,21 @@ public final class WorkLedger {
 		}
 	}
 
+	private static Deliverable loadDeliverable(JsonObject row) {
+		Deliverable.Kind kind = Deliverable.Kind.valueOf(row.get("kind").getAsString());
+		int count = row.get("count").getAsInt();
+		if (!row.has("noun")) {
+			return new Deliverable(kind, count);
+		}
+		return new Deliverable(kind, count, stringField(row, "noun"), stringField(row, "block_id"),
+				stringField(row, "item_id"), stringField(row, "skill"),
+				row.has("build") && row.get("build").getAsBoolean());
+	}
+
+	private static String stringField(JsonObject row, String key) {
+		return row.has(key) && !row.get(key).isJsonNull() ? row.get(key).getAsString() : "";
+	}
+
 	private void load() {
 		if (!Files.isRegularFile(file)) {
 			return;
@@ -839,9 +1022,7 @@ public final class WorkLedger {
 			if (root.has("commitments")) {
 				for (var element : root.getAsJsonArray("commitments")) {
 					JsonObject row = element.getAsJsonObject();
-					Deliverable deliverable = new Deliverable(
-							Deliverable.Kind.valueOf(row.get("kind").getAsString()),
-							row.get("count").getAsInt());
+					Deliverable deliverable = loadDeliverable(row);
 					Commitment commitment = new Commitment(row.get("commitment_id").getAsString(),
 							row.get("world_id").getAsString(), row.get("agent_id").getAsString(),
 							row.get("name").getAsString(), deliverable,

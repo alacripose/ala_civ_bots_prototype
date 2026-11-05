@@ -1,0 +1,830 @@
+RENDERING SCIENCE / TECHNICAL COMPANION
+
+OpenPBR Rendering
+& Energy Conservation
+
+How light is reflected, transmitted, absorbed, and preserved
+
+A research-led guide to the OpenPBR Surface model,
+microfacet reflection, Fresnel, layered materials,
+diffuse/specular energy sharing, transmission,
+multiple-scattering compensation, and white-furnace tests.
+
+         ONE INCIDENT LIGHT BUDGET
+
+REFLECT  TRANSMIT / SCATTER                                                                           ABSORB
+
+                                              Open standard • Physically based shading • Renderer QA
+Prepared 9 October 2026 | Sources and implementation notes included
+OPENPBR RENDERING / ENERGY CONSERVATION                                                          Technical reference • 09 Oct 2026
+
+How to use this document
+
+This document is a practical companion to the OpenPBR Surface specification. It explains the physics behind the controls
+and provides implementation checks for a renderer or material pipeline. It is not a substitute for the authoritative OpenPBR
+specification or a promise that every application implements every parameter identically. OpenPBR is a shared surface
+shading model maintained as an Academy Software Foundation / MaterialX project; it is not itself a renderer. [1, 2]
+
+Central idea
+
+     Energy conservation is about the whole light budget, not a single highlight.
+     For each amount of incident light, the model must account for what is reflected, transmitted or scattered onward, and
+     absorbed. The same photon cannot independently fund a full-strength diffuse lobe, a full-strength specular lobe, and
+     a full-strength clear coat.
+
+The three checks that matter
+
+Question                    Meaning                                                              Typical diagnostic
+                                                                                                 BRDF / BSDF energy integral.
+Can the material create     For non-emissive response, integrated reflected plus transmitted
+light?                      energy must not exceed incident energy.                              White-furnace test with enough
+                                                                                                 bounces.
+Does a lossless white       In ideal lossless test configurations, reflected/transmitted energy
+material lose light in the  should be preserved rather than disappearing because of a lobe       Versioned parameter tests and
+shader?                     approximation.                                                       reference renders.
+
+Does the artist-facing      Parameters should have stable meaning across lights,
+material behave             environments, scales and supported renderers.
+consistently?
+
+Reading path
+
+Physics first: Sections 3-7 introduce radiometry, BRDFs, energy integrals and Fresnel. Model mechanics: Sections 8-12
+cover diffuse/specular sharing, roughness, multiple scattering, layers and transmission. Engineering: Sections 13-17
+provide white-furnace testing, debugging, implementation guidance and a compact checklist. The final pages contain a
+glossary and source bibliography.
+
+Source status: technical claims below are attributed to the OpenPBR specification, MaterialX physically based shading specification, or
+foundational rendering literature. Illustrative diagrams are explanatory, not measured material data.
+
+Open standard does not imply identical renderer implementation                                                                   2
+OPENPBR RENDERING / ENERGY CONSERVATION                                                Technical reference • 09 Oct 2026
+
+1. What OpenPBR describes
+
+OpenPBR Surface aims to be an artist-usable, cross-application description of common production materials. It combines a
+layered surface structure with parameters for metalness, dielectric specular response, diffuse reflection, subsurface
+scattering, transmission, coat, fuzz, thin-film iridescence, emission, opacity and thin-walled geometry. The reference model
+is based on the same broad family of concepts used in production shaders, but the specification—not a UI label—is the
+contract. [1, 2, 10]
+
+Conceptual stack
+
+Figure 1. Conceptual OpenPBR material stack. Each upper interface changes the fraction of light available to the substrate; a coat is not
+                                                                 simply another highlight added at full strength. [1]
+
+Major physical components
+
+Component            What it represents                                                Typical examples
+
+Base substrate       A metal or dielectric interface, with underlying opaque or        Paint, wood, stone, metal, glass, liquids.
+                     transmissive behavior.
+
+Glossy-diffuse base  A dielectric interface over a strongly scattering/absorbing       Concrete, cardboard, wall paint.
+                     interior, approximated as diffuse-like response.
+
+Subsurface base      Light penetrates, scatters internally and exits at a displaced    Skin, wax, marble, fruit, leaves.
+                     location.
+
+Translucent base     A dielectric interface plus a volume that can absorb and scatter  Glass, colored liquids, honey, opalescent
+                     transmitted light.                                                media.
+
+Coat                 An upper dielectric interface, potentially colored/absorbing,     Varnish, clear coat, lacquer.
+                     with its own roughness and Fresnel behavior.
+
+Fuzz                 A fiber-like upper response.                                      Peach skin, cloth fibers, fine hair, dust.
+
+A parameter model is not a claim of universal physical uniqueness.
+A material such as base_metalness = 0.5 is a useful, art-directable mixture in OpenPBR. It should not be mistaken for
+a literal homogeneous substance that is half metallic at every microscopic point. The shader is a controlled model of
+appearance.
+
+Open standard does not imply identical renderer implementation                                                                             3
+OPENPBR RENDERING / ENERGY CONSERVATION                         Technical reference • 09 Oct 2026
+
+2. Light quantities and where energy lives
+
+A rendering system carries radiance along rays and integrates it over directions. Radiance, L, describes energy arriving or
+leaving a point per projected area and solid angle; irradiance, E, is incident power per unit area integrated over a
+hemisphere. These quantities are not interchangeable with display RGB values after exposure, tone mapping or encoding.
+MaterialX specifies radiance as the central transport quantity and treats RGB as a tristimulus representation rather than a
+complete spectral distribution. [2]
+
+Quantity           Symbol / units        Useful interpretation
+Radiant power      Φ, watts (W)          Total rate of energy flow.
+Radiant intensity  I, W sr⁻¹             Power per direction for a point-like source.
+Irradiance         E, W m⁻²              Incoming power per surface area.
+Radiance           L, W m⁻² sr⁻¹         Directional light quantity transported by most renderers.
+BRDF               fᵣ, sr⁻¹              How incident radiance contributes to reflected radiance, per incoming direction
+                                         and projected solid angle.
+
+     Figure 2. Conceptual—not measured—energy partitions. Pigment and volume absorption remove energy; metals reflect strongly and
+                                         typically have no diffuse substrate; transparent media may both transmit and absorb.
+
+A surface cannot spend the same incoming energy twice
+
+For a passive, non-emissive surface, the incident energy is partitioned among reflection, transmission/scattering that
+eventually exits, and absorption. In a full scene, energy can return through many bounces, but each interaction must
+remain bounded. A bright pixel by itself does not prove a violation: a mirror can concentrate reflected light into a narrow
+angular distribution. Conservation constrains the integral over directions, not each pixel independently.
+
+     Emission is a separate source term.
+     A glowing surface can add energy because it is modeled as emitting light. Its emitted radiance does not come from
+     the incident-light budget, although the emitted light still participates in transport when it strikes other surfaces.
+
+Open standard does not imply identical renderer implementation                                                                      4
+OPENPBR RENDERING / ENERGY CONSERVATION                                               Technical reference • 09 Oct 2026
+
+3. The rendering equation and the scattering
+function
+
+At a surface point x, the outgoing radiance in direction ωₒ consists of emitted radiance plus incident radiance reflected into
+that direction from all incoming directions. This is the foundational rendering equation introduced to computer graphics in
+its modern form by Kajiya and developed in the broader rendering literature. [3]
+
+                Lₒ(x, ωₒ) = Lₑ(x, ωₒ) + ∫H fᵣ(x, ωᵢ, ωₒ) Lᵢ(x, ωᵢ) cos θᵢ dωᵢ
+
+Here H is the incident hemisphere, fᵣ is the BRDF, and cos θᵢ accounts for projected area. The equation is recursive: Lᵢ may
+itself come from other surfaces that reflected or emitted light. Path tracing estimates this integral by sampling paths;
+rasterization and real-time pipelines approximate it with direct-light evaluation, image-based lighting, prefiltered
+environments and other methods.
+
+BRDF, BTDF, BSDF and BSSRDF
+
+Term            Role                                                                  Direction relation
+
+BRDF            Bidirectional reflectance distribution function: surface reflection.  Incoming and outgoing directions on the
+                                                                                      same side.
+
+BTDF            Bidirectional transmittance distribution function: surface            Incoming and outgoing directions on
+                transmission/refraction.                                              opposite sides.
+
+BSDF            Umbrella term for reflection and transmission distributions.          May include reflective and transmissive
+                                                                                      lobes.
+
+BSSRDF          Subsurface transport between different points on a material.          Light enters at one location and exits at
+                                                                                      another.
+
+EDF / emission  Describes light emitted by a surface.                                 A source term, not a reflection lobe.
+
+Diffuse, glossy and specular are about directionality
+
+“Diffuse” means energy is distributed broadly; “specular” is concentrated around ideal reflection or refraction; “glossy” lies
+between. These categories describe angular shape rather than energy amount. A rough mirror and a smooth mirror may
+reflect similar total energy while producing radically different-looking highlights. [2, 4]
+
+     Implementation consequence
+     A shader should not calculate arbitrary “brightness” for each lobe independently and add the values without a
+     budget. Lobe evaluation, mixture weights, sampling PDFs and any attenuation between layers must agree with the
+     material model.
+
+Open standard does not imply identical renderer implementation                                                                   5
+OPENPBR RENDERING / ENERGY CONSERVATION                                                                Technical reference • 09 Oct 2026
+
+4. Energy conservation: the integral condition
+
+A common surface-level definition uses the directional albedo (also called directional reflectance): integrate the BRDF over
+all incident directions, weighted by the projected solid angle. For a passive reflective lobe, this result must not exceed one
+for any fixed outgoing direction. MaterialX makes this condition explicit for physically plausible BSDFs. [1, 2]
+
+                      Eₒ(ωₒ) = ∫H fᵣ(ωᵢ, ωₒ) cos θᵢ dωᵢ ≤ 1
+
+For a material that both reflects and transmits, the analogous whole-surface statement considers the total reflected and
+transmitted fractions. Any remaining energy can be absorbed. In a simplified budget, Eᵣ + Eₜ + Eₐ = 1 for a complete
+accounting of incident energy; a passive model must not yield Eᵣ + Eₜ > 1. Practical approximations may leave some
+energy unreturned, which leads to the separate idea of energy preservation.
+
+Conservation versus preservation
+
+Property              Mathematical idea                                       What failure looks like
+
+Energy conserving     Returned energy is no greater than energy arriving.     Under a white environment, material adds excess
+                                                                              brightness or diverges as layers are added.
+
+Energy preserving     In an ideal lossless configuration, energy that should  A white, lossless rough material appears too dark or has
+                      return is not lost by an approximation.                 roughness-dependent brightness loss.
+
+Physically plausible  Conservation plus appropriate scattering behavior;      A model may conserve energy yet have implausible
+                      reciprocity and plausible Fresnel/volume behavior are   color, directionality or refraction.
+                      also expected.
+
+Why conservation alone is not enough
+
+A shader that returns zero radiance can be “energy conserving” in the trivial inequality sense, but it is not a useful model
+of a white lossless material. Conversely, a material with real absorption should not be brightened artificially to pass a
+white-furnace test. The test configuration must describe an idealized lossless material before energy preservation is
+expected. [1]
+
+     Do not compare only the highlight pixel.
+     Evaluate the integrated outgoing distribution or run a white-furnace test. A narrow lobe can be very bright at its peak
+     and still conserve energy; a broad lobe can have a modest peak and carry substantial integrated energy.
+
+Open standard does not imply identical renderer implementation                                                                          6
+OPENPBR RENDERING / ENERGY CONSERVATION                         Technical reference • 09 Oct 2026
+
+5. Fresnel reflection, dielectrics and metals
+
+Fresnel equations describe the angle-dependent division between reflection and transmission at an interface. At normal
+incidence, a non-absorbing dielectric interface has reflectance determined by the refractive indices. For air-to-glass with
+IOR around 1.5, this is roughly 4%. As the angle approaches grazing, reflectance approaches one. [1, 4, 5]
+
+                                              F₀ = ((n₁ − n₂) / (n₁ + n₂))² ; IOR 1.5 gives F₀ ≈ 0.04
+
+  Figure 3. Exact unpolarized dielectric Fresnel curve for an air-to-IOR-1.5 interface. A value near four percent at normal incidence does not
+                                                    mean that only four percent of light can ever be reflected at all angles.
+
+Dielectrics
+
+For common non-metals (plastic, wood, paint, stone, water, glass), specular reflection is largely governed by refractive
+index and Fresnel. Light not reflected at the interface may enter the body, where it can scatter, be absorbed, transmit
+through, or eventually emerge diffusely. In a layered model, that underlying response must be attenuated by the interface
+behavior; otherwise the material gets a full specular lobe and a full diffuse response using the same incoming light.
+
+Conductors / metals
+
+Metals have a complex, wavelength-dependent refractive index. Their Fresnel reflection is strongly colored for materials
+such as gold and copper and often high across much of the visible range. They are typically modeled as opaque
+conductors, so ordinary diffuse color from a dielectric substrate is not the right physical picture. OpenPBR uses a dedicated
+conductor-like base response and an art-directable metallic parametrization. [1, 2]
+
+     OpenPBR controls to know
+     specular_ior sets the dielectric IOR; specular_roughness controls the interface microfacet width;
+     base_metalness interpolates between dielectric and metal base models; base_color participates differently in
+     dielectric base color and conductor Fresnel parametrization. Consult the exact model version before transferring
+     settings between tools.
+
+Open standard does not imply identical renderer implementation                                                               7
+OPENPBR RENDERING / ENERGY CONSERVATION                                         Technical reference • 09 Oct 2026
+
+6. Why diffuse and specular must share a
+budget
+
+A diffuse term is not a separate reservoir of energy from the specular term. For a dielectric surface, Fresnel-reflected light
+never enters the body; only the remaining transmitted portion can feed the diffuse/subsurface response behind the
+interface. An implementation can express the principle by scaling the base response by a function related to the energy
+not reflected at the interface. OpenPBR’s derivation uses directional-albedo balancing for this purpose. [1]
+
+                                        f_dielectric ≈ f_specular + (1 − E[f_specular]) · f_substrate
+
+This is a conceptual form: E[f_specular] is an integrated directional reflectance, not simply the Fresnel value at the view
+angle nor a scalar copied from a specular_weight knob. A production implementation may require angular integration,
+compensation, and layer-specific details.
+
+The visible result
+
+At a grazing angle, a dielectric’s Fresnel reflection rises. The base contribution should correspondingly diminish because
+less light enters the substrate. In a well-balanced shader the specular highlight does not sit on top of a fully untouched
+diffuse layer. This is why the diffuse lobe may look darker around a strong reflection even though the diffuse albedo
+texture did not change.
+
+What metallic does to the balance
+
+As the OpenPBR base moves toward metalness, the model transitions toward conductor reflection. The familiar diffuse-like
+base contribution is reduced or removed because light is not treated as entering an opaque dielectric body and diffusely
+returning. A half-metal setting is artistically useful, but it represents a mixing model—not a universal physical substance.
+
+Incorrect construction          Why it fails                                    Better construction
+                                                                                Fresnel-aware balancing; integrated-lobe checks.
+Diffuse = albedo / π plus       May double-count energy, especially at grazing
+independently tuned specular.   angles.                                         Use the metallic response model and calibrate it
+                                                                                against a known material / reference.
+Use a colored diffuse term for  Duplicates color in two separate mechanisms
+metal and also colored metal    and can make metals too bright or too           Fix the shader’s energy balance, then retune the
+Fresnel.                        saturated.                                      physical base color.
+
+Reduce diffuse texture          Bakes light/environment assumptions into
+brightness until one render     material data.
+looks right.
+
+Practical diagnostic
+Rotate a non-metal sphere under a stable environment. The material should not suddenly gain a second independent
+energy source when a bright environment edge enters the specular lobe.
+
+Open standard does not imply identical renderer implementation                                                                    8
+OPENPBR RENDERING / ENERGY CONSERVATION                         Technical reference • 09 Oct 2026
+
+7. Microfacets and the role of roughness
+
+Microfacet models treat a rough surface as a distribution of tiny, locally specular facets. A common microfacet BRDF
+combines a normal-distribution function D, a Fresnel term F, and masking-shadowing factor G. One standard reflection
+form is shown below. [2, 4, 5, 7]
+
+                                          fᵣ(ωᵢ, ωₒ) = D(ωₕ) F(ωᵢ, ωₕ) G₂(ωᵢ, ωₒ) / (4 cos θᵢ cos θₒ)
+
+The half-vector ωₕ is derived from the incident and outgoing directions. D describes how likely microfacet normals are
+oriented; F determines the Fresnel response at each microfacet; G accounts for microfacets hidden from the incident or
+outgoing direction. OpenPBR / MaterialX uses a GGX-family microfacet description for its common dielectric and conductor
+specular interfaces. [1, 2]
+
+  Figure 4. Illustration only: the same normalized energy distribution can be narrow or broad. A shader whose roughness changes the lobe
+width should avoid inadvertently changing total reflectance, except where the model’s intended physical behavior or approximations specify
+
+                                                                                                   otherwise.
+
+Roughness is not a brightness slider
+
+For an ideal energy-normalized model, increasing roughness broadens the reflection while broadly preserving its total
+integrated energy. The peak drops because that energy is spread across more directions. In a finite renderer, measured
+brightness can still change due to sampling variance, environment-map filtering, limited path depth, denoising, clamping
+or missing multiple-scattering energy.
+
+Geometry and normal maps
+
+The masking-shadowing term matters: facets can hide one another. Incorrect geometric attenuation can produce bad
+grazing highlights and incorrect normalization. Heitz’s analysis derives constraints on masking functions from visible
+microsurface area and explains why choosing G is tied to a microsurface assumption. Normal maps are not automatically a
+license to ignore geometric occlusion or change material energy accounting. [7]
+
+     Test across roughness, not at just one value.
+     Sweep specular_roughness from near zero to very rough while holding the environment and all other parameters
+     fixed. Look for changes in integrated output, not merely the highlight shape.
+
+Open standard does not imply identical renderer implementation  9
+OPENPBR RENDERING / ENERGY CONSERVATION                                             Technical reference • 09 Oct 2026
+
+8. Missing energy in single-scattering
+microfacet models
+
+A common implementation evaluates the main specular event as if the light reflects once from a microfacet and then
+leaves the surface. Real microsurfaces can have multiple internal bounces: one facet may reflect light toward another
+facet, and that second event may send energy toward the camera. A single-scattering microfacet BRDF omits those paths.
+The omission becomes more visible for rough surfaces because occlusion and facet-to-facet paths are more important. [2,
+6]
+
+What energy compensation is trying to fix
+
+Multiple-scattering compensation adds the energy that the single-scatter model omitted, while keeping the overall BSDF
+normalized. Different techniques exist: explicit multi-scatter models, analytical or tabulated corrections, and
+approximations based on single-scatter directional albedo. One correction family is documented in the MaterialX PBS
+specification as a multiplier of the single-scatter BRDF; it should be understood as one implementation strategy rather than
+a universal OpenPBR equation. [2, 6]
+
+                                          fᵣᶜᵒᵐᵖ ≈ fᵣ · (1 + F̄ · (1 − Eₛₛ) / Eₛₛ)
+
+In this schematic form, Eₛₛ denotes a directional albedo for a unit-Fresnel single-scattering microfacet model and F̄
+represents a suitable averaged Fresnel factor. The exact normalization, edge cases, sampling, and implementation details
+matter; do not paste this shorthand into a shader without following the source specification.
+
+Symptoms of a missing or broken correction
+
+Observation                                     Likely cause to investigate
+
+White rough metal or dielectric gets darker as  Single-scatter energy loss; compensation disabled or misapplied.
+roughness increases.
+
+The correction creates bright overshoot.        Albedo approximation wrong, roughness remapping mismatch, double application of
+                                                correction, or unstable denominator.
+
+Direct lighting seems correct but image-based   Prefiltered environment, BRDF integration LUT, and runtime BRDF may not use
+lighting is dark.                               compatible roughness/normalization.
+
+One renderer passes and another fails.          Different BSDF variants, versions, lobe weights, bounce depth, clamps or color
+                                                management.
+
+Separate physical attenuation from approximation loss.
+A rough clear coat can reflect into more directions and can legitimately attenuate the base. That is not the same as a
+single-scattering approximation losing energy inside one rough interface.
+
+Open standard does not imply identical renderer implementation                                                                   10
+OPENPBR RENDERING / ENERGY CONSERVATION                         Technical reference • 09 Oct 2026
+
+9. Layering: coat, fuzz and substrate
+
+OpenPBR models materials as a stack of interacting structures. If an upper layer reflects some light, the underlying layer
+must receive less. If the upper layer absorbs light, that absorbed portion does not reach the base. If it transmits light, the
+transmitted part is attenuated on its way through. A naive sum of independent lobes ignores this path budget. [1, 2]
+
+           Figure 5. Conceptual layer stack. Real implementations need to account for direction, Fresnel reflectance, absorption and the
+                                                                    approximations used to represent multiple passes.
+
+A useful layering abstraction
+
+                                                                 f_layered ≈ f_top + T_top · f_base
+
+Here T_top represents the fraction made available to the lower layer under the model’s directional approximation.
+MaterialX defines a vertical-layering transmittance for BSDFs and composes the transmittance of nested layers; for
+common interface lobes the pass-through is related to one minus reflected directional albedo, with absorption treated
+separately. This is more disciplined than adding full top and base BSDFs. [2]
+
+Coat
+
+A clear coat adds another dielectric interface with its own IOR, roughness, coverage/weight and color/absorption behavior.
+Adding coat weight must not increase the full-strength energy available to both the coat and base. The coat’s Fresnel
+response and attenuation change the base that remains visible. A physically plausible car-paint appearance depends on
+this relation, not simply on drawing a second highlight over metallic paint.
+
+Fuzz
+
+Fuzz represents a fiber-like scattering layer. It also changes the light available to the structure beneath it. Treat fuzz as a
+model component with its own directional response and attenuation, not merely an emissive rim term. If a custom fur/fuzz
+effect intentionally violates the model, document that departure.
+
+     Watch for double attenuation as well as missing attenuation.
+     If the top lobe is attenuated once inside the OpenPBR BSDF and again by a renderer-specific layer node, the base
+     may become too dark. One layer stack should have one well-defined energy bookkeeping convention.
+
+Open standard does not imply identical renderer implementation  11
+OPENPBR RENDERING / ENERGY CONSERVATION                         Technical reference • 09 Oct 2026
+
+10. Transmission, absorption and subsurface
+transport
+
+For a dielectric, reflected energy and transmitted energy are linked by the interface’s Fresnel behavior. After transmission
+into a body, light may be absorbed, scattered, refracted, transmitted out of the far side, or emerge from a different
+location. A surface BRDF alone cannot describe all of these paths. OpenPBR exposes distinct glossy-diffuse, subsurface and
+translucent-base configurations to cover different appearance regimes. [1, 2, 5]
+
+Beer-Lambert attenuation
+
+A homogeneous absorbing medium attenuates light exponentially with path length. OpenPBR’s artist-facing transmission
+color/depth pair is one way to derive an extinction coefficient per color channel when transmission depth is positive. The
+color indicates the surviving fraction at the specified distance, not a free bonus tint independent of physical path length.
+[1]
+
+                                                       T(d) = exp(−σₜ d) and σₜ = −ln(T_ref) / d_ref
+
+T(d) is transmittance over distance d; σₜ is extinction (per-channel in an RGB approximation); T_ref is the transmission
+color at reference distance d_ref. Scattering can redirect the surviving energy; absorption removes energy from the light
+field. Extinction combines both effects along the original ray.
+
+Subsurface is not the same as surface diffuse
+
+Diffuse reflection is an efficient approximation for light that enters and exits near a surface point after many unresolved
+scattering events. Subsurface scattering carries spatial displacement and material-scale dependence. The color and
+mean-free-path controls affect appearance, but conservation still requires the amount of energy that emerges to be
+compatible with energy entering and leaving the object.
+
+Thin-walled materials
+
+Leaves, paper and thin films may be better represented with a thin-walled model than a thick closed volume. It changes
+how transmission and internal travel are approximated. Do not use the thin-walled option just to remove inconvenient
+refraction artifacts on a physically thick object unless the visual compromise is intended.
+
+     Keep units and scale coherent.
+     A transmission_depth of 1 means a distance in the scene’s declared length units. If one asset uses centimeters and
+     another interprets the same numeric depth as meters, the color attenuation will be wildly different. Document units
+     and conversions in the pipeline.
+
+Open standard does not imply identical renderer implementation  12
+OPENPBR RENDERING / ENERGY CONSERVATION                         Technical reference • 09 Oct 2026
+
+11. The white-furnace test
+
+A white furnace is a uniform white environment that illuminates the test object equally from every direction. For idealized
+lossless white material configurations, the object should eventually merge into the environment when light transport is
+solved with sufficient path depth. OpenPBR’s specification explicitly describes this as a test of energy preservation and lists
+configurations involving white dielectric and metallic bases, coat, fuzz, thin films, roughness and anisotropy. [1]
+
+Figure 6. Conceptual white-furnace arrangement. A visually plausible single frame is not enough; the test should use a stable, uniform
+                                                           environment and enough bounces for the target model.
+
+A reproducible test protocol
+
+Step               Procedure
+
+1. Environment     Use a uniform white environment with a known linear radiance or unit intensity. Disable contrasty HDRI maps.
+
+2. Geometry        Use a closed sphere or another well-behaved primitive. Keep normals and geometry fixed during tests.
+
+3. Ideal material  Start with white, lossless values and turn off emission. Use an OpenPBR configuration named in the current
+                   white-furnace section.
+
+4. Transport       Use enough bounces / converged samples. Fix exposure, view transform, denoiser and clamping.
+
+5. Sweep           Test low-to-high specular and coat roughness; then add coat, fuzz, thin film, anisotropy and supported normal maps.
+
+6. Measure         Compare linear render values or integrated energy against the environment, not only tone-mapped screenshots.
+
+7. Repeat          Run multiple seeds and renderer backends; record software version and material parameters.
+
+Interpretation
+
+If the all-white lossless sphere appears too dark, investigate lost energy, insufficient bounces, transmission accounting,
+layer attenuation, the environment prefilter and denoising. If it is too bright or exceeds the environment, investigate
+duplicated lobes, double-adding reflection, incorrect layer weights and normalization. A pigmented or absorbing real
+material is not expected to vanish into the white environment; it should return less energy.
+
+Open standard does not imply identical renderer implementation                                                                          13
+OPENPBR RENDERING / ENERGY CONSERVATION                                               Technical reference • 09 Oct 2026
+
+12. Implementation pitfalls and
+cross-renderer differences
+
+OpenPBR gives tools a common model, not a guarantee of bit-identical renders. Applications may differ in specification
+version, parameter remapping, sampled versus analytic BRDF integration, multiple-scattering treatment, volume
+implementation, sampling, denoising, tone mapping and unsupported features. The model definition and the renderer’s
+implementation both need to be recorded. [1, 2, 10, 11]
+
+Pitfall                       Why it causes problems                                  Mitigation
+
+Adding all lobes              Diffuse, specular, coat and fuzz can each consume       Use the model’s mixture/layer equations and white-furnace
+independently                 the same incident energy.                               tests.
+
+Mixing sRGB color values      The energy calculations see distorted values.           Decode texture/color inputs into the intended linear working
+into linear math                                                                      space before BSDF evaluation.
+                              Environment prefilter and BRDF response do not
+Using roughness in a BRDF     match.                                                  Use consistent roughness remapping, NDF, Fresnel and
+and LUT differently                                                                   compensation in precompute and runtime.
+                              A display transform can hide over/under-energy or
+Tuning materials with tone    create highlight clipping.                              Inspect linear output and run unit tests in a controlled scene.
+mapping on
+                              AO can darken areas without corresponding transport     Reserve AO for its intended approximation; do not substitute
+Treating AO as energy         and is often multiplied into direct light incorrectly.  it for BRDF/layer conservation.
+attenuation everywhere
+                              Shading normals change the frame and can create         Validate geometric/shading-normal handling and test
+Using normals as if they      reciprocity/normalization artifacts.                    normal-mapped white materials.
+changed the true energy
+budget                        Some controls are art-directable, e.g. reflectivity     Distinguish physical quantities (IOR, depth) from artistic
+                              weights or color tints.                                 controls in tools and documentation.
+Assuming every OpenPBR
+input is physically measured  Color may be path-length-based volume attenuation       Follow the specification’s depth=0 and depth>0 semantics.
+                              or a specific interface tint in a defined edge case.
+Assuming transmission color
+is a surface albedo
+
+Avoid hidden clamping as a substitute for a correct model.
+Clamps can stabilize a production render, but if they activate for valid material inputs they can conceal a
+non-conserving BSDF or a broken importance-sampling path. Log the clamp rate and test normalized values before
+relying on it.
+
+Open standard does not imply identical renderer implementation                                                                                         14
+OPENPBR RENDERING / ENERGY CONSERVATION                                    Technical reference • 09 Oct 2026
+
+13. Practical renderer integration checklist
+
+Material-evaluation layer
+
+□ Choose and pin an OpenPBR specification version. □ Keep shader parameter names and units consistent with the
+specification. □ Implement color management at the input/output boundaries, not as hidden BRDF math. □ Separate
+surface reflection/transmission (BSDF), subsurface/volume transport (BSSRDF/VDF) and emission (EDF). □ Keep direct
+lighting, environment lighting and path tracing on compatible scattering definitions.
+
+Transport and sampling
+
+□ A sample’s throughput weight must match the BSDF value, cosine / projection measure and PDF used to generate the
+sample. □ Include transmission when evaluating the whole energy budget. □ Use a layer transmission convention shared
+by each layer node. □ If a multiple-scattering correction exists, align evaluation, sampling and PDF accounting. □ Record
+path depth and termination thresholds for tests.
+
+Texture and coordinate conventions
+
+□ Define linear working color space and channel interpretation. □ Confirm roughness remapping end-to-end. □ State
+whether texture values are perceptual roughness or microfacet alpha. □ Validate tangent frames / anisotropy axes. □ Test
+geometric normals and shading normals. □ Specify scene units for subsurface radius and transmission depth.
+
+Validation suite
+
+Test                 Purpose                                               Hold constant
+White furnace        Check energy preservation of ideal lossless configs.
+                                                                           Environment radiance, exposure, bounces, color
+                                                                           transform.
+
+Roughness sweep      Catch roughness-correlated energy loss or overshoot. Material weights, normal, view, environment.
+
+Grazing-angle sweep  Check Fresnel and diffuse/base attenuation.           IOR, roughness, albedo, lighting.
+
+Layer addition       Verify coat/fuzz reduces base response consistently.  Base material, scene, top-layer coverage.
+
+Transmission depth   Check Beer-Lambert distance response.                 Scene scale, reference depth, IOR, light.
+sweep
+
+Metal/dielectric     Check that base modes have distinct expected          Environment, exposure, base color.
+endpoints            behavior.
+
+Cross-renderer       Find unsupported features and parameter mapping       Asset version, units, texture decode, view transform.
+reference            drift.
+
+Make the test machine-readable.
+For each render, save the shader parameter block, renderer version, model version, scene units, environment
+identifier, sample / bounce settings, linear image, and a numeric summary of output radiance. A screenshot alone is
+not sufficient for regression testing.
+
+Open standard does not imply identical renderer implementation                                                                    15
+OPENPBR RENDERING / ENERGY CONSERVATION                                                            Technical reference • 09 Oct 2026
+
+14. Material recipes as energy hypotheses
+
+The recipes below are starting hypotheses for building a test scene, not universal presets. The point is to isolate the
+underlying energy path before artistic tuning. Use current OpenPBR defaults and its parameter reference as the schema of
+record. [1, 10, 11]
+
+Target                        Start with                                                           Check before artistic tuning
+Painted concrete / wall       base_metalness = 0; nonzero base_weight; neutral dielectric
+Clear-coated paint            specular; moderate base_color; low-to-moderate specular              Diffuse/base response is attenuated by
+Gold / copper-like conductor  roughness.                                                           dielectric specular; energy behaves at grazing
+Glass / colored liquid        Dielectric or metallic base as appropriate; add coat_weight; set     angles.
+Skin / wax / fruit            coat_ior and coat_roughness deliberately.
+Cloth / peach fuzz                                                                                 Adding coat changes the base’s visible
+Paper / leaf                  base_metalness near 1; color selected for conductor response; tune   contribution instead of adding a second full
+                              specular_roughness.                                                  energy budget.
+
+                              Use transmission_weight and physical IOR; encode interior            No independent full-strength diffuse dielectric
+                              attenuation via transmission_color + depth where supported.          term; colored reflectance is
+                                                                                                   direction-dependent.
+                              Dielectric base with subsurface_weight and radius scale appropriate
+                              to object dimensions.                                                Object thickness and scene units affect
+                              Enable fuzz gently above a stable base.                              absorption; check reflected and transmitted
+                                                                                                   transport.
+                              Consider thin-walled behavior if geometry is physically a sheet;
+                              choose surface and transmission controls together.                   Check energy across entry/exit; avoid using
+                                                                                                   subsurface as a free brightness boost.
+
+                                                                                                   Fuzz response and base attenuation remain
+                                                                                                   consistent under changing view/light direction.
+
+                                                                                                   Front/back lighting, opacity and transmission
+                                                                                                   should not each spend full incident energy.
+
+A disciplined tuning order
+
+1. Validate geometry, normals and scene scale. 2. Set the material class (dielectric / conductor / translucent / subsurface).
+3. Set IOR and physically meaningful length parameters. 4. Tune base color and roughness under neutral lighting. 5. Add
+coat, fuzz, thin film and emission one at a time. 6. Re-run energy tests after any custom shader modification. This order
+reduces the chance of compensating for a broken light model with arbitrary material colors.
+
+     Treat every extra lobe as a hypothesis.
+     When a new parameter is enabled, ask: what physical path does this represent, what existing energy path does it
+     occlude or replace, and what test would reveal an incorrect implementation?
+
+Open standard does not imply identical renderer implementation                                                                                      16
+OPENPBR RENDERING / ENERGY CONSERVATION                                                            Technical reference • 09 Oct 2026
+
+15. Failure diagnosis: symptom to likely cause
+
+Symptom                                  Likely explanation                                        Next test
+
+Material gets darker at high roughness   Single-scattering microfacet loss, missing compensation,  White-furnace roughness sweep in linear
+in a white environment.                  too few bounces, or prefiltered environment mismatch.     output.
+
+Coat makes the surface brighter overall  Top/base lobes added instead of layered, or coat          Compare base-only and coated energy
+in every view.                           attenuation is skipped.                                   integrals.
+
+Diffuse stays equally bright at grazing  Specular/base coupling is missing or using a              Rotate an IOR 1.5 dielectric sphere through
+angles under a strong dielectric         non-directional shortcut.                                 grazing angles.
+highlight.
+                                         Incorrect Fresnel complement, refraction throughput /     Test an unabsorbing slab; integrate reflected
+Glass transmits more energy than the     eta factor, duplicate transmission or path-weight bug.    + transmitted energy.
+environment provides.
+                                         Metallic and diffuse responses may both be active;        Compare metalness endpoints and inspect
+Metal looks like bright plastic.         conductor Fresnel color/weight mapping may be wrong.      lobe contributions separately.
+
+Asset appearance changes after import.   Different OpenPBR version, color space, roughness         Round-trip parameter dump and render a
+                                         remapping, unsupported feature or changed scene scale.    versioned reference asset.
+A white furnace sphere is too bright
+only with normal mapping.                Shading-normal correction or frame handling may break     Disable map; then introduce a fixed, known
+                                         reciprocity/normalization.                                normal map.
+Image-based light differs from direct
+light tests.                             Environment prefilter / integration LUT does not match    Use a simple directional light plus
+                                         actual BSDF, or importance sampling is biased.            environment and compare isolated
+                                                                                                   components.
+
+Minimal reproducibility record
+
+       OpenPBR version + renderer build + parameter values + scene units + linear environment + transport
+                                                                          settings + linear output
+
+Save intermediate component renders when possible: base, interface specular, transmission, coat, fuzz and emission.
+Component renders are diagnostic tools, not necessarily physically meaningful standalone materials. The final combined
+result must pass the whole-model tests.
+
+     Do not “fix” every energy symptom with albedo.
+     A lower base_color can hide excess lobe energy in one view; a higher base_color can hide lost single-scattering
+     energy. Those edits undermine interoperability because the material now compensates for a specific renderer or light
+     setup.
+
+Open standard does not imply identical renderer implementation                                                                                    17
+OPENPBR RENDERING / ENERGY CONSERVATION                         Technical reference • 09 Oct 2026
+
+16. Limits: physical principles versus a
+production model
+
+Energy conservation is necessary, not sufficient
+
+A material can conserve energy and still be the wrong material. Energy conservation alone does not guarantee the correct
+Fresnel curve, wavelength-dependent metal color, subsurface profile, refraction, anisotropy, polarization behavior or
+thin-film interference. It also does not define the artistic meaning of every control. Physically based models are
+approximations with chosen degrees of freedom. [1, 2, 4, 8]
+
+RGB is a rendering approximation
+
+Most production pipelines transport linear RGB rather than wavelength-resolved spectral radiance. RGB Fresnel and
+absorption colors can match many appearances, but they cannot represent every spectral effect exactly. Dispersion,
+narrow spectral interactions, fluorescence and unusual thin-film behavior may require a spectral renderer or carefully
+chosen approximations. OpenPBR’s controls should be interpreted within the renderer’s supported transport model. [2]
+
+Reciprocity and transport conventions
+
+Reciprocity means that reversing the light path preserves the material response under the appropriate conventions. It is a
+key property of passive ordinary materials and useful for detecting inconsistent BSDFs. Transmission needs particular care
+because radiance measures on the two sides of a refractive boundary involve refractive-index factors. A test that swaps
+direction vectors without respecting the renderer’s convention may falsely diagnose an error.
+
+Art direction is not banned
+
+An open material model can include tint, weight and other controls that are deliberately art-directable. The engineering
+requirement is that the implementation define their meaning and preserve the intended bounds where energy
+conservation is promised. If a project intentionally uses nonphysical values to reach a stylized look, flag that material as an
+intentional exception rather than silently treating it as a physically faithful reference.
+
+Versioning matters
+
+The OpenPBR website and MaterialX library are living documents. Current MaterialX specification material documents the
+OpenPBR Surface Shader Definition v1.1.1, while applications may advertise support for earlier revisions or a subset.
+Before comparing results, pin the specification and renderer version and record unsupported parameters. A shared model
+name alone is not enough. [1, 2, 10, 11]
+
+     The practical standard
+     A trustworthy OpenPBR implementation should explain its energy accounting, produce stable material behavior
+     under changing illumination, and come with tests that reveal where it approximates or omits the standard.
+
+Open standard does not imply identical renderer implementation  18
+OPENPBR RENDERING / ENERGY CONSERVATION                         Technical reference • 09 Oct 2026
+
+17. Compact glossary
+
+Term                         Definition
+Albedo / directional albedo  Fraction of incident energy reflected by a scattering function under a defined directional integral; depends on
+                             convention and configuration.
+Absorption                   Conversion of optical energy to internal energy; removed from the rendered light field.
+BSDF                         Bidirectional scattering distribution function; umbrella for reflection and transmission.
+BRDF / BTDF                  Reflectance / transmittance distributions for light scattered from a surface.
+BSSRDF                       Subsurface distribution connecting incoming and outgoing light at potentially different surface points.
+Dielectric                   Non-conducting optical material such as glass, water or plastic; interface reflection is governed by refractive
+                             index / Fresnel.
+Conductor                    Conductive material, typically a metal, modeled with complex-IOR / conductor Fresnel behavior.
+Fresnel                      Angle- and polarization-dependent reflection/transmission behavior at an interface.
+IOR (index of refraction)    Dimensionless ratio that governs phase propagation and refraction; it affects dielectric Fresnel reflection.
+Microfacet                   A statistical model of rough surfaces as many tiny idealized facets.
+NDF / NDF roughness          Normal distribution function describing microfacet orientations; roughness controls its width / shape.
+Masking-shadowing G          Geometric attenuation term accounting for microfacets hidden along incident or outgoing directions.
+Multiple scattering          Two or more scattering events within a rough microsurface or volume before light exits.
+Energy compensation          A correction or model extension that restores physically appropriate energy omitted by a simplified scattering
+                             approximation.
+White furnace                Uniform white environment test for energy preservation in designated lossless material configurations.
+OpenPBR Surface              A standardized, artist-facing material model, maintained as part of the ASWF / MaterialX ecosystem.
+Beer-Lambert law             Exponential attenuation of a beam along path length in a medium.
+Emission / EDF               Light emitted by a material, treated separately from reflected incident illumination.
+Tone mapping                 A display transform that maps scene-linear radiance to a display range; it can obscure energy bugs if used for
+                             diagnosis.
+
+Five principles to remember
+
+1. Conserve the whole incident-light budget. 2. Couple diffuse and specular response through Fresnel / layer transmission.
+3. Roughness changes distribution and can reveal missing microfacet multiple scattering. 4. Layering attenuates the base;
+it is not unweighted addition. 5. Validate with white-furnace and controlled linear-output tests before art-directing
+materials.
+
+Open standard does not imply identical renderer implementation                                                                                19
+OPENPBR RENDERING / ENERGY CONSERVATION                            Technical reference • 09 Oct 2026
+
+References and further reading
+
+Primary references are listed first because they define the model and its intended implementation. Accessed 9 October 2026. Links are
+included for direct verification. OpenPBR / MaterialX sources can change; pin release tags or repository commits for production validation.
+[1] Andersson, M. et al. OpenPBR Surface Specification. Academy Software Foundation, OpenPBR subproject of MaterialX. The
+specification covers the material structure, component BRDFs, energy accounting, layering and white-furnace testing. OpenPBR specification
+and parameter reference.
+
+[2] Harrysson, N.; Smythe, D.; Stone, J. et al. MaterialX Physically Based Shading Nodes, Version 1.39. Academy Software
+Foundation, 5 June 2026. Includes the scattering framework, microfacet reflectance model, directional albedo, energy compensation,
+vertical-layering transmittance and OpenPBR Surface shader definition (v1.1.1). Specification source.
+
+[3] Kajiya, J. T. (1986). “The Rendering Equation.” Proceedings of SIGGRAPH ’86, pp. 143–150. DOI: 10.1145/15922.15902. Foundational
+integral equation for light transport.
+
+[4] Cook, R. L.; Torrance, K. E. (1982). “A Reflectance Model for Computer Graphics.” ACM Transactions on Graphics 1(1), 7–24. DOI:
+10.1145/357290.357293. Foundational physically motivated specular reflectance model.
+
+[5] Walter, B.; Marschner, S. R.; Li, H.; Torrance, K. E. (2007). “Microfacet Models for Refraction through Rough Surfaces.”
+EGSR 2007. Paper and supplemental material. Microfacet transmission and refraction, including rough dielectric surfaces.
+
+[6] Heitz, E.; Hanika, J.; d’Eon, E.; Dachsbacher, C. (2016). “Multiple-Scattering Microfacet BSDFs with the Smith Model.” ACM
+Transactions on Graphics 35(4). DOI: 10.1145/2897824.2925943. Derives multiple-scattering components for Smith-model microfacet BSDFs.
+
+[7] Heitz, E. (2014). “Understanding the Masking-Shadowing Function in Microfacet-Based BRDFs.” Journal of Computer Graphics
+Techniques 3(2), 48–107. Open-access article. Explains masking functions, visible microfacet normals and normalization constraints.
+
+[8] Burley, B. (2012). “Physically-Based Shading at Disney.” SIGGRAPH course notes. Publication page and PDF. Production experience
+in designing an artist-facing physically based BRDF.
+
+[9] Pharr, M.; Jakob, W.; Humphreys, G. Physically Based Rendering: From Theory to Implementation, 4th ed. 2023. Online book
+and implementation resources: pbrt.org; FAQ on energy conservation: pbrt FAQ.
+
+[10] Autodesk. “OpenPBR Surface.” Maya Lighting & Shading documentation, 2026. Summarizes material composition, energy
+conservation, layer behavior and white-furnace expectations in Maya. Documentation.
+
+[11] Adobe Substance 3D. “OpenPBR overview.” Updated 31 July 2026. Artist-facing overview of common parameters including
+roughness, IOR, specular response, metalness and transmission. Documentation.
+
+Scope note
+
+This guide paraphrases the sources above and adds explanatory diagrams and implementation-oriented checks. Equations
+are presented in simplified forms where labeled; the authoritative specifications define exact parameter semantics,
+remapping, edge cases and implementation details. Use the current OpenPBR source and MaterialX reference graph when
+writing a renderer, converting assets or establishing a conformance suite.
+
+                                       End of document
+OpenPBR Rendering & Energy Conservation • Prepared 9 October 2026
+
+Open standard does not imply identical renderer implementation     20
+

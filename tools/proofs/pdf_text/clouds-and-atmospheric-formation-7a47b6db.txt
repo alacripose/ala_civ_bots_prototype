@@ -1,0 +1,428 @@
+                       CLOUDS
+
+         How they form, grow, transform, and produce precipitation in Earth's atmosphere
+
+The central idea: a cloud forms when air containing water vapor is cooled enough, or otherwise brought to
+saturation, that water can condense or deposit onto microscopic particles. The particles become cloud droplets
+or ice crystals1, .aMnodisthtuerecslosuoduprceersists only w2.hAileir irtissefosrsmaantdioenxpparoncdessses o3u. Atpiar cceooelvssaptoowraatridonsaatnudraotitohner 4lo. sVsaepso.r condensesso
+[1-3]
+
+                                                                     A visible cloud is a population of tiny droplets and/or ice crystals suspended in air.
+
+Why the sky is full of invisible water but only sometimes has clouds: water vapor is transparent. A cloud becomes
+visible when enough water exists in the condensed phase - liquid drops, ice crystals, or both - to scatter light back toward
+an observer.
+
+At a glance
+
+Process             What changes                    Typical result
+
+Evaporation         Liquid water -> water vapor     Moist air
+
+Rising / expansion  Pressure falls; parcel cools    Relative humidity rises
+
+Condensation        Vapor -> liquid on CCN          Cloud droplets
+
+Deposition / freezing Vapor or liquid -> ice        Ice crystals
+
+Growth              Droplets collide or ice grows/collects Precipitation-sized particles
+
+Dissipation         Evaporation, mixing, sinking, precipitationCloud weakens or disappears
+
+This handout is written for a scientifically literate general reader. It explains the physics first, then adds the microphysics and climate
+connections that make real clouds much more complicated than the simple "warm air rises and makes clouds" picture.
+
+Clouds and Atmospheric Formation - science handout                                                                                           1
+1. Where the water comes from
+
+Earth's atmosphere is continuously supplied with water vapor. Evaporation from oceans, lakes, soil, and other surfaces is
+the dominant surface-to-atmosphere pathway. Plants add vapor through transpiration, and ice and snow can also
+contribute through sublimation. The hydrologic cycle continually moves water between the surface, atmosphere, clouds,
+and precipitation. [4]
+
+Water vapor is a gas, not a visible cloud
+
+Individual water molecules are far too small to scatter enough visible light for us to see them. You can have very humid air
+that looks perfectly clear. The visible transition begins when water molecules assemble into a condensed phase - a
+population of tiny liquid droplets or ice crystals. [1,2]
+
+Saturation and relative humidity
+
+The atmosphere has a temperature-dependent equilibrium vapor pressure. In simplified terms, warm air can support more
+water vapor before reaching saturation than cold air can. Relative humidity (RH) is commonly expressed as the actual
+water-vapor partial pressure divided by the saturation vapor pressure at the same temperature, multiplied by 100%. RH
+near 100% means the air is close to saturation.
+
+   Important nuance: "the air can only hold so much water" is a useful teaching approximation, but it is not a literal
+   container limit. Saturation describes thermodynamic equilibrium between water vapor and a condensed phase at
+   a given temperature and pressure. Cloud microphysics also depends on particle size, composition, curvature,
+   surface tension, and the dynamics of the air.
+
+How air reaches saturation
+
+Mechanism          Physical picture                                          Examples
+
+Adiabatic lifting  Air rises, pressure decreases, and the parcel expanTdhse/cromoalsls, fronts, mountains
+
+Convergence        Horizontal winds force air upward                         Low-pressure systems, boundaries
+
+Frontal lifting    Denser air undercuts or lifts warmer air                  Cold and warm fronts
+
+Radiative / surface coolinAgir near a surface loses heat until it saturates  Radiation fog, stratus
+
+Evaporation into cool air Moisture enters air faster than it can be mixed awaySea smoke, steam fog
+
+Clouds and Atmospheric Formation - science handout                                                                         2
+2. Why rising air cools and makes clouds
+
+A very common route to cloud formation begins with upward motion. As an air parcel rises into lower pressure, it expands.
+Expansion costs internal energy, so the parcel cools even if it exchanges little heat with its surroundings. This is the
+adiabatic process. [1,5]
+
+The dry and moist adiabatic lapse rates
+
+For unsaturated air, the dry adiabatic lapse rate is about 9.8 C per kilometer. Once condensation begins, latent heat
+released by condensation offsets part of the cooling, so the saturated (moist) adiabatic lapse rate is smaller and varies with
+temperature and pressure, commonly on the order of about 4-7 C per kilometer in the lower atmosphere.
+
+                    -10 C  Dry adiabatic: ~9.8 C/km
+                      0 C
+                                                                          Moist adiabatic: ~4-7 C/km
+
+Parcel temperature  10 C
+
+                    20 C
+
+                    30 C
+
+                                                     Height increases ->
+
+The exact altitude of a cloud base depends on starting temperature, dew point, moisture profile, and lifting rate. A useful local estimate is the lifting
+ condensation level (LCL), where a rising parcel first reaches saturation. Cloud base is often near the LCL, though real cloud bases can be ragged
+
+                                                  because turbulence and mixing continuously alter the parcel history. [1]
+
+Atmospheric stability controls cloud shape
+
+The surrounding temperature profile matters just as much as the parcel temperature. If the atmosphere is unstable, a rising
+parcel can remain warmer and less dense than its surroundings and keep accelerating upward. That favors vertically
+developed cumulus and, with sufficient moisture and instability, thunderstorms. A stable atmosphere resists vertical motion
+and favors broad layers such as stratus or stratiform cloud.
+
+   Key idea: cloud shape is a visible record of atmospheric motion. Flat layers often indicate widespread, gentle
+   ascent or stable stratification. Towering clouds indicate strong localized updrafts and continued vertical
+   development.
+
+Clouds and Atmospheric Formation - science handout                                                    3
+Equilibrium supersaturation ->3. Why tiny particles matter: cloud condensation nuclei
+
+Cloud droplets generally do not appear efficiently by simply clustering pure water molecules in the open atmosphere. Most
+cloud droplets form on pre-existing aerosol particles called cloud condensation nuclei (CCN). Sources include sea salt,
+mineral dust, sulfate and other pollution-derived particles, smoke, organic material, and biological particles. [1,6]
+
+Kohler theory in plain language
+
+Two competing effects govern the equilibrium vapor pressure over a small solution droplet. Curvature (the Kelvin effect)
+makes it harder for a tiny curved water surface to remain wet, which favors evaporation. Dissolved solute lowers water
+activity and makes the droplet easier to grow. The balance creates a characteristic critical supersaturation: once ambient
+supersaturation exceeds thcartithicraelsshuoplde,rtshaetuprarttiiocnle can activate into a cloud droplet. [6]
+
+                                Small size: curvature makes growth difficult
+
+                                 Larger activated droplet: ordinary growth becomes favorable
+
+                                                                                          Droplet diameter / particle size ->
+     This is a simplified qualitative sketch, not a numerical Kohler curve. Real activation depends on particle size, soluble mass, surface tension,
+     chemical composition, and temperature. Modern treatments extend classical Kohler theory to mixtures, surfactants, non-ideal solutions, and
+
+                                                                       temperature-dependent properties. [6,7]
+
+Supersaturation is usually small - but crucial
+
+Inside growing clouds, supersaturation with respect to liquid water is often only a fraction of one percent. That tiny excess
+is nevertheless enough to activate an appropriate subset of aerosol particles. Updraft speed, temperature, aerosol
+properties, and turbulent mixing all influence how much supersaturation develops and how many particles activate. [6-8]
+
+Clouds and Atmospheric Formation - science handout  4
+4. The major cloud families
+
+The familiar cloud names encode appearance and altitude. The World Meteorological Organization uses a more detailed
+system of genera, species, and varieties; the broad families below are a practical introduction. [9]
+
+Family / examples  Typical appearance                     What usually shapes it
+
+Cirrus / cirro-    High, thin, wispy; mostly ice          Strong upper-level winds, ice growth and fall streaks
+
+Cumulus            Puffy heaps with vertical structure Thermals, buoyancy, localized updrafts
+
+Stratus            Broad, gray or white layers            Stable air, widespread weak ascent, cooling near surface
+
+Nimbostratus       Thick layered cloud with widespread prDeeceippit,aptieornsistent ascent in large weather systems
+
+Cumulonimbus       Towering cloud with anvil; intense precSiptritoantigoninpstoasbsiilbityle, moisture, sustained deep updrafts
+
+Altostratus / altocumulus Middle-level sheets or patches  Mid-level ascent, wave motion, fronts and instability
+
+Altitude is not the whole story
+
+Clouds are three-dimensional and can span large vertical ranges. A cloud genus does not mean every part of the cloud sits
+at one fixed altitude. In mountains, for example, a cloud can be classified as low-level relative to the local terrain even if its
+elevation above sea level is considerable.
+
+A useful visual rule
+
+Cirro- usually signals high cloud; alto- signals middle-level cloud; strato- suggests a layer; cumulo- suggests vertical
+heaps; and nimbo- is associated with precipitation. These name pieces are clues, not substitutes for the formal
+classification system.
+
+Clouds and Atmospheric Formation - science handout                                                                               5
+5. What is actually inside a cloud?
+
+A cloud is not a giant blob of liquid water. It is a dilute suspension of enormous numbers of tiny hydrometeors - primarily
+cloud droplets and/or ice crystals - moving with the air. Individual cloud droplets are typically on the order of several to a
+few tens of micrometers in diameter, while precipitation particles are much larger.
+
+Droplet growth: condensation
+
+Freshly activated droplets grow by diffusion of water vapor toward their surfaces. Growth is fastest early on and slows as
+droplets become larger because the available vapor field adjusts around each particle. Turbulence and mixing continuously
+modify the local temperature and humidity histories that individual droplets experience. [5]
+
+Droplet growth: collision and coalescence
+
+In warm clouds, droplets do not all have the same size or fall speed. Larger droplets fall faster, overtake smaller ones,
+collide, and sometimes merge. This collision-coalescence process can create droplets large enough to fall as drizzle or
+rain. Turbulence can enhance collision rates under some conditions. [5,10]
+
+Ice processes
+
+Cloud ice can form through several pathways. Ice-nucleating particles can initiate heterogeneous freezing or deposition
+under favorable conditions; at sufficiently cold temperatures, homogeneous freezing can occur. Once ice is present in
+mixed-phase clouds, vapor tends to deposit efficiently onto ice because the equilibrium vapor pressure over ice is lower
+than over supercooled liquid water. This can draw vapor away from droplets - the Wegener-Bergeron-Findeisen process -
+while riming and aggregation can further grow ice particles. [3,11]
+
+         Water vapor                                          Cloud droplet   Rain drop
+condensation                                        collection / coalescence
+
+Ice nucleus /sfreezing seed                         Ice crystal               Snow / hail /sice pellets
+
+nucleation / freezing                               aggregation / riming
+
+Cloud microphysics is a competition among processes that create, grow, transform, transport, and remove hydrometeors. Which process dominates
+                              depends strongly on temperature, humidity, vertical motion, aerosol population, cloud depth, and time.
+
+Clouds and Atmospheric Formation - science handout                                                       6
+6. From cloud droplets to precipitation
+
+Cloud droplets are small enough that their terminal fall speeds are modest and upward air motions can keep them
+suspended. Precipitation requires a pathway that makes some particles substantially larger.
+
+Warm-rain pathway
+
+In liquid-only clouds, a broad droplet-size distribution allows faster-falling droplets to collide with slower droplets. If the
+collision leads to coalescence, the drop grows. Repetition can move water from hundreds or thousands of cloud droplets
+into a much smaller number of drizzle and raindrops. This is the classic collision-coalescence mechanism. [5,10]
+
+Cold and mixed-phase pathway
+
+In clouds containing both supercooled liquid water and ice, ice crystals can grow rapidly through vapor deposition. They
+may then aggregate with other ice crystals or collect supercooled droplets by riming. The resulting particles can become
+snowflakes, graupel, or hail. If they fall into warmer layers, they may melt into rain.
+
+Why precipitation can shut the cloud down
+
+Precipitation exports water from the cloud. Evaporation below or within the cloud can cool air and change buoyancy. Falling
+hydrometeors can also collide with other particles and alter the distribution of liquid and ice. Thus precipitation is not merely
+an output of a cloud; it can feed back on cloud dynamics and lifetime. [3,10]
+
+   Key distinction: condensation makes cloud water; microphysical growth makes precipitation. Those are related
+   but not identical steps.
+
+                                                    Cloud droplets / ice
+
+             liquid pathway                                         ice pathway
+Warm cloud:scoalescence                             Ice / mixed phase:sdeposition + riming
+
+                                                         Precipitation-sizedshydrometeor
+
+The diagram is simplified. Real storms can contain multiple microphysical pathways simultaneously, including melting layers, aggregation,
+                                        secondary ice production, hail growth, and evaporation of falling precipitation.
+
+Clouds and Atmospheric Formation - science handout                                                                                         7
+7. Why clouds appear where they do
+
+Clouds are strongly organized by the geometry of atmospheric motion. Moisture alone does not place a cloud over a
+particular location; the atmosphere must also provide a way to lift, cool, or otherwise saturate air.
+
+Setting            Lifting / cooling mechanism                 Common cloud expression
+
+Mountain slopes    Air is forced upward over terrain (orographically inducedCaaspcecnlotu) ds, lenticular clouds, upslope precipitation
+
+Cold fronts        Cold dense air lifts warmer moist air       Lines of cumulus / cumulonimbus
+
+Warm fronts        Warm air glides over cooler air along a shallow slope Layered stratiform cloud, broad precipitation areas
+
+Low-pressure centers Convergence and large-scale ascent        Widespread multilayer cloud and precipitation
+
+Sunny land surfaces Surface heating drives thermals            Fair-weather cumulus, growing cumulus
+
+Nighttime cooling  Surface cools the lowest air to saturation  Radiation fog and low stratus
+
+Marine boundary layers Moisture supply, cooling from the surface/air-sea exchanSgtrea,tuasndanindvestrrsaiotoncsutmruucltuusre
+
+Cloud streets and organized convection
+
+When airflow and surface conditions are aligned, convection can self-organize into rows or bands. The spacing and
+orientation of these structures reflect interactions among boundary-layer turbulence, buoyancy, wind shear, surface fluxes,
+and cloud processes. The atmosphere is not merely a conveyor belt that lifts moist air; clouds can alter the air that
+surrounds them by transporting heat and moisture and by producing precipitation.
+
+   A cloud is a coupled fluid + thermodynamics + microphysics problem. The visible shape is the end product of
+   processes acting across scales from molecular collisions to kilometers of organized weather.
+
+Clouds and Atmospheric Formation - science handout                                                                              8
+8. Why clouds change shape so quickly
+
+Clouds can look solid from a distance, yet their individual droplets are constantly forming, evaporating, growing, colliding,
+freezing, and falling. Air is also being entrained from outside the cloud. These processes can change the cloud's
+appearance on timescales of minutes.
+
+Entrainment and mixing
+
+Rising cloud air mixes with environmental air that may be warmer, colder, drier, or more humid. Dry-air entrainment tends
+to increase evaporation and can weaken cloud water. Strong mixing can also broaden the distribution of droplet growth
+histories. The balance between cloud ascent and entrainment is therefore central to cloud lifetime and precipitation
+initiation. [5,11]
+
+Cloud base can evaporate while the top grows
+
+A growing cumulus may add condensate in its upper regions while droplets near the base evaporate in a drier environment.
+What the observer sees is the combined result of these local gain and loss processes. This helps explain why clouds can
+look as though they are boiling, billowing, or dissolving even when the larger-scale weather changes only gradually.
+
+Fog is a cloud at the surface
+
+The physics does not stop at the ground. When the air immediately above the surface reaches saturation and enough
+condensed water becomes visible, the result is fog. Radiation fog, advection fog, upslope fog, and evaporation fog differ
+mainly in how the air is cooled or moistened enough to reach saturation. [2]
+
+Cloud lifetime is a balance
+
+A useful conceptual equation is:
+
+   cloud water change = formation + growth + transport - evaporation - precipitation removal - mixing
+   losses
+
+The terms are not independent: precipitation can alter temperature and humidity; latent heating can alter buoyancy;
+aerosols can modify droplet number and size; and radiation can heat or cool cloud layers. That coupling is why clouds
+remain an active area of atmospheric research. [3,8,12]
+
+Clouds and Atmospheric Formation - science handout  9
+9. Why clouds matter for weather and climate
+
+Clouds influence Earth's energy budget in competing ways. Sunlight can be reflected or scattered by cloud droplets and
+ice, producing a cooling influence at the top of the atmosphere. At the same time, clouds can absorb and emit infrared
+radiation, reducing the rate at which heat escapes to space and producing a warming influence, especially for high cold
+clouds. The net effect depends on cloud altitude, thickness, particle properties, coverage, and the surrounding atmosphere.
+[12]
+
+Aerosol-cloud interactions
+
+Changing the number, size, and composition of atmospheric aerosol particles can change cloud droplet number and size.
+More numerous, smaller droplets can alter cloud reflectivity and can also change how efficiently cloud water becomes rain.
+In ice and mixed-phase clouds, ice-nucleating particles can affect freezing, phase, precipitation, and radiative properties.
+The sign and magnitude of these effects are not universal: they depend on the cloud regime, meteorology, aerosol
+properties, and the processes operating at the time. [3,6,8,11]
+
+   Why this is scientifically hard: cloud processes span many scales. Molecular-scale thermodynamics controls
+   droplet activation; droplets interact through turbulence and gravity; clouds organize within weather systems; and
+   those weather systems influence regional and global climate. Numerical models cannot directly resolve every
+   scale, so many cloud processes must be represented through parameterizations.
+
+What satellites can and cannot tell us
+
+Satellites can map cloud cover, top temperatures, optical thickness, phase, and other properties over large areas. But
+connecting those measurements to the underlying aerosol population, vertical motion, supersaturation, and individual
+microphysical pathways is difficult. Combining satellites, aircraft, surface observations, laboratory measurements, and
+models is therefore central to modern cloud research. [3,12]
+
+Clouds and Atmospheric Formation - science handout  10
+10. Deeper scientific references
+
+The links below are selected for deeper reading. They mix foundational explanations, review papers, and a recent
+peer-reviewed study. DOI links are the most stable route when available.
+
+1. NOAA JetStream - How Clouds Form. Official educational overview covering water, condensation nuclei, saturation, adiabatic cooling,
+    entrainment, and cloud growth/dissipation.
+    https://www.noaa.gov/jetstream/clouds/how-clouds-form
+
+2. NASA Science - How Do Clouds Form? Clear introduction to evaporation, saturation, condensation, deposition, cloud particles, fog,
+    and why cloud science is difficult.
+    https://science.nasa.gov/kids/earth/how-do-clouds-form/
+
+3. Burrows, S. M. et al. (2022), Reviews of Geophysics - Ice-Nucleating Particles That Impact Clouds and Climate: Observational
+    and Modeling Research Needs. Open-access review of ice-nucleating particles, mixed-phase cloud processes, precipitation and
+    climate impacts. DOI: 10.1029/2021RG000745.
+    https://doi.org/10.1029/2021RG000745
+
+4. NASA Earth Observatory - The Water Cycle. Background on evaporation, transpiration, sublimation, cloud formation, and precipitation
+    in the hydrologic cycle.
+    https://science.nasa.gov/earth/earth-observatory/the-water-cycle/
+
+5. Grabowski et al. / Pinsky et al. (2013), Annual Review of Fluid Mechanics - Growth of Cloud Droplets in a Turbulent
+    Environment. Review of condensational growth, collision-coalescence, turbulence, and the warm-rain bottleneck. DOI:
+    10.1146/annurev-fluid-011212-140750.
+    https://doi.org/10.1146/annurev-fluid-011212-140750
+
+6. Padró & Nenes (2007), Atmospheric Chemistry and Physics - Cloud droplet activation: solubility revisited. Paper on aerosol
+    solubility, curvature effects, and cloud droplet activation within the framework of Kohler theory. DOI: 10.5194/acpd-7-2325-2007.
+    https://doi.org/10.5194/acpd-7-2325-2007
+
+7. Ervens et al. (2021), Atmospheric Chemistry and Physics - A predictive thermodynamic framework of cloud droplet activation
+    for chemically unresolved aerosol mixtures. Modern treatment of cloud droplet activation including surface tension, non-ideality, and
+    bulk-surface partitioning.
+    https://acp.copernicus.org/articles/21/16387/2021/
+
+8. Li et al. (2025), Atmospheric Research - A review of aerosol-cloud interactions: Mechanisms, climate effects, and observation
+    methods. Recent review of liquid, ice, and mixed-phase aerosol-cloud interactions, precipitation effects, radiation, and observations.
+    DOI: 10.1016/j.atmosres.2025.108267.
+    https://doi.org/10.1016/j.atmosres.2025.108267
+
+9. World Meteorological Organization - International Cloud Atlas. Formal international terminology and classification of cloud genera,
+    species, and varieties.
+    https://cloudatlas.wmo.int/
+
+10. Rosenfeld et al. (2014), Reviews of Geophysics - Global observations of aerosol-cloud-precipitation-climate interactions.
+    Large review connecting CCN/IN populations to cloud microstructure, albedo, precipitation and climate. DOI: 10.1002/2013RG000441.
+    https://doi.org/10.1002/2013RG000441
+
+11. Korolev / Morrison and related mixed-phase cloud literature. Starting point for advanced study of supercooled liquid water, ice
+    growth, WBF, riming, aggregation, and cloud glaciation. See the Burrows review above for a well-linked synthesis.
+    https://doi.org/10.1029/2021RG000745
+
+12. Fan, J., Wang, Y., Rosenfeld, D., & Liu, X. (2016), Journal of the Atmospheric Sciences - Review of Aerosol-Cloud Interactions:
+    Mechanisms, Significance, and Challenges. Detailed review of aerosol-cloud feedbacks, precipitation, radiative effects, and
+    unresolved processes. DOI: 10.1175/JAS-D-16-0037.1.
+    https://doi.org/10.1175/JAS-D-16-0037.1
+
+13. Zabala, I. et al. (2026), Atmospheric Chemistry and Physics - Cloud condensation nuclei phenomenology: predictions based
+    on aerosol chemical and optical properties. Recent 2026 study linking aerosol chemical/optical properties to CCN predictions and
+    the uncertainty in aerosol-cloud forcing. DOI: 10.5194/acp-26-3697-2026.
+    https://doi.org/10.5194/acp-26-3697-2026
+
+Clouds and Atmospheric Formation - science handout  11
+Notes on terminology
+
+Cloud condensation nuclei (CCN): aerosol particles that can activate into cloud droplets at a given supersaturation.
+Ice-nucleating particles (INPs): atmospheric particles that promote ice formation under conditions where homogeneous
+freezing would otherwise be unlikely. Supersaturation: water vapor abundance above the equilibrium saturation value.
+Hydrometeor: a water or ice particle in the atmosphere, including cloud droplets, rain, snow, graupel, and hail. Latent
+heat: energy absorbed or released during a phase change without a corresponding temperature change of the substance
+undergoing that phase change.
+
+Prepared October 2026. Educational reference document; descriptions are simplified where noted so that the core physical picture remains
+readable without omitting important scientific caveats.
+
+Clouds and Atmospheric Formation - science handout  12
+

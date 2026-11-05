@@ -77,6 +77,13 @@ def proseClaims = file('src/main/resources/ensouled/prose_claims.tsv')
 // its words are merged into the attested lexicon, and its expectations stay non-conclusive.
 def pingWheelLexicon = file('tools/ping_wheel_lexicon.tsv')
 def pingWheelExpectations = file('tools/proofs/ping_wheel/expectations.json')
+// The external shploingus corpus is 8.8 GB, so its extraction and ingestion stay manual. Its
+// compiled lexicon is committed with the project and merged into the baseline like any other
+// source; the tasks exist so a later corpus change can be reproduced rather than hand-copied.
+def shploingusRoot = file('C:/Users/ala/Documents/shploingus-clean')
+def shploingusPdfText = file('tools/proofs/pdf_text')
+def shploingusLexicon = file('tools/shploingus_lexicon.tsv')
+def shploingusReport = file('tools/shploingus_lexicon.report.json')
 tasks.register('compilePingWheelExpectations', Exec) {
 	group = 'build'
 	description = 'Compiles the ping-wheel document into its language and non-conclusive wishes.'
@@ -92,13 +99,54 @@ tasks.register('compilePingWheelExpectations', Exec) {
 			'--out-tsv', file('tools/proofs/ping_wheel/expectations.tsv').absolutePath
 }
 
+tasks.register('extractShploingusPdfs', Exec) {
+	group = 'build'
+	description = 'Converts the external shploingus corpus PDFs to text before ingestion.'
+	onlyIf { shploingusRoot.isDirectory() }
+	outputs.dir(shploingusPdfText)
+	commandLine 'python', 'tools/pdf_extract.py', '--root', shploingusRoot.absolutePath,
+			'--out', shploingusPdfText.absolutePath
+}
+
+tasks.register('compileShploingusLexicon', Exec) {
+	group = 'build'
+	description = 'Recompiles the external Rust and PDF corpus; manual because the tree is 8.8 GB.'
+	dependsOn 'extractShploingusPdfs'
+	onlyIf { shploingusRoot.isDirectory() }
+	outputs.file(shploingusLexicon)
+	outputs.file(shploingusReport)
+	commandLine 'python', 'tools/prose_ingest_mods.py',
+			'--root', shploingusRoot.absolutePath,
+			'--root', shploingusPdfText.absolutePath,
+			'--out', shploingusLexicon.absolutePath,
+			'--report', shploingusReport.absolutePath
+}
+
+// This project's own docs are prose the agents should have too. Unlike the external corpus, the
+// docs tree is small and local, so it recompiles on every build and cannot drift.
+tasks.register('compileProjectLexicon', Exec) {
+	group = 'build'
+	description = "Compiles this project's own docs into its attested lexicon."
+	inputs.dir(file('docs'))
+	inputs.file(file('tools/prose_ingest_mods.py'))
+	outputs.file(file('tools/project_lexicon.tsv'))
+	outputs.file(file('tools/project_lexicon.report.json'))
+	commandLine 'python', 'tools/prose_ingest_mods.py',
+			'--root', file('docs').absolutePath,
+			'--exclude', 'ping_wheel_messages.md',
+			'--out', file('tools/project_lexicon.tsv').absolutePath,
+			'--report', file('tools/project_lexicon.report.json').absolutePath
+}
+
 tasks.register('compileProseBaseline', Exec) {
 	group = 'build'
 	description = 'Compiles the prose-logic corpus into the speech verb baseline.'
 	def corpus = file(proseCorpus)
 	inputs.dir(corpus).optional()
-	dependsOn 'compilePingWheelExpectations'
+	dependsOn 'compilePingWheelExpectations', 'compileProjectLexicon'
 	inputs.file(pingWheelLexicon)
+	inputs.file(file('tools/project_lexicon.tsv'))
+	inputs.file(shploingusLexicon)
 	outputs.file(proseBaseline)
 	outputs.file(proseClaims)
 	onlyIf { corpus.isDirectory() }
@@ -106,6 +154,7 @@ tasks.register('compileProseBaseline', Exec) {
 			'--out', proseBaseline.absolutePath,
 			'--extra', file('tools/mod_lexicon.tsv').absolutePath,
 			'--extra', file('tools/project_lexicon.tsv').absolutePath,
+			'--extra', shploingusLexicon.absolutePath,
 			'--extra', pingWheelLexicon.absolutePath
 	// A corpus that cannot be compiled leaves the committed baseline in place rather than failing
 	// an unrelated build; the task's own exit codes say why.

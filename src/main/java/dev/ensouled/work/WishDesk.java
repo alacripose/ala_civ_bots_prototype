@@ -1,11 +1,13 @@
 package dev.ensouled.work;
 
 import dev.ensouled.core.AgentIdentity;
+import dev.ensouled.core.EpisodeKind;
 import dev.ensouled.core.EvidenceKind;
 import dev.ensouled.core.MindLedger;
 import dev.ensouled.core.Voice;
 import dev.ensouled.core.StreamNotices;
 import dev.ensouled.core.Talk;
+import dev.ensouled.core.Vec3i;
 import dev.ensouled.core.Wishes;
 import dev.ensouled.core.WorldView;
 
@@ -70,6 +72,17 @@ public final class WishDesk {
 		ledger.note(tick, identity.agentId(), intentionId, EvidenceKind.SOCIAL, "",
 				answer.opened() ? "wish_taken_up" : "wish_" + answer.code(),
 				wish.id() + ": " + wish.text() + " — " + answer.why());
+		if ("wish-aspiration".equals(answer.code())) {
+			// Nothing in this world can supply the thing yet. The wish is not refused: it becomes
+			// an episode the dreaming loop can take up, with the words exactly as they were said.
+			ledger.remember(tick, EpisodeKind.DREAM,
+					"wish held as aspiration: " + wish.text(),
+					view == null ? new Vec3i(0, 64, 0) : view.bodyPos(),
+					"wish-aspiration", answer.words());
+			StreamNotices.noted(identity.agentId(), "wish " + wish.id(), "wish-held-in-mind",
+					"I have it in mind; I have no way to bring " + answer.words() + " yet");
+			return;
+		}
 		if (answer.opened()) {
 			// What it took on is said in its own words, so the person who asked hears the work
 			// exist rather than inferring it from a silent ledger row.
@@ -81,7 +94,10 @@ public final class WishDesk {
 		}
 		// Ambiguous is not understood: the being asks about the half it is missing, or says it
 		// cannot tell (addendum E.4).
-		String ask = answer.words().isBlank() ? Talk.askWhat() : Talk.askHowMany(answer.words());
+		// Only a missing number earns "How many?" An unread thing or an unlearned target asks
+		// what it should bring, not how many of a word it does not know.
+		String ask = "wish-no-count".equals(answer.code())
+				? Talk.askHowMany(answer.words()) : Talk.askWhat();
 		if (!ask.isEmpty()) {
 			voice.say(ask, tick);
 			StreamNotices.noted(identity.agentId(), "wish " + wish.id(), "wish-asked", ask);

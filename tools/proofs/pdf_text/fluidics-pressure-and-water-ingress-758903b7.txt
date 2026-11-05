@@ -1,0 +1,483 @@
+          FLUIDICS, PRESSURE, AND
+     HOW WATER ENTERS MATERIALS
+
+A real-world model connecting pressure, gravity, capillarity, permeability, pore structure, and material
+                                                              wetting
+
+Water reservoir           Porous material
+
+pressure / head gradient                                                  capillary suction can pull water
+                                                                          into dry pores even with little
+                                                                          externally applied pressure.
+
+                        wetting front                                     gravity
+                     permeability k porosity n effective pore radius r    elevation z
+
+p = p_atm + rho g h
+
+       Core idea
+       Water moves when there is a usable driving force and a connected path. In a large pipe, that driving force is
+       often a pressure or elevation difference. In a dry porous material, surface tension and wetting can create
+       capillary pressure that pulls water into tiny pores even when the applied pressure is small.
+
+Designed as a practical physics reference rather than a specialist textbook. Equations are simplified models; real materials require measured or
+fitted parameters.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model                                                                          1
+Contents and model roadmap
+
+  1. The physical picture - Pressure, elevation, viscosity, resistance, and what "fluidics" means inside a material.
+  2. Pressure in the real world - Hydrostatic pressure, gauge vs absolute pressure, hydraulic head, and pressure
+  gradients.
+  3. How water enters a material - Connected pores, cracks, wetting, capillarity, sorption, vapor, and forced entry.
+  4. Capillary pressure - Young-Laplace, contact angle, pore radius, capillary entry pressure, and capillary rise.
+  5. Flow after entry - Darcy law, permeability, hydraulic conductivity, and why pore connectivity matters.
+  6. Unsaturated materials - Water content, saturation, matric suction, Richards-type modeling, and hysteresis.
+  7. Real material examples - Concrete/brick, wood, soil, paper/fabric, and cracked materials.
+  8. Worked numerical model - Four simple calculations you can reproduce by hand or in code.
+  9. A practical simulation recipe - State variables, boundary conditions, timestep updates, calibration, and failure
+  modes.
+  10. Scientific references - Primary papers, reviews, and deeper reading with clickable DOI or article links.
+
+One equation to keep in your head
+
+                                              Hydraulic head: H = p/(rho g) + z
+
+This lets pressure and elevation be treated as parts of one driving potential. For saturated porous flow, a common
+macroscopic model is q = -K grad(H). For a dry or partially saturated material, an additional capillary or matric-pressure
+description is needed.
+
+  Open channel           Porous matrix                                       Crack / joint
+
+  pressure + gravity   pressure + gravity +                               large connected path
+viscous losses set by      capillary forces                                very high effective
+                                                                               permeability
+    pipe geometry      pore network matters
+
+The same outside water pressure can produce very different ingress rates because geometry and connectivity change the resistance.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model                                                           2
+1. The physical picture
+
+"Fluidics" is the control and movement of fluids. At everyday scale it includes water in pipes, pumps, tanks, hoses, valves,
+and channels. When the fluid meets a porous material, the same conservation laws still apply, but the path becomes a
+huge network of microscopic channels.
+
+Think of a material as a hidden plumbing network
+
+A sponge, brick, soil bed, paper sheet, wood cell structure, or concrete paste can be represented as a connected set of
+voids. Some voids are large; some are tiny. Some connect all the way through; some terminate. The flow rate is therefore
+controlled by both driving force and hydraulic resistance.
+
+Quantity  Meaning                 Typical role
+p         fluid pressure          pushes fluid from high pressure toward low pressure
+z         elevation               gravity changes pressure with height
+rho       density                 sets hydrostatic pressure and inertia
+mu        dynamic viscosity       sets viscous resistance
+k         intrinsic permeability  how easily the material transmits fluid
+n         porosity                how much void space exists
+S         saturation              fraction of accessible pore volume filled by water
+theta     contact angle           describes wetting of a solid by the liquid
+r         effective pore radius   sets capillary pressure scale
+
+Important: porosity alone does not tell you how fast water moves. Two materials can have similar void volume but very
+different permeability because their pores differ in size, tortuosity, connectivity, and throat geometry.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model                                                      3
+2. Pressure in the real world
+
+Pressure is force per area. In a still column of water, pressure increases with depth because the water above has weight.
+Relative to a free surface exposed to atmosphere, gauge pressure is approximately:
+
+                                                            p_g = rho g h
+
+For water near room temperature, rho is about 1000 kg/m^3. A 1 m water column therefore corresponds to about 9.8 kPa
+of gauge pressure. Ten meters corresponds to about 98 kPa.
+
+Hydrostatic pressure  p(z) = p_surface + rho g (z_surface - z)
+
+                      deeper points have larger liquid pressure in a static column
+
+Hydraulic head        H = p/(rho g) + z
+
+                      pressure head + elevation head; useful for groundwater and porous flow
+
+Pressure gradient is what matters for flow
+
+A reservoir can have high pressure and still produce little flow if the downstream boundary has nearly the same pressure,
+or if the material resistance is enormous. Flow responds to the spatial gradient in the fluid potential, not to a single
+pressure number in isolation.
+
+For a one-dimensional saturated material, a useful model is:
+
+                                                    q = -(k/mu) (dp/dx - rho g)
+
+where q is Darcy flux (volumetric flow per cross-sectional area). If the material is horizontal, the gravity term drops out. In
+vertical flow, gravity either helps or opposes the pressure-driven component.
+
+Gauge vs absolute pressure
+
+Gauge pressure uses the local atmosphere as the reference. Absolute pressure includes atmospheric pressure. For water
+infiltration problems, using gauge pressure is often convenient as long as every boundary is expressed using the same
+reference.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model                                                         4
+3. How water actually enters a material
+
+     Pore-scale picture: why water can enter a dry material
+
+                                               Pc = 2 gamma cos(theta) / r
+
+                      capillary entsrmy aller pore -> larger capillary pressure        non-wetting case
+                                     better wetting -> stronger spontaneous entry         theta > 90 deg
+
+                      pressure jump across curved meniscus                             external pressure may be needed
+                                                                                                  to force invasion.
+
+wetting liquid
+
+There are several distinct routes. They can happen simultaneously.
+
+Mechanism             What physically happens                                          Main controls
+
+Capillary imbibition  A wetting liquid is pulled into small connected pores by curved liqcuoidn-taicrtinatnegrlfea,cseusr.face tension, pore radius, viscosity, pore network
+
+Pressure-driven permeation An imposed pressure difference pushes water through connectedprpeosrseusreorgcraradciekns.t, permeability, viscosity, thickness
+
+Gravity-driven infiltration Water moves downward because elevation contributes to hydrauhliecighheta,ds.aturation, hydraulic conductivity
+
+Surface wetting + spreading A droplet spreads over a surface and finds pore openings.  surface energy, roughness, contact angle
+
+Sorption / molecular uptake Water molecules bind or diffuse into hydrophilic solid phases or ncahneomscicaalel asfpfinaictye,sh. umidity, temperature, diffusivity
+
+Vapor transport       Water vapor diffuses through a material and may adsorb, desorbv, aopr ocro-npdreesnssuereingsridaediepnotr,epse. rmeability, temperature
+
+Cracks / joints / defects Large connected paths bypass much of the fine-pore resistance.crack width, connectivity, wetting, pressure
+
+The practical rule: water enters when the combination of pressure, gravity, capillary suction, and wetting forces can move
+the liquid across the material surface and into an interconnected pore path. The rate is then limited by hydraulic resistance,
+air displacement, changing saturation, and geometry.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model                                                                                            5
+4. Capillary pressure: the "hidden pump" inside small pores
+
+A curved water-air interface carries a pressure jump. For an idealized cylindrical pore, the Young-Laplace relation
+becomes:
+
+                                      Pc = p_air - p_water = 2 gamma cos(theta) / r
+
+Here gamma is surface tension, theta is the contact angle measured through the liquid, and r is an effective pore radius.
+For a wetting liquid with theta < 90 degrees, the liquid pressure can be lower than the air pressure while the liquid is still
+pulled into the pore. This is the physical basis of capillary suction.
+
+Capillary rise
+
+If capillary suction balances the weight of a vertical liquid column, an idealized capillary rise is:
+
+                                           h_cap = 2 gamma cos(theta) / (rho g r)
+
+This reveals an unintuitive fact: a smaller pore can generate a larger pressure difference. That is why tiny pores can pull
+water upward or laterally through porous solids.
+
+Entry pressure and non-wetting liquids
+
+For a non-wetting liquid (theta > 90 degrees), spontaneous entry is unfavorable in an ideal pore. An externally imposed
+pressure can overcome the capillary barrier. In real porous materials, the actual threshold depends on pore-throat
+geometry, surface heterogeneity, roughness, trapped gas, and wetting hysteresis.
+
+Capillary pressure scale  Pc ~ 2 gamma |cos(theta)| / r
+
+                          useful estimate for the pressure needed to overcome a pore-throat barrier
+
+Example: a 10 micrometer pore
+
+Taking gamma = 0.072 N/m, theta = 0 degrees, and r = 10 micrometers gives Pc about 14.4 kPa. That is equivalent to
+roughly 1.47 m of water head. So a tiny wetting pore can develop a capillary pressure comparable to a substantial water
+column.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model                                                        6
+5. Flow after water is inside: Darcy's law
+
+Once a connected region of water exists, a porous material can often be modeled macroscopically as a hydraulic resistor.
+For saturated, single-phase flow:
+
+                                                   q = -(k/mu) (grad p - rho g)
+
+In 1D horizontal form: q = -(k/mu) dp/dx.
+
+The intrinsic permeability k has units of square meters and is a property of the material-fluid geometry. Hydraulic
+conductivity K is often used in hydrology and folds in fluid density, gravity, and viscosity:
+
+                                                 K = k rho g / mu
+
+Then q = -K grad(H), where H is hydraulic head.
+
+Why a crack changes everything
+
+Permeability is highly sensitive to the size and connectivity of flow paths. A millimeter-scale connected crack can carry
+water much more readily than a dense fine-pore matrix because the hydraulic resistance of a channel falls steeply as its
+characteristic size increases. A material may therefore be "waterproof" through its intact matrix while leaking badly through
+one connected defect.
+
+For a flat slab with area A and thickness L, the saturated estimate is:
+
+                                                   Q = (k A / mu) (Delta p / L)
+
+This is a first-order real-world engineering model, not a universal law for every porous medium. It assumes steady,
+single-phase, saturated flow with effective constant properties.
+
+  Open channel                                     Porous matrix             Crack / joint
+
+  pressure + gravity                             pressure + gravity +     large connected path
+viscous losses set by                                capillary forces      very high effective
+                                                                               permeability
+    pipe geometry                                pore network matters
+
+The same outside water pressure can produce very different ingress rates because geometry and connectivity change the resistance.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model                                                           7
+6. Unsaturated materials: pressure becomes a state variable
+
+A dry material is not simply a saturated material with less water. As water content falls, air occupies more of the pore
+network, water films get thinner, and the set of pores carrying liquid changes. Consequently, the effective hydraulic
+conductivity can drop by orders of magnitude.
+
+A common macroscopic state description uses water saturation S, water pressure p_w, and a retention relation connecting
+saturation to capillary pressure. The broad structure is:
+
+                                                Pc = p_air - p_water; S = S(Pc)
+
+and then an unsaturated conductivity K(S) is supplied by a fitted constitutive relation. The well-known van Genuchten
+model provides a closed-form water-retention relation and can be combined with conductivity models such as Mualem's.
+
+Wetting front in a material                                                         I(t) = S sqrt(t) + A0
+
+                                     wet front x(t)                       common early-time form for water absorption
+                                                                                   S = sorptivity; A0 = initial offset
+
+                                                                A sharp visible front is an approximation. Real materials have dispersed pore sizes, dead ends, cracks, and air entrap
+
+Richards-type model
+
+A standard continuum model for partially saturated flow combines water conservation with a constitutive relation for
+pressure, saturation, and conductivity. The exact form depends on chosen variables, but conceptually it is:
+
+                     storage change = divergence of [conductivity x hydraulic-head gradient]
+
+This is the natural next step after Darcy: Darcy describes the flow law, while the unsaturated model adds the fact that
+saturation and conductivity change as water content changes.
+
+Hysteresis matters
+
+The path by which a material becomes wet can differ from the path by which it dries. Pore-throat geometry and trapped
+non-wetting fluid can cause different pressure-saturation relationships during drainage and imbibition. Do not assume one
+curve works equally well in both directions.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model                                                  8
+7. Real materials: what the model predicts
+
+Concrete and brick
+
+These materials contain interconnected capillary pores at several scales. Dry concrete or brick can absorb water from a
+wet face even without a large external pressure because capillary forces drive early uptake. Sorptivity is commonly used to
+quantify the rate of capillary absorption. Initial moisture condition, pore structure, compaction, and mix composition all
+affect the result.
+
+Wood
+
+Wood is anisotropic. Water can move through cell lumina and pits as capillary water and can also diffuse into cell walls.
+Liquid transport is often much faster along the grain than across it because the dominant connected pathways are oriented
+longitudinally. Thus a single isotropic permeability number can be a poor model for wood.
+
+Soil
+
+Soil is a classic unsaturated porous medium. Rain or irrigation first encounters a surface that may be dry. Water infiltrates
+under a combination of gravity and capillary forces, while air is displaced. Hydraulic conductivity depends strongly on water
+content. Fine-textured soils can hold strong matric suction but may have low conductivity when very dry.
+
+Paper, cloth, and fibrous materials
+
+Fibers form irregular pore networks. At low saturation, liquid can travel in thin films and bridges between fibers; at higher
+saturation, larger connected flow paths develop. The classical Lucas-Washburn picture captures the square-root-of-time
+scaling in idealized pores, while real fibrous structures can show more complicated transport.
+
+Cracks, joints, fasteners, and interfaces
+
+A defect can dominate total leakage. The matrix may have low k, but a connected crack, joint, or interface can provide a
+much lower-resistance path. For practical modeling, treat these as separate hydraulic domains rather than averaging them
+blindly into one bulk material property.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model                                                       9
+8. Worked numerical model
+
+These examples are deliberately simple. Their purpose is to show how the parameters map onto physical behavior.
+
+Example 1 - water pressure at depth
+
+At h = 1.0 m, using rho = 1000 kg/m^3 and g = 9.81 m/s^2:
+
+                                       p_g = rho g h = 1000 x 9.81 x 1.0 = 9.81 kPa
+
+So a one-meter water column adds about 9.8 kPa of gauge pressure at its base.
+
+Example 2 - capillary suction in a 10 micrometer pore
+
+For gamma = 0.072 N/m, theta = 0 degrees, r = 10e-6 m:
+
+                                          Pc = 2 gamma/r = 14,400 Pa = 14.4 kPa
+
+Equivalent water head = Pc/(rho g) about 1.47 m.
+
+Example 3 - pressure-driven flow through a slab
+
+Suppose a slab has k = 1e-16 m^2, A = 0.01 m^2, L = 0.10 m, Delta p = 10 kPa, and water viscosity mu = 1e-3 Pa s. Then:
+
+                               Q = (k A / mu)(Delta p/L) = 1.0e-10 m^3/s = 0.36 mL/hour
+
+That tiny flow is why a low-permeability intact matrix can appear almost dry despite a large water reservoir pressing on one
+side.
+
+Example 4 - spontaneous capillary penetration
+
+For an ideal 10 micrometer cylindrical pore with water, theta = 0 degrees, and t = 1 s, the Lucas-Washburn estimate gives:
+
+                                 L^2 = gamma r cos(theta) t / (2 mu) -> L about 19 mm
+
+Real porous materials usually deviate because pores vary in size, paths branch, air can become trapped, and the effective
+flow geometry changes while the material wets.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model  10
+9. A practical simulation recipe
+
+A useful fluid-ingress model can be built from a small set of state variables. Start simple, then add complexity only when
+the data demand it.
+
+Minimum state
+
+Variable  Meaning                           Use in a timestep
+                                            driving force
+p_w       water pressure                    gravity contribution
+                                            controls which pores are water-filled
+z         elevation                         resistance to saturated flow
+                                            resistance under partial saturation
+S         water saturation                  links pore occupancy to pressure
+                                            entry-pressure estimate
+k         permeability                      capillary sign and magnitude
+                                            simple sharp-front approximation
+K(S)      effective hydraulic conductivity  changes viscosity and surface tension
+
+Pc(S)     capillary pressure
+
+r_eff     effective pore/throat scale
+
+theta     wetting/contact behavior
+
+x_f       wetting-front position
+
+T         temperature
+
+A simple timestep
+
+1. Apply boundary conditions: outside water level, inlet pressure, drainage pressure, or humidity.
+2. Compute capillary pressure from the local saturation or an effective pore radius.
+3. Compute hydraulic head H = p/(rho g) + z.
+4. Compute flux from Darcy-type flow using K(S) or k.
+5. Update water content / saturation using mass conservation.
+6. Recompute pore accessibility, conductivity, and capillary pressure.
+7. Repeat until the desired time or equilibrium state is reached.
+
+Pseudocode
+
+for each timestep:
+ boundary = get_boundary_conditions(t)
+ for each material cell:
+   Pc = retention_curve(S)
+   Keff = conductivity_curve(S)
+   H = p/(rho*g) + z
+ flux = -Keff * grad(H)
+ S = update_by_mass_balance(S, flux, dt)
+ apply_sources_sinks_and_drainage()
+
+Calibration order
+
+Measure or estimate parameters in this order: geometry -> density/viscosity -> permeability or hydraulic conductivity ->
+water-retention curve -> wetting/contact behavior -> defect pathways. This prevents one "mystery permeability" value from
+being forced to compensate for incorrect geometry or missing capillary physics.
+
+When the simple model fails
+
+Upgrade to a pore-network model, multiphase formulation, fracture domain, or coupled heat/vapor model when you see
+strong hysteresis, trapped air, phase change, preferential flow, swelling/shrinkage, chemical reactions, or flow that is
+visibly concentrated in a small number of channels.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model                                                    11
+10. Scientific references and deeper reading
+
+The links below are selected to connect the simplified model in this guide to foundational papers and modern reviews. DOI
+links are preferred where available.
+
+1. Washburn, E. W. (1921). The Dynamics of Capillary Flow. Physical Review, 17, 273-283.
+https://doi.org/10.1103/PhysRev.17.273
+Foundational derivation of capillary penetration and square-root-of-time imbibition in idealized capillaries and porous bodies.
+2. Richards, L. A. (1931). Capillary Conduction of Liquids Through Porous Mediums. Physics, 1, 318-333.
+https://doi.org/10.1063/1.1745010
+Introduces the continuum treatment of unsaturated liquid flow using capillary potential, conductivity, storage, gravity, and pressure-gradient
+ideas.
+3. Carman, P. C. (1937). Fluid Flow Through Granular Beds. Transactions of the Institution of Chemical Engineers, 15, 150-156.
+https://cir.nii.ac.jp/crid/1571698600457019392
+Foundational work connecting flow resistance in granular media to pore structure; useful background for permeability thinking.
+4. van Genuchten, M. Th. (1980). A Closed-form Equation for Predicting the Hydraulic Conductivity of Unsaturated Soils. Soil
+Science Society of America Journal, 44, 892-898.
+https://doi.org/10.2136/sssaj1980.03615995004400050002x
+Classic water-retention and unsaturated-conductivity model used across soil physics and porous-media simulation.
+5. Hall, C. (1980). Water movement in porous building materials-II. Hydraulic suction and sorptivity of brick and other masonry
+materials. Building and Environment, 15, 101-108.
+https://doi.org/10.1016/0360-1323(80)90015-3
+Applies hydraulic suction and sorptivity concepts to brick, stone, mortar, and related building materials.
+6. Hall, C. (1987). Water movement in porous building materials-IX. The water absorption and sorptivity of concretes. Building and
+Environment, 22, 77-82.
+https://doi.org/10.1016/0360-1323(87)90044-8
+Concrete absorption and sorptivity; useful for real construction-material water uptake.
+7. Lukyanov, A. V. et al. (2020). Capillary transport in paper porous materials at low saturation levels: normal, fast or superfast?
+Proceedings of the Royal Society A, 476, 20200488.
+https://doi.org/10.1098/rspa.2020.0488
+Modern treatment of capillary transport in fibrous porous media at low saturation and why real pore networks can depart from simple front
+models.
+8. Thybring, E. E., Fredriksson, M., Zelinka, S. L., & Glass, S. V. (2022). Water in Wood: A Review of Current Understanding and
+Knowledge Gaps. Forests, 13, 2051.
+https://doi.org/10.3390/f13122051
+Broad review of bound water, capillary water, sorption, hysteresis, and liquid/vapor transport in wood.
+9. Review: Microfluidic / porous geomaterial flow overview (2020). Review of Microfluidic Devices and Imaging Techniques for Fluid
+Flow Study in Porous Geomaterials.
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7412536/
+Accessible review connecting Darcy flow, capillary forces, gravity, multiphase displacement, and pore-scale observations.
+10. Hulikal Chakrapani, T., & den Otter, W. K. (2020). Capillary Imbibition of Binary Fluid Mixtures in Nanochannels. Langmuir, 36,
+12712-12722.
+https://doi.org/10.1021/acs.langmuir.0c02361
+Shows how wetting behavior and pore-wall affinity can alter imbibition and fluid segregation in small channels.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model  12
+11. Scanziani, A. et al. (2020). Dynamics of fluid displacement in mixed-wet porous media. Proceedings of the Royal Society A, 476,
+20200040.
+https://doi.org/10.1098/rspa.2020.0040
+Pore-scale dynamics for mixed-wet porous systems; useful when one simple contact angle is not enough.
+12. Nondestructive high-throughput screening of nanopore geometry in porous membranes by imbibition (2019). Applied Physics
+Letters, 115, 113701.
+https://doi.org/10.1063/1.5119338
+Demonstrates how a hydraulic imbibition model can account for pore geometry and compressed-gas back pressure.
+
+Parameter checklist for a real-world model
+
+• Fluid: density rho, viscosity mu, surface tension gamma.
+• Boundary: water pressure or water level, outlet pressure, temperature, exposure duration.
+• Material: porosity n, permeability k or hydraulic conductivity K, effective pore-size scale, tortuosity/connectivity.
+• Wetting: contact angle or a fitted capillary-pressure relation.
+• State: initial saturation / moisture content and whether the material is drying, wetting, or cycling.
+• Defects: cracks, joints, edges, interfaces, holes, fasteners, and preferential pathways.
+
+Bottom line: a material does not have one universal "water pressure". Its response is the result of pressure and gravity
+acting on a pore network whose hydraulic resistance changes with saturation, while capillary forces can actively pull water
+into wetting pores. A good model therefore keeps pressure, geometry, saturation, and wetting as separate variables.
+
+Fluidics, Pressure, and Water Ingress - real-world porous-material model  13
+

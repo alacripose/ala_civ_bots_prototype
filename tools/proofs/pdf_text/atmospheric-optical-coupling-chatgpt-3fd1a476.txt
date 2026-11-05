@@ -1,0 +1,892 @@
+Atmospheric Optical Coupling
+
+Aerosols, Turbidity, Visibility, Clouds, Sky Radiance, and Twilight
+
+A physics-oriented reference for real-time atmospheric appearance models
+
+    Purpose. This document fills the atmospheric-optics gap between an existing cloud/CCN treatment
+    and a renderer that already uses the Preetham daylight model. The central problem is to keep four
+    different things distinct but coupled: aerosol optical depth and spectral slope; local extinction and
+    visibility; cloud liquid water and cloud optical thickness; and the changing radiance/illuminance
+    regime through twilight.
+
+Primary literature used: Preetham, Shirley and Smits (1999); Bodhaine et al. (1999); Kasten and Young (1989);
+Angstrom (1964); Horvath (1971); Brock et al. (2016); Spitschan et al. (2016); and related atmospheric-radiation
+literature cited herein. Prepared October 2026. Equations are written for implementation as well as scientific
+interpretation; approximations are explicitly labeled.
+Atmospheric Optical Coupling                            Research companion
+
+Contents
+
+1 Executive synthesis                                   3
+
+2 Aerosol optical properties                            3
+
+2.1 Extinction, scattering, and absorption . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+
+2.2 Aerosol optical depth . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+
+2.3 The Angstrom exponent . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+
+2.4 Why one AOD value is not enough for appearance . . . . . . . . . . . . . . . . . . . . . . 5
+
+3 Visibility and its relationship to extinction         5
+
+3.1 Koschmieder relation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+
+3.2 AOD-to-visibility requires a vertical profile . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+
+3.3 Molecular extinction must not be silently folded into aerosol AOD . . . . . . . . . . . . . 6
+
+4 From AOD and Angstrom exponent to Preetham turbidity  7
+
+4.1 What Preetham turbidity means . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+
+4.2 A first-order crosswalk . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+
+4.3 Preetham’s original validity domain . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+
+5 Humidity and wet aerosol optics                       8
+
+5.1 Why water changes aerosol extinction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+
+5.2 The renderer-friendly separation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+
+6 Cloud liquid water content and liquid water path      8
+
+6.1 Adiabatic in-cloud liquid water . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+
+6.2 Liquid water path . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+6.3 From LWP to cloud optical thickness . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+
+6.4 Why LWP should not be substituted for aerosol turbidity . . . . . . . . . . . . . . . . . . 10
+
+7 Sky radiance models and their validity domain         10
+
+7.1 What Preetham is good at . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+
+7.2 What it does not solve . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+
+7.3 Hosek-Wilkie as a useful upgrade path . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+
+8 Twilight and the open-horizon ambient step            11
+
+8.1 Twilight definitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+
+8.2 Twilight is not just a dimmed daytime shader . . . . . . . . . . . . . . . . . . . . . . . . . 11
+
+8.3 A simple implementable curve . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+
+                                   1
+Atmospheric Optical Coupling                             Research companion
+
+8.4 Practical renderer behavior . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+
+9 Integrated atmospheric model for a real-time renderer  13
+
+9.1 Aerosol spectral state . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+
+9.2 Preetham crosswalk . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+
+9.3 Wet aerosol coupling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+
+9.4 Cloud state . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+
+9.5 Radiative composition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+
+10 Recommended parameter semantics                       14
+
+11 Failure modes this separation prevents                14
+
+12 Implementation checklist                              15
+
+13 Key equations at a glance                             16
+
+14 Source notes and references                           16
+
+                                           2
+Atmospheric Optical Coupling                                                      Research companion
+
+1 Executive synthesis
+
+The most useful organizing principle is to avoid forcing one scalar to stand for all atmospheric obscuration.
+Aerosols, molecules, clouds, and twilight all affect light, but they do so through different state variables
+and at different spatial scales.
+
+Core state separation
+
+Aerosol loading        Column aerosol optical depth τa(λ); spectral slope α; local extinction
+
+                       profile σext(z, λ).
+
+Hygroscopic response Relative-humidity growth factor f (RH) that modifies hydrated
+
+                       aerosol optical coefficients.
+
+Cloud water            Cloud-base/top, in-cloud LWC(z), liquid water path LWP, droplet
+
+                       size and cloud optical thickness τc.
+
+Sky model              Sun position plus a clear-sky parameter such as Preetham turbidity;
+
+                       use a separate cloud representation for clouds.
+
+Twilight               Solar depression angle, with a dedicated transition in both intensity
+
+                       and spectrum once the Sun approaches and passes the horizon.
+
+A practical renderer can therefore follow the chain
+
+   aerosol mass/size/composition → AOD(λ), α, ω0, g → σext(z, λ) → visibility and aerial perspective,
+while clouds follow
+
+              cloud thermodynamics → LWC(z), LWP, reff → τc → cloud scattering/attenuation.
+
+Preetham turbidity is especially important because it is neither a modern synonym for AOD nor a cloud
+parameter. In the original model it is a heuristic ratio between total and molecular optical thickness,
+evaluated around 550 nm, and the original fitted clear-sky model is intended for a limited turbidity range.
+The paper also explicitly notes that cloudy and partially cloudy density assumptions are outside the
+clear-sky formulation. [1, 2]
+
+2 Aerosol optical properties
+
+2.1 Extinction, scattering, and absorption
+
+The bulk aerosol extinction coefficient is the sum of scattering and absorption:
+
+                                 σext(λ) = σsca(λ) + σabs(λ).
+
+It has units of inverse length. In radiative-transfer work, this is the local quantity that determines how
+
+quickly a beam loses direct intensity through the Beer-Lambert law,
+
+                                                                   s
+
+                                 I(s) = I0 exp − σext(l) dl .
+
+                                                                 0
+
+The single-scattering albedo is
+
+                                 ω0(λ) =    σsca(λ) ,
+                                            σsca(λ) + σabs(λ)
+
+which separates mostly scattering aerosols from strongly absorbing aerosols. The angular distribution
+
+of the scattered light is represented by a phase function; a common low-dimensional summary is the
+
+asymmetry parameter g, the first angular moment of the phase function. NASA and NOAA aerosol
+
+documentation treat AOD, ω0, and phase-function information as the essential pieces of a radiatively
+complete aerosol description. [13, 6, 9]
+
+                                            3
+Atmospheric Optical Coupling                                      Research companion
+
+2.2 Aerosol optical depth
+
+Aerosol optical depth is the vertical integral of aerosol extinction from the surface to the top of atmosphere:
+
+                                        TOA
+
+                              AOD(λ) =         σext, a(z, λ) dz.
+
+                                        z0
+
+AOD is dimensionless because it integrates an inverse-length coefficient over length. It is therefore a
+column property, while visibility is primarily a near-surface/path property.
+
+AOD at 550 nm is a standard reference quantity in atmospheric observation products. NASA’s aerosol
+documentation describes AOD as the vertically integrated aerosol extinction and uses 550 nm as a common
+reference wavelength. [7, 8]
+
+This distinction is fundamental for implementation: an AOD of 0.3 does not uniquely determine a
+ground-level extinction coefficient. One must also know, or assume, the aerosol vertical distribution.
+
+2.3 The Angstrom exponent
+
+The classical Angstrom power law is
+                                                                           λ −α
+
+                                                    τa(λ) = τa(λ0) λ0 ,
+where α is dimensionless and describes the spectral slope of optical depth. Equivalently, for two wavelengths,
+
+                                                     α = − ln[τa(λ1)/τa(λ2)] .
+                                                                  ln(λ1/λ2)
+
+Large positive α generally indicates stronger short-wavelength weighting associated with smaller/finer
+aerosol, while values near zero are associated with optically important coarse particles. NASA’s Dark
+Target documentation gives the same qualitative interpretation and notes that typical operational retrievals
+use visible or near-infrared wavelength pairs. [2, 8]
+
+                                            4
+Atmospheric Optical Coupling                        Research companion
+
+Figure 1: Angstrom spectral scaling normalized to AOD at 550 nm. The slope changes the color weighting
+of aerosol attenuation and scattering without changing the reference AOD itself.
+
+2.4 Why one AOD value is not enough for appearance
+
+Two atmospheres can have the same AOD550 but noticeably different sky colors if their α differs. Two
+atmospheres can also have similar AOD and α but different brightness patterns because their single-
+scattering albedo, phase function, humidity response, or vertical distribution differs. A renderer that only
+stores one scalar “haze amount” is therefore collapsing several physical degrees of freedom.
+For a compact real-time representation, a particularly useful minimum is
+
+                                                  {AOD550, α, ω0, g, Ha, RH},
+
+where Ha is an aerosol scale-height parameter used to distribute column optical depth vertically.
+
+3 Visibility and its relationship to extinction
+
+3.1 Koschmieder relation
+
+For a dark object viewed against a uniform horizon background under the assumptions of classical
+meteorological visibility theory, the visual range is approximately
+
+                              V=  3.912          ,
+
+                                  σext
+
+when σext is expressed in inverse kilometers and V in kilometers. The constant is associated with a 2
+percent contrast threshold, since − ln(0.02) ≈ 3.912. The simple relationship is only valid under restricted
+conditions; Horvath showed how non-uniform illumination, spatially varying extinction, object reflectance,
+and observer threshold alter the result. [10, 11]
+
+                                  5
+Atmospheric Optical Coupling                                                 Research companion
+
+3.2 AOD-to-visibility requires a vertical profile
+
+Suppose the aerosol extinction profile is approximated as exponential:
+
+                              σext, a(z, 550) = σext, a, 0(550) exp(−z/Ha).
+
+Then                          ∞
+so
+      AOD550 = σext, a(z, 550) dz = σext, a, 0(550)Ha,
+
+                            0
+
+                       σext, a, 0(550) ≈ AOD550 .
+                                                Ha
+
+Ignoring molecular and gaseous extinction for the moment,
+
+                                                          V, a ≈ 3.912 Ha .
+                                                                   AOD550
+
+This is not a universal law; it is a transparent illustration of why a column measurement needs a vertical
+scale to become a surface visibility estimate. Satellite AOD products and visibility retrievals make the
+same point: aerosol vertical distribution is a major source of ambiguity when converting column optical
+depth into surface extinction. [12]
+
+Figure 2: First-order 550 nm turbidity/AOD crosswalk with a separate visibility example using a 1.5 km
+aerosol scale height. The right axis is illustrative rather than a universal mapping.
+
+3.3 Molecular extinction must not be silently folded into aerosol AOD
+
+Rayleigh optical depth is a molecular contribution and should be treated separately when a model wants
+a physically interpretable aerosol state. Bodhaine et al. recommend computing Rayleigh optical depth
+from the molecular-scattering physics and updated refractive-index information rather than absorbing
+it into an empirical aerosol fit. At 550 nm, representative sea-level atmospheric Rayleigh optical depth
+values are about 0.097, depending weakly on atmospheric profile and convention. [3, 5]
+
+                                                                    6
+Atmospheric Optical Coupling                                              Research companion
+
+Thus a useful decomposition is
+
+                                τtotal(λ) = τR(λ) + τa(λ) + τg(λ),
+
+where τg covers absorbers such as ozone and other gases when needed.
+
+4 From AOD and Angstrom exponent to Preetham turbidity
+
+4.1 What Preetham turbidity means
+
+Preetham et al. define turbidity as the ratio of the optical thickness of the total haze-plus-molecular
+atmosphere to the optical thickness of the molecular atmosphere. In compact notation,
+
+                                T = τR + τa = 1 + τa ,
+                                   τR  τR
+
+with the original optical application evaluating turbidity at approximately 550 nm. The paper uses
+turbidity as a practical heuristic tied to atmospheric haze and visibility rather than as a complete aerosol
+retrieval. [1]
+
+The original daylight model uses Angstrom’s aerosol transmittance law in its direct-light attenuation
+component and adopts a fixed wavelength exponent α = 1.3 for that part of the model. This is important:
+the original Preetham implementation does not expose modern measurement-grade α as an independent
+control. [1]
+
+4.2 A first-order crosswalk
+If a renderer has measured or modeled AOD550, a physically intelligible first-order mapping is
+
+                                                         T ≈ 1 + AOD550 .
+                                                                      τR,550
+
+Using a representative τR,550 = 0.097, this gives:
+
+Table 1: Approximate Preetham turbidity to AOD crosswalk at 550 nm.
+
+T Approx. AOD550                       Interpretation
+
+2  0.097                           Very clear / low aerosol optical load
+
+3  0.194                           Clear temperate-type loading
+
+4  0.291                        Noticeably hazy but still daylight-model regime
+
+5  0.388                           Strong haze / warm-moist appearance
+
+6  0.485                           Upper end of original fitted range
+
+The values should be read as a crosswalk, not as a claim that all real atmospheres at AOD 0.29 look
+exactly like Preetham T = 4. The mapping inherits the molecular optical-depth reference, the assumed
+aerosol vertical profile, wavelength convention, and Preetham’s simplified aerosol spectral law.
+
+4.3 Preetham’s original validity domain
+
+The original fitted Preetham sky model is commonly used over a turbidity range of about T = 2 to 6.
+Later sky-model literature identifies the Preetham model’s weak points as high-turbidity configurations
+
+                                                                    7
+Atmospheric Optical Coupling                                 Research companion
+
+and sunsets. Hosek and Wilkie developed a successor model specifically to improve those regimes while
+retaining a similar analytic structure and to add ground albedo and independent spectral treatment.
+[1, 23]
+
+    Implementation rule: use Preetham turbidity as the clear-sky aerosol/haze control. Do not
+    increase turbidity until a cloud becomes visually thick. A cloud is a separate volumetric water/ice
+    scattering medium. The same physical scene can have low aerosol turbidity and optically thick
+    cloud.
+
+5 Humidity and wet aerosol optics
+
+5.1 Why water changes aerosol extinction
+
+Hygroscopic aerosol takes up water as relative humidity rises. Particle size and refractive index change,
+which can substantially increase scattering and therefore extinction. A common measurement-side quantity
+is the scattering enhancement factor
+
+                              fsca(RH) = σsca(RH) .
+                                              σsca(RHref )
+
+The literature shows that f (RH) is strongly dependent on aerosol chemistry, size distribution, and the
+reference humidity. In measurements and models, it is often represented by an empirical power law or by
+more physically based hygroscopic-growth formulations. [14, 15, 16, 17]
+
+A simple engineering form is                    1 − RHref γ
+                              fsca(RH) = 1 − RH ,
+
+with RH expressed as a fraction and γ fitted to a specified aerosol type. This should be treated as a
+parameterization, not a universal atmospheric constant. [14]
+
+5.2 The renderer-friendly separation
+
+For a compact model, it is better to write
+
+                                          σext, wet ≈ σabs, dry + fsca(RH) σsca, dry,
+
+than to multiply all cloud or atmospheric optical density by an arbitrary “wetness” factor. This preserves
+the idea that humidity changes aerosol optical behavior, while a cloud water path is a different state
+variable.
+This is the physical interpretation most directly relevant to a parameter such as WET TURBIDITY GAIN:
+that parameter can be understood as an intentionally simplified proxy for f (RH), provided its scope is
+explicitly restricted to aerosol haze rather than cloud water.
+
+6 Cloud liquid water content and liquid water path
+
+6.1 Adiabatic in-cloud liquid water
+For an idealized warm liquid cloud, rising air cools, saturation is maintained, and condensed liquid
+accumulates above cloud base. In this document, LWC denotes liquid-water mass concentration in kg
+
+                                                                    8
+Atmospheric Optical Coupling  Research companion
+
+m−3; meteorological literature also uses qL for a mixing ratio, so the units should be kept explicit. In the
+adiabatic approximation, in-cloud liquid water content is approximately linear with height:
+
+                                        LWC(z) ≈ fad Γad(z − zb), zb ≤ z ≤ zt,
+
+where Γad is the adiabatic condensation gradient and fad is an optional sub-adiabatic factor. Ideal
+adiabatic behavior corresponds to fad = 1; real clouds are often sub-adiabatic because of entrainment,
+mixing, precipitation, and other processes. Observational and model studies routinely use the near-linear
+vertical LWC behavior as an idealized cloud model. [20, 18, 19, 21]
+
+  Figure 3: Idealized linear adiabatic LWC profile. The area under the profile is the liquid water path.
+
+6.2 Liquid water path
+
+Liquid water path is the vertical integral
+
+                                                                                           zt
+
+                                                     LWP = LWC(z) dz.
+
+                                                                                          zb
+
+With the linear idealization above, and cloud depth H = zt − zb,
+                                                       LWP = 1 fad ΓadH2 .
+                                                                  2
+
+The result is especially useful in a renderer because it creates a direct path from cloud thermodynamics
+and geometry to an integrated optical mass without inventing an arbitrary ramp.
+Modern cloud-profile datasets can calculate adiabatic LWC from cloud-base temperature and pressure,
+then scale the profile to observed LWP. This is exactly the kind of structure that can be used to replace a
+declared ramp with a sourced thermodynamic relationship. [22, 21]
+
+                                                                    9
+Atmospheric Optical Coupling                                                     Research companion
+
+6.3 From LWP to cloud optical thickness
+
+For droplets with effective radius reff , a general geometric-optics expression with extinction efficiency near
+2 is zt 3 LWC(z)
+
+                                                    zb τc = 2ρw reff (z) dz.
+
+For a vertically constant LWC and reff , this reduces to
+
+                                     3LWP
+                              τc ≈ 2ρwreff .
+
+The sub-adiabatic cloud treatment of Barlakas et al.  also gives τc =  9 LWP     when its corresponding
+                                                                       5 ρwreff
+vertically integrated effective-radius construction is used. The coefficient is therefore model-dependent
+
+rather than universal. Cloud opacity depends jointly on water mass and droplet size: aerosol can affect
+
+droplet number and effective radius through cloud microphysics, while total cloud water mass is represented
+
+by LWP. [21]
+
+6.4 Why LWP should not be substituted for aerosol turbidity
+
+Although both aerosol water uptake and cloud water affect visible scattering, the scales and physics are
+different. Sub-saturated aerosol water is a change in particle size/refractive index below saturation. A
+cloud contains a concentrated population of liquid or ice hydrometeors in a saturated layer. A single
+scalar water path should therefore not be inserted directly into an aerosol turbidity equation without an
+explicit intermediate model.
+A good implementation keeps
+
+                                      {AOD, α, f (RH)} and {LWC, LWP, reff , τc}
+
+separate, while allowing both to contribute to the final radiative transfer.
+
+7 Sky radiance models and their validity domain
+
+7.1 What Preetham is good at
+
+Preetham, Shirley and Smits provide an inexpensive analytic approximation to daylight sky spectral
+radiance and aerial perspective, parameterized by sun position and atmospheric conditions. Their model
+is a fitted representation of atmospheric-scattering calculations rather than a full on-line radiative-transfer
+solver. [1]
+The model is therefore excellent as a real-time clear-sky baseline, particularly when the renderer needs a
+single fast analytic evaluation instead of a multi-layer radiative-transfer calculation. The same paper also
+discusses the established overcast-sky luminance formulation; that is a distinct sky-state model rather
+than a volumetric cloud solution.
+
+7.2 What it does not solve
+
+The original paper states that its analytic formulas cover clear and overcast skies, while partially cloudy
+skies were not presented as a solved case. The simulated atmosphere uses uniform or exponential-like
+particle-density assumptions, and the authors explicitly note that those assumptions do not hold for
+
+                                         10
+Atmospheric Optical Coupling      Research companion
+
+cloudy or partly cloudy skies. A renderer therefore still needs a separate cloud field and cloud optical
+model for partially cloudy scenes. [1]
+This gives a clean architectural boundary:
+
+                  clear sky model + explicit cloud field + aerosol extinction/aerial perspective.
+
+Do not treat a cloud as merely a very large Preetham turbidity value.
+
+7.3 Hosek-Wilkie as a useful upgrade path
+
+Hosek and Wilkie’s 2012 model preserves the analytic character of Preetham while improving high-turbidity
+and sunset behavior, accounting for ground albedo, and treating spectral components independently. The
+authors describe it as a drop-in replacement in many mathematical contexts. [23]
+This suggests a pragmatic path: keep the physical state model independent of the sky evaluator. The
+renderer can use Preetham now, while later substituting Hosek-Wilkie or a more modern sky-dome model
+without changing how aerosol AOD, humidity, cloud LWP, and twilight are represented.
+
+8 Twilight and the open-horizon ambient step
+
+8.1 Twilight definitions
+
+Civil twilight is conventionally the interval during which the geometric solar center moves from the horizon
+to 6 degrees below it. Nautical twilight continues to 12 degrees, and astronomical twilight to 18 degrees.
+The American Meteorological Society glossary also reports clear-evening horizontal illuminance decreasing
+from roughly 585–410 lux at the beginning of civil twilight to about 3.5–2 lux at its end. [26]
+
+8.2 Twilight is not just a dimmed daytime shader
+
+Measurements show that twilight changes both intensity and spectrum with solar elevation. Spitschan et
+al. measured visible irradiance through the civil, nautical, and astronomical regimes and found systematic
+spectral changes, not merely a scalar decrease in brightness. More detailed radiative-transfer studies model
+twilight as solar illumination scattered from a spherical atmosphere with altitude-dependent molecular
+and aerosol structure. [25, 24]
+
+                              11
+Atmospheric Optical Coupling                                                                Research companion
+
+Figure 4: An engineering civil-twilight curve. The endpoints are the midpoints of the AMS clear-sky
+illuminance ranges; the interior is a log-linear interpolation chosen for renderer stability, not claimed as a
+universal empirical law.
+
+8.3 A simple implementable curve
+
+For a first implementation, let d be solar depression in degrees, with d = 0 at the horizon and d = 6 at
+the end of civil twilight. Solar geometry and optical air mass near the horizon should use a low-elevation
+approximation such as Kasten–Young rather than a simple secant law. [4] Using representative midpoint
+endpoints E0 = 500 lux and E6 = 2.75 lux, an engineering interpolation is
+
+                                               E6 d/6  0 ≤ d ≤ 6.
+                              E(d) = E0 E0 ,
+
+This is intentionally labeled an engineering curve. Actual twilight illuminance depends on aerosol loading,
+altitude, latitude, season, solar azimuth, cloud cover, ground reflectance, and light pollution. The
+measurement literature supports using solar elevation as the principal coordinate but also demonstrates
+substantial environmental variation. [25]
+
+8.4 Practical renderer behavior
+
+A robust open-horizon transition can use:                                     h ≥ 0,
+                                                                             −6◦ < h < 0,
+                                              Eday(h, sky model)            h ≤ −6◦,
+
+                               Eambient = E(−h, twilight state)
+                                                Enight(moon, stars, airglow)
+
+where h is solar elevation. For a visually convincing result, intensity and sky chromaticity should transition
+together. A clear-sky Preetham evaluator can provide the daylight side down to its practical limit, while
+a separate twilight layer takes over as the Sun leaves the direct daylight geometry.
+
+                                  12
+Atmospheric Optical Coupling                                         Research companion
+
+9 Integrated atmospheric model for a real-time renderer
+
+The following decomposition is compact enough for a real-time world model but preserves the main
+physical meanings.
+
+9.1 Aerosol spectral state
+
+Store:
+
+                                   AOD550, α, ω0, g, Ha, RH.
+
+Compute
+
+                                   AODλ = AOD550      λ −α
+                                                                  .
+
+                                                  0.55 µm
+
+Choose a normalized aerosol profile pa(z) with
+
+                                        ∞
+
+                                           pa(z) dz = 1,
+
+                                       0
+
+and then set
+
+                                       σext, a(z, λ) = AODλpa(z).
+
+For a simple exponential profile,
+
+                                       pa(z) = 1 e−z/Ha .
+                                                  Ha
+
+9.2 Preetham crosswalk
+
+For a clear-sky Preetham call, derive
+
+                                       T ≈ 1 + AOD550 ,
+                                                    τR,550
+
+then clamp to the range appropriate to the original fitted model when using the original implementation. If
+a scene requires conditions beyond that range, prefer upgrading the sky evaluator rather than interpreting
+out-of-range turbidity as a new physical regime.
+
+9.3 Wet aerosol coupling
+
+Replace an arbitrary wetness multiplier with a documented growth factor:
+
+                                    σsca, a(z, λ, RH) = fsca(RH, type) σsca, a, dry(z, λ).
+
+A parameter named WET TURBIDITY GAIN can then be treated as the renderer’s calibration of fsca or its
+exponent, rather than as “cloud water.” This preserves the intent of the stylization while giving it a
+physical interpretation.
+
+9.4 Cloud state                    zb, zt, fad, Γad, LWP, reff .
+Store:                                   LWC(z) = fadΓad(z − zb),
+Compute                                                 13
+Atmospheric Optical Coupling                                                          Research companion
+
+                              LWP = 1 fadΓad(zt − zb)2,
+                                         2
+
+and, where appropriate,
+
+                                     3LWP
+                              τc ≈ 2ρwreff .
+
+A parameter named WATER PATH REFERENCE M is therefore naturally interpreted as the geometric/reference
+
+scale used to normalize or shape cloud-water distributions, not as an aerosol optical scale.
+
+9.5 Radiative composition
+
+At a high level, the path from the source to the visible scene can be represented as
+
+τR +τa +τg                    cloud field                       ground + aerial perspective
+sun spectrum −−−−−−→ clear sky radiance −−−−−−→ cloud-filtered radiance −−−−−−−−−−−−−−−−−→ camera radiance.
+
+This is schematic rather than a replacement for a full multiple-scattering solver, but it gives each parameter
+a clear physical home.
+
+10 Recommended parameter semantics
+
+Renderer parameter            Physical analogue                 Recommended interpretation
+AOD 550                       Aerosol optical depth
+ANGSTROM ALPHA                Angstrom exponent                 Column aerosol extinction at the
+WET TURBIDITY GAIN            f (RH) or a fit parameter for it  visible reference wavelength.
+                                                                Wavelength slope of aerosol optical
+AEROSOL SCALE HEIGHT          Ha                                depth.
+                                                                Hydrated-aerosol scattering en-
+PREETHAM TURBIDITY            T                                 hancement; do not use it to rep-
+                                                                resent cloud opacity.
+WATER PATH REFERENCE M        Geometric cloud-water reference   Converts column AOD into an ap-
+                                                                proximate surface extinction pro-
+CLOUD LWP                     Liquid water path                 file.
+CLOUD REFF                    Effective droplet radius          Clear-sky haze/molecular optical-
+TWILIGHT CURVE                Empirical/engineering illumi-     thickness ratio; derived from or cal-
+                              nance curve                       ibrated against AOD when possi-
+                                                                ble.
+                                                                Normalization/transition length for
+                                                                cloud LWC/LWP logic; not an
+                                                                aerosol scale.
+                                                                Integrated cloud liquid water per
+                                                                unit horizontal area.
+                                                                Controls cloud optical thickness for
+                                                                fixed LWP.
+                                                                Ambient intensity transition for so-
+                                                                lar elevation 0 to −6 degrees.
+
+11 Failure modes this separation prevents
+
+Failure 1: “More cloud” is implemented by raising turbidity. This makes the sky white/hazy
+rather than volumetrically clouded and breaks the distinction between horizontal haze and vertically
+
+                                                                   14
+Atmospheric Optical Coupling      Research companion
+
+concentrated cloud water.
+
+Failure 2: AOD is converted directly to visibility with no aerosol profile. The resulting surface
+extinction is implicitly assuming a scale height even if the code does not state one.
+
+Failure 3: Wet aerosol is represented by adding cloud LWP. Sub-saturated aerosol water uptake
+and saturated cloud droplets occupy very different microphysical regimes.
+
+Failure 4: Preetham is extrapolated far past its fit range. The result may look plausible in one
+camera direction while failing near the Sun, horizon, or during strong haze/sunset conditions. Hosek-Wilkie
+is a better upgrade path for those cases. [23]
+
+Failure 5: Twilight is just a smoothstep on daytime RGB. This misses the measured intensity
+and spectral changes across the 0 to -6 degree civil-twilight interval. [25, 24]
+
+12 Implementation checklist
+
+A physically organized implementation can be tested in this order:
+
+ 1. Verify Rayleigh optical depth independently of aerosols.
+ 2. Verify AOD550 and α reproduce the intended aerosol spectral attenuation.
+ 3. Verify the aerosol profile integrates exactly to the requested AOD.
+ 4. Verify the visibility calculation is tied to local extinction, not directly to column AOD.
+ 5. Verify the Preetham turbidity crosswalk uses the same 550 nm and molecular-atmosphere convention
+
+     throughout.
+ 6. Verify humidity changes aerosol scattering through f (RH) while leaving cloud LWP as an independent
+
+     state.
+ 7. Verify adiabatic LWC integrates to the requested LWP and that fad changes water mass rather than
+
+     merely color.
+ 8. Verify cloud optical thickness responds to both LWP and reff .
+ 9. Verify the clear-sky evaluator is not expected to synthesize actual cloud volumes.
+10. Verify the open-horizon ambient step uses a twilight curve as solar elevation crosses 0 to -6 degrees.
+
+                              15
+Atmospheric Optical Coupling                                Research companion
+
+13 Key equations at a glance
+
+                              σext = σsca + σabs,
+                               ω0 = σsca ,
+                                       σext
+
+                              AODλ = σext, a(z, λ) dz,
+
+                                                    λ −α
+                              τa(λ) = τa(λ0) λ0 ,
+
+                              V≈  3.912  ,
+
+                                  σext
+
+                              T ≈ 1 + AOD550 ,
+                                           τR,550
+
+                              fsca(RH) = σsca(RH) ,
+                                              σsca(RHref )
+
+                              LWC(z) ≈ fadΓad(z − zb),
+
+                                  LWP = 1 fadΓadH2,
+                                             2
+                                             3LWP
+
+                                      τc ≈ 2ρwreff ,
+
+                                                   E6 d/6
+                              Ecivil(d) ≈ E0 E0 .
+
+14 Source notes and references
+
+The reference list intentionally favors primary papers, institutional technical documentation, and open
+scientific sources. Where the document gives a renderer-oriented approximation rather than a published
+law, it is labeled as such.
+
+References
+
+ [1] A. J. Preetham, P. Shirley, and B. Smits, “A Practical Analytic Model for Daylight,” SIGGRAPH
+      1999, pp. 91–100. DOI: https://doi.org/10.1145/311535.311545. The paper describes the ana-
+      lytic daylight model, its turbidity concept, atmospheric transmittance terms, and limitations for
+      cloudy/partly cloudy skies.
+
+ [2] A. Angstrom, “The parameters of atmospheric turbidity,” Tellus, 1964. DOI: https://doi.org/10.
+      1111/j.2153-3490.1964.tb00144.x.
+
+ [3] B. A. Bodhaine, N. B. Wood, E. G. Dutton, and J. R. Slusser, “On Rayleigh Optical Depth
+      Calculations,” Journal of Atmospheric and Oceanic Technology 16, 1854–1861 (1999). DOI: https:
+      //doi.org/10.1175/1520-0426(1999)016<1854:ORODC>2.0.CO;2.
+
+ [4] D. Kasten and A. T. Young, “Revised optical air mass tables and approximation formula,” Applied
+      Optics 28, 4735–4738 (1989). DOI: https://doi.org/10.1364/AO.28.004735. Provides a practical
+      optical-air-mass approximation, especially useful near low solar elevations.
+
+                                  16
+Atmospheric Optical Coupling      Research companion
+
+ [5] MODTRAN technical documentation and representative standard-atmosphere optical-depth tables,
+      including τR(550 nm) ≈ 0.097 at sea level. Used here only as a reference scale, not as a substitute for
+      Bodhaine-style first-principles calculation.
+
+ [6] NASA, “Deep Blue: Aerosol Optics and Retrieval Strategy,” Earth Science and Remote Sensing
+      documentation. Describes AOD as vertically integrated aerosol extinction and the role of the Angstrom
+      exponent.
+
+ [7] NASA, “How Aerosols Are Measured: The Science of Deep Blue.” https://earth.gsfc.nasa.gov/
+      climate/data/deep-blue/science.
+
+ [8] NASA Dark Target, “ATBD Aerosol, Optics and Retrieval Strategy.” https://darktarget.gsfc.
+      nasa.gov/atbd-aerosol-optics-and-retrieval-strategy.
+
+ [9] NOAA Global Monitoring Laboratory, aerosol optical-property glossary and network documentation.
+      Defines scattering, absorption, single-scattering albedo, asymmetry parameter, and Angstrom-type
+      exponents.
+
+[10] H. Horvath, “On the applicability of the Koschmieder visibility formula,” Atmospheric Environment
+      5, 177–184 (1971). DOI: https://doi.org/10.1016/0004-6981(71)90081-3.
+
+[11] Z. Li et al., “Changes in surface aerosol extinction trends over China during 1980–2013 inferred from
+      quality-controlled visibility data,” Geophysical Research Letters (2016). The paper summarizes the
+      standard 3.912/V conversion and emphasizes that extinction contains more than aerosol alone unless
+      other terms are controlled.
+
+[12] Q. He, C. Li, F. Geng, G. Zhou, W. Gao, W. Yu, Z. Li, and M. Du, “A parameterization scheme
+      of aerosol vertical distribution for surface-level visibility retrieval from satellite remote sensing,”
+      Remote Sensing of Environment 181, 1–13 (2016). DOI: https://doi.org/10.1016/j.rse.2016.
+      03.016. Shows explicitly why AOD-to-surface-visibility retrieval needs an aerosol vertical-distribution
+      correction.
+
+[13] C. Liu et al., “Synthesis of information on aerosol optical properties,” Journal of Geophysical Research:
+      Atmospheres (2008). DOI: https://doi.org/10.1029/2007JD008735.
+
+[14] C. A. Brock et al., “Aerosol optical properties in the southeastern United States in summer –
+      Part 1: Hygroscopic growth,” Atmospheric Chemistry and Physics 16, 4987–5007 (2016). DOI:
+      https://doi.org/10.5194/acp-16-4987-2016.
+
+[15] X. Liu et al., “Increase of aerosol scattering by hygroscopic growth: Observation, modeling, and impli-
+      cations on visibility,” Atmospheric Research (2013). DOI: https://doi.org/10.1016/j.atmosres.
+      2013.04.007.
+
+[16] G. Titos et al., “Effect of hygroscopic growth on the aerosol light-scattering coefficient: A review of
+      measurements, techniques and error sources,” Atmospheric Environment 141, 494–507 (2016). DOI:
+      https://doi.org/10.1016/j.atmosenv.2016.07.021.
+
+[17] NOAA Global Monitoring Laboratory, “Hygroscopic Growth” documentation for humidified neph-
+      elometer measurements and f (RH).
+
+[18] C. A. Pontikis, “Parameterization of the droplet effective radius of warm layer clouds,” Geophysical
+      Research Letters 23, 2629–2632 (1996). DOI: https://doi.org/10.1029/96GL02452.
+
+                              17
+Atmospheric Optical Coupling      Research companion
+
+[19] A. I. Barrett et al., “Why are mixed-phase altocumulus clouds poorly predicted by large-scale
+      models? Part 2: Vertical resolution sensitivity and parameterization,” Journal of Geophysical
+      Research: Atmospheres (2017). Discusses the approximately linear in-cloud liquid-water profile in
+      well-mixed/adiabatic settings.
+
+[20] J.-L. Brenguier, H. Pawlowska, L. Schu¨ller, R. Preusker, J. Fischer, and Y. Fouquart, “Radiative Prop-
+      erties of Boundary Layer Clouds: Droplet Effective Radius versus Number Concentration,” Journal of
+      the Atmospheric Sciences 57, 803–821 (2000). DOI: https://doi.org/10.1175/1520-0469(2000)
+      057<0803:RPOBLC>2.0.CO;2.
+
+[21] V. Barlakas, H. Deneke, and A. Macke, “The sub-adiabatic model as a concept for evaluating the repre-
+      sentation and radiative effects of low-level clouds in a high-resolution atmospheric model,” Atmospheric
+      Chemistry and Physics 20, 303–322 (2020). DOI: https://doi.org/10.5194/acp-20-303-2020.
+      Gives the linear adiabatic/sub-adiabatic LWC profile, LWP integral, and cloud optical-thickness
+      relations.
+
+[22] Cloudnet / University of Hamburg Integrated Climate Data Center documentation for height-resolved
+      cloud liquid-water products. Profiles use cloud-base/top information and thermodynamic calculations
+      of adiabatic LWC.
+
+[23] L. Hosek and A. Wilkie, “An Analytic Model for Full Spectral Sky-Dome Radiance,” ACM Transac-
+      tions on Graphics 31(4) (2012). DOI: https://doi.org/10.1145/2185520.2185591. The authors
+      specifically address weaknesses of Preetham at sunsets and high turbidity and add ground albedo
+      and independent spectral handling.
+
+[24] Yu. E. Belikov, “Modelling of the twilight sky brightness using a numerical solution of the radiation
+      transfer equation,” Journal of Atmospheric and Terrestrial Physics 58, 1843–1848 (1996). DOI:
+      https://doi.org/10.1016/0021-9169(95)00175-1.
+
+[25] M. Spitschan, G. K. Aguirre, D. H. Brainard, and A. M. Sweeney, “Variation of outdoor illumination
+      as a function of solar elevation and light pollution,” Scientific Reports 6, 26756 (2016). DOI:
+      https://doi.org/10.1038/srep26756.
+
+[26] American Meteorological Society, Glossary of Meteorology, “civil twilight.” The entry defines the 0 to
+      −6 degree civil-twilight range and reports clear-sky horizontal illuminance decreasing from roughly
+      585–410 lux to 3.5–2 lux over that interval.
+
+Bottom line for the renderer
+Use aerosol optical depth and the Angstrom exponent to control wavelength-dependent haze; use a
+vertical aerosol profile to connect column AOD to visibility; use relative humidity to modify aerosol
+scattering through a humidity response such as f (RH); use LWC/LWP and droplet radius for cloud
+opacity; keep Preetham turbidity as a clear-sky parameter; and use a separate twilight transition
+once the solar elevation enters the civil-twilight band.
+
+                              18
+

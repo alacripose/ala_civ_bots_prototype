@@ -1,0 +1,1214 @@
+EARTH BIOMES, SUB-BIOMES
+AND THE TERRAIN THAT SHAPES
+THEM
+
+A high-resolution conceptual atlas of climate, continentalness, relief, hydrology, soils, and
+ecological patterning across Earth.
+
+Central idea: a biome is not painted onto a map by latitude alone. It emerges from long-term energy and water balance,
+modified by distance from the ocean, atmospheric circulation, mountain barriers, landform, substrate, fire, flooding, and
+ecological history.
+
+Latitude +   Ocean distance   Relief +   Water +   Disturbance  Vegetation
+circulation     + currents   elevation  substrate    + history   structure
+
+  Use this guide as a practical, broad approximation of global biome and sub-biome diversity. It is intentionally
+  more detailed than a school-level biome list, but it does not claim every local plant association is a separate
+  global biome.
+
+WHAT THIS ATLAS COVERS
+
+• Climate geography: tropical-to-polar gradients, oceanic versus continental climates, seasonality, monsoons, and
+   moisture balance.
+
+• Terrain: mountain belts, windward and leeward slopes, elevation zones, plateaus, basins, valleys, floodplains, dunes, and
+   coasts.
+
+• Ecological taxonomy: major terrestrial biomes plus a wide catalog of recognizable sub-biomes and special substrate- or
+   water-controlled systems.
+
+• Modeling logic: a repeatable way to connect climate, elevation, slope, drainage, geology, and disturbance when
+   classifying real landscapes or building a terrain system.
+
+Classification note: there is no single universally adopted global hierarchy of “biome -> sub-biome”. Different scientific products classify climate,
+potential vegetation, ecoregions, land cover, or ecological land units for different purposes. This document treats the hierarchy as a useful synthesis
+and flags where categories overlap. See references [1]-[5].
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                                           FIELD REFERENCE / 2026
+
+How to use the atlas
+
+Start with the physical controls, then use the biome catalog. The same visible vegetation can arise from different histories,
+and similar climates can support different vegetation where fire, soils, grazing, flooding, or geological history differ. A map
+label is therefore a summary of a coupled system, not a complete explanation.
+
+Contents
+
+PART                                                                              PART
+
+1 Climate engine and moisture budget                                              2 Continentalness: ocean influence to continental interior
+
+3 Mountains: uplift, rain shadows, and elevation gradients                        4 Terrain, soils, hydrology, and local ecological mosaics
+
+5 Global biome overview and what each classification captures                     6 Tropical and subtropical forest systems
+
+7 Drylands: deserts, semi-deserts, and xeric shrublands                           8 Temperate forests, rainforests, and Mediterranean systems
+
+9 Grasslands, savannas, shrublands, and open woodlands                            10 Boreal forest, tundra, polar desert, and cold steppes
+
+11 Mountain biome belts and high-elevation specializations                        12 Azonal, wetland, riparian, coastal, and edaphic systems
+
+13 Continental transects: North America and Eurasia                               14 Continental transects: Africa, South America, and Australia
+
+15 Practical sub-biome catalog and terrain signatures                             16 A practical ruleset for assigning biomes to terrain
+
+17 Ecotones, disturbance, change, and uncertainty                                 18 Glossary and scientific references
+
+  Scale matters. A “biome” is a broad system; an “ecoregion” is a geographically distinct ecological unit; a “plant
+  association” is much more local; a “landform” is physical shape; and “land cover” is what occupies the surface
+  right now. They are related but not interchangeable.
+
+Suggested reading path for terrain generation: Sections 1-4 explain drivers; Sections 6-12 supply categories; Sections 13-16 convert the concepts into
+geographical and classification rules.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                        2
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                            FIELD REFERENCE / 2026
+
+1. The climate engine: heat, water, and seasonality
+
+The first-order pattern of terrestrial vegetation is strongly constrained by energy and water. Solar input varies with latitude
+and season; atmospheric circulation redistributes heat and moisture; oceans store heat and supply vapor; and terrain
+modifies airflow and runoff. Plants respond to growing-season temperature, frost frequency, drought intensity, atmospheric
+demand, and the duration of water availability - not only annual averages. [2, 6]
+
+The primary climate dimensions
+
+CONTROL               WHAT TO TRACK                                                   ECOLOGICAL CONSEQUENCE
+
+Energy / temperature  Mean temperature; coldest-month minimum; heat                   Tropical forest vs boreal forest; treeline position; frost-limited woody
+                      accumulation; frost-free season; freeze-thaw frequency.         vegetation.
+
+Moisture supply       Annual precipitation, rain/snow fraction, seasonality, storm    Rainforest vs seasonal forest; snowbed; fog oasis; monsoon forest.
+                      type, fog/dew inputs.
+
+Atmospheric demand    Potential evapotranspiration (PET), solar radiation, wind,      A warm place with moderate rain can still be water-limited if
+                      vapor-pressure deficit.                                         demand is high.
+
+Seasonality           Wet/dry season timing, winter versus summer rain, length of     Savanna vs evergreen forest; Mediterranean shrubland vs humid
+                      drought, snowpack persistence.                                  temperate forest.
+
+Extremes and          Fire-return interval, flood magnitude, wind exposure, tropical  Fire-maintained grassland; floodplain forest; wind-pruned
+disturbance           cyclones, frost events.                                         krummholz.
+
+A useful moisture balance is P - ET, where P is precipitation and ET is actual evapotranspiration. For vegetation potential,
+PET is also important because it estimates the atmosphere’s capacity to remove water. Two sites with equal annual rainfall
+can differ sharply if one has cool summers and low evaporative demand while the other has intense heat, wind, and a long
+rainless season. Soil storage and groundwater can further buffer drought.
+
+Why annual averages are insufficient
+
+• Minimum winter temperature can determine whether broadleaf evergreen species survive, even if annual mean
+   temperature is mild.
+
+• Rainfall seasonality can separate evergreen forest, seasonal forest, savanna, and thorn scrub at similar annual totals.
+
+• Snowfall stored through winter may support spring growth; rain of the same amount at a different time has a different
+   ecological effect.
+
+• Fire, grazing, and flood regimes can maintain a grassland or open woodland where climate alone might also allow more
+   trees.
+
+  For a defensible biome assignment, use at least: temperature seasonality, precipitation amount and
+  seasonality, evaporative demand, elevation, and one measure of terrain-controlled moisture. Add soils and
+  disturbance when the goal is finer than a broad climate-biome map.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                     3
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                                     FIELD REFERENCE / 2026
+
+2. Continentalness: from maritime margins to inland climates
+
+Continentalness describes the strength of land-interior influence relative to the thermal and moisture buffering of nearby
+oceans. Water has high heat capacity and mixes vertically; land surfaces generally heat and cool more rapidly. As a result,
+maritime climates often have smaller annual temperature ranges and milder winters, while continental interiors tend to have
+larger seasonal extremes. Continentalness is not a simple distance-to-coast rule: prevailing winds, ocean currents,
+mountain barriers, latitude, sea ice, and regional circulation can strengthen or weaken the pattern.
+
+     OCEAN                                      CONTINENTAL INTERIOR                                                   OCEAN
+Continental: larger seasonal temperature range
+Maritime: smaller seasonal temperature range
+
+                                                Conceptual pattern only; real climates also depend on latitude, circulation, currents and terrain.
+
+Typical tendencies (not universal laws)
+
+SETTING                      COMMON PHYSICAL SIGNATURE                                        POSSIBLE BIOME RESPONSE
+
+Near ocean / maritime        Smaller annual temperature range; humid air more frequently      Temperate rain forest, oceanic broadleaf forest, maritime heath,
+                             available; fog and cloud can be important; precipitation may be  coastal shrubland, cloud forest on suitable slopes.
+                             frequent but not necessarily heavy.
+
+Coastal dry-summer           Ocean nearby but seasonal circulation suppresses summer          Mediterranean shrubland, coastal desert, fog desert, succulent
+margins                      rain; cold currents and upwelling can stabilize air and create   shrubland.
+                             fog.
+
+Mid-continent                Greater seasonal temperature range; moisture can decline         Temperate grassland, steppe, mixed forest, continental taiga,
+                             downwind of oceans and after mountain barriers; winter cold      semi-arid shrub steppe.
+                             and summer heat become more pronounced.
+
+Deep interior / rain-shadow  Low precipitation can combine with high evaporative demand,      Cold desert, salt basin, dry steppe, sagebrush-like shrubland,
+basin                        strong temperature extremes, and limited surface water.          semi-desert.
+
+Mechanisms that matter
+
+• Seasonal thermal range: inland surfaces commonly experience hotter summers and colder winters than nearby maritime
+   settings at comparable latitude and elevation.
+
+• Moisture trajectory: air masses may lose moisture as they travel over land, especially when uplift and precipitation occur
+   along intervening ranges. But storm tracks and monsoons can bring moisture far inland.
+
+• Coastal currents: cool eastern-boundary currents often favor stable marine layers and fog along west coasts in
+   subtropical dry belts; warm currents can add moisture and alter storm intensity.
+
+• Snow and frozen ground: continental interiors can have long snow seasons or strong seasonal frost, changing growing
+   seasons, soil drainage, and spring runoff.
+
+Do not infer biome from continentalness alone. A humid continental forest, a prairie, and a cold desert can all
+occur far from oceans because temperature, rainfall, soil storage, fire, and topography interact.
+
+Useful quantitative approach: calculate a continentality index from annual temperature range and latitude only if you need a comparative metric; for
+ecological mapping, direct climatologies (monthly temperatures, precipitation, PET, frost days, snow cover) usually preserve more interpretable
+information.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                              4
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                 FIELD REFERENCE / 2026
+
+3. Mountains: uplift, rain shadows, and ecological
+compression
+
+Mountains reorganize climate over short horizontal distances. When moist air is forced upward, it expands and cools;
+condensation and precipitation often increase on windward slopes. Air descending on the lee side compresses and warms,
+often lowering relative humidity. The strength and location of this contrast depends on wind direction, stability, moisture
+content, storm structure, and the range’s orientation and height. Orographic precipitation is complex, so not every mountain
+has a neat wet side and dry side. [7, 8]
+
+WINDWARD / MOIST                                                                  LEEWARD / DRIER
+
+Air rises, expands and cools; cloud and precipitation often increase.             Descending air warms; relative humidity often falls.
+
+Why relief changes biome boundaries
+
+• Elevation lowers temperature: temperature commonly decreases with altitude, but the local lapse rate varies with
+   humidity, season, inversions, and time of day. Cold-air pooling can make valley floors colder than slopes at night.
+
+• Cloud belts move upslope: windward slopes may intercept cloud water and fog; cloud forests can occur where frequent
+   cloud immersion supplements rainfall.
+
+• Snowpack redistributes water: snow accumulates in shaded hollows and high basins, then melts later than lowland
+   rain. Snowbeds and meltwater corridors can support plants unlike the surrounding slopes.
+
+• Aspect changes radiation: equator-facing slopes tend to receive more solar energy than pole-facing slopes in
+   mid-latitudes. They are often warmer and drier; the direction is reversed between hemispheres.
+
+• Terrain redistributes soil and water: ridges shed water and often have thin, exposed soils; concave hollows collect
+   colluvium and moisture; floodplains receive sediment and groundwater.
+
+Mountain effect is more than altitude
+
+The same elevation may hold closed forest on a humid windward slope, open woodland on a sunny aspect, alpine meadow
+on a windy ridge, peatland in a poorly drained basin, and bare scree on a steep unstable face. Bedrock affects soil depth
+and chemistry; glacial history affects landforms and lakes; avalanche tracks and recurring snow slides create disturbance
+corridors. [4, 5, 9]
+
+  A mountain should usually be classified as a stack of ecological zones and terrain facets, not as one “mountain
+  biome”. The FAO’s broad mountain-system classes are useful at global scale, but each range contains several
+  climates and vegetation types.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                        5
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                        FIELD REFERENCE / 2026
+
+4. Landform, soil, drainage, and local mosaics
+
+Climate sets the broad envelope; terrain and substrate decide where water and nutrients are stored, concentrated, or lost. A
+regional climate zone can therefore contain unexpectedly wet valley forests, dry rocky ridges, salt flats, bogs, and
+grasslands on shallow soils. USGS Global Ecological Land Units explicitly combines bioclimate, landform, lithology, and
+land cover; it produced 3,923 mapped ecological land units from 250 m base-resolution inputs, illustrating how much
+variation is hidden within broad biome labels. [3]
+
+LANDSCAPE POSITION / PHYSICAL FILTER                                                      COMMON ECOLOGICAL RESPONSE
+SUBSTRATE
+                                                                                          Dwarf scrub, fellfield, grassland, open woodland, alpine plants.
+Ridge / summit            Wind, radiation, shallow soils, rapid runoff, frost exposure.   Dry scrub on hot slopes; forest on sheltered moist slopes; talus
+                                                                                          vegetation.
+Steep slope               High drainage and erosion; soil depth depends on rock,          Mesic forest, fern-rich understory, snowbed, seep or small
+                          stability, and colluvium.                                       wetland.
+                                                                                          Woodland, grassland, desert scrub, riparian bands along
+Concave hollow            Convergent runoff, deeper colluvium, sometimes cold-air         channels.
+                          pooling.                                                        Riparian forest, wet meadow, oxbow wetland, seasonally flooded
+                                                                                          grassland.
+Footslope / alluvial fan  Deposited sediment; infiltration changes with grain size;       Salt flats, saline meadows, alkali shrubland, playa wetlands.
+                          episodic debris flows.
+                                                                                          Calcicolous grassland, dry woodland, cave-associated habitats,
+Floodplain / terrace      Flood frequency, groundwater access, sediment renewal.          spring-fed wetlands.
+                                                                                          Distinct edaphic shrubland/grassland with specialist plants.
+Closed basin              Poor drainage, evaporation concentration, groundwater
+Karst / limestone         discharge.                                                      Lava-field pioneer communities, ash-soil forest, geothermal or
+Ultramafic / serpentine                                                                   volcanic wetland patches.
+Volcanic substrate        Rapid infiltration into fractures; alkaline substrate and thin
+                          soils in places.
+
+                          Often low calcium-to-magnesium ratio and elevated metals;
+                          unusual nutrient balance.
+
+                          Rugged lava, porous ash, nutrient release as substrate
+                          weathers; uneven soil age.
+
+Soils are not merely a passive layer
+
+Soil texture controls infiltration and water-holding capacity; depth determines rooting volume; organic matter changes
+aggregation and storage; salinity imposes osmotic stress; pH and mineralogy affect nutrient availability. Soil age, parent
+material, climate, vegetation, and topography interact through time. [10, 11] Two nearby sites can therefore support different
+communities despite sharing weather.
+
+Landscape water paths
+
+• Runoff-dominated: steep slopes, crusted surfaces, shallow soils, or intense storms can route water quickly into gullies and
+   channels.
+
+• Infiltration-dominated: permeable soils or fractured bedrock can move water downward, sometimes sustaining springs
+   and groundwater-dependent vegetation.
+
+• Storage-dominated: deep soils, peat, snowpacks, and alluvial aquifers can buffer dry periods.
+
+• Evapoconcentration: closed basins in arid climates accumulate salts where evaporation exceeds flushing and
+   groundwater discharges near the surface.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                6
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                FIELD REFERENCE / 2026
+
+5. Global biome overview: useful levels of classification
+
+Global biome maps differ because their aims differ. WWF terrestrial ecoregions emphasize distinctive assemblages of
+species and communities; Köppen-Geiger maps classify climate; FAO ecological zones summarize broad
+climate-vegetation domains; USGS ecological land units combine bioclimate, landform, lithology, and land cover. A reliable
+system should retain its scale and purpose rather than blend all labels into one supposedly universal list. [1-5, 12]
+
+BROAD SYSTEM               CLIMATE / CONTROL                                      EXAMPLES OF SUB-BIOMES
+Tropical moist forest
+                           Warm all year; very high moisture; weak thermal        Lowland rain forest, cloud forest, swamp forest, peat-swamp forest, flooded
+Tropical seasonal forest   seasonality.                                           forest.
+
+Savanna / open woodland    Warm; dry season or monsoon seasonality.               Semi-evergreen forest, moist deciduous forest, dry deciduous forest, monsoon
+                                                                                  forest.
+Desert / xeric shrubland   Warm; seasonal moisture and disturbance often limit
+                           tree cover.                                            Wet/dry savanna, thorn savanna, wooded grassland, gallery-forest mosaic.
+Mediterranean shrubland /
+woodland                   Chronic water deficit; either hot or cold.             Hyper-arid desert, coastal fog desert, gravel desert, dune desert, cold desert,
+Temperate forest                                                                  salt basin.
+                           Mild wet season and hot dry season; fire often
+Temperate grassland /      important.                                             Chaparral, maquis, garrigue, matorral, fynbos, kwongan, open sclerophyll
+steppe                                                                            woodland.
+Boreal forest              Seasonal temperatures; moisture supports tree
+                           canopy.                                                Deciduous broadleaf, mixed forest, evergreen conifer, temperate rain forest,
+Tundra / polar desert                                                             coastal forest.
+                           Semi-arid to subhumid; grasses dominate; fire and
+Mountain systems           herbivory matter.                                      Tallgrass, mixed-grass, shortgrass prairie, Eurasian steppe, pampas, veld, cold
+                                                                                  steppe.
+Azonal / special systems   Long cold winters; short growing season; conifers
+                           often dominant.                                        Closed taiga, open lichen woodland, peatland-forest mosaic, continental larch
+                                                                                  forest.
+                           Low heat availability and short growing season;
+                           permafrost common in many settings.                    Arctic tundra, alpine tundra, wet sedge tundra, dry heath tundra, polar desert.
+
+                           Elevation, exposure, and relief compress climate       Montane forest, subalpine woodland, alpine meadow/fellfield, nival rock and ice.
+                           zones.
+                                                                                  Bogs, fens, marshes, mangroves, salt marshes, riparian corridors, dunes,
+                           Local hydrology, salinity, substrate, or disturbance   serpentine barrens.
+                           overrides zonal climate.
+
+“Sub-biome” is used here for a recognizable subdivision based on moisture seasonality, vegetation structure,
+substrate, hydrology, or elevation. In formal research, the same unit might be called an ecoregion, formation,
+ecosystem type, vegetation zone, or ecological land unit.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                            7
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                                 FIELD REFERENCE / 2026
+
+6. Tropical and subtropical forest systems
+
+Tropical systems are not all rainforest. The length and reliability of the dry season, flooding regime, elevation, and substrate
+produce strong structural differences. Warm temperatures allow year-round growth where water and nutrients permit, but
+seasonal drought can favor deciduousness, deep roots, fire-resistant traits, and open canopies.
+
+SUB-BIOME                        SIGNATURE                                                          TYPICAL LANDSCAPE / REGIONS
+Lowland tropical rain forest
+                                 No long severe dry season; high moisture; multi-layer evergreen Amazon, Congo Basin, Borneo, New Guinea, Central American
+Tropical montane / cloud forest
+                                 canopy, lianas and epiphytes.                                      wet lowlands.
+Tropical swamp / peat forest
+                                 Cooler with elevation; frequent cloud immersion; steep, wet        Andes, Central American ranges, East African mountains, New
+Seasonally flooded / whitewater  slopes.                                                            Guinea highlands.
+forest
+Tropical moist deciduous forest  Waterlogged soils; flood or groundwater control; organic matter    Amazonian flooded forest, Congo swamps, Southeast Asian peat
+                                 can accumulate.                                                    swamp.
+Monsoon forest
+                                 Annual flood pulse; sediment and nutrient inputs differ by river   Amazon várzea and igapó types; riverine forests in tropical
+Tropical dry forest              water source.                                                      basins.
+
+Thorn forest / tropical scrub    Pronounced dry season; many trees shed leaves seasonally.          South and Southeast Asia, parts of tropical Africa and the
+                                                                                                    Americas.
+Savanna-forest transition
+                                 Strong wet summer and dry winter, often associated with            South Asia, mainland Southeast Asia, northern Australia pockets.
+Subtropical humid forest         monsoon circulation.
+
+Subtropical evergreen broadleaf  Long dry season; open to closed canopy, drought-deciduous          Seasonally dry Central America, Caribbean, dry tropical South
+forest                           trees, thorny understory.                                          America, India, Madagascar.
+
+                                 More severe aridity; spinescence, small leaves, succulents and     Caatinga, parts of the Deccan, African drylands, dry Caribbean
+                                 open woody cover.                                                  islands.
+
+                                 Tree cover varies with rainfall, fire, soils and herbivory; grass  Cerrado-forest edges, African miombo/savanna mosaics,
+                                 fuels can maintain openness.                                       northern Australian savannas.
+
+                                 Hot summers, mild winters, abundant rainfall; evergreen and        Southeastern China, southeastern United States, southern
+                                 deciduous species mix.                                             Japan, parts of eastern South America.
+
+                                 Mild humid climate; evergreen broadleaf canopy, often with         East Asia and other humid subtropical settings.
+                                 evergreen oak/laurel-type species.
+
+Terrain modifiers in the tropics
+
+• Windward slopes can carry cloud forest above lowland rainforest, while adjacent rain shadows support montane dry forest
+   or scrub.
+
+• Flood basins create swamp and seasonally flooded forest inside otherwise terra-firme rainforest regions.
+
+• Nutrient-poor ancient soils can support distinctive heath forest or white-sand vegetation, while young alluvium can support
+   more productive forest.
+
+• In savanna mosaics, shallow soils, rock pavements, fire frequency, grazing and waterlogging can keep tree cover low
+   despite rainfall that could support forest.
+
+Tropical mountain systems deserve their own elevation and exposure layers; they are not simply a cooler copy of lowland tropical forest. [4, 5]
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                                    8
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                                      FIELD REFERENCE / 2026
+
+7. Drylands: deserts, semi-deserts, and xeric shrublands
+
+Drylands occupy climates where precipitation is low or unreliable relative to evaporative demand. Their appearance
+depends heavily on substrate and water-routing: sandy dune fields, rocky pavements, salt basins, ephemeral washes, and
+mountain-front fans are very different habitats within the same arid region. In arid terrain, the soil-geomorphic template can
+strongly predict vegetation patterns. [13]
+
+SUB-BIOME                       PHYSICAL SIGNATURE                                                 TERRAIN EXPRESSIONS
+Hyper-arid desert
+Hot subtropical desert          Extremely low and unreliable rain; sparse annuals and drought      Rock desert, sand sea, gravel plain, salt pan, dry mountain
+Cold desert                     specialists.                                                       desert.
+Coastal fog desert
+Semi-desert / desert steppe     Subtropical subsidence, clear skies, high evaporative demand.      Sahara, Arabian deserts, Sonoran-like hot desert sectors,
+Dune and sand-sheet systems                                                                        Australian deserts.
+Gravel / stony desert pavement
+Badlands / clay-rich drylands   Low precipitation plus cold winters, frost, and sometimes snow.    Great Basin, Gobi, Patagonian steppe/desert transitions, Central
+Salt desert / playa                                                                                Asian basins.
+Xeric shrubland
+Succulent / spiny desert scrub  Very low rain but regular marine fog/dew in some coastal           Atacama margins, Namib coastal belt.
+Desert oasis / springline       settings.
+
+                                More continuous grass and shrub cover than true desert but         Desert grassland, semi-desert scrub, cold steppe margins.
+                                water still limits production.
+
+                                Mobile or semi-stable sand; burial and abrasion select for         Barchan dunes, longitudinal dunes, nebkhas, interdune flats.
+                                specialist plants.
+
+                                Surface armor reduces erosion and infiltration; shallow soils;     Reg, stony plains, desert pavement, rocky plateau.
+                                runoff may be concentrated.
+
+                                Fine substrate, high runoff and erosion, low infiltration in some  Gullied marl, shale badlands, mudstone hills.
+                                crusted surfaces.
+
+                                Closed basin evaporation concentrates salts; seasonal standing Salt pan, alkali flat, saline mudflat, ephemeral lake margin.
+                                water possible.
+
+                                Woody shrubs dominate; drought, fire, soils or grazing maintain    Sagebrush steppe, Mediterranean-type dry scrub, thorn scrub.
+                                structure.
+
+                                Succulents or spinescent plants exploit episodic water and         Nama-Karoo-like scrub, succulent Karoo, cactus scrub, arid
+                                reduce water loss.                                                 thornbush.
+
+                                Groundwater or spring supply locally overrides regional aridity.   Riparian oasis, spring marsh, palm oasis,
+                                                                                                   groundwater-dependent woodland.
+
+A good dryland map should separate at least three dimensions: (1) water deficit, (2) substrate/landform, and (3) plant
+growth form. For example, a sandy arid basin and a rocky semiarid mountain front may receive similar rainfall but have
+different infiltration, runoff, rooting depth, and plant composition. [13, 14]
+
+  Map drylands by routing water as well as by assigning rainfall classes. Ephemeral channels, alluvial fans,
+  groundwater discharge, and shaded north-facing slopes can form narrow green corridors through an otherwise
+  dry matrix.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                                 9
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                   FIELD REFERENCE / 2026
+
+8. Temperate forests, rainforests, and Mediterranean systems
+
+Temperate biomes occupy many combinations of winter cold, summer heat, precipitation, and seasonality. Distance from
+the ocean often separates mild oceanic forest from strongly seasonal continental forest. Mediterranean climates are
+unusual because summers are dry while winters are the wetter season; their shrublands and woodlands frequently have
+long histories of nutrient limitation and fire. [15]
+
+SUB-BIOME                             SIGNATURE                                                      TERRAIN / REGION EXAMPLES
+Temperate oceanic broadleaf forest                                                                   Western Europe, southern Chile margins, parts of New Zealand
+Temperate seasonal deciduous          Mild winters; cool-to-warm summers; rainfall relatively even.  and Tasmania.
+forest                                                                                               Eastern North America, Europe, East Asia.
+Temperate mixed forest                Warm growing season and cold winter; leaf fall avoids winter
+Temperate conifer forest              stress.                                                        Northeastern North America, East Asia, central European
+Temperate rain forest                                                                                transitions.
+Cloud forest (subtropical/temperate)  Broadleaf deciduous species mixed with conifers; transitional  Interior ranges, sandy soils, fire-adapted pine systems, some
+Mediterranean chaparral               climate or soil conditions.                                    continental margins.
+Maquis / garrigue                                                                                    Pacific Northwest, coastal British Columbia/Alaska, southern
+Matorral                              Conifer dominance under cool, dry, nutrient-poor or            Chile, Tasmania, New Zealand.
+Fynbos                                disturbance regimes.                                           Mountain island slopes, subtropical uplands, selected coastal
+Kwongan                                                                                              ranges.
+Mediterranean open woodland /         Very high rainfall, often maritime; large trees, mosses,       California and Baja California.
+savanna                               epiphytes and nurse logs.
+                                                                                                     Mediterranean Basin.
+                                      Persistent or frequent cloud immersion at elevation, often on
+                                      windward slope.                                                Central Chile.
+
+                                      Hard-leaved shrubland; hot dry summer; fire adaptations vary   Cape Floristic Region, South Africa.
+                                      by species.
+                                                                                                     Southwestern Australia.
+                                      Mediterranean evergreen shrubland; garrigue often lower and
+                                      more open on calcareous or degraded sites.                     Dehesa/montado-like systems and other regional open
+                                                                                                     woodlands.
+                                      Sclerophyll shrubland and woodland; fire and drought effects
+                                      vary regionally.
+
+                                      Species-rich, often nutrient-poor shrubland with proteoid,
+                                      ericoid and restioid components; fire-sensitive timing.
+
+                                      Species-rich southwestern Australian shrubland/heath on
+                                      nutrient-poor soils.
+
+                                      Oak, pine or other woodland structure combined with
+                                      grass/shrub layers and recurrent fire/grazing.
+
+Why the Mediterranean family is not just “dry forest”
+
+Its defining climatic pattern is usually wet winter and dry summer, unlike summer-rainfall savanna or many continental
+steppe systems. Plants must cope with summer water deficit while often exploiting winter moisture. Fire regimes,
+nutrient-poor soils, and regional evolutionary histories produce similar-looking but compositionally distinct shrublands:
+chaparral, maquis, matorral, fynbos, and kwongan are analogues, not exact ecological equivalents. [15]
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                           10
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                                                     FIELD REFERENCE / 2026
+
+9. Grasslands, savannas, shrublands, and open woodlands
+
+These are not merely failed forests. Open biomes can be maintained by climate, seasonal drought, fire, herbivory, shallow
+or nutrient-poor soils, waterlogging, cold, or interactions among these factors. In many regions, removing fire or large
+herbivores changes woody cover; elsewhere rainfall and soil constraints keep forests from closing even without frequent
+fire.
+
+SUB-BIOME                      SIGNATURE                                                            EXAMPLES / TERRAIN
+Tropical savanna
+Tropical wooded grassland      Warm all year; wet/dry season; grasses and scattered trees; fire Wet savanna, dry savanna, thorn savanna, wooded savanna,
+Montane grassland / shrubland
+Temperate tallgrass prairie    often important.                                                     palm savanna.
+Mixed-grass prairie
+Shortgrass steppe              A more tree-rich grassland mosaic; canopy varies with fire and       Miombo woodland, mopane woodland, cerrado
+Eurasian steppe                soil moisture.                                                       woodland/savanna mosaics.
+Pampas / temperate grassland
+Veld / Highveld grassland      Cooler elevation; frost, wind, fire, and shallow soils limit closed  Puna, páramo, tropical montane grassland, afromontane
+Patagonian steppe              forest.                                                              grassland.
+Heathland
+Open pine / oak woodland       Subhumid; relatively productive tall grasses and deep-rooted         North American tallgrass prairie; mesic prairie remnants.
+Boreal parkland transition     herbaceous cover.
+
+                               Intermediate moisture; mixture of taller and shorter grasses,        Central Great Plains transitions.
+                               often with shrubs.
+
+                               Semi-arid; short drought-adapted grasses and low shrubs.             Western Great Plains, dry continental basins.
+
+                               Strong continentality; cold winters, warm/hot summers; little tree Pontic-Caspian, Kazakh, Mongolian and Central Asian steppe
+
+                               cover over large areas.                                              types.
+
+                               Humid to subhumid temperate grassland on plains and                  Pampas of Argentina and Uruguay.
+                               loess/alluvial soils.
+
+                               Seasonal rainfall, frost at elevation in some sectors, fire and      Southern African grasslands.
+                               grazing.
+
+                               Cool, windy and dry; often leeward of the Andes.                     Shrub steppe, bunchgrass steppe, rocky plateau.
+
+                               Low evergreen shrubs on acidic, often nutrient-poor soils; fire      Atlantic heath, moorland, dry heath, wet heath.
+                               and grazing often influential.
+
+                               Tree cover open due to moisture, soils, fire regime or historical    Pine barrens, oak savanna, ponderosa-like open forest,
+                               grazing.                                                             parkland.
+
+                               Sparse trees and shrublands at dry or cold forest margins.           Forest-steppe, larch woodland-steppe, northern parkland.
+
+Terrain expression matters
+
+• Plains tend to allow continuous grassland; dissected uplands create a mosaic of grass slopes, woody ravines, rocky
+   outcrops, and riparian corridors.
+
+• Fine-textured or shallow soils can restrict tree roots; deep loess and alluvium may support productive grasslands where
+   climate is not quite wet enough for closed forest.
+
+• Fire can spread most readily where seasonal dry biomass connects across the landscape; wet breaks, rocky ridges, and
+   riparian strips can interrupt it.
+
+• In mountain grasslands, frost, wind, snow redistribution and grazing can be as important as annual precipitation.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                               11
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                                        FIELD REFERENCE / 2026
+
+10. Boreal forest, tundra, polar desert, and cold steppe
+
+Cold-region ecosystems are shaped by the short growing season, winter temperature, snow distribution, permafrost or
+seasonal frost, and the balance between drainage and water storage. A cold climate does not necessarily mean a dry
+surface: permafrost or frozen subsoil can inhibit drainage and create wet tundra or peatland. Conversely, windy ridges can
+be dry and exposed even in a wet region.
+
+SUB-BIOME                     SIGNATURE                                                          LANDSCAPE EXAMPLES
+Closed boreal forest / taiga
+Maritime boreal forest        Long cold winter; short summer; evergreen conifers or deciduous    Interior Canada/Alaska, Scandinavia, Siberia.
+Open lichen woodland          larch dominate depending on continentality and region.
+Boreal peatland mosaic
+Arctic shrub tundra           Cold but with stronger ocean buffering and, in places, heavy snow  Coastal boreal margins and maritime subarctic forests.
+Wet sedge / polygon tundra    or rain.
+Dry heath / upland tundra
+Alpine tundra                 Sparse trees; lichens, mosses and low shrubs; often cold, dry,     Northern continental taiga margins, shield landscapes.
+Polar desert                  fire-affected or nutrient-limited.
+Cold semi-desert / steppe
+Nival / ice and rock          Poor drainage and cool conditions slow decomposition; bogs and     Boreal lowlands, glacial depressions, kettle basins.
+                              fens intermix with forest.
+
+                              Low shrubs, sedges, mosses and lichens; snowbeds and               Circumpolar low Arctic.
+                              permafrost influence pattern.
+
+                              Saturated soils, shallow active layer, patterned ground, low       Arctic coastal plains and permafrost lowlands.
+                              shrubs.
+
+                              Wind-exposed, well-drained, shallow soils; dwarf shrubs and        Arctic uplands and exposed mountain plateaus.
+                              lichens.
+
+                              Above regional treeline; cold, wind, frost heave and snow          High mountains on all continents except where absent by
+                              redistribution.                                                    geography.
+
+                              Very low liquid-water availability plus low temperatures; sparse   High Arctic islands, Antarctica ice-free areas.
+                              plants, extensive bare ground.
+
+                              Low precipitation with frost and strong seasonal temperature;      Central Asian cold drylands, some high plateaus and rain
+                              dwarf shrubs and grasses.                                          shadows.
+
+                              Persistent snow/ice or bare rock where growing conditions are      Glacier accumulation zones, high summits, polar ice-free
+                              absent or extremely limited.                                       mountain terrain.
+
+Treeline is not a single global altitude
+
+The climatic treeline shifts with latitude, exposure, growing-season warmth, wind, snow damage, and regional species
+pools. Mountains in the tropics can carry forest far above treelines seen at much higher latitudes; dry subtropical mountains
+may have sparse woody cover well below the elevation expected from temperature alone. Treeline ecotones may be
+gradual, patchy, or abrupt depending on terrain and disturbance. [4, 5]
+
+  In cold regions, model snowpack and ground thermal state separately from air temperature. Winter insulation,
+  melt timing, drainage over frozen layers and permafrost can determine whether a pixel behaves like wet tundra,
+  dry heath, peatland, or forest.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                           12
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                                           FIELD REFERENCE / 2026
+
+11. Mountain biomes: elevation belts and terrain facets
+
+A useful first approximation is to stack vegetation belts from the lowland zone through montane forest, subalpine woodland
+or scrub, alpine vegetation, and nival terrain. These are descriptive bands, not fixed altitude bands. A wet equatorial
+mountain can have several forest belts and a high alpine zone; a dry subtropical range may transition from desert scrub to
+open woodland, bunchgrass, alpine steppe and bare rock. [4, 5]
+
+                                                                                  NIVAL
+                                                                                  Persistent snow/ice and exposed rock where climate permits
+                                                                                  ALPINE
+                                                                                  Above local treeline; low plants, exposed ground, short growing season
+
+                                                                                  SUBALPINE
+                                                                                  Tree growth becomes sparse; krummholz, shrubland and meadow
+
+                                                                                  MONTANE
+                                                                                  Cooler and often wetter; mountain-specific forest types
+
+                                                                                  LOWER SLOPES
+                                                                                  Climate of surrounding lowlands; forest, woodland, shrubland or dry stepp
+
+Belts shift with latitude, moisture exposure, aspect, wind, substrate and regional treeline; they are not fixed elevations.
+
+BELT (RELATIVE)  FILTERS                                                          POSSIBLE COMMUNITIES
+Lower foothills
+Lower montane    Local lowland biome, modified by slope, runoff and               Dry scrub, savanna, broadleaf woodland, montane forest edge.
+Upper montane    orographic rainfall.
+Subalpine                                                                         Tropical montane forest, temperate forest, montane conifer forest,
+Alpine           Often forested where water is sufficient; strong aspect and      cloud forest.
+Nival / summit   exposure differences.
+                                                                                  Upper montane forest, mixed conifer forest, subalpine rainforest,
+                 Cooler; shorter season; species turnover; snow may persist       dwarf forest.
+                 seasonally.
+                                                                                  Krummholz, parkland, dwarf pine/juniper, shrubland, subalpine
+                 Tree growth becomes sparse or stunted; wind and snow             meadow.
+                 damage increase.
+                                                                                  Alpine grassland, cushion-plant fellfield, scree flora, snowbed,
+                 Above local treeline; frost, wind, freeze-thaw and soil          alpine heath.
+                 movement dominate.
+                                                                                  Glacier, snowfield, bare rock, sparse cryptogams, very localized
+                 Persistent snow and ice in favorable accumulation zones;         pioneer plants.
+                 exposed rock elsewhere.
+
+Across a single contour line, ecological conditions can still differ
+
+• Windward forest: greater cloud immersion, wind-driven rain and frequent fog can support wetter forest types.
+
+• Leeward scrub or steppe: lower precipitation and higher evaporative demand may produce open vegetation at the same
+   elevation.
+
+• Sun-facing slope: more radiation, earlier snowmelt, warmer soils and faster drying can favor open woodland or
+   shrubland.
+
+• Shaded slope: reduced radiation, later snowmelt and cool soils can favor mesic forest, snowbed or moist meadow.
+
+• Ridge / summit: shallow soil and wind exposure; vegetation short and discontinuous even if nearby hollows are wet.
+
+• Valley bottom: temperature inversions, cold-air pooling, groundwater and alluvial soils may create a separate habitat
+   zone.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                             13
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                  FIELD REFERENCE / 2026
+
+12. Azonal, wetland, riparian, coastal, and edaphic systems
+
+Some ecosystems do not follow the dominant regional climate-vegetation pattern because another control is locally
+overwhelming. These are often called azonal or special ecosystems in broad mapping. They can be narrow lines, small
+patches, or extensive landscapes; they are essential if the goal is high terrain fidelity.
+
+SYSTEM                           CONTROLLING PROCESS                                                WHERE IT TENDS TO OCCUR
+Bogs                                                                                                Cool maritime and boreal uplands, glacial depressions, flat poorly
+Fens                             Rain-fed, acidic, nutrient-poor peatlands; water table near        drained ground.
+Marshes / wet meadows            surface.                                                           Valley bottoms, spring lines, glacial lowlands.
+Swamp forest
+Riparian corridor                Groundwater-fed peatlands; chemistry reflects water passing        Floodplains, lake margins, depressions.
+Mangrove forest                  through mineral soils.
+Salt marsh                                                                                          Tropical lowlands, temperate floodplains, coastal wetlands.
+Coastal dune / strand            Shallow standing water or seasonally saturated mineral soil;       River banks, canyon bottoms, ephemeral desert washes.
+Seep / spring / travertine       sedges, grasses and emergent plants.                               Sheltered tropical coasts, deltas, estuaries.
+Serpentine / ultramafic barrens
+Calcareous grassland             Woody vegetation on saturated or seasonally flooded ground.        Estuaries, lagoons, sheltered coasts.
+Sandy pine barrens / heath
+Lava-field pioneer systems       Groundwater access, alluvial sediment, disturbance by floods.      Beaches, foredunes, dune slacks, back-barrier ridges.
+Glacial foreland                                                                                    Hillsides, karst springs, volcanic fields, fault zones.
+Cave / subterranean habitats     Tropical/subtropical intertidal salinity, anoxia and tidal
+                                 exchange.                                                          Rocky uplands, shallow soils over ultramafic bedrock.
+                                                                                                    Limestone pavement, chalk downs, karst slopes.
+                                 Temperate/cool intertidal or saline coastal flats; tidal flooding  Outwash plains, coastal sands, old dunes.
+                                 and salinity.
+                                                                                                    Basalt fields, lava flows, scoria cones, volcanic plateaus.
+                                 Salt spray, wind, burial, mobile sand and extreme drainage.
+                                                                                                    Retreating glacier margins and moraines.
+                                 Groundwater emerges; temperature and mineral chemistry can
+                                 be distinctive.                                                    Karst caves, lava tubes, subterranean streams.
+
+                                 Chemical stress and unusual nutrient balance filter species.
+
+                                 High-pH carbonate soils, often shallow and nutrient-limited.
+
+                                 Acidic, nutrient-poor, droughty sand; fire often maintains open
+                                 vegetation.
+
+                                 Bare or young volcanic rock with discontinuous soil
+                                 development.
+
+                                 Recently exposed substrate, unstable deposits, cold meltwater,
+                                 primary succession.
+
+                                 Light absent; temperature and moisture buffered; energy often
+                                 imported.
+
+These systems are best represented as a second classification layer rather than forcing them into a single zonal biome. A
+tropical swamp is both tropical and wetland; a desert riparian forest is both arid-region vegetation and
+groundwater-supported corridor; a mountain bog is both montane and peatland.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                           14
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                FIELD REFERENCE / 2026
+
+13. Continental transects: North America and Eurasia
+
+These examples show how large-scale patterns arise and why biome boundaries curve, fragment, and interlock. They are
+schematic, not literal west-to-east or north-to-south transects for every latitude.
+
+North America: Pacific margin to continental interior
+
+Pacific maritime coast: mild temperatures and strong wet-season precipitation support temperate rainforest in the wettest
+coastal belts; conifer forests grade inland with declining ocean influence and orographic barriers. Coast Ranges /
+Cascades / Sierra Nevada: windward slopes are often wetter, with strong snowpack and elevation bands. Intermontane
+basins: rain shadows support sagebrush-like shrub steppe, cold desert, salt basins and dry grassland. Great Plains: a
+broad moisture gradient from moister tallgrass toward mixed-grass and shortgrass steppe grades westward, influenced by
+continentality, topography and fire. Eastern forests: humid conditions support deciduous and mixed forest; southward,
+warm humid forest; northward, boreal forest and tundra. [1, 2, 7]
+
+North American mountain mosaics
+
+• Olympic and coastal ranges: maritime moisture, cloud belts, temperate rain forest, snowfields, and dry lee-side areas over
+   short distances.
+
+• Rocky Mountains: foothill grassland or shrubland -> montane forest -> subalpine forest/krummholz -> alpine tundra;
+   aspect and snowpack create wet hollows and dry ridges.
+
+• Great Basin ranges: basin-and-range relief isolates mountain “islands” of woodland and montane forest above desert
+   valleys; north-facing slopes and springs can support mesic pockets.
+
+• Appalachians: elevation and aspect create cooler coves, rich hardwood forests, high-elevation spruce-fir patches and
+   exposed heath balds in regional contexts.
+
+Eurasia: Atlantic margin to interior Asia
+
+Western Atlantic margin: oceanic temperatures and regular moisture support broadleaf forest, mixed forest and heath
+mosaics. Central/eastern Europe: more seasonal continental forest and steppe transition. Central Asia: dry steppe, cold
+desert, mountain rain shadows and internally drained basins dominate large areas. Siberia: boreal forest grades into larch
+woodland, tundra and polar desert northward; permafrost and fire shape drainage and succession. South and East Asian
+monsoon regions: seasonal rainfall drives moist and dry forests, subtropical evergreen forests and major mountain
+gradients. [2, 3, 14]
+
+  Eurasia demonstrates both latitude and continentalness: moving north cools the climate, while moving inland
+  strengthens seasonal extremes and often increases aridity; mountain arcs then create strong local exceptions.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.  15
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                FIELD REFERENCE / 2026
+
+14. Continental transects: Africa, South America, and
+Australia
+
+Africa: equatorial wet zone, savanna belts, and deserts
+
+The Congo Basin supports tropical moist forest, with flooded forest and swamp mosaics in lowlands. Moving outward from
+the equatorial humid core, seasonal forests grade into savannas and dry woodlands where the dry season lengthens and
+fire becomes more influential. The Sahel forms a variable semi-arid transition north of wetter savannas, then the Sahara
+spans multiple desert expressions including sand seas, gravel plains, mountains and oases. Southern Africa combines
+savannas, Highveld grasslands, the Namib fog-desert margin, Karoo shrublands and the Cape fynbos region. East African
+highlands add montane forest, afroalpine vegetation and sharp rain-shadow contrasts.
+
+South America: Amazon, Andes, and dry east/west contrasts
+
+The Amazon lowlands contain extensive rainforest and flood-pulse ecosystems. The Andes generate a striking west-to-east
+and elevation mosaic: Pacific-facing dry regions, high puna and other alpine systems, cloud forest on moist slopes, and
+Amazon-facing foothill rainforest. Central Brazil’s Cerrado is a savanna and woodland mosaic affected by soils, fire and
+rainfall seasonality; the Caatinga is seasonally dry thorn scrub; the Pampas are temperate grasslands; the Gran Chaco
+includes dry forests, scrub and wetlands; Patagonia contains steppe and cold desert in the lee of the Andes. Southern
+Chile’s maritime exposure supports temperate rain forest in wet belts. [1, 7]
+
+Australia: strong aridity, old landscapes, and coastal exceptions
+
+Much of the interior is arid or semi-arid, with spinifex grasslands, mulga-like shrublands, salt lakes, sand ridges, rocky
+ranges and episodic drainage. Northern Australia supports tropical savannas with monsoon seasonality. Wetter eastern and
+southeastern margins include eucalypt forests, temperate forests, alpine zones in the southeast, and subtropical/tropical
+rainforest pockets where moisture and topography allow. Southwestern Australia hosts Mediterranean-type shrublands and
+woodlands including kwongan; Tasmania has cool temperate rainforest and other temperate systems.
+
+Islands and archipelagos
+
+Islands can create sharp elevation belts, cloud forests, windward/lee patterns, and endemism over small distances.
+Volcanic islands may have young porous substrates, geothermal zones, lava fields, and strong soil-age gradients. Oceanic
+isolation and local history can make their species assemblages unlike those of continental regions with similar climate.
+
+Comparative lesson
+
+Similar climate envelopes do not create identical biomes everywhere. The Cape fynbos, Californian chaparral, central
+Chilean matorral, Mediterranean maquis and southwestern Australian kwongan share some climate and plant-functional
+traits, but their species histories, soils and fire regimes differ. Use the climatic/terrain label to describe physical conditions;
+use ecoregion or floristic information when species identity matters. [15]
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.  16
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                                  FIELD REFERENCE / 2026
+
+15. Practical sub-biome catalog: climate and structure
+
+The catalog below is intentionally broad but granular enough to support a map legend, ecological database, or terrain
+generator. Treat these labels as candidate types; assign them only when the controlling conditions fit. Several can overlap
+because the categories describe different dimensions: climate zone, vegetation structure, terrain position, hydrology, or
+substrate.
+
+TYPE                          CLIMATE / MAIN FILTER                    LANDSCAPE POSITION                           VEGETATION / STRUCTURE
+
+Tropical evergreen lowland    Hot; very wet; no severe dry season      Lowland basin, old humid surface, often Evergreen closed canopy, multilayer
+forest
+                                                                       deep weathered soils                         structure, lianas/epiphytes
+
+Tropical cloud forest         Cool humid upland; frequent fog/cloud Windward mountain slope, cloud belt             Mossy trunks, epiphytes, small leaves,
+                              immersion                                                                             cloud-water input
+
+Tropical swamp / peat forest  Warm; saturated or seasonally flooded Depression, flood basin, peat                   Waterlogging, specialized roots,
+                                                                                     accumulation zone              organic-rich soils
+
+Tropical dry forest           Warm; long dry season                    Seasonally dry lowland or rain-shadow        Deciduous canopy, drought strategies,
+                                                                       slope                                        seasonal leaf-off
+
+Savanna                       Warm; strongly seasonal water;           Broad plains, uplands, fire-prone            Continuous or seasonal grass layer,
+                              disturbance often important              mosaics                                      scattered woody plants
+
+Thorn scrub / caatinga-like   High seasonal deficit                    Dry basin, rocky or shallow-soil upland      Spiny shrubs, small leaves, succulents or
+                                                                                                                    drought-deciduous plants
+
+Hot desert                    Extreme water deficit and high           Sand sea, gravel plain, rocky plateau,       Sparse cover; annuals pulse after rainfall
+                              evaporative demand                       basin
+
+Fog desert                    Very low rain; coastal marine fog        Coastal plain beside cool current            Fog-dependent lichens, succulents or
+                              possible                                                                              localized vegetation
+
+Cold desert                   Low precipitation and strong cold        Continental basin, plateau, mountain         Low shrubs and grasses; frost-tolerant
+                              season                                   lee                                          vegetation
+
+Salt pan / playa              Evaporative basin; salinity varies       Closed depression and groundwater            Salt crusts, saline mats, sparse
+                              seasonally                               discharge zone                               halophytes
+
+Mediterranean shrubland       Dry summer, wet winter; fire often       Coastal hills, foothills, old nutrient-poor  Sclerophyll shrubs, seasonal herbs,
+                              important                                soils                                        post-fire mosaics
+
+Temperate rain forest         Cool-mild and very wet; maritime         Wet coastal ranges, windward slopes Large trees, mosses, ferns, nurse logs
+                              influence
+
+Temperate deciduous forest    Seasonal cold winter; adequate           Rolling uplands, deep soils, coves           Leaf-deciduous broadleaf canopy
+                              moisture
+
+Temperate mixed / conifer forest Seasonal climate; species or soils    Mountains, sandy or nutrient-poor soils, Mixed broadleaf-conifer or
+                                               favor conifers
+                                                                       fire regimes                                 conifer-dominant canopy
+
+Temperate tallgrass prairie   Subhumid; fertile soils; fire/herbivory  Plains, loess and deep mineral soils         Tall graminoids, deep root systems
+                              important
+
+Shortgrass steppe             Semi-arid continental climate            Wind-exposed plains, dry uplands             Low bunchgrasses, drought-adapted
+                                                                                                                    shrubs
+
+Montane forest                Cooler with elevation; terrain controls  Lower/mid mountain slopes                    Locally adapted forest composition and
+                              moisture                                                                              structure
+
+Subalpine woodland            Short growing season; snow and wind      Near treeline, sheltered upper slopes        Stunted trees, parkland, krummholz
+                              stress
+
+Alpine meadow / turf          Cold, short season; adequate local       Bowl, bench, snowmelt zone                   Low grasses, forbs, cushion plants
+                              soil water
+
+Alpine fellfield / scree      Wind, frost heave, thin soil, unstable   Exposed ridge, talus, summit                 Discontinuous low vegetation and bare
+                              rock                                                                                  substrate
+
+Boreal taiga                  Long cold winter; short summer           Shield, plains, glacial terrain              Conifer forest, moss and organic layers
+
+Boreal peatland               Cool; high water table; slow             Flat basin, kettle, poorly drained           Bog, fen, marsh, forest islands
+                              decomposition                            lowland
+
+Arctic wet tundra             Permafrost or frozen layer; saturated    Coastal plain, polygon ground, low           Sedge, moss, shallow wetlands
+                              active layer                             relief
+
+Arctic dry heath tundra       Cold and windy, better-drained sites Ridges, slopes, uplands                          Dwarf shrubs, lichens, exposed soil
+
+Polar desert                  Very cold and often extremely dry        High Arctic or Antarctic ice-free terrain Sparse cryptogams and bare ground
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                                17
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                                   FIELD REFERENCE / 2026
+
+15. Practical sub-biome catalog: hydrology and substrate
+
+These secondary overlays are often what make a terrain map feel geographically convincing. They can be mapped inside
+almost any major climatic biome.
+
+OVERLAY TYPE                 MAIN FILTER                                      TERRAIN POSITION                       MAPPING CUE
+                                                                              Channel corridor through grassland,
+Riparian woodland / gallery forest Surface flow and groundwater; disturbance  savanna, desert or forest              Linear band following drainage
+                                                by floods                     Low river terraces, oxbows,            network
+                                                                              backswamps
+Floodplain forest            Flood frequency, sediment and water table        Basin, lake edge, valley floor         Patchwork by elevation and flood
+                                                                                                                     recurrence
+Marsh / wet meadow           Seasonal saturation or shallow water             Cool, wet, flat or convex bog surface
+                                                                                                                     Sedges, rushes, emergent plants,
+Bog                          Rain-fed, acidic, nutrient-poor peat             Seepage slope, valley bottom,          open wet grass
+                                                                              groundwater outlet
+Fen                          Groundwater-fed, mineral-influenced peat         Tropical sheltered coast/delta         Sphagnum peat, dwarf shrubs, wet
+                                                                              Temperate/cool sheltered coast         hollows
+Mangrove                     Tide + salinity + warm climate                   Beach, foredune, back-dune
+Salt marsh                   Saline tidal flooding                                                                   Sedge-rich, chemistry-sensitive
+Coastal strand / dunes       Salt spray, wind burial, sand mobility           Shaded hollow, lee hollow,             wetland
+                                                                              avalanche margin
+Alpine snowbed               Late-melting snow; short growing season          Slope break, fault, karst or volcanic  Intertidal woody vegetation
+                                                                              seep
+Spring / seep meadow         Groundwater discharge                            Shallow rocky soil on ultramafic       Salt-tolerant herbs and grasses
+                                                                              bedrock
+Serpentine grassland / barrens Ultramafic chemistry, nutrient imbalance       Chalk, limestone, karst slopes         Zonation from pioneer plants to
+                                                                              Old dunes, outwash plains, sandy       stabilized scrub/woodland
+Limestone / calcareous grassland High pH and shallow carbonate soil           terraces
+                                                                              Cliffs, scree, boulder fields          Low herbs and sedges; late phenology
+Sandy heath / pine barrens   Acidic low-nutrient sand, fire
+                                                                              Recent basalt or other lava flows      Mesic plants in dry matrix
+Rockland / talus             Substrate instability, exposure, shallow soil
+                                                                              Newly deglaciated terrain              Specialist flora, sparse
+Lava-field pioneer           Bare young rock, porous surfaces, variable                                              grasses/shrubs
+Glacial foreland             soil age                                         Closed basin margin, saline seep
+                                                                              Shoreline gradients and shallow        Low turf, herbs, droughty pockets
+                             Fresh till, meltwater, unstable moraines         shelves
+                                                                              Delta distributaries, mudflats and     Heath, pines, open woodland
+Salt-tolerant inland meadow  Saline groundwater and periodic flooding         levees
+Lake / pond littoral         Water depth, light, oxygen and sediment                                                 Sparse plants in fissures and stable
+                                                                                                                     pockets
+Estuarine delta mosaic       Freshwater-saltwater mixing, tides,
+                             sediment deposition                                                                     Lichens, mosses, shrubs and soil
+                                                                                                                     islands in succession
+
+                                                                                                                     Primary succession; patchy pioneer
+                                                                                                                     plants
+
+                                                                                                                     Halophytes and salt crust communities
+
+                                                                                                                     Emergent, floating and submerged
+                                                                                                                     vegetation bands
+
+                                                                                                                     Mangrove/marsh/mudflat/levee
+                                                                                                                     succession by climate
+
+Represent nested conditions explicitly. A pixel can be “temperate maritime climate” + “montane forest” +
+“windward slope” + “volcanic substrate” + “riparian wetland”. A single exclusive biome label discards useful
+causal information.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                            18
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                FIELD REFERENCE / 2026
+
+16. A practical ruleset for assigning biomes to terrain
+
+For a GIS map, simulation, or procedural terrain system, a robust approach is hierarchical: classify broad climate first, then
+modify it by relief and water routing, then apply soil and disturbance overlays. Avoid using altitude as a direct biome lookup
+without latitude and moisture context.
+
+Suggested classification pipeline
+
+1. Climate envelope
+
+Use monthly temperature and precipitation, coldest month, growing-season length, precipitation seasonality, PET or aridity
+index, snow fraction and frost frequency. Derive broad thermal/moisture domain.
+
+2. Continentalness and circulation
+
+Estimate maritime influence, seasonal temperature range, prevailing windward direction, storm-track exposure, monsoon
+seasonality and coastal-current context where relevant.
+
+3. Topographic position
+
+Compute elevation, slope, aspect, curvature, roughness, topographic wetness, distance to drainage, local relief, valley
+depth and ridge exposure.
+
+4. Orographic correction
+
+Where possible, use precipitation and temperature fields corrected for topography; distinguish windward uplift from lee-side
+rain shadows. Do not assume every side is simply wet/dry.
+
+5. Water-routing layer
+
+Track runoff accumulation, flood recurrence, seasonal wetness, groundwater discharge, lakes, snowmelt paths and closed
+basins. Apply riparian, floodplain, wetland and salt-basin overlays.
+
+6. Substrate / soil layer
+
+Use lithology, soil texture/depth, drainage class, pH/salinity, parent material and soil age if available. These modify
+forest/grassland/shrubland outcomes and generate edaphic specialists.
+
+7. Potential vegetation class
+
+Assign the broad biome and candidate sub-biome that fits the climate envelope, then test whether tree cover is plausible
+given fire, cold, waterlogging, soil and disturbance.
+
+8. Disturbance and land-use state
+
+Apply fire regime, grazing/herbivory, storm damage, flood regime, avalanches, human land use and succession. Keep
+potential vegetation separate from present land cover.
+
+9. Ecotones and uncertainty
+
+Blend or probabilistically assign where climate envelopes overlap. Preserve confidence scores and multiple factors rather
+than forcing every transition into a hard line.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.  19
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                FIELD REFERENCE / 2026
+
+Example logic (illustrative, not universal)
+
+CONDITION                                  BASE CONTEXT                           INITIAL RULE
+
+Warm + very wet, no severe dry season Lowland tropical humid region               Rainforest candidate; if waterlogged then swamp/peat forest; if upland and
+                                                                                  cloud-immersed then cloud forest.
+Warm + strong dry season                   Seasonal tropics
+                                                                                  Seasonal forest if dry-season stress moderate; savanna or thorn scrub if water
+Semi-arid + continental + flat to rolling  Interior temperate region              deficit and/or fire keep tree cover open.
+
+Very low P + high PET                      Arid region                            Steppe/grassland candidate; adjust by soil water holding, fire/grazing, and
+                                                                                  slope.
+Cold + short growing season                Boreal/polar or high elevation
+                                                                                  Desert/xeric shrubland; map dune, gravel, salt basin and riparian corridors
+High elevation + exposed ridge             Mountain terrain                       separately.
+
+                                                                                  Forest if heat/soil allow; woodland/treeline transition; tundra or polar desert
+                                                                                  where thermal constraints dominate.
+
+                                                                                  Montane to alpine candidate, but modify strongly by latitude, aspect, moisture
+                                                                                  and local treeline.
+
+Best-practice data architecture: store climate class, biome class, sub-biome class, terrain position, hydrology
+class, substrate class, disturbance regime, and confidence as separate fields. This avoids collapsing causes
+and outcomes into one opaque label.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                                   20
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                                           FIELD REFERENCE / 2026
+
+17. Ecotones, disturbance, change, and uncertainty
+
+Biome boundaries are often ecotones - zones of transition where two or more ecological systems intergrade. Some
+boundaries are sharp because of abrupt substrate changes, fire breaks, topographic cliffs or water-table edges; others are
+broad and move from year to year with rainfall or snow. Classifications simplify these patterns to make maps usable, but the
+underlying environment is continuous and dynamic.
+
+Processes that shift local vegetation
+
+DRIVER                ECOLOGICAL EFFECT                                                        VARIABLES TO TRACK
+
+Fire                  Can favor grasses and fire-adapted shrubs or pines; repeated fire can Fire return interval, fuel continuity, seasonality,
+
+                      prevent tree recruitment; too-frequent fire can also degrade adapted     severity.
+
+                      communities.
+
+Herbivory / grazing   Changes grass biomass, tree recruitment, shrub cover, soil compaction    Wildlife or livestock intensity, browsing pressure,
+                      and erosion.                                                             movement corridors.
+
+Floods and channel    Create patches of different ages, scour surfaces, deposit sediment,      Flood recurrence, channel migration, levees,
+migration             reconnect wetlands.                                                      oxbows and terraces.
+
+Avalanche / wind / landslide Repeated disturbance can maintain open corridors in forested mountain Slope, snow loading, exposure, geology, storm
+
+                      landscapes.                                                              climatology.
+
+Soil development and  Vegetation and microbial activity alter organic matter, nutrient cycles  Substrate age, weathering, erosion, parent
+succession            and soil structure over time.                                            material.
+
+Climate shifts        Move suitable temperature/moisture envelopes; alter fire, pests,         Trend + variability, extreme events, dispersal
+                      snowpack and drought.                                                    limits, land-use barriers.
+
+Human land use        Clearing, irrigation, drainage, roads and grazing can transform land     Separate potential biome from observed cover
+                      cover without changing the broad climate biome.                          and management state.
+
+Potential vegetation versus current land cover
+
+A climate- and terrain-based map usually estimates what vegetation could persist under specified environmental conditions.
+A contemporary land-cover map records what is actually present after human land use, disturbance and succession. A
+modern agricultural field can sit within a temperate grassland biome; plantation forest can occupy a rainforest or savanna
+region; urban land can hide the local hydrologic and soil system. Do not interpret current cover as the natural biome without
+evidence.
+
+Uncertainty is structural, not just measurement error
+
+• Global classifications use different variable sets and boundary rules, and their maps do not always agree. The
+   biome-inventory literature documents divergence among global products. [12]
+
+• Climate-only classifications often miss substrate-controlled vegetation, wetlands, and terrain microclimates.
+
+• A single “mountain” category hides huge differences between windward forest, lee desert, alpine meadow, and glacier
+   terrain.
+
+• Ecological communities reflect history and available species as well as current climate, so one global rule cannot predict
+   every local assemblage.
+
+  For high-fidelity mapping, retain both the best label and the evidence behind it: climate drivers, terrain position,
+  soil/water factors, and confidence. When uncertainty is high, store two plausible sub-biomes or an ecotone
+  instead of inventing false precision.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                                                    21
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                FIELD REFERENCE / 2026
+
+18. Glossary and reference map
+
+TERM                          WORKING DEFINITION
+Biome                         A broad ecological formation, commonly associated with climate and dominant vegetation structure, though definitions vary.
+Sub-biome                     A practical subdivision of a biome; not a universally standardized formal rank.
+Ecoregion                     A geographically distinct area characterized by a particular assemblage of communities and species.
+Ecological land unit (ELU)    An integrated unit produced by combining physical setting and land-cover information, such as bioclimate, landform, lithology
+                              and land cover.
+Continentalness               Degree of inland versus maritime climate influence, often expressed by seasonal temperature range and moisture patterns.
+Orographic precipitation      Precipitation caused or enhanced by air being forced to rise over topography.
+Rain shadow                   A region of reduced precipitation in the lee of a mountain range relative to windward exposure, under suitable circulation
+                              conditions.
+Potential evapotranspiration  An estimate of atmospheric demand for water from a vegetated surface if water supply were not limiting.
+(PET)
+Aridity index                 A ratio or index comparing precipitation with evaporative demand; definitions differ by product.
+Azonal ecosystem              A system whose local control (such as flooding, salinity or substrate) overrides the broad zonal climate-vegetation pattern.
+Edaphic                       Relating to soil conditions such as texture, depth, chemistry, drainage and nutrient supply.
+Ecotone                       A transition area between ecological systems, sometimes gradual and sometimes sharply bounded.
+Treeline                      The upper or poleward limit of tree growth, varying with climate, exposure, species and disturbance.
+Krummholz                     Stunted or wind-shaped woody growth near treeline, often bent or shrub-like due to exposure.
+Fellfield                     Open alpine or arctic vegetation with much exposed ground, rock and sparse low plants.
+Potential vegetation          Vegetation expected under the environmental conditions specified by a model, often excluding current human land use.
+Land cover                    The surface cover actually present, such as forest, grass, crop, bare ground, water or built area.
+
+Reference guide: strongest starting points
+
+• [1] Olson et al. (2001) - terrestrial ecoregions as a global biodiversity-oriented map.
+• [2] Beck et al. (2018) - high-resolution present/future Köppen-Geiger climate maps.
+• [3] Sayre et al. (2014) - USGS Global Ecological Land Units built from bioclimate, landform, lithology and land cover.
+• [4]-[5] Körner and colleagues - definitions and global inventory of mountain environments and belts.
+• [7] Roe (2005) - review of orographic precipitation mechanisms.
+• [12]-[13] Fischer et al. and Champreux et al. - variation among biome classification products and methods.
+
+Direct links and full citation details follow. Hyperlinks in the PDF open the publisher, repository, or agency page.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.                                          22
+EARTH BIOMES, SUB-BIOMES & TERRAIN                                                FIELD REFERENCE / 2026
+
+[1] Olson, D. M. et al. (2001). Terrestrial Ecoregions of the World: A New Map of Life on Earth. BioScience, 51(11), 933-938. Open source
+[2] Beck, H. E. et al. (2018). Present and future Koppen-Geiger climate classification maps at 1-km resolution. Scientific Data, 5, 180214. Open source
+[3] Sayre, R. et al. (2014). A new map of global ecological land units - an ecophysiographic stratification approach. Association of American Geographers /
+
+     USGS. Open source
+[4] Korner, C., Paulsen, J. & Spehn, E. M. (2011). A definition of mountains and their bioclimatic belts for global comparisons of biodiversity data. Alp
+
+     Botany, 121, 73-78. Open source
+[5] Korner, C. et al. (2017). A global inventory of mountains for biogeographical applications. Alpine Botany, 127, 1-15. Open source
+[6] Champreux, F. et al. (2024). How to map biomes: Quantitative comparison and review of biome-mapping methods. Ecological Monographs. Open
+
+     source
+[7] Roe, G. H. (2005). Orographic precipitation. Annual Review of Earth and Planetary Sciences, 33, 645-671. Open source
+[8] NASA Global Precipitation Measurement. Rain shadow education and geographic influences. Open source
+[9] FAO (2001). Global Ecological Zoning for the Global Forest Resources Assessment 2000. Domains, ecological zones and regional descriptions. Open
+
+     source
+
+Additional research on soils, vegetation, and regional systems
+
+[10] Dymond, S. F. et al. (2017). Topographic, edaphic, and vegetative controls on plant-available water. Ecohydrology, 10, e1897. Open source
+[11] Rasmussen, C. et al. (2020). The influence of soil age on ecosystem structure and function across biomes. Nature Communications. Open source
+[12] Fischer, A. et al. (2022). The biome inventory - Standardizing global biogeographical land units. Global Ecology and Biogeography, 31, 2172-2183.
+
+     Open source
+[13] Schlesinger, W. H. and colleagues (2006). The soil-geomorphic template and biotic change in arid and semi-arid ecosystems. Journal of Arid
+
+     Environments, 65, 207-218. Open source
+[14] FAO. Global Ecological Zoning for the Global Forest Resources Assessment 2000 - regional accounts, including boreal and continental systems. Open
+
+     source
+[15] Rundel, P. W. et al. (2016). Mediterranean biomes: Evolution of their vegetation, floras, and climate. Annual Review of Ecology, Evolution, and
+
+     Systematics, 47, 383-407. Open source
+[16] USGS. Global ecosystems and Global Ecological Land Unit data; explanation of integrated physical and cover layers. Open source
+[17] NASA Earth Observatory / GPM. Geographic influences on precipitation and rain-shadow resources. Open source
+[18] World Wildlife Fund / RESOLVE. Terrestrial ecoregions framework and related map resources. Open source
+
+  Use these references as complementary lenses, not as competing answers to a single taxonomy question. For
+  broad climate geography, start with [2]; for species assemblages and conservation, [1]; for climate + landform +
+  lithology, [3] and [16]; for mountain belts and orographic effects, [4], [5] and [7]; for classification uncertainty,
+  [6] and [12].
+
+End of guide. The most useful high-fidelity map is usually a layered model with continuous drivers and multiple categorical overlays, not
+                                                                            one flat biome raster.
+
+Conceptual synthesis; local boundaries are gradual and classification-dependent.  23
+

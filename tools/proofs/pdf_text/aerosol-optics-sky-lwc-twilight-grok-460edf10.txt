@@ -1,0 +1,312 @@
+Aerosol Optics, Sky Models, LWC & Twilight — Technical Reference
+
+    Aerosol Optical Properties, Sky Radiance Models,
+         Cloud LWC Profiles & Twilight Illuminance
+
+                Technical reference for coupling turbidity, visibility, Preetham sky domain,
+                         adiabatic liquid-water content, and civil-twilight ambient light
+
+This document addresses four gaps that commonly appear when an analytic clear-sky model (Preetham / Perez)
+is extended toward cloudy or low-Sun conditions: (1) the mapping from aerosol optical depth and visibility to the
+single turbidity parameter used by Preetham; (2) the validity domain of that sky model and the conceptual
+separation of aerosol extinction from cloud scattering; (3) adiabatic liquid-water content (LWC) and liquid-water
+path (LWP) profiles that can replace purely declared wet-turbidity gains; and (4) quantitative illuminance curves
+through civil twilight for open-horizon ambient lighting.
+
+1. Aerosol Optical Properties and Turbidity
+
+1.1 Aerosol Optical Depth (AOD / AOT)
+
+Aerosol optical depth τa(λ) is the vertical integral of the aerosol extinction coefficient σext(z,λ) from the surface to
+the top of the atmosphere:
+
+                                                             τa(λ) = ∫ ∞ 0 σext(z,λ) dz
+It is dimensionless and wavelength-dependent. Typical mid-visible (550 nm) values range from <0.05 (pristine
+maritime / polar) through 0.1–0.3 (clean continental) to >0.5–1.0 (urban, biomass-burning or dust outbreaks).
+AERONET sun-photometer networks report AOD at several discrete wavelengths; satellite products (MODIS,
+VIIRS) provide global maps at 550 nm.
+
+1.2 Ångström Exponent
+
+Ångström (1929) observed that aerosol optical thickness follows a power law over the visible–near-IR:
+                                                                  τa(λ) = β · λ−α
+
+where β is the Ångström turbidity coefficient (AOD extrapolated to 1 µm) and α is the Ångström exponent. From
+two wavelengths:
+
+                                                         α = − ln(τλ1 / τλ2) / ln(λ1 / λ2)
+α is inversely related to particle size: fine-mode combustion aerosols give α ≈ 1.5–2.0; coarse dust or sea-salt
+give α ≈ 0–0.5; cloud droplets (very large) give α ≈ 0 (hence clouds appear white/grey). Typical continental
+averages lie near α ≈ 1.3. Because the power-law is only approximate, α itself varies with wavelength
+(“curvature”); multi-wavelength fits or second-order spectral derivatives improve size-mode separation.
+
+1.3 Preetham / Linke Turbidity Factor T
+
+The Preetham (1999) analytic sky model parameterises the atmosphere by a single scalar T (turbidity).
+Conceptually T is the ratio of the optical thickness of a hazy atmosphere to that of a clean Rayleigh atmosphere at
+the same air mass:
+
+                                                      T = (τRayleigh + τaerosol) / τRayleigh
+A perfectly clean atmosphere has T = 1; observed “exceptionally clear” values are ≈1.25, “very clear” ≈1.6, typical
+rural 2–3, urban/hazy 4–6, and heavy haze T ≥ 10. Preetham’s analytic fit was performed on data for T ∈ [2, 6];
+outside that interval the model is numerically and physically unreliable (see §2).
+
+Internal technical note                                           Page 1
+Aerosol Optics, Sky Models, LWC & Twilight — Technical Reference
+
+ A practical conversion from mid-visible AOD (τ550) often used in graphics and solar-energy literature is
+ approximately:
+
+                        T ≈ 1 + 16 · τ550 (order-of-magnitude; see also Bodhaine 1999, Kasten–Young)
+ More accurate mappings incorporate the Ångström exponent and the relative optical air mass. The Linke turbidity
+ factor TL is a closely related quantity used in solar radiation models; linear regressions between TL and Ångström
+ β exist for different climate regimes.
+
+ 1.4 Visibility / Meteorological Optical Range
+
+ Koschmieder’s law relates daytime horizontal visibility V (meteorological optical range) to the horizontal extinction
+ coefficient σext:
+
+                                                      V = (1 / σext) · ln(1 / ε) ≈ 3.912 / σext
+ where the contrast threshold ε is conventionally taken as 0.02 (sometimes 0.05). If an exponential scale height H
+ for aerosol extinction is assumed, the column AOD can be recovered from surface visibility:
+
+                                                          τa ≈ (3.912 / V) · H − τRayleigh
+ Typical aerosol scale heights are 1–2 km. Visibility data are widely archived by weather services and can
+ therefore serve as a proxy for historical AOD, although water vapour, fog and precipitation must be filtered. This
+ relationship is the physical basis for any “visibility → turbidity” conversion used in a renderer.
+
+ 1.5 Scattering vs Extinction; Coupling to Wet Turbidity
+
+ Extinction is the sum of scattering and absorption: σext = σsca + σabs. For most continental aerosols the
+ single-scattering albedo ω = σsca/σext lies between 0.85 and 0.95 in the visible; strongly absorbing smoke or
+ black-carbon plumes can drop ω below 0.7. Cloud droplets are essentially pure scatterers (ω ≈ 1) with Ångström
+ exponent near zero.
+
+ When a renderer introduces a wet-turbidity gain (e.g. WET_TURBIDITY_GAIN scaled by a reference water path),
+ the gain is effectively modulating an aerosol-like extinction term. Because cloud optical depth is orders of
+ magnitude larger than typical AOD and has a different spectral dependence, the physically consistent approach is
+ to keep aerosol turbidity and cloud optical depth as separate quantities and to composite them only at the
+ radiance level (see §2.3).
+
+ 2. Sky Radiance Models — Validity Domain of Preetham
+
+ 2.1 What Preetham Models
+
+ Preetham, Shirley & Smits (SIGGRAPH 1999) fitted an analytic Perez-type luminance distribution to a large set of
+ path-traced clear-sky radiances generated by the Nishita et al. (1996) single-scattering model. Inputs are solar
+ zenith angle θs, view zenith/azimuth, and turbidity T. The model supplies both relative luminance distribution and
+ absolute zenith luminance / chromaticity, making it convenient for real-time graphics. Related supporting formulae
+ (Bodhaine 1999 Rayleigh optical depth, Kasten–Young air-mass) are commonly cited alongside the
+ implementation.
+
+ 2.2 Known Limitations and Numerical Domain
+
+ Independent critical reviews (Zotti, Wilkie & Purgathofer 2007; later quantitative comparisons) establish the
+ following practical bounds:
+
+      • Turbidity range. The underlying fit used T ∈ [2, 6]. For T s 1.9 the model produces an unrealistically bright horizon
+      glow and can yield negative zenith luminance. For T s 10 the formulae become numerically unstable and the
+      physical premise of a “clear-sky” atmosphere ceases to hold.
+      • Solar elevation. Results near sunrise/sunset (θs s 85°) are problematic, especially at high turbidity; absolute
+      luminances can become negative or diverge.
+
+Internal technical note  Page 2
+Aerosol Optics, Sky Models, LWC & Twilight — Technical Reference
+
+      • Horizon and colour. Even inside the nominal range the horizon is often too bright and too pink compared with CIE
+      Standard General Sky measurements and real clear-sky observations.
+      • Ground-only observer. The analytic functions and the accompanying aerial-perspective term assume a
+      ground-level observer and a flat-Earth geometry.
+      • No clouds. The model contains no cloud optical depth, no multiple scattering inside cloud layers, and no
+      broken-cloud geometry. It is strictly a clear-sky (or at most thin-haze) model.
+ Consequently, any production renderer that drives Preetham with a turbidity that has been artificially inflated to
+ simulate clouds is operating outside the model’s validity domain. The visual result may be plausible for light haze,
+ but it is not a physically justified representation of cloud scattering.
+
+ 2.3 Clouds Are Not Aerosol — Recommended Separation
+
+ Cloud droplets are typically 5–20 µm in radius — two orders of magnitude larger than accumulation-mode aerosol.
+ Their scattering is essentially wavelength-independent (α ≈ 0), their single-scattering albedo is ≈1, and a cloud of
+ only a few hundred metres optical depth already reaches τ s 10. Treating cloud water as an additive term inside
+ the Preetham turbidity parameter therefore:
+
+      • violates the spectral assumptions of the Ångström / Preetham formulation;
+      • pushes T far outside the [2, 6] fit range;
+      • cannot reproduce the sharp spatial and angular structure of real cloud fields;
+      • cannot capture the transition from single-scattering haze to multiple-scattering white cloud.
+ A cleaner architecture keeps:
+
+      1. Clear-sky radiance — Preetham (or the improved Hosek–Wilkie / Hosek–Wilkie spectral models) driven by a true
+      aerosol turbidity T derived from AOD or visibility;
+      2. Cloud optical properties — separately computed from liquid-water content profiles (or a microphysical
+      parameterisation) and composited via a multiple-scattering approximation, a precomputed cloud lookup, or a
+      path-traced cloud layer;
+      3. Aerial perspective / extinction — applied consistently to both the clear sky and the cloud-scattered light using the
+      same aerosol optical depth.
+     Practical note: if a legacy “wet turbidity gain” must be retained for artistic control, document it explicitly as a stylisation that
+     leaves the physical clear-sky path untouched, and clamp the effective T to the interval [1.8, 8] to avoid numerical
+     breakdown.
+
+ 3. Adiabatic Liquid-Water Content and Liquid-Water Path
+
+ 3.1 Adiabatic Condensation
+
+ In a closed air parcel rising from cloud base without entrainment, water vapour condenses at a rate set by the
+ difference between the dry and saturated adiabatic lapse rates. The specific liquid-water mass ql satisfies
+
+                                                             dql = (cp / Lv) (Γd − Γs) dz
+ where Γd = g/cp is the dry adiabatic lapse rate and Γs is the saturated moist-adiabatic lapse rate. For shallow
+ clouds (depth s 500 m) the condensation rate cq is nearly constant and equal to its value at cloud base, yielding
+ the linear profile
+
+                                                           ql(z) ≈ cq(T0, p0) · (z − zbase)
+
+ 3.2 Liquid-Water Content (LWC)
+
+ Liquid-water content is the mass of liquid water per unit volume:
+
+                                                                LWC(z) = ρ(z) · ql(z)
+ Under the constant-rate approximation this is also linear in height above base:
+
+                                            LWC(z) ≈ cLWC · (z − zbase), cLWC = ρ0 cq(T0, p0)
+
+Internal technical note  Page 3
+Aerosol Optics, Sky Models, LWC & Twilight — Technical Reference
+
+Typical adiabatic gradients at mid-latitude temperatures are of order 1–2 g m−3 km−1 (i.e. 0.001–0.002 g m−3 m−1).
+A 300 m deep adiabatic cloud therefore reaches peak LWC ≈ 0.3–0.6 g m−3 near cloud top.
+
+3.3 Liquid-Water Path (LWP)
+
+The liquid-water path is the vertical integral of LWC:
+                                                        LWP = ∫ z_top z_base LWC(z) dz
+
+For a linear (adiabatic) profile LWP = ½ · LWCtop · ∆z. Observationally, microwave radiometers measure LWP
+directly; adiabatic LWP computed from cloud-base temperature/pressure and cloud depth usually overestimates
+the measured value because real clouds are sub-adiabatic.
+
+3.4 Sub-adiabaticity
+
+Entrainment of dry air, precipitation and turbulent mixing reduce the liquid-water content below the pure adiabatic
+value. The adiabaticity factor
+
+                                                       fad = LWPobserved / LWPadiabatic
+
+is typically 0.5–0.9 for shallow stratocumulus and can fall to 0.2–0.5 for deeper or heavily precipitating clouds.
+Cloud-net and aircraft studies show that clouds thinner than ≈200 m are often close to adiabatic, while thicker
+layers become progressively more sub-adiabatic. A simple practical model is therefore:
+
+                                                      LWC(z) = fad · cLWC · (z − zbase)
+with fad prescribed from cloud depth or left as a tunable parameter. This supplies a physically sourced water-path
+reference that can replace a purely declared WATER_PATH_REFERENCE_M in a wet-turbidity or
+cloud-optical-depth ramp.
+
+            Table 1. Illustrative adiabatic LWC gradients and LWP for selected cloud-base conditions (approximate).
+
+Tbase (°C)  pbase (hPa)  c (g m−3 km−1)                           ∆z = 200 m LWP (g m−2)          ∆z = 500 m LWP (g m−2)
+0           900                                                   ≈36                             ≈225
+10          900            LWC                                    ≈30                             ≈188
+20          950                                                   ≈24                             ≈150
+                         ≈1.8
+                         ≈1.5
+                         ≈1.2
+
+4. Twilight / Civil-Twilight Illuminance
+
+4.1 Definitions
+
+Twilight is conventionally divided by solar elevation angle hs (centre of the solar disk, refraction-corrected):
+
+    • Civil twilight: 0° ≥ hs ≥ −6°. Terrestrial objects remain distinguishable; outdoor activities possible without artificial
+    light.
+
+    • Nautical twilight: −6° ≥ hs ≥ −12°. Horizon still visible for navigation; most stars appear.
+    • Astronomical twilight: −12° ≥ hs ≥ −18°. Sky still measurably brighter than pure night; after −18° the contribution
+    of sunlight is negligible.
+
+4.2 Illuminance versus Solar Elevation
+
+Clear-sky horizontal illuminance falls by roughly five orders of magnitude between sunset and the end of
+astronomical twilight. Representative values (open horizon, no light pollution, mid-latitude) are:
+
+ Table 2. Approximate clear-sky horizontal illuminance (lux) versus solar elevation. Compiled from multiple observational compilations
+                                                     (Brown, Jones & Condit, and modern photometric fits).
+
+Solar elevation hs       Illuminance (lux)                        Notes
++5°                      ≈ 3 500 – 5 000                          late afternoon / early morning
+
+Internal technical note                                                                                              Page 4
+Aerosol Optics, Sky Models, LWC & Twilight — Technical Reference
+
+Solar elevation hs       Illuminance (lux)                        Notes
+0° (sunset)              ≈ 400 – 800                              upper limb on horizon ≈ −0.3°
+−1°                      ≈ 150 – 300
+−2°                      ≈ 50 – 100                               civil twilight ends
+−3°                      ≈ 20 – 40                                nautical twilight ends
+−4°                      ≈ 8 – 15                                 astronomical twilight ends
+−5°                      ≈ 3 – 6                                  starlight + airglow
+−6° (end civil)          ≈ 1 – 3.5                                depends on elevation & phase
+−9°                      ≈ 0.1 – 0.3
+−12° (end nautical)      ≈ 0.01 – 0.03
+−15°                     ≈ 0.002 – 0.005
+−18° (end astron.)       ≈ 0.0005 – 0.001
+night (no Moon)          ≈ 0.0001 – 0.001
+full Moon                ≈ 0.05 – 0.3
+
+4.3 Analytic Approximations for the Ambient Step
+
+For real-time or offline lighting the rapid change near the horizon can be captured by a smooth function of solar
+elevation. A convenient practical form used in many graphics and illumination models is a logistic or exponential
+decay fitted to the civil-twilight interval:
+
+                                                  E(h) = E0 · 10k·h (h in degrees, h ≤ 0)
+with E0 ≈ 400–600 lx at h = 0° and k ≈ 0.4–0.5 per degree through civil twilight, then a shallower slope through
+nautical and astronomical twilight. More accurate tabulated or spline representations (e.g. those derived from the
+“moonlit” / SQM-twilight data sets) can be pre-computed once and evaluated by lookup. Because the ambient step
+at the open horizon is dominated by the clear-sky scattering path, the same turbidity that drives the Preetham
+daytime sky should also modulate the absolute scale of the twilight curve; higher turbidity lengthens the twilight
+and raises the residual illuminance at a given negative elevation.
+
+When clouds are present the twilight curve is further modified: a broken cloud field can both obscure the last direct
+rays and reflect residual sunlight, producing a more abrupt or a more prolonged transition depending on cloud
+cover and solar azimuth relative to the observer. A full treatment again requires separating the clear-sky
+illuminance from the cloud-scattered contribution.
+
+5. Summary Recommendations for Implementation
+
+    1. Turbidity source. Derive T from measured or climatological AOD (or from visibility via Koschmieder + scale
+    height). Keep T inside [1.8, 8] for Preetham; outside that range switch to a different sky model (Hosek–Wilkie, CIE
+    Standard General Sky, or a path-traced atmosphere).
+    2. Do not fold cloud water into T. Cloud optical depth belongs in a separate cloud-radiance term. A wet-turbidity
+    gain is a stylisation; if retained, document and clamp it.
+    3. LWC / LWP. Prefer an adiabatic (or sub-adiabatic) profile driven by cloud-base temperature/pressure and
+    geometric thickness. The resulting LWP can directly feed a cloud optical-depth parameterisation, replacing a
+    hard-coded WATER_PATH_REFERENCE_M.
+    4. Twilight ambient. Drive the open-horizon ambient step with a tabulated or analytic illuminance-versus-elevation
+    curve that is continuous with the daytime Preetham zenith luminance at h ≈ 0°. Scale the curve by the same turbidity
+    used for the daytime sky.
+    5. Spectral consistency. Aerosol extinction carries an Ångström exponent; cloud extinction does not. Any
+    wavelength-dependent path (spectral rendering, aerial perspective) must treat the two components separately.
+
+Internal technical note                                                                          Page 5
+Aerosol Optics, Sky Models, LWC & Twilight — Technical Reference
+
+ Selected References
+
+  Ångström, A. (1929). On the atmospheric transmission of sun radiation and on dust in the air. Geografiska Annaler.
+  Bodhaine, B. A. et al. (1999). On Rayleigh optical depth calculations. J. Atmos. Oceanic Technol.
+  Brenguier, J.-L. (1991). Parameterization of the condensation process: A theoretical approach. J. Atmos. Sci.
+  Kasten, F. & Young, A. T. (1989). Revised optical air mass tables and approximation formula. Applied Optics.
+  Koschmieder, H. (1924). Theorie der horizontalen Sichtweite. Beitr. Phys. freien Atmos.
+  Preetham, A. J., Shirley, P. & Smits, B. (1999). A practical analytic model for daylight. SIGGRAPH ’99.
+  Zotti, G., Wilkie, A. & Purgathofer, W. (2007). A critical review of the Preetham skylight model. WSCG Short Papers.
+  Hosek, L. & Wilkie, A. (2012). An analytic model for full spectral sky-dome radiance. ACM TOG (SIGGRAPH).
+  Wood, R. (2012). Stratocumulus clouds. Monthly Weather Review (review of adiabaticity & LWC).
+  Illingworth, A. J. et al. (2007). Cloudnet — continuous evaluation of cloud profiles. Bull. Amer. Meteor. Soc.
+
+     End of technical note. Equations are given in a form suitable for direct implementation; numerical coefficients should be
+     validated against the specific atmospheric column and spectral band used by the renderer.
+
+Internal technical note                                                                                                         Page 6
+
